@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lor-generator": {
+      "hosting": {
+        "lor-generator": [
+          "lor-generator"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lor-generator"
+  }
+}
