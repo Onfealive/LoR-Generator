@@ -58,6 +58,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
   }
 
   compare() {
+    this.setContents = {};
     let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
 
     let selectedPatch = this.patchInfo[selectedPatchIndex].name;
@@ -67,7 +68,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.patchIDs.new = selectedPatch;
 
     let maxSet = this.patchInfo[selectedPatchIndex].maxSet;
-
     let countFiles = 0;
     for (let i = 1; i <= maxSet; i++) {
       this.getJSON(selectedPatch, i).subscribe(data => {
@@ -89,6 +89,17 @@ export class PatchNotesGeneratorComponent implements OnInit {
         }
 
         this.setContents['set' + i][previousPatch] = JSON.stringify(data || []);
+
+        countFiles += 1;
+        if (countFiles == maxSet * 2) {
+          this.compareJson();
+        }
+      }, (error) => {
+        if (!this.setContents['set' + i]) {
+          this.setContents['set' + i] = {};
+        }
+
+        this.setContents['set' + i][previousPatch] = JSON.stringify([]);
 
         countFiles += 1;
         if (countFiles == maxSet * 2) {
@@ -145,7 +156,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
       this.patchIDs.new = nextFile[1];
     }
 
-    console.log(this.patchIDs)
     this.files.push(...draggedFiles);
 
     let countFiles = 0;
@@ -180,8 +190,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.isCompleted = true;
 
     setTimeout(() => {
-      console.log(this.setContents)
-
       // Init
       const defaults = {
         display: false,
@@ -197,7 +205,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
       const display = document.getElementById('display'),
         displayFragment = document.createDocumentFragment();
 
-      console.log(display)
       display.innerHTML = '';
       // Handleing
       let totalOldJSONData = {};
@@ -214,7 +221,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         return cardData.type;
       }
-      console.log('here')
       Object.keys(this.setContents).forEach(setID => {
         // Old Set
         const oldData = this.setContents[setID][this.patchIDs.old];
@@ -763,11 +769,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
   convertNewCards() {
     var result = {};
-    var cardDatabase  = [];
-
-    console.log(this.cardAdded)
-
-    console.log(this.setContents);
 
     let database = {}
     Object.keys(this.setContents).forEach(setID => {

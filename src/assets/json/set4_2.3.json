@@ -1,0 +1,333 @@
+[
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH049T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH049.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH049-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 1,
+    "cost": 1,
+    "health": 1,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: If you've leveled a champion, transform me into <link=card.transform><style=AssociatedCard>Exalted Poro</style></link>.",
+    "descriptionRaw": "Round Start: If you've leveled a champion, transform me into Exalted Poro.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "She didn't know what she had found, precisely... but it was shiny, and looked like a good snack.",
+    "artistName": "Kudos Productions",
+    "name": "Destined Poro",
+    "cardCode": "04SH049",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "PORO",
+    "subtypes": [
+      "PORO"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH062.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH062-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Start of Game: Draw 1 of me if all your cards are Shuriman.\r\n<link=vocab.Buried><style=Vocab>Countdown 25</style></link><style=Variable></style>: <link=vocab.SunDiscRestore><style=Vocab>Restore the Sun Disc</style></link>.\r\nWhen an Ascended ally levels up, <link=vocab.Advance><style=Vocab>advance</style></link> me 10 rounds.",
+    "descriptionRaw": "Start of Game: Draw 1 of me if all your cards are Shuriman.\r\nCountdown 25: Restore the Sun Disc.\r\nWhen an Ascended ally levels up, advance me 10 rounds.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "When Azir beheld the Shuriman capital's Sun Disc, he saw it not for what it was, but what it could be--the key to returning Shurima to its former glory.",
+    "artistName": "Kudos Productions",
+    "name": "Buried Sun Disc",
+    "cardCode": "04SH062",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH062T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH062T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Immediately draw 1 of all your Ascendants.\r\nFor the rest of the game, your level 2 Ascendants are level 3.",
+    "descriptionRaw": "Immediately draw 1 of all your Ascendants.\r\nFor the rest of the game, your level 2 Ascendants are level 3.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Shurima has known no glory like today. Come, bask in the light of our sun!\" - Voice of the Risen",
+    "artistName": "Kudos Productions",
+    "name": "Restored Sun Disc",
+    "cardCode": "04SH062T1",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH062"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH012.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH012-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 3,
+    "health": 4,
+    "description": "When I'm summoned, <link=vocab.Advance><style=Vocab>advance</style></link> your <link=card.create><style=AssociatedCard>Buried Sun Disc</style></link> 2 rounds.",
+    "descriptionRaw": "When I'm summoned, advance your Buried Sun Disc 2 rounds.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Oh! That's Padjuman, one of the elders of Nashramae! I think everyone has come to our city today, papa!\" - Excited onlooker",
+    "artistName": "Kudos Productions",
+    "name": "Esteemed Hierophant",
+    "cardCode": "04SH012",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH049T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH049T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 2,
+    "cost": 1,
+    "health": 2,
+    "description": "I have 3 random keywords.",
+    "descriptionRaw": "I have 3 random keywords.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "As far as divine rulers go, she's awfully fond of snax. ",
+    "artistName": "Kudos Productions",
+    "name": "Exalted Poro",
+    "cardCode": "04SH049T1",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "PORO",
+    "subtypes": [
+      "PORO"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH101.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH101-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 1,
+    "cost": 3,
+    "health": 6,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: If you've leveled a champion, heal your champions and Nexus 2.",
+    "descriptionRaw": "Round Start: If you've leveled a champion, heal your champions and Nexus 2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I have sworn myself to Azir, and to Shurima, my home! Will you not do the same?\"",
+    "artistName": "Kudos Productions",
+    "name": "Devoted Council",
+    "cardCode": "04SH101",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH102.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH102-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 4,
+    "health": 2,
+    "description": "<link=vocab.Allegiance><style=Vocab>Allegiance</style></link>: Draw a champion and grant it +2|+2.",
+    "descriptionRaw": "Allegiance: Draw a champion and grant it +2|+2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Our shining future lies just beneath the sands, and it is up to us to pave the way for Azir. The golden empire in the desert will rise again!\"",
+    "artistName": "Kudos Productions",
+    "name": "Golden Ambassador",
+    "cardCode": "04SH102",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH077.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH077-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 4,
+    "health": 4,
+    "description": "If you've leveled a champion, allies have +2|+0.",
+    "descriptionRaw": "If you've leveled a champion, allies have +2|+0.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I saw her speak, long ago.\" The old soldier smiled, and for an instant, his granddaughter could picture it: Shurima, gold and gleaming, proud Azir standing over the city heralded by the Voice of the Risen. \"She stirred in us all a passion we thought long lost.\"",
+    "artistName": "Eunice",
+    "name": "Voice of the Risen",
+    "cardCode": "04SH077",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH107.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH107-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 7,
+    "health": 0,
+    "description": "Level up all level 1 Ascended allies.",
+    "descriptionRaw": "Level up all level 1 Ascended allies.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"The future will be written by the Ascended!\" - Azir",
+    "artistName": "Kudos Productions",
+    "name": "Ascended's Rise",
+    "cardCode": "04SH107",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  }
+]
