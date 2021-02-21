@@ -329,5 +329,975 @@
     "type": "Spell",
     "collectible": true,
     "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH067T4",
+      "04SH067T1",
+      "04SH067T2",
+      "04SH062",
+      "04SH067T5"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 4,
+    "cost": 4,
+    "health": 4,
+    "description": "When I <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenge</style></link> an enemy, give me +2|+1 this round. ",
+    "descriptionRaw": "When I Challenge an enemy, give me +2|+1 this round. ",
+    "levelupDescription": "I've dealt 12+ damage<style=Variable></style>.",
+    "levelupDescriptionRaw": "I've dealt 12+ damage.",
+    "flavorText": "\"It could be easily forgotten that he was once human, for the visage of the crocodile fits his love for bloody battle so well...\" - Scribe Kah'nir, History of the Ascended Host",
+    "artistName": "SIXMOREVODKA",
+    "name": "Renekton",
+    "cardCode": "04SH067",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtype": "ASCENDED",
+    "subtypes": [
+      "ASCENDED"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH067",
+      "04SH067T1",
+      "04SH067T2",
+      "04SH062",
+      "04SH067T5"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T4.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T4-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 5,
+    "cost": 4,
+    "health": 5,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Give me +3|+3 this round. ",
+    "descriptionRaw": "Attack: Give me +3|+3 this round. ",
+    "levelupDescription": "You've <link=vocab.SunDiscRestore><style=Vocab>restored the Sun Disc</style></link>.",
+    "levelupDescriptionRaw": "You've restored the Sun Disc.",
+    "flavorText": "\"So many long years in the dark with that betrayer filling his head with words of hate and resentment, breeding contempt for his brother. It only fueled his rage, made him stronger.\" - Scribe Kah'nir, History of the Ascended Host",
+    "artistName": "SIXMOREVODKA",
+    "name": "Renekton",
+    "cardCode": "04SH067T4",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "ASCENDED",
+    "subtypes": [
+      "ASCENDED"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH067",
+      "04SH067T4",
+      "04SH067T2",
+      "04SH067T5"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 10,
+    "cost": 4,
+    "health": 10,
+    "description": "<link=keyword.PlaySkillMark><sprite name=PlaySkillMark><style=Keyword></style></link>When I block or <link=vocab.Attack><style=Vocab>Attack</style></link>: Deal 2 to enemies and the enemy Nexus.",
+    "descriptionRaw": "When I block or Attack: Deal 2 to enemies and the enemy Nexus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"When he finally has a chance at revenge on his brother Nasus, Renekton will stop at nothing. He will destroy all, and Shurima will again be left a ruin.\" - Scribe Kah'nir, History of the Ascended Host",
+    "artistName": "SIXMOREVODKA",
+    "name": "Renekton",
+    "cardCode": "04SH067T1",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "ASCENDED",
+    "subtypes": [
+      "ASCENDED"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH067",
+      "04SH067T4",
+      "04SH067T1",
+      "04SH067"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T2-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Give an ally +2|+0 and an enemy <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> this round.\r\nCreate a <link=card.level1><style=AssociatedCard>Renekton</style></link> in your deck.",
+    "descriptionRaw": "Give an ally +2|+0 and an enemy Vulnerable this round.\r\nCreate a Renekton in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Shred them!\" - Renekton",
+    "artistName": "Kudos Productions",
+    "name": "Renekton's Ruthless Predator",
+    "cardCode": "04SH067T2",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH069.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH069-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Give an ally +2|+0 and an enemy <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> this round.",
+    "descriptionRaw": "Give an ally +2|+0 and an enemy Vulnerable this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Shred them!\" - Renekton",
+    "artistName": "Kudos Productions",
+    "name": "Ruthless Predator",
+    "cardCode": "04SH069",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH005-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 1,
+    "health": 1,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The Sandthrashers do everything with their companions. Fight, hunt, kill... and eat.",
+    "artistName": "JiHun Lee",
+    "name": "Bloodthirsty Marauder",
+    "cardCode": "04SH005",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH081.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH081-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 5,
+    "cost": 4,
+    "health": 3,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Grant an enemy <nobr>-1|-0</nobr> and <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link>.",
+    "descriptionRaw": "Play: Grant an enemy -1|-0 and Vulnerable.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Each grain she spills takes a second from their lives, wearing away at them like wind.",
+    "artistName": "Kudos Productions",
+    "name": "Baccai Sandspinner",
+    "cardCode": "04SH081",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH015.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH015-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 6,
+    "cost": 7,
+    "health": 6,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Give enemies <nobr>-2|-0</nobr> this round.",
+    "descriptionRaw": "Attack: Give enemies -2|-0 this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"When this here croc was born, the others took bets on how long he'd live, assuming he was the runt of the litter and a freak to boot. Nobody thought to bet on him eatin' all his siblings. Heh.\"",
+    "artistName": "JiHun Lee",
+    "name": "Raz Bloodmane",
+    "cardCode": "04SH015",
+    "keywords": [
+      "Fearsome"
+    ],
+    "keywordRefs": [
+      "Fearsome"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH045.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH045-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Give an enemy <nobr>-2|-0</nobr> and <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> this round.",
+    "descriptionRaw": "Give an enemy -2|-0 and Vulnerable this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Desert-dwellers know how to avoid the sun's searing and relentless heat, but those unprepared to withstand it will find their strength and energy sapped at remarkable speed.",
+    "artistName": "Kudos Productions",
+    "name": "Exhaust",
+    "cardCode": "04SH045",
+    "keywords": [
+      "Focus"
+    ],
+    "keywordRefs": [
+      "Focus"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH109.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH109-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Give an enemy <nobr>-4|-0</nobr> and disable its keywords (excluding any negative keywords) this round.",
+    "descriptionRaw": "Give an enemy -4|-0 and disable its keywords (excluding any negative keywords) this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "In parts of the desert, old ruins have sunk into sand, creating hollows where unwary travelers might join them. ",
+    "artistName": "Kudos Productions",
+    "name": "Quicksand",
+    "cardCode": "04SH109",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH018.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH018-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Kill an ally or destroy one of your mana gems to give all enemies <nobr>-2|-0</nobr> this round.",
+    "descriptionRaw": "Kill an ally or destroy one of your mana gems to give all enemies -2|-0 this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"We fight, they bleed!\" - Renekton",
+    "artistName": "Kudos Productions",
+    "name": "Rite of Dominance",
+    "cardCode": "04SH018",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH070.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH070-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Give an enemy follower <nobr>-4|-0</nobr> this round.\r\nIf you have fewer mana gems than your opponent, kill it instead.",
+    "descriptionRaw": "Give an enemy follower -4|-0 this round.\r\nIf you have fewer mana gems than your opponent, kill it instead.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"The sun will shine again upon Shuriman lands.\" - Voice of the Risen",
+    "artistName": "Kudos Productions",
+    "name": "Unworthy",
+    "cardCode": "04SH070",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T5.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH067T5-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Deal 2 to enemies and the enemy Nexus.",
+    "descriptionRaw": "Deal 2 to enemies and the enemy Nexus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I will spare no one!\" - Renekton",
+    "artistName": "Kudos Productions",
+    "name": "Dominus Destruction",
+    "cardCode": "04SH067T5",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04DE008T2",
+      "04DE008T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE008-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 5,
+    "cost": 6,
+    "health": 3,
+    "description": "When you attack, pay my cost to summon me <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenging</style></link> the <link=vocab.Strongest><style=Vocab>Strongest</style></link> enemy.",
+    "descriptionRaw": "When you attack, pay my cost to summon me Challenging the Strongest enemy.",
+    "levelupDescription": "Allies have survived 4+ strikes from enemy blockers<style=Variable></style>.",
+    "levelupDescriptionRaw": "Allies have survived 4+ strikes from enemy blockers.",
+    "flavorText": "The Noxians knew where Prince Jarvan's hunt would take him. They knew how many Demacians would be by his side, and they knew that his honor wouldn't permit him to flee. The trap was set.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Jarvan IV",
+    "cardCode": "04DE008",
+    "keywords": [
+      "Barrier"
+    ],
+    "keywordRefs": [
+      "Barrier"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtype": "ELITE",
+    "subtypes": [
+      "ELITE"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04DE008T2",
+      "04DE008",
+      "04DE003"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE008T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE008T1-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 6,
+    "cost": 6,
+    "health": 4,
+    "description": "When you attack, pay my cost to summon me <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenging</style></link> the <link=vocab.Strongest><style=Vocab>Strongest</style></link> enemy.\r\n<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.create><style=AssociatedCard>Cataclysm</style></link> in hand.\r\nWhen I <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenge</style></link> an enemy, give me <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.",
+    "descriptionRaw": "When you attack, pay my cost to summon me Challenging the Strongest enemy.\r\nRound Start: Create a Fleeting Cataclysm in hand.\r\nWhen I Challenge an enemy, give me Barrier this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "But the Noxians did fail to account for the young prince's sheer strength and uncompromising will. They paid for this miscalculation in blood.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Jarvan IV",
+    "cardCode": "04DE008T1",
+    "keywords": [
+      "Barrier"
+    ],
+    "keywordRefs": [
+      "Barrier"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "ELITE",
+    "subtypes": [
+      "ELITE"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04DE008",
+      "04DE008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE008T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE008T2-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "An ally starts a free attack <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenging</style></link> an enemy.\r\nCreate a <link=card.level1><style=AssociatedCard>Jarvan IV</style></link> in your deck.",
+    "descriptionRaw": "An ally starts a free attack Challenging an enemy.\r\nCreate a Jarvan IV in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"For the king!\" - Jarvan IV",
+    "artistName": "Kudos Productions",
+    "name": "Jarvan IV's Cataclysm",
+    "cardCode": "04DE008T2",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE003-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "An ally starts a free attack <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenging</style></link> an enemy.",
+    "descriptionRaw": "An ally starts a free attack Challenging an enemy.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"For the king!\" - Jarvan IV",
+    "artistName": "Kudos Productions",
+    "name": "Cataclysm",
+    "cardCode": "04DE003",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04DE008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE010-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 3,
+    "cost": 7,
+    "health": 6,
+    "description": "When I'm summoned, draw <link=card.champ1><style=AssociatedCard>Jarvan IV</style></link>. \r\nIf he's already in play, instead give allies <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenger</style></link> and <link=keyword.Scout><sprite name=Scout><style=Keyword>Scout</style></link> this round.",
+    "descriptionRaw": "When I'm summoned, draw Jarvan IV. \r\nIf he's already in play, instead give allies Challenger and Scout this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"What, pray tell, would a father sacrifice to save his son? Better yet, what would a king?\" - LeBlanc",
+    "artistName": "SIXMOREVODKA",
+    "name": "King Jarvan III",
+    "cardCode": "04DE010",
+    "keywords": [
+      "Tough"
+    ],
+    "keywordRefs": [
+      "Tough"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "ELITE",
+    "subtypes": [
+      "ELITE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01DE028"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE009-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 4,
+    "cost": 4,
+    "health": 4,
+    "description": "The first time I <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenge</style></link> an enemy, transform me into <link=card.transform><style=AssociatedCard>Vanguard Cavalry</style></link>.",
+    "descriptionRaw": "The first time I Challenge an enemy, transform me into Vanguard Cavalry.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Once the call was made, every Demacian soldier was summoned to aid in the search for the prince. Expediency, more than anything, was key.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Gallant Rider",
+    "cardCode": "04DE009",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "ELITE",
+    "subtypes": [
+      "ELITE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE002-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Give an ally <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.\r\n<link=vocab.Rally><style=Vocab>Rally</style></link>.",
+    "descriptionRaw": "Give an ally Barrier this round.\r\nRally.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Once more, soldier of Demacia!\" - Jarvan IV",
+    "artistName": "Kudos Productions",
+    "name": "Golden Aegis",
+    "cardCode": "04DE002",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE001-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 3,
+    "cost": 2,
+    "health": 2,
+    "description": "The first time I <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenge</style></link> an enemy, give me <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.",
+    "descriptionRaw": "The first time I Challenge an enemy, give me Barrier this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "After learning of his son's disappearance, King Jarvan III tasked his trusted friend Lord Barrett Buvelle with organizing a search party. The prince returned safe and well. Lord Buvelle, to the king's eternal regret, did not.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Honored Lord",
+    "cardCode": "04DE001",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "ELITE",
+    "subtypes": [
+      "ELITE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE006-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Grant an ally +1|+1.",
+    "descriptionRaw": "Grant an ally +1|+1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I could teach you a thing or two.\" - Lord Buvelle",
+    "artistName": "Kudos Productions",
+    "name": "Battlefield Prowess",
+    "cardCode": "04DE006",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04DE007T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE007-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 2,
+    "cost": 1,
+    "health": 2,
+    "description": "When I'm summoned, if you <link=vocab.Behold><style=Vocab>Behold</style></link> an Elite, create a <link=card.create><style=AssociatedCard>Tattered Banner</style></link> in hand.",
+    "descriptionRaw": "When I'm summoned, if you Behold an Elite, create a Tattered Banner in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Only when she reached the city's walls did her legs finally give way. The Dauntless Vanguard would carry her message to the king, and the king would save the prince. Thus would her wrong be righted, and her honor preserved.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Penitent Squire",
+    "cardCode": "04DE007",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE007T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04DE007T1-full.png"
+      }
+    ],
+    "region": "Demacia",
+    "regionRef": "Demacia",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "The next time you summon an ally this round, grant it <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenger</style></link>.",
+    "descriptionRaw": "The next time you summon an ally this round, grant it Challenger.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Form up, on me!\" - Silverwing Vanguard",
+    "artistName": "Kudos Productions",
+    "name": "Tattered Banner",
+    "cardCode": "04DE007T1",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set4"
   }
 ]

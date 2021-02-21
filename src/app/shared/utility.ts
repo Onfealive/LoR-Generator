@@ -65,6 +65,10 @@ export function cleanObject(obj) {
     if (Array.isArray(obj[propName]) && obj[propName].length === 0) {
       delete obj[propName];
     }
+
+    if (typeof obj[propName] == 'string') {
+      obj[propName] = obj[propName].trim();
+    }
   }
   return obj;
 }

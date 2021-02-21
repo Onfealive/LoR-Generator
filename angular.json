@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "lor-generator"
+  "defaultProject": "lor-generator",
+  "cli": {
+    "analytics": "85e3832d-6ad2-4e79-86fe-6e31123489d5"
+  }
 }

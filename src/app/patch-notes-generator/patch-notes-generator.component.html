@@ -1,8 +1,9 @@
-<div class="mb-3">  
+<div class="mb-3">
   <div>Use the already data:</div>
   <ng-container *ngFor="let pInfo of patchInfo; let i = index;">
     <label class="patch-label">
-      <input [disabled]="i == 0" name="options" ng-control="options" type="radio" [value]="pInfo.code" [checked]="pInfo.checked" (change)="selectPatchInfo(pInfo)">
+      <input [disabled]="i == 0" name="options" ng-control="options" type="radio" [value]="pInfo.code"
+        [checked]="pInfo.checked" (change)="selectPatchInfo(pInfo)">
       {{pInfo.name}}
     </label>
   </ng-container>
@@ -19,14 +20,29 @@
 </div>
 
 <ng-container *ngIf="isCompleted">
-  <div class="form-inline">
+  <div class="form-inline" *ngIf="cardChanged.length || cardAdded.length">
     <div class="form-group">
       <label for="resourceImageFolder">Resource Image Folder</label>
       <!-- <input type="file" class="form-control mx-sm-3" id="resourceImageFolder" placeholder="Resource Image Folder"
         [(ngModel)]="resourceImageFolder"> -->
-      <button type="button" class="btn btn-secondary ml-1" (click)="copyResourceImages()">File Changed List</button>
-      <button type="button" class="btn btn-secondary ml-1" (click)="convertNewCards()">Convert New Cards</button>
+      <button *ngIf="cardChanged.length" type="button" class="btn btn-secondary ml-1" (click)="copyResourceImages()">File Changed List</button>
+      <button *ngIf="cardAdded.length" type="button" class="btn btn-secondary ml-1" (click)="convertNewCards()">Convert New Cards</button>
     </div>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" value="" id="add-display" [(ngModel)]="isDisplayAddedData"
+      (change)="compare()">
+    <label class="form-check-label" for="add-display">
+      Added data
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" value="" id="change-display" [(ngModel)]="isDisplayChangedData"
+      (change)="compare()">
+    <label class="form-check-label" for="change-display">
+      Changed data
+    </label>
   </div>
 
   <div class="mt-3">

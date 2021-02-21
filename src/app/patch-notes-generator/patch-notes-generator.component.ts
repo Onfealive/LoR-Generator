@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Diff from "diff";
-import * as Utiliy from "../shared/utility";
+import * as Utility from "../shared/utility";
 import { HttpClient } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import { PatchInfo } from '../shared/patches';
@@ -23,6 +23,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
   setContents = {};
   cardChanged = [];
   cardAdded = [];
+
+  isDisplayAddedData = true;
+  isDisplayChangedData = true;
 
   patchIDs = {
     old: '',
@@ -80,7 +83,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == maxSet * 2) {
-          this.compareJson();
+          this._compareJson();
         }
       });
       this.getJSON(previousPatch, i).subscribe(data => {
@@ -92,7 +95,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == maxSet * 2) {
-          this.compareJson();
+          this._compareJson();
         }
       }, (error) => {
         if (!this.setContents['set' + i]) {
@@ -103,7 +106,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == maxSet * 2) {
-          this.compareJson();
+          this._compareJson();
         }
       });
     }
@@ -124,7 +127,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
   optionChanged(inputOption) {
     let options = {};
     options[inputOption] = true;
-    this.compareJson(options);
+    this._compareJson(options);
   }
 
   onSelect(event) {
@@ -173,7 +176,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == this.files.length) {
-          this.compareJson();
+          this._compareJson();
         }
       }
       fileReader.onerror = (error) => {
@@ -186,7 +189,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  compareJson(options: any = { display: true }) {
+  _compareJson(options: any = { display: true }) {
     this.isCompleted = true;
 
     setTimeout(() => {
@@ -238,7 +241,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
             // type: cardData.cardCode.indexOf('T') >= 0 ? '' : getCardType(cardData)
             type: getCardType(cardData),
             spellSpeed: cardData.spellSpeed,
-            group: Utiliy.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
+            group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
             flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
             keywords: cardData.keywords.filter(k => !['Slow', 'Fast', 'Burst'].includes(k)),
           }
@@ -262,7 +265,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
             // type: cardData.cardCode.indexOf('T') >= 0 ? '' : getCardType(cardData)
             type: getCardType(cardData),
             spellSpeed: cardData.spellSpeed,
-            group: Utiliy.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
+            group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
             flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
             keywords: cardData.keywords.filter(k => !['Slow', 'Fast', 'Burst'].includes(k)),
           }
@@ -290,12 +293,12 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
       // Sort for Patch Note
       const sortRules = ['name'];
-      totalOldJSONData = Utiliy.sortObjectByValues(totalOldJSONData, sortRules);
-      totalNewJSONData = Utiliy.sortObjectByValues(totalNewJSONData, sortRules);
+      totalOldJSONData = Utility.sortObjectByValues(totalOldJSONData, sortRules);
+      totalNewJSONData = Utility.sortObjectByValues(totalNewJSONData, sortRules);
 
       const generateElementContent = (tag, content, styles = {}, others = {}) => {
         let tagElement = document.createElement(tag);
-        if (Utiliy.isElement(content)) {
+        if (Utility.isElement(content)) {
           tagElement.appendChild(content);
         } else {
           tagElement.appendChild(document
@@ -320,7 +323,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
       const generateContentList = (list) => {
         let ul = document.createElement('ul');
         list.forEach(l => {
-          if (typeof l == 'object' && !Utiliy.isElement(l)) {
+          if (typeof l == 'object' && !Utility.isElement(l)) {
             ul.appendChild(generateElementContent('li', l.content, l.style || {}));
           } else {
             ul.appendChild(generateElementContent('li', l));
@@ -637,8 +640,13 @@ export class PatchNotesGeneratorComponent implements OnInit {
           }
           // Add Header
           if (lines.length) {
+            if ((this.isDisplayAddedData && isNew) || (this.isDisplayChangedData && isChanged)) {
+              
+            } else {
+              return;
+            }
             displayFragment.appendChild(document.createElement('br'))
-            if (isChanged) {
+            if (isChanged) {              
               this.cardChanged.push(newCard);
             } else if (isNew) {
               this.cardAdded.push(newCard);
@@ -664,13 +672,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
               if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
                 edittedCardName += ' (Level 2)';
               }
-              if (options.newChangeLog) {
+              if (options.newChangeLog && isNew) {
                 addContent(`== Change Log ==`);
                 addContent(`{| class="article-table ruling-table"`);
                 addContent(`! colspan="2" | ${edittedCardName}`, { 'font-weight': 'bold' });
               } else {
                 addContent(`${edittedCardName}`, { 'font-weight': 'bold' });
               }
+
               addContent(`|-`);
               addContent(`| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`);
               addContent(`|`);
@@ -683,7 +692,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
               addContents(lines);
             }
 
-            if (options.newChangeLog) {
+            if (options.newChangeLog && isNew) {
               addContent(`|}`);
             }
           }
@@ -779,25 +788,31 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
     this.cardAdded.forEach(addedCard => {
       let cardData = database[addedCard.code];
-      result[cardData.cardCode] = Utiliy.cleanObject({
+      let subtype = Utility.capitalize(cardData.subtype);
+      if (subtype) {
+
+      }
+      result[cardData.cardCode] = Utility.cleanObject({
         name: cardData.name,
         type: cardData.type,
         rarity: cardData.collectible ? cardData.rarityRef : 'None',
-        subtype: (cardData.subtype || '').toLowerCase(),
+        subtype: subtype ? [subtype] : '',
         supertype: cardData.supertype,
         keywords: cardData.keywords,
+        keywordRefs: cardData.keywords,
         collectible: cardData.collectible,
         cost: cardData.cost,
         power: cardData.attack,
         health: cardData.health,
         desc: cardData.descriptionRaw,
         lvldesc: cardData.levelupDescriptionRaw,
+        categoryRefs: subtype ? [subtype] : '',
         flavor: cardData.flavorText,
         artist: cardData.artistName
       })
     });
 
-    result = Utiliy.sortObjectByKey(result);
+    result = Utility.sortObjectByKey(result);
 
     let fileContent = JSON.stringify(result, (key, value) => {
       if (Array.isArray(value) && !value.some(x => x && typeof x === 'object')) {
@@ -806,11 +821,12 @@ export class PatchNotesGeneratorComponent implements OnInit {
       return value;
     }, 4).replace(/"\uE000([^\uE000]+)\uE000"/g, match => match.substr(2, match.length - 4).replace(/\\"/g, '"').replace(/\uE001/g, '\\\"'));
 
+    fileContent = fileContent.split(`\\r\\n`).join(`<br />`);
     fileContent = fileContent.split(`[`).join(`{`);
     fileContent = fileContent.split(`]`).join(`}`);
     fileContent = fileContent.split(`"0`).join(`["0`);
     
-    let titles = ['name', 'type', 'rarity', 'subtype', 'supertype', 'keywords', 'collectible', 'cost', 'power', 'health', 'desc', 'lvldesc', 'flavor', 'artist']
+    let titles = ['name', 'type', 'rarity', 'subtype', 'supertype', 'keywords', 'keywordRefs', 'collectible', 'cost', 'power', 'health', 'desc', 'lvldesc', 'categoryRefs', 'flavor', 'artist']
     
     titles.forEach(title => {
       fileContent = fileContent.split(`"${title}": `).join(`["${title}"]`.padEnd(17, ' ') + '= ');
