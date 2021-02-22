@@ -9,12 +9,16 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { ExpeditionGeneratorComponent } from './expedition-generator/expedition-generator.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SafeHtmlPipe } from './shared/pipe.safehtml';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SafeHtmlPipe,
     PatchNotesGeneratorComponent,
-    ExpeditionGeneratorComponent
+    ExpeditionGeneratorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

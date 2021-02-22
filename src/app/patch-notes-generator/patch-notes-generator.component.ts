@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import { PatchInfo } from '../shared/patches';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 
 declare var $: any;
 
@@ -21,8 +20,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
   resourceImageFolder = '';
   setContents = {};
-  cardChanged = [];
-  cardAdded = [];
 
   isDisplayAddedData = true;
   isDisplayChangedData = true;
@@ -37,6 +34,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
   isCompleted = false;
 
   patchInfo = [];
+  logs: any = [];
+  PatchInfo = PatchInfo;
 
   constructor(
     private http: HttpClient
@@ -52,6 +51,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
         'maxSet': PatchInfo[patchVersion].maxSet
       })
     })
+  }
+
+  getChangedCard() {
+    return this.logs.filter(l => l.type == 'change').map(l => l.data);
+  }
+
+  getAddedCard() {
+    return this.logs.filter(l => l.type == 'add').map(l => l.data);
   }
 
   selectPatchInfo(pathcInfo) {
@@ -71,6 +78,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.patchIDs.new = selectedPatch;
 
     let maxSet = this.patchInfo[selectedPatchIndex].maxSet;
+    let prevMaxSet = this.patchInfo[selectedPatchIndex - 1].maxSet;
+
     let countFiles = 0;
     for (let i = 1; i <= maxSet; i++) {
       this.getJSON(selectedPatch, i).subscribe(data => {
@@ -83,21 +92,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == maxSet * 2) {
-          this._compareJson();
+          this._compareJson2();
         }
       });
-      this.getJSON(previousPatch, i).subscribe(data => {
-        if (!this.setContents['set' + i]) {
-          this.setContents['set' + i] = {};
-        }
-
-        this.setContents['set' + i][previousPatch] = JSON.stringify(data || []);
-
-        countFiles += 1;
-        if (countFiles == maxSet * 2) {
-          this._compareJson();
-        }
-      }, (error) => {
+      if (i > prevMaxSet) {
         if (!this.setContents['set' + i]) {
           this.setContents['set' + i] = {};
         }
@@ -106,11 +104,23 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == maxSet * 2) {
-          this._compareJson();
+          this._compareJson2();
         }
-      });
+      } else {
+        this.getJSON(previousPatch, i).subscribe(data => {
+          if (!this.setContents['set' + i]) {
+            this.setContents['set' + i] = {};
+          }
+
+          this.setContents['set' + i][previousPatch] = JSON.stringify(data || []);
+
+          countFiles += 1;
+          if (countFiles == maxSet * 2) {
+            this._compareJson2();
+          }
+        });
+      }
     }
-    // $('.hover-preview').anarchytip();
   }
 
   public getJSON(patch, set = 1): Observable<any> {
@@ -127,7 +137,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
   optionChanged(inputOption) {
     let options = {};
     options[inputOption] = true;
-    this._compareJson(options);
+    this._compareJson2(options);
   }
 
   onSelect(event) {
@@ -176,7 +186,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         countFiles += 1;
         if (countFiles == this.files.length) {
-          this._compareJson();
+          this._compareJson2();
         }
       }
       fileReader.onerror = (error) => {
@@ -189,7 +199,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  _compareJson(options: any = { display: true }) {
+  _compareJson2(options: any = { display: true }) {
     this.isCompleted = true;
 
     setTimeout(() => {
@@ -203,12 +213,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
       options = Object.assign({}, defaults, options);
 
-      this.cardChanged = [];
-      this.cardAdded = [];
-      const display = document.getElementById('display'),
-        displayFragment = document.createDocumentFragment();
-
-      display.innerHTML = '';
       // Handleing
       let totalOldJSONData = {};
       let totalNewJSONData = {};
@@ -236,8 +240,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
             cost: cardData.cost,
             power: cardData.attack,
             health: cardData.health,
-            description: cardData.descriptionRaw.split("\r\n").join(" "),
-            levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" "),
+            description: cardData.descriptionRaw.split("\r\n").join(" ").trim(),
+            levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" ").trim(),
             // type: cardData.cardCode.indexOf('T') >= 0 ? '' : getCardType(cardData)
             type: getCardType(cardData),
             spellSpeed: cardData.spellSpeed,
@@ -260,8 +264,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
             cost: cardData.cost,
             power: cardData.attack,
             health: cardData.health,
-            description: cardData.descriptionRaw.split("\r\n").join(" "),
-            levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" "),
+            description: cardData.descriptionRaw.split("\r\n").join(" ").trim(),
+            levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" ").trim(),
             // type: cardData.cardCode.indexOf('T') >= 0 ? '' : getCardType(cardData)
             type: getCardType(cardData),
             spellSpeed: cardData.spellSpeed,
@@ -272,81 +276,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
         });
 
         totalNewJSONData = Object.assign(totalNewJSONData, newDataJSON);
-        
       });
-      // // Get Type
-      // totalOldJSONData = this.sortObjectByValues(totalOldJSONData, 'code');
-      // totalNewJSONData = this.sortObjectByValues(totalNewJSONData, 'code');
-
-      // Object.keys(totalOldJSONData).forEach(cardCode => {
-      //   const cardData = totalOldJSONData[cardCode]
-      //   if (cardData.type == '') {
-      //     if (cardData.code.indexOf('T') >= 0) {
-      //       // totalOldJSONData[cardCode].type =
-      //       //   getCardType(totalOldJSONData[cardCode.split('T')[0]]._data)
-      //       //   + '-'
-      //       //   + getCardType(cardData._data);
-      //       totalOldJSONData[cardCode].type =  getCardType(cardData._data);
-      //     }
-      //   }
-      // });
 
       // Sort for Patch Note
       const sortRules = ['name'];
       totalOldJSONData = Utility.sortObjectByValues(totalOldJSONData, sortRules);
       totalNewJSONData = Utility.sortObjectByValues(totalNewJSONData, sortRules);
 
-      const generateElementContent = (tag, content, styles = {}, others = {}) => {
-        let tagElement = document.createElement(tag);
-        if (Utility.isElement(content)) {
-          tagElement.appendChild(content);
-        } else {
-          tagElement.appendChild(document
-            .createTextNode(content));
-        }
-
-        Object.keys(styles).forEach(styleName => {
-          tagElement.style[styleName] = styles[styleName];
-        });
-
-        if (others['class']) {
-          tagElement.className = others['class']
-        }
-        if (others['data-url']) {
-          // tagElement.dataset['data-url'] = escape(others['data-url']);
-          $(tagElement).attr('data-url', others['data-url'])
-        }
-
-        return tagElement;
-      }
-
-      const generateContentList = (list) => {
-        let ul = document.createElement('ul');
-        list.forEach(l => {
-          if (typeof l == 'object' && !Utility.isElement(l)) {
-            ul.appendChild(generateElementContent('li', l.content, l.style || {}));
-          } else {
-            ul.appendChild(generateElementContent('li', l));
-          }
-        });
-
-        return ul;
-      }
-
-      const addLines = (lines) => {
-        displayFragment.appendChild(generateContentList(lines));
-      }
-
-      const addContent = (content, styles = {}, others = {}) => {
-        displayFragment.appendChild(generateElementContent('span', content, styles, others));
-        displayFragment.appendChild(document.createElement('br'));
-      }
-
-      const addContents = (list) => {
-        list.forEach(li => {
-          addContent(li);
-        });
-      }
+      this.logs = [];
 
       const commonPrefix = !options.display ? '* ' : '';
 
@@ -380,55 +317,51 @@ export class PatchNotesGeneratorComponent implements OnInit {
         const oldCard = totalOldJSONData[cardCode];
         const newCard = totalNewJSONData[cardCode];
         if (JSON.stringify(oldCard) != JSON.stringify(newCard)) {
-          const lines = [];
-          let isChanged = false;
-          let isNew = false;
+          let log = {
+            'data': newCard,
+            'diff': [],
+            'type': 'change'
+          };
 
           if (!oldCard) {
-            lines.push(commonPrefix + `Added.`);
-            isNew = true;
+            log.diff.push(commonPrefix + `Added.`);
+            log.type = 'add'
           } else {
             // newCard.code == '03SI015' && console.log(JSON.stringify(oldCard), JSON.stringify(newCard))
             if (oldCard.name != newCard.name) {
-              lines.push(commonPrefix + `Renamed from ${addedHighlightedContent + oldCard.name + addedHighlightedContent}.`);
-              isChanged = true;
+              log.diff.push(commonPrefix + `Renamed from ${addedHighlightedContent + oldCard.name + addedHighlightedContent}.`);
             }
 
             if (oldCard.cost != newCard.cost) {
-              lines.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} from ${oldCard.cost}.`);
-              isChanged = true;
+              log.diff.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} from ${oldCard.cost}.`);
             }
 
             if (oldCard.power != newCard.power) {
-              lines.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} from ${oldCard.power}.`);
-              isChanged = true;
+              log.diff.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} from ${oldCard.power}.`);
             }
 
             if (oldCard.health != newCard.health) {
-              lines.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} from ${oldCard.health}.`);
-              isChanged = true;
+              log.diff.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} from ${oldCard.health}.`);
             }
 
             if (oldCard.spellSpeed != newCard.spellSpeed) {
               const startTip = startTipContent + newCard.spellSpeed + endTipContent;
               const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
-              lines.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
-              isChanged = true;
+              log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
             }
 
             if (oldCard.group != newCard.group) {
               if (!newCard.group) {
                 const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
-                lines.push(commonPrefix + `No longer belong to ${removedGroupContent}.`);
+                log.diff.push(commonPrefix + `No longer belong to ${removedGroupContent}.`);
               } else if (!oldCard.group) {
                 const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
-                lines.push(commonPrefix + `Now belong to ${newGroupContent}.`);
+                log.diff.push(commonPrefix + `Now belong to ${newGroupContent}.`);
               } else {
                 const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
                 const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
-                lines.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
+                log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
               }
-              isChanged = true;
             }
 
             let removedKeywords = oldCard.keywords.filter(x => !newCard.keywords.includes(x));
@@ -439,261 +372,131 @@ export class PatchNotesGeneratorComponent implements OnInit {
               let span = document.createElement('span');
               span.appendChild(document.createTextNode(content));
 
-              lines.push(span);
-              isChanged = true;
+              log.diff.push(span);
             }
 
             if (removedKeywords.length) {
               let content = commonPrefix + removedKeywordPrefix + startTipContent + removedKeywords.join(endTipContent + ', ') + endTipContent + '.';
 
-              let span = document.createElement('span');
-              span.appendChild(document.createTextNode(content));
-
-              lines.push(span);
-              isChanged = true;
+              log.diff.push(content);
             }
 
-            // Description
-            if (oldCard.description != newCard.description) {
-              isChanged = true;
-              if (oldCard.description.trim() == newCard.description.trim()) {
-                lines.push(commonPrefix + `Visual Updated.`);
-              } else {
-                const diffParts = Diff.diffWords(oldCard.description, "\n" + newCard.description, {
-                  newlineIsToken: false,
-                  // ignoreCase: true
-                });
+            let largeContents = [
+              {
+                object: 'description',
+                newPrefix: newPrefixText,
+                oldPrefix: oldPrefixText,
+                isCheckedVisual: true
+              },
+              {
+                object: 'levelupDescription',
+                newPrefix: newPrefixLevelUp,
+                oldPrefix: oldPrefixLevelUp,
+                isCheckedVisual: true
+              },
+              {
+                object: 'flavor',
+                newPrefix: newPrefixFlavor,
+                oldPrefix: oldPrefixFlavor
+              }
+            ]
 
-                let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
-
-                let newDiv = document.createElement('span');
-                [{ value: newPrefixText }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
-                  // green for additions, red for deletions
-                  // grey for common parts
-                  const color = part.added ? 'green' :
-                    part.removed ? 'red' : 'black';
-                  let span = document.createElement('span');
-                  span.style.color = color;
-
-                  if (index == 1 && part.value == '\n') {
-                    return;
-                  }
-
-                  let content = part.value;
-                  if (part.added) {
-                    content = addedHighlightedContent + part.value + addedHighlightedContent
-                  }
-
-                  span.appendChild(document.createTextNode(content));
-                  newDiv.appendChild(span);
-                });
-                lines.push(newDiv);
-
-                let oldDiv = document.createElement('span');
-                [{ value: oldPrefixText }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
-                  const color = part.added ? 'green' :
-                    part.removed ? 'red' : 'black';
-                  let span = document.createElement('span');
-                  span.style.color = color;
-
-                  let content = part.value;
-                  if (part.removed) {
-                    content = removedHighlightedContent + part.value + removedHighlightedContent;
-                  }
-
-                  span.appendChild(document.createTextNode(content));
-                  oldDiv.appendChild(span);
-                });
-
-                if (options.display) {
-                  lines.push({
-                    content: oldDiv,
-                    style: { 'margin-left': '20px' }
-                  });
+            largeContents.forEach(largeContent => {
+              if (oldCard[largeContent.object] != newCard[largeContent.object]) {
+                if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
+                  log.diff.push(commonPrefix + `Visual Updated.`);
                 } else {
-                  lines.push(oldDiv);
-                }
-              }
-            }
-
-            // Level Up
-            if (oldCard.levelupDescription != newCard.levelupDescription) {
-              isChanged = true;
-              if (oldCard.levelupDescription.trim() == newCard.levelupDescription.trim()) {
-                lines.push(commonPrefix + `Visual Updated.`);
-              } else {
-                const diffParts = Diff.diffWords(oldCard.levelupDescription, "\n" + newCard.levelupDescription, {
-                  newlineIsToken: false,
-                  // ignoreCase: true
-                });
-
-                let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
-
-                let newDiv = document.createElement('span');
-                [{ value: newPrefixLevelUp }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
-                  // green for additions, red for deletions
-                  // grey for common parts
-                  const color = part.added ? 'green' :
-                    part.removed ? 'red' : 'black';
-                  let span = document.createElement('span');
-                  span.style.color = color;
-
-                  if (index == 1 && part.value == '\n') {
-                    return;
-                  }
-
-                  let content = part.value;
-                  if (part.added) {
-                    content = addedHighlightedContent + part.value + addedHighlightedContent
-                  }
-
-                  span.appendChild(document.createTextNode(content));
-                  newDiv.appendChild(span);
-                });
-                lines.push(newDiv);
-
-                let oldDiv = document.createElement('span');
-                [{ value: oldPrefixLevelUp }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
-                  const color = part.added ? 'green' :
-                    part.removed ? 'red' : 'black';
-                  let span = document.createElement('span');
-                  span.style.color = color;
-
-                  let content = part.value;
-                  if (part.removed) {
-                    content = removedHighlightedContent + part.value + removedHighlightedContent;
-                  }
-
-                  span.appendChild(document.createTextNode(content));
-                  oldDiv.appendChild(span);
-                });
-
-                if (options.display) {
-                  lines.push({
-                    content: oldDiv,
-                    style: { 'margin-left': '20px' }
+                  const diffParts = Diff.diffWords(oldCard[largeContent.object], "\n" + newCard[largeContent.object], {
+                    newlineIsToken: false,
+                    // ignoreCase: true
                   });
-                } else {
-                  lines.push(oldDiv);
+
+                  let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
+
+                  let newDiv = [];
+                  [{ value: largeContent.newPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
+                    // green for additions, red for deletions
+                    // grey for common parts
+                    const color = part.added ? 'green' :
+                      part.removed ? 'red' : 'black';
+
+                    if (index == 1 && part.value == '\n') {
+                      return;
+                    }
+
+                    let content = part.value;
+                    if (part.added) {
+                      content = addedHighlightedContent + part.value + addedHighlightedContent
+                    }
+
+                    newDiv.push(`<span style="color: ${color}">${content}</span>`);
+                  });
+
+                  if (newDiv.length) {
+                    log.diff.push(newDiv.join(''));
+                  }
+
+                  let oldDiv = [];
+                  [{ value: largeContent.oldPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
+                    const color = part.added ? 'green' :
+                      part.removed ? 'red' : 'black';
+
+                    let content = part.value;
+                    if (part.removed) {
+                      content = removedHighlightedContent + part.value + removedHighlightedContent;
+                    }
+
+                    oldDiv.push(`<span style="color: ${color}">${content}</span>`);
+                  });
+
+                  if (oldDiv.length) {
+                    if (options.display) {
+                      oldDiv.unshift(`<span style="display:inline-block;width:20px"></span>`);
+                    }
+
+                    log.diff.push(oldDiv.join(''));
+                  }
                 }
               }
-            }
-
-            // Flavor
-            if (oldCard.flavor != newCard.flavor) {
-              isChanged = true;
-              const diffParts = Diff.diffWords(oldCard.flavor, "\n" + newCard.flavor, {
-                newlineIsToken: false,
-                // ignoreCase: true
-              });
-
-              let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
-
-              let newDiv = document.createElement('span');
-              [{ value: newPrefixFlavor }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
-                // green for additions, red for deletions
-                // grey for common parts
-                const color = part.added ? 'green' :
-                  part.removed ? 'red' : 'black';
-                let span = document.createElement('span');
-                span.style.color = color;
-
-                if (index == 1 && part.value == '\n') {
-                  return;
-                }
-
-                let content = part.value;
-                if (part.added) {
-                  content = addedHighlightedContent + part.value + addedHighlightedContent
-                }
-
-                span.appendChild(document.createTextNode(content));
-                newDiv.appendChild(span);
-              });
-              lines.push(newDiv);
-
-              let oldDiv = document.createElement('span');
-              [{ value: oldPrefixFlavor }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
-                const color = part.added ? 'green' :
-                  part.removed ? 'red' : 'black';
-                let span = document.createElement('span');
-                span.style.color = color;
-
-                let content = part.value;
-                if (part.removed) {
-                  content = removedHighlightedContent + part.value + removedHighlightedContent;
-                }
-
-                span.appendChild(document.createTextNode(content));
-                oldDiv.appendChild(span);
-              });
-
-              if (options.display) {
-                lines.push({
-                  content: oldDiv,
-                  style: { 'margin-left': '20px' }
-                });
-              } else {
-                lines.push(oldDiv);
-              }
-            }
+            });
           }
-          // Add Header
-          if (lines.length) {
-            if ((this.isDisplayAddedData && isNew) || (this.isDisplayChangedData && isChanged)) {
-              
-            } else {
-              return;
-            }
-            displayFragment.appendChild(document.createElement('br'))
-            if (isChanged) {              
-              this.cardChanged.push(newCard);
-            } else if (isNew) {
-              this.cardAdded.push(newCard);
-            }
 
-            let others = {
-              class: 'hover-preview'
-            }
+          if (log.diff.length) {
+            if ((this.isDisplayAddedData && log.type == 'add') || (this.isDisplayChangedData && log.type == 'change')) {
 
-            if (PatchInfo[this.patchIDs.new]) {
-              others['data-url'] = this.getAPIImage(PatchInfo[this.patchIDs.new].code, newCard.code)
-            }
+              if (options.newChangeLog || options.oldChangeLog) {
+                let edittedCardName = newCard.name;
+                if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
+                  edittedCardName += ' (Level 2)';
+                }
 
-            if (options.patchNote) {
-              addContent(`{{LoR|${newCard.name}|code=${newCard.code}}}`, {}, others);
-            }
-            if (options.display) {
-              addContent(`${newCard.name} (${newCard.code})`, {}, others);
-            }
+                let unshiftContents = [];
+                if (options.newChangeLog && log.type == 'add') {
+                  unshiftContents = [
+                    `== Change Log ==`,
+                    `{| class="article-table ruling-table"`,
+                    `! colspan="2" | <b>${edittedCardName}</b>`
+                  ];
+                } else {
+                  unshiftContents = [
+                    `<b>${edittedCardName}</b>`
+                  ];
+                }
 
-            if (options.newChangeLog || options.oldChangeLog) {
-              let edittedCardName = newCard.name;
-              if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
-                edittedCardName += ' (Level 2)';
-              }
-              if (options.newChangeLog && isNew) {
-                addContent(`== Change Log ==`);
-                addContent(`{| class="article-table ruling-table"`);
-                addContent(`! colspan="2" | ${edittedCardName}`, { 'font-weight': 'bold' });
-              } else {
-                addContent(`${edittedCardName}`, { 'font-weight': 'bold' });
+                unshiftContents = unshiftContents.concat([
+                  `|-`,
+                  `| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`,
+                  `|`
+                ]);
+
+                log.diff.unshift(unshiftContents.join('<br />'));
               }
 
-              addContent(`|-`);
-              addContent(`| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`);
-              addContent(`|`);
-            }
+              if (options.newChangeLog && log.type == 'add') {
+                log.diff.push(`|}`);
+              }
 
-            // Change Content
-            if (options.display) {
-              addLines(lines);
-            } else {
-              addContents(lines);
-            }
-
-            if (options.newChangeLog && isNew) {
-              addContent(`|}`);
+              this.logs.push(log);
             }
           }
         }
@@ -704,71 +507,67 @@ export class PatchNotesGeneratorComponent implements OnInit {
         const oldCard = totalOldJSONData[cardCode];
         const newCard = totalNewJSONData[cardCode];
         if (!newCard) {
-          const lines = [];
+          let log = {
+            'data': oldCard,
+            'diff': [],
+            'type': 'remove'
+          };
 
-          lines.push(commonPrefix + `Removed.`);
+          log.diff.push(commonPrefix + `Removed.`);
 
-          // Add Header
-          if (lines.length) {
-            displayFragment.appendChild(document.createElement('br'))
-            this.cardChanged.push(oldCard);
-
-            if (options.patchNote) {
-              addContent(`{{LoR|${oldCard.name}|code=${oldCard.code}}}`);
-            }
-            if (options.display) {
-              addContent(`${oldCard.name} (${oldCard.code})`);
-            }
-
+          if (log.diff.length) {
             if (options.newChangeLog || options.oldChangeLog) {
-              let edittedCardName = oldCard.name;
-              if (oldCard.type == 'Champion' && oldCard.code.indexOf('T') >= 0) {
+              let edittedCardName = newCard.name;
+              if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
                 edittedCardName += ' (Level 2)';
               }
-              if (options.newChangeLog) {
-                addContent(`== Change Log ==`);
-                addContent(`{| class="article-table ruling-table"`);
-                addContent(`! colspan="2" | ${edittedCardName}`, { 'font-weight': 'bold' });
+
+              let unshiftContents = [];
+              if (options.newChangeLog && log.type == 'add') {
+                unshiftContents = [
+                  `== Change Log ==`,
+                  `{| class="article-table ruling-table"`,
+                  `! colspan="2" | <b>${edittedCardName}</b>`
+                ];
               } else {
-                addContent(`${edittedCardName}`, { 'font-weight': 'bold' });
+                unshiftContents = [
+                  `<b>${edittedCardName}</b>`
+                ];
               }
-              addContent(`|-`);
-              addContent(`| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`);
-              addContent(`|`);
+
+              unshiftContents = unshiftContents.concat([
+                `|-`,
+                `| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`,
+                `|`
+              ]);
+
+              log.diff.unshift(unshiftContents.join('<br />'));
             }
 
-            // Change Content
-            if (options.display) {
-              addLines(lines);
-            } else {
-              addContents(lines);
+            if (options.newChangeLog && log.type == 'add') {
+              log.diff.push(`|}`);
             }
 
-            if (options.newChangeLog) {
-              addContent(`|}`);
-            }
+            this.logs.push(log);
           }
         }
       });
-
-      display.appendChild(displayFragment);
-
-      $('.hover-preview').anarchytip();
     }, 0);
-
   }
 
   copyResourceImages() {
     const folderPath = this.resourceImageFolder.split("\\").slice(0, -1).join("\\");
+    let changedCards = this.logs.filter(l => l.type = 'change').map(l => l.data)
+    let addedCards = this.logs.filter(l => l.type = 'add').map(l => l.data)
 
-    let cardChangeContent = this.cardChanged.map(card => card.code + '.png').join('\n');
-    cardChangeContent += ('\n') + this.cardChanged.map(card => card.code + '-alt.png').join('\n');
+    let cardChangeContent = changedCards.map(card => card.code + '.png').join('\n');
+    cardChangeContent += ('\n') + changedCards.map(card => card.code + '-alt.png').join('\n');
 
-    if (this.cardAdded.length) {
-      let cardAddedContent = this.cardAdded.map(card => card.code + '.png').join('\n');
-      cardAddedContent += ('\n') + this.cardAdded.map(card => card.code + '-alt.png').join('\n');
-      cardAddedContent += ('\n') + this.cardAdded.map(card => card.code + '-full.png').join('\n');
-      cardAddedContent += ('\n') + this.cardAdded.map(card => card.code + '-alt-full.png').join('\n');
+    if (addedCards.length) {
+      let cardAddedContent = addedCards.map(card => card.code + '.png').join('\n');
+      cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt.png').join('\n');
+      cardAddedContent += ('\n') + addedCards.map(card => card.code + '-full.png').join('\n');
+      cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt-full.png').join('\n');
 
       cardChangeContent = cardChangeContent + '\n' + cardAddedContent;
     }
@@ -777,6 +576,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
   }
 
   convertNewCards() {
+    let addedCards = this.logs.filter(l => l.type = 'add').map(l => l.data)
     var result = {};
 
     let database = {}
@@ -786,7 +586,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
       })
     });
 
-    this.cardAdded.forEach(addedCard => {
+    addedCards.forEach(addedCard => {
       let cardData = database[addedCard.code];
       let subtype = Utility.capitalize(cardData.subtype);
       if (subtype) {
@@ -825,9 +625,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
     fileContent = fileContent.split(`[`).join(`{`);
     fileContent = fileContent.split(`]`).join(`}`);
     fileContent = fileContent.split(`"0`).join(`["0`);
-    
+
     let titles = ['name', 'type', 'rarity', 'subtype', 'supertype', 'keywords', 'keywordRefs', 'collectible', 'cost', 'power', 'health', 'desc', 'lvldesc', 'categoryRefs', 'flavor', 'artist']
-    
+
     titles.forEach(title => {
       fileContent = fileContent.split(`"${title}": `).join(`["${title}"]`.padEnd(17, ' ') + '= ');
     });
