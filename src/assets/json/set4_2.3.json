@@ -1597,5 +1597,673 @@
     "type": "Spell",
     "collectible": true,
     "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH073T2",
+      "04SH073T3",
+      "04SH073T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 2,
+    "cost": 5,
+    "health": 4,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Summon an exact copy of an allied landmark.",
+    "descriptionRaw": "Play: Summon an exact copy of an allied landmark.",
+    "levelupDescription": "You've summoned 5+ landmarks<style=Variable></style>.",
+    "levelupDescriptionRaw": "You've summoned 5+ landmarks.",
+    "flavorText": "\"The nomad's step is always light, for it is unburdened by the weight of roots, and their home is forever beyond the horizon.\"\n- The Societies of Shurima",
+    "artistName": "SIXMOREVODKA",
+    "name": "Taliyah",
+    "cardCode": "04SH073",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH073",
+      "04SH073T3",
+      "04SH073T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073T2-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 5,
+    "health": 5,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Summon an exact copy of an allied landmark. \r\n<link=keyword.AttackSkillMark><sprite name=AttackSkillMark><style=Keyword>Attack</style></link>: Deal 2 to my blocker. If it's dead or gone, deal 2 to the enemy Nexus instead. If you have a landmark, do this 2 more times.",
+    "descriptionRaw": "Play: Summon an exact copy of an allied landmark. \r\nAttack: Deal 2 to my blocker. If it's dead or gone, deal 2 to the enemy Nexus instead. If you have a landmark, do this 2 more times.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Taliyah left Ionia after hearing word of monumental change in her homeland. She returned to Shurima to find an emperor reborn, her people fraught, and the xer'sai more active than ever. She had no choice but to grow beyond her years.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Taliyah",
+    "cardCode": "04SH073T2",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH073",
+      "04SH073T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073T3-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Look at 3 random landmarks you can afford. Pick 1 to create in hand.\r\nCreate a <link=card.level1><style=AssociatedCard>Taliyah</style></link> in your deck.",
+    "descriptionRaw": "Look at 3 random landmarks you can afford. Pick 1 to create in hand.\r\nCreate a Taliyah in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Come on - there's so much to see!\" - Taliyah",
+    "artistName": "Kudos Productions",
+    "name": "Taliyah's Stoneweaving",
+    "cardCode": "04SH073T3",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH110.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH110-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Look at 3 random landmarks you can afford. Pick 1 to create in hand.",
+    "descriptionRaw": "Look at 3 random landmarks you can afford. Pick 1 to create in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Come on - there's so much to see!\" - Taliyah",
+    "artistName": "Kudos Productions",
+    "name": "Stoneweaving",
+    "cardCode": "04SH110",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH093.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH093-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Give an ally +1|+1 this round.\r\nIf you've summoned a landmark this game, give it +3|+1 instead.",
+    "descriptionRaw": "Give an ally +1|+1 this round.\r\nIf you've summoned a landmark this game, give it +3|+1 instead.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"With the land's help, we WILL defend ourselves!\" - Taliyah",
+    "artistName": "",
+    "name": "Shaped Stone",
+    "cardCode": "04SH093",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH041.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH041-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 2,
+    "cost": 3,
+    "health": 4,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: <link=vocab.Forecast><style=Vocab>Predict</style></link>. If you pick a landmark, grant me <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link>.",
+    "descriptionRaw": "Play: Predict. If you pick a landmark, grant me Elusive.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"We had trouble earlier! A great storm threatened from the west, and Taliyah passed xer'sai tunnels to the south. I spotted a temple to the north, and we are now safe inside its terracotta walls. The others are all asleep, and my flame, like me, is ebbing. I hope I dream well.\"\n- Zaifa's diary",
+    "artistName": "Dao Le",
+    "name": "Sai Scout",
+    "cardCode": "04SH041",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH090"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH042.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH042-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "<link=vocab.Buried><style=Vocab>Countdown 3</style></link><style=Variable></style>: Summon a <link=card.create><style=AssociatedCard>Grumpy Rockbear</style></link>.",
+    "descriptionRaw": "Countdown 3: Summon a Grumpy Rockbear.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"MY NAME IS ZAIFA AND I LIKE WRITING STUPID THINGS IN MY STUPID BOOK WHEN I THINK EVERYONE ELSE IS ASLEEP. EVEN SAMI.\"\n- Zaifa's diary",
+    "artistName": "Polar Engine",
+    "name": "Hibernating Rockbear",
+    "cardCode": "04SH042",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH090.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH090-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 5,
+    "cost": 5,
+    "health": 4,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Ogh today was fun! We stopped for lunch (skallashi cheese - BLEUGH!) when Kadira spotted a poor rockdoubb asleep in the shade. Of course, she had to tug on its tail, and of course, it got mad. I hope it likes the cheese we left behind!\"\n- Zaifa's diary",
+    "artistName": "Dao Le",
+    "name": "Grumpy Rockbear",
+    "cardCode": "04SH090",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH089T1",
+      "04SH090"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH089.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH089-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 2,
+    "cost": 4,
+    "health": 4,
+    "description": "<link=keyword.PlaySkillMark><sprite name=PlaySkillMark><style=Keyword>Play</style></link>: Destroy a landmark. If it's allied, summon a <link=card.summon><style=AssociatedCard>Grumpy Rockbear</style></link>.",
+    "descriptionRaw": "Play: Destroy a landmark. If it's allied, summon a Grumpy Rockbear.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Kadira broke something today! Again! It was just a stone wall this time, but it looked old and was probably important to someone's ancestor. Her excuse is that walls are built better in Tereshni, but still! I am very cross.\"\n- Zaifa's diary",
+    "artistName": "Dao Le",
+    "name": "Desert Naturalist",
+    "cardCode": "04SH089",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH090"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH024.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH024-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=vocab.Buried><style=Vocab>Countdown 2</style></link><style=Variable></style>: Summon a <link=card.create><style=AssociatedCard>Grumpy Rockbear</style></link>. Then, if you've summoned 4+ landmarks this game, grant the <link=vocab.Strongest><style=Vocab>Strongest</style></link> ally +2|+2. <style=Variable></style>",
+    "descriptionRaw": "Countdown 2: Summon a Grumpy Rockbear. Then, if you've summoned 4+ landmarks this game, grant the Strongest ally +2|+2. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "A Shuriman saltworker quickly learns which deposits are suitable for collection, and which are best left alone.",
+    "artistName": "Polar Engine",
+    "name": "Salt Spire",
+    "cardCode": "04SH024",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH006"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH038.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH038-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 2,
+    "health": 1,
+    "description": "When I'm summoned, summon a <link=card.create><style=AssociatedCard>Roiling Sands</style></link>.",
+    "descriptionRaw": "When I'm summoned, summon a Roiling Sands.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Today, we began our journey to Nashramae! Samir is determined to cross the Great Sai before the next full moon, and is making SUCH a mess of things! I did not know a simple sandboard could collapse a whole dune. Neither did Sami. He's fine.\"\n- Zaifa's diary",
+    "artistName": "Dao Le",
+    "name": "Rock Hopper",
+    "cardCode": "04SH038",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH006"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH037.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH037-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Summon 2 <link=card.create><style=AssociatedCard>Roiling Sands</style></link>.\r\nDraw 1.",
+    "descriptionRaw": "Summon 2 Roiling Sands.\r\nDraw 1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "As beautiful as the Great Sai may be, it is not a place for the weak. Many lives have been lost among its rolling dunes, and while the xer'sai claim many, the land itself takes its share.",
+    "artistName": "Kudos Productions",
+    "name": "Unraveled Earth",
+    "cardCode": "04SH037",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH006-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "When an enemy is summoned, destroy me to grant it <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link>.",
+    "descriptionRaw": "When an enemy is summoned, destroy me to grant it Vulnerable.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Centuries of missteps have taught the Shurimans how to read the sands. Only they know which expanses will stand firm, and which give way. It is all the same to the layman observer.",
+    "artistName": "Polar Engine",
+    "name": "Roiling Sands",
+    "cardCode": "04SH006",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH076T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH076.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH076-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "<link=keyword.Obliterate><style=Keyword>Obliterate</style></link> an ally and summon a <link=card.create><style=AssociatedCard>Stasis Statue</style></link> in its place.",
+    "descriptionRaw": "Obliterate an ally and summon a Stasis Statue in its place.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Oh, Tai! Come here! We could use your help with something.\"\n- Xetsa, Void Researcher",
+    "artistName": "Kudos Productions",
+    "name": "Ancient Hourglass",
+    "cardCode": "04SH076",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH076T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH076T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "<link=vocab.Buried><style=Vocab>Countdown 1</style></link><style=Variable></style>: Summon an exact copy of the <link=keyword.Obliterate><style=Keyword>Obliterated</style></link> unit I replaced.",
+    "descriptionRaw": "Countdown 1: Summon an exact copy of the Obliterated unit I replaced.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I like to think of this as 'capturing a moment'.\" \n\"Ha. Clever.\"\n- Xetsa and Zinsa, Void Researchers",
+    "artistName": "Polar Engine",
+    "name": "Stasis Statue",
+    "cardCode": "04SH076T1",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH073"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH073T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Deal 2 to <link=card.parentRef><style=AssociatedCard>Taliyah</style></link>'s blocker. If it's dead or gone, deal 2 to the enemy Nexus instead.",
+    "descriptionRaw": "Deal 2 to Taliyah's blocker. If it's dead or gone, deal 2 to the enemy Nexus instead.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Throw another rock!\" - Taliyah",
+    "artistName": "Kudos Productions",
+    "name": "Threaded Volley",
+    "cardCode": "04SH073T1",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH090",
+      "04SH089"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH089T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH089T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Destroy a landmark. If it's allied, summon a <link=card.summon><style=AssociatedCard>Grumpy Rockbear</style></link>.",
+    "descriptionRaw": "Destroy a landmark. If it's allied, summon a Grumpy Rockbear.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Kadira broke something today! Again! It was just a stone wall this time, but it looked old and was probably important to someone's ancestor. Her excuse is that walls are built better in Tereshni, but still! I am very cross.\"\n- Zaifa's diary",
+    "artistName": "Kudos Productions",
+    "name": "Teen Spirit",
+    "cardCode": "04SH089T1",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set4"
   }
 ]

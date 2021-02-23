@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as Diff from "diff";
 import * as Utility from "../shared/utility";
-import { HttpClient } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import { PatchInfo } from '../shared/patches';
-import { Observable, of } from 'rxjs';
+import { DatabaseService } from '../shared/database.service';
 
 declare var $: any;
 
@@ -19,26 +18,25 @@ export class PatchNotesGeneratorComponent implements OnInit {
   error = '';
 
   resourceImageFolder = '';
-  setContents = {};
 
   isDisplayAddedData = true;
   isDisplayChangedData = true;
 
-  patchIDs = {
-    old: '',
-    new: ''
-  }
+  selectedPatch = null;
+  comparingPatch = null;
+  selectedDatabase = {};
+  comparingDatabase = {};
 
-  database = {};
+  customDatabase = {};
 
   isCompleted = false;
 
   patchInfo = [];
   logs: any = [];
-  PatchInfo = PatchInfo;
+  PatchInfo = PatchInfo; // for Client-only
 
   constructor(
-    private http: HttpClient
+    private databaseService: DatabaseService
   ) { }
 
   ngOnInit(): void {
@@ -50,7 +48,11 @@ export class PatchNotesGeneratorComponent implements OnInit {
         'checked': index == patchLength - 1,
         'maxSet': PatchInfo[patchVersion].maxSet
       })
-    })
+    });
+
+    let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
+    this.selectedPatch = this.patchInfo[selectedPatchIndex].name;
+    this.comparingPatch = this.patchInfo[selectedPatchIndex - 1].name;
   }
 
   getChangedCard() {
@@ -65,79 +67,53 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.patchInfo.find(p => p.checked).checked = false;
     pathcInfo.checked = true;
     this.isCompleted = false;
+
+    let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
+    this.selectedPatch = this.patchInfo[selectedPatchIndex].name;
+    this.comparingPatch = this.patchInfo[selectedPatchIndex - 1].name;
   }
 
-  compare() {
-    this.setContents = {};
-    let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
-
-    let selectedPatch = this.patchInfo[selectedPatchIndex].name;
-    let previousPatch = this.patchInfo[selectedPatchIndex - 1].name;
-
-    this.patchIDs.old = previousPatch;
-    this.patchIDs.new = selectedPatch;
-
-    let maxSet = this.patchInfo[selectedPatchIndex].maxSet;
-    let prevMaxSet = this.patchInfo[selectedPatchIndex - 1].maxSet;
-
-    let countFiles = 0;
-    for (let i = 1; i <= maxSet; i++) {
-      this.getJSON(selectedPatch, i).subscribe(data => {
-
-        if (!this.setContents['set' + i]) {
-          this.setContents['set' + i] = {};
-        }
-
-        this.setContents['set' + i][selectedPatch] = JSON.stringify(data || []);
-
-        countFiles += 1;
-        if (countFiles == maxSet * 2) {
-          this._compareJson2();
+  compare(options: any = { display: true }) {
+    let flag = 0;
+    if (this.selectedPatch !== 'custom') {
+      this.databaseService.getCardData(this.comparingPatch).subscribe(database => {
+        this.comparingDatabase = database;
+        flag++;
+        if (flag == 2) {
+          setTimeout(() => {
+            this._compareJson(options);
+          }, 0);
         }
       });
-      if (i > prevMaxSet) {
-        if (!this.setContents['set' + i]) {
-          this.setContents['set' + i] = {};
+      this.databaseService.getCardData(this.selectedPatch).subscribe(database => {
+        this.selectedDatabase = database;
+        flag++;
+        if (flag == 2) {
+          setTimeout(() => {
+            this._compareJson(options);
+          }, 0);
         }
-
-        this.setContents['set' + i][previousPatch] = JSON.stringify([]);
-
-        countFiles += 1;
-        if (countFiles == maxSet * 2) {
-          this._compareJson2();
-        }
-      } else {
-        this.getJSON(previousPatch, i).subscribe(data => {
-          if (!this.setContents['set' + i]) {
-            this.setContents['set' + i] = {};
-          }
-
-          this.setContents['set' + i][previousPatch] = JSON.stringify(data || []);
-
-          countFiles += 1;
-          if (countFiles == maxSet * 2) {
-            this._compareJson2();
-          }
-        });
-      }
+      });
+    } else {
+      this.selectedDatabase = this.customDatabase;
+      this.databaseService.getCardData().subscribe(database => {
+        this.comparingDatabase = database;
+        setTimeout(() => {
+          console.log(1)
+          this._compareJson(options);
+        }, 0);
+      });
     }
   }
 
-  public getJSON(patch, set = 1): Observable<any> {
-    return this.http.get(`./assets/json/set${set}_${patch}.json`);
-  }
-
   getAPIImage(patchCode, cardcode) {
-    let set = parseInt(cardcode.substring(0, 2));
-    let url = `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardcode}.png`;
-
-    return url;
+    return this.databaseService.getAPIImage(patchCode, cardcode);
   }
 
   optionChanged(inputOption) {
     let options = {};
     options[inputOption] = true;
-    this._compareJson2(options);
+    this.compare(options);
   }
 
   onSelect(event) {
@@ -146,10 +122,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.files = [];
 
     const draggedFiles = [...event.addedFiles];
-    if (draggedFiles.length % 2 !== 0) {
-      this.error = 'The files must include a pair with an old file and a new file.'
-      return;
-    }
     draggedFiles.sort((a, b) => {
       return a.name - b.name;
     });
@@ -157,19 +129,16 @@ export class PatchNotesGeneratorComponent implements OnInit {
       let currentFile = draggedFiles[i].name.replace('.json', '').split('_');
       let nextFile = draggedFiles[i + 1].name.replace('.json', '').split('_');
 
-      if (currentFile[1] == nextFile[1]) {
-        this.error = 'The files must include a pair with an old file and a new file, of the same Set, different Patch.';
-        return;
-      } else if (!["set1", "set2", "set3"].includes(currentFile[0]) || !["set1", "set2", "set3"].includes(nextFile[0])) {
-        this.error = 'Only support Set 1 to 3.';
+      if (!["set1", "set2", "set3", "set4"].includes(currentFile[0]) || !["set1", "set2", "set3", "set4"].includes(nextFile[0])) {
+        this.error = 'Only support Set 1 to 4.';
         return;
       }
-
-      this.patchIDs.old = currentFile[1];
-      this.patchIDs.new = nextFile[1];
     }
 
     this.files.push(...draggedFiles);
+
+    this.customDatabase = {};
+    this.selectedPatch = 'custom';
 
     let countFiles = 0;
     this.files.forEach(file => {
@@ -179,14 +148,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
       const fileReader = new FileReader();
       fileReader.readAsText(selectedFile, "UTF-8");
       fileReader.onload = () => {
-        if (!this.setContents[currentFile[0]]) {
-          this.setContents[currentFile[0]] = {};
+        if (!this.customDatabase[currentFile[0]]) {
+          this.customDatabase[currentFile[0]] = {};
         }
-        this.setContents[currentFile[0]][currentFile[1]] = fileReader.result as string;
+        this.customDatabase[currentFile[0]][currentFile[1]] = fileReader.result as string;
 
         countFiles += 1;
         if (countFiles == this.files.length) {
-          this._compareJson2();
+          this.compare();
         }
       }
       fileReader.onerror = (error) => {
@@ -199,323 +168,209 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  _compareJson2(options: any = { display: true }) {
+  _compareJson(options: any = { display: true }) {
     this.isCompleted = true;
 
-    setTimeout(() => {
-      // Init
-      const defaults = {
-        display: false,
-        patchNote: false,
-        newChangeLog: false,
-        oldChangeLog: false
-      };
+    // Init
+    const defaults = {
+      display: false,
+      patchNote: false,
+      newChangeLog: false,
+      oldChangeLog: false
+    };
 
-      options = Object.assign({}, defaults, options);
+    options = Object.assign({}, defaults, options);
 
-      // Handleing
-      let totalOldJSONData = {};
-      let totalNewJSONData = {};
+    // Handleing
+    let totalOldJSONData = this.comparingDatabase;
+    let totalNewJSONData = this.selectedDatabase;
 
-      const getCardType = (cardData) => {
-        if (cardData.type == 'Unit') {
-          if (cardData.supertype) {
-            return 'Champion';
+    // Sort for Patch Note
+    const sortRules = ['code'];
+    totalOldJSONData = Utility.sortObjectByValues(totalOldJSONData, sortRules);
+    totalNewJSONData = Utility.sortObjectByValues(totalNewJSONData, sortRules);
+
+    this.logs = [];
+
+    const commonPrefix = !options.display ? '* ' : '';
+
+    let newPrefixText = "Text becomes: \"";
+    let oldPrefixText = "Old Text: \"";
+    let newPrefixLevelUp = "Level Up becomes: \"";
+    let oldPrefixLevelUp = "Old Level Up: \"";
+    let newPrefixFlavor = "Flavor becomes: \"";
+    let oldPrefixFlavor = "Old Flavor: \"";
+    let newKeywordPrefix = "Now gain ";
+    let removedKeywordPrefix = "No longer ";
+    let addedHighlightedContent = '';
+    let removedHighlightedContent = '';
+    let startTipContent = '';
+    let endTipContent = '';
+
+    if (!options.display) {
+      newPrefixText = '* ' + newPrefixText;
+      oldPrefixText = '** ' + oldPrefixText;
+      newPrefixLevelUp = '* ' + newPrefixLevelUp;
+      oldPrefixLevelUp = '** ' + oldPrefixLevelUp;
+      newPrefixFlavor = "* " + newPrefixFlavor;
+      oldPrefixFlavor = "** " + oldPrefixFlavor;
+      addedHighlightedContent = `'''`;
+      removedHighlightedContent = `''`;
+      startTipContent = '{{TipLoR|';
+      endTipContent = '}}';
+    }
+
+    Object.keys(totalNewJSONData).forEach(cardCode => {
+      const oldCard = totalOldJSONData[cardCode];
+      const newCard = totalNewJSONData[cardCode];
+      if (JSON.stringify(oldCard) != JSON.stringify(newCard)) {
+        let log = {
+          'data': newCard,
+          'diff': [],
+          'type': 'change'
+        };
+
+        if (!oldCard) {
+          log.diff.push(commonPrefix + `Added.`);
+          log.type = 'add'
+        } else {
+          // newCard.code == '03SI015' && console.log(JSON.stringify(oldCard), JSON.stringify(newCard))
+          if (oldCard.name != newCard.name) {
+            log.diff.push(commonPrefix + `Renamed from ${addedHighlightedContent + oldCard.name + addedHighlightedContent}.`);
           }
 
-          return 'Follower';
-        }
-
-        return cardData.type;
-      }
-      Object.keys(this.setContents).forEach(setID => {
-        // Old Set
-        const oldData = this.setContents[setID][this.patchIDs.old];
-        let oldDataJSON = {};
-        JSON.parse(oldData).forEach(cardData => {
-          oldDataJSON[cardData.cardCode] = {
-            _data: cardData,
-            code: cardData.cardCode,
-            name: cardData.name,
-            cost: cardData.cost,
-            power: cardData.attack,
-            health: cardData.health,
-            description: cardData.descriptionRaw.split("\r\n").join(" ").trim(),
-            levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" ").trim(),
-            // type: cardData.cardCode.indexOf('T') >= 0 ? '' : getCardType(cardData)
-            type: getCardType(cardData),
-            spellSpeed: cardData.spellSpeed,
-            group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
-            flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-            keywords: cardData.keywords.filter(k => !['Slow', 'Fast', 'Burst'].includes(k)),
+          if (oldCard.cost != newCard.cost) {
+            log.diff.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} from ${oldCard.cost}.`);
           }
-        });
 
-        totalOldJSONData = Object.assign(totalOldJSONData, oldDataJSON);
-
-        // New Set
-        const newData = this.setContents[setID][this.patchIDs.new];
-        let newDataJSON = {};
-        JSON.parse(newData).forEach(cardData => {
-          newDataJSON[cardData.cardCode] = {
-            _data: cardData,
-            code: cardData.cardCode,
-            name: cardData.name,
-            cost: cardData.cost,
-            power: cardData.attack,
-            health: cardData.health,
-            description: cardData.descriptionRaw.split("\r\n").join(" ").trim(),
-            levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" ").trim(),
-            // type: cardData.cardCode.indexOf('T') >= 0 ? '' : getCardType(cardData)
-            type: getCardType(cardData),
-            spellSpeed: cardData.spellSpeed,
-            group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
-            flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-            keywords: cardData.keywords.filter(k => !['Slow', 'Fast', 'Burst'].includes(k)),
+          if (oldCard.power != newCard.power) {
+            log.diff.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} from ${oldCard.power}.`);
           }
-        });
 
-        totalNewJSONData = Object.assign(totalNewJSONData, newDataJSON);
-      });
+          if (oldCard.health != newCard.health) {
+            log.diff.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} from ${oldCard.health}.`);
+          }
 
-      // Sort for Patch Note
-      const sortRules = ['name'];
-      totalOldJSONData = Utility.sortObjectByValues(totalOldJSONData, sortRules);
-      totalNewJSONData = Utility.sortObjectByValues(totalNewJSONData, sortRules);
+          if (oldCard.spellSpeed != newCard.spellSpeed) {
+            const startTip = startTipContent + newCard.spellSpeed + endTipContent;
+            const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
+            log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
+          }
 
-      this.logs = [];
-
-      const commonPrefix = !options.display ? '* ' : '';
-
-      let newPrefixText = "Text becomes: \"";
-      let oldPrefixText = "Old Text: \"";
-      let newPrefixLevelUp = "Level Up becomes: \"";
-      let oldPrefixLevelUp = "Old Level Up: \"";
-      let newPrefixFlavor = "Flavor becomes: \"";
-      let oldPrefixFlavor = "Old Flavor: \"";
-      let newKeywordPrefix = "Now gain ";
-      let removedKeywordPrefix = "No longer ";
-      let addedHighlightedContent = '';
-      let removedHighlightedContent = '';
-      let startTipContent = '';
-      let endTipContent = '';
-
-      if (!options.display) {
-        newPrefixText = '* ' + newPrefixText;
-        oldPrefixText = '** ' + oldPrefixText;
-        newPrefixLevelUp = '* ' + newPrefixLevelUp;
-        oldPrefixLevelUp = '** ' + oldPrefixLevelUp;
-        newPrefixFlavor = "* " + newPrefixFlavor;
-        oldPrefixFlavor = "** " + oldPrefixFlavor;
-        addedHighlightedContent = `'''`;
-        removedHighlightedContent = `''`;
-        startTipContent = '{{TipLoR|';
-        endTipContent = '}}';
-      }
-
-      Object.keys(totalNewJSONData).forEach(cardCode => {
-        const oldCard = totalOldJSONData[cardCode];
-        const newCard = totalNewJSONData[cardCode];
-        if (JSON.stringify(oldCard) != JSON.stringify(newCard)) {
-          let log = {
-            'data': newCard,
-            'diff': [],
-            'type': 'change'
-          };
-
-          if (!oldCard) {
-            log.diff.push(commonPrefix + `Added.`);
-            log.type = 'add'
-          } else {
-            // newCard.code == '03SI015' && console.log(JSON.stringify(oldCard), JSON.stringify(newCard))
-            if (oldCard.name != newCard.name) {
-              log.diff.push(commonPrefix + `Renamed from ${addedHighlightedContent + oldCard.name + addedHighlightedContent}.`);
+          if (oldCard.group != newCard.group) {
+            if (!newCard.group) {
+              const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
+              log.diff.push(commonPrefix + `No longer belong to ${removedGroupContent}.`);
+            } else if (!oldCard.group) {
+              const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
+              log.diff.push(commonPrefix + `Now belong to ${newGroupContent}.`);
+            } else {
+              const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
+              const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
+              log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
             }
+          }
 
-            if (oldCard.cost != newCard.cost) {
-              log.diff.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} from ${oldCard.cost}.`);
+          let removedKeywords = oldCard.keywords.filter(x => !newCard.keywords.includes(x));
+          let newKeywords = newCard.keywords.filter(x => !oldCard.keywords.includes(x));
+          if (newKeywords.length) {
+            let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
+
+            let span = document.createElement('span');
+            span.appendChild(document.createTextNode(content));
+
+            log.diff.push(span);
+          }
+
+          if (removedKeywords.length) {
+            let content = commonPrefix + removedKeywordPrefix + startTipContent + removedKeywords.join(endTipContent + ', ') + endTipContent + '.';
+
+            log.diff.push(content);
+          }
+
+          let largeContents = [
+            {
+              object: 'description',
+              newPrefix: newPrefixText,
+              oldPrefix: oldPrefixText,
+              isCheckedVisual: true
+            },
+            {
+              object: 'levelupDescription',
+              newPrefix: newPrefixLevelUp,
+              oldPrefix: oldPrefixLevelUp,
+              isCheckedVisual: true
+            },
+            {
+              object: 'flavor',
+              newPrefix: newPrefixFlavor,
+              oldPrefix: oldPrefixFlavor
             }
+          ]
 
-            if (oldCard.power != newCard.power) {
-              log.diff.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} from ${oldCard.power}.`);
-            }
-
-            if (oldCard.health != newCard.health) {
-              log.diff.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} from ${oldCard.health}.`);
-            }
-
-            if (oldCard.spellSpeed != newCard.spellSpeed) {
-              const startTip = startTipContent + newCard.spellSpeed + endTipContent;
-              const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
-              log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
-            }
-
-            if (oldCard.group != newCard.group) {
-              if (!newCard.group) {
-                const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
-                log.diff.push(commonPrefix + `No longer belong to ${removedGroupContent}.`);
-              } else if (!oldCard.group) {
-                const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
-                log.diff.push(commonPrefix + `Now belong to ${newGroupContent}.`);
+          largeContents.forEach(largeContent => {
+            if (oldCard[largeContent.object] != newCard[largeContent.object]) {
+              if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
+                log.diff.push(commonPrefix + `Visual Updated.`);
               } else {
-                const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
-                const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
-                log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
-              }
-            }
+                const diffParts = Diff.diffWords(oldCard[largeContent.object], "\n" + newCard[largeContent.object], {
+                  newlineIsToken: false,
+                  // ignoreCase: true
+                });
 
-            let removedKeywords = oldCard.keywords.filter(x => !newCard.keywords.includes(x));
-            let newKeywords = newCard.keywords.filter(x => !oldCard.keywords.includes(x));
-            if (newKeywords.length) {
-              let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
+                let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
 
-              let span = document.createElement('span');
-              span.appendChild(document.createTextNode(content));
+                let newDiv = [];
+                [{ value: largeContent.newPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
+                  // green for additions, red for deletions
+                  // grey for common parts
+                  const color = part.added ? 'green' :
+                    part.removed ? 'red' : 'black';
 
-              log.diff.push(span);
-            }
-
-            if (removedKeywords.length) {
-              let content = commonPrefix + removedKeywordPrefix + startTipContent + removedKeywords.join(endTipContent + ', ') + endTipContent + '.';
-
-              log.diff.push(content);
-            }
-
-            let largeContents = [
-              {
-                object: 'description',
-                newPrefix: newPrefixText,
-                oldPrefix: oldPrefixText,
-                isCheckedVisual: true
-              },
-              {
-                object: 'levelupDescription',
-                newPrefix: newPrefixLevelUp,
-                oldPrefix: oldPrefixLevelUp,
-                isCheckedVisual: true
-              },
-              {
-                object: 'flavor',
-                newPrefix: newPrefixFlavor,
-                oldPrefix: oldPrefixFlavor
-              }
-            ]
-
-            largeContents.forEach(largeContent => {
-              if (oldCard[largeContent.object] != newCard[largeContent.object]) {
-                if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
-                  log.diff.push(commonPrefix + `Visual Updated.`);
-                } else {
-                  const diffParts = Diff.diffWords(oldCard[largeContent.object], "\n" + newCard[largeContent.object], {
-                    newlineIsToken: false,
-                    // ignoreCase: true
-                  });
-
-                  let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
-
-                  let newDiv = [];
-                  [{ value: largeContent.newPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
-                    // green for additions, red for deletions
-                    // grey for common parts
-                    const color = part.added ? 'green' :
-                      part.removed ? 'red' : 'black';
-
-                    if (index == 1 && part.value == '\n') {
-                      return;
-                    }
-
-                    let content = part.value;
-                    if (part.added) {
-                      content = addedHighlightedContent + part.value + addedHighlightedContent
-                    }
-
-                    newDiv.push(`<span style="color: ${color}">${content}</span>`);
-                  });
-
-                  if (newDiv.length) {
-                    log.diff.push(newDiv.join(''));
+                  if (index == 1 && part.value == '\n') {
+                    return;
                   }
 
-                  let oldDiv = [];
-                  [{ value: largeContent.oldPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
-                    const color = part.added ? 'green' :
-                      part.removed ? 'red' : 'black';
-
-                    let content = part.value;
-                    if (part.removed) {
-                      content = removedHighlightedContent + part.value + removedHighlightedContent;
-                    }
-
-                    oldDiv.push(`<span style="color: ${color}">${content}</span>`);
-                  });
-
-                  if (oldDiv.length) {
-                    if (options.display) {
-                      oldDiv.unshift(`<span style="display:inline-block;width:20px"></span>`);
-                    }
-
-                    log.diff.push(oldDiv.join(''));
+                  let content = part.value;
+                  if (part.added) {
+                    content = addedHighlightedContent + part.value + addedHighlightedContent
                   }
-                }
-              }
-            });
-          }
 
-          if (log.diff.length) {
-            if ((this.isDisplayAddedData && log.type == 'add') || (this.isDisplayChangedData && log.type == 'change')) {
+                  newDiv.push(`<span style="color: ${color}">${content}</span>`);
+                });
 
-              if (options.newChangeLog || options.oldChangeLog) {
-                let edittedCardName = newCard.name;
-                if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
-                  edittedCardName += ' (Level 2)';
+                if (newDiv.length) {
+                  log.diff.push(newDiv.join(''));
                 }
 
-                let unshiftContents = [];
-                if (options.newChangeLog && log.type == 'add') {
-                  unshiftContents = [
-                    `== Change Log ==`,
-                    `{| class="article-table ruling-table"`,
-                    `! colspan="2" | <b>${edittedCardName}</b>`
-                  ];
-                } else {
-                  unshiftContents = [
-                    `<b>${edittedCardName}</b>`
-                  ];
+                let oldDiv = [];
+                [{ value: largeContent.oldPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
+                  const color = part.added ? 'green' :
+                    part.removed ? 'red' : 'black';
+
+                  let content = part.value;
+                  if (part.removed) {
+                    content = removedHighlightedContent + part.value + removedHighlightedContent;
+                  }
+
+                  oldDiv.push(`<span style="color: ${color}">${content}</span>`);
+                });
+
+                if (oldDiv.length) {
+                  if (options.display) {
+                    oldDiv.unshift(`<span style="display: inline-block; width: 37px;"></span>`);
+                  }
+
+                  log.diff.push(oldDiv.join(''));
                 }
-
-                unshiftContents = unshiftContents.concat([
-                  `|-`,
-                  `| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`,
-                  `|`
-                ]);
-
-                log.diff.unshift(unshiftContents.join('<br />'));
               }
-
-              if (options.newChangeLog && log.type == 'add') {
-                log.diff.push(`|}`);
-              }
-
-              this.logs.push(log);
             }
-          }
+          });
         }
-      });
 
-      // Check Removed cards
-      Object.keys(totalOldJSONData).forEach(cardCode => {
-        const oldCard = totalOldJSONData[cardCode];
-        const newCard = totalNewJSONData[cardCode];
-        if (!newCard) {
-          let log = {
-            'data': oldCard,
-            'diff': [],
-            'type': 'remove'
-          };
+        if (log.diff.length) {
+          if ((this.isDisplayAddedData && log.type == 'add') || (this.isDisplayChangedData && log.type == 'change')) {
 
-          log.diff.push(commonPrefix + `Removed.`);
-
-          if (log.diff.length) {
             if (options.newChangeLog || options.oldChangeLog) {
               let edittedCardName = newCard.name;
               if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
@@ -537,7 +392,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
               unshiftContents = unshiftContents.concat([
                 `|-`,
-                `| [[V${this.patchIDs.new} (Legends of Runeterra)|V${this.patchIDs.new}]]`,
+                `| [[V${this.selectedPatch} (Legends of Runeterra)|V${this.selectedPatch}]]`,
                 `|`
               ]);
 
@@ -551,8 +406,59 @@ export class PatchNotesGeneratorComponent implements OnInit {
             this.logs.push(log);
           }
         }
-      });
-    }, 0);
+      }
+    });
+
+    // Check Removed cards
+    Object.keys(totalOldJSONData).forEach(cardCode => {
+      const oldCard = totalOldJSONData[cardCode];
+      const newCard = totalNewJSONData[cardCode];
+      if (!newCard) {
+        let log = {
+          'data': oldCard,
+          'diff': [],
+          'type': 'remove'
+        };
+
+        log.diff.push(commonPrefix + `Removed.`);
+
+        if (log.diff.length) {
+          if (options.newChangeLog || options.oldChangeLog) {
+            let edittedCardName = newCard.name;
+            if (newCard.type == 'Champion' && newCard.code.indexOf('T') >= 0) {
+              edittedCardName += ' (Level 2)';
+            }
+
+            let unshiftContents = [];
+            if (options.newChangeLog && log.type == 'add') {
+              unshiftContents = [
+                `== Change Log ==`,
+                `{| class="article-table ruling-table"`,
+                `! colspan="2" | <b>${edittedCardName}</b>`
+              ];
+            } else {
+              unshiftContents = [
+                `<b>${edittedCardName}</b>`
+              ];
+            }
+
+            unshiftContents = unshiftContents.concat([
+              `|-`,
+              `| [[V${this.selectedPatch} (Legends of Runeterra)|V${this.selectedPatch}]]`,
+              `|`
+            ]);
+
+            log.diff.unshift(unshiftContents.join('<br />'));
+          }
+
+          if (options.newChangeLog && log.type == 'add') {
+            log.diff.push(`|}`);
+          }
+
+          this.logs.push(log);
+        }
+      }
+    });
   }
 
   copyResourceImages() {
@@ -572,26 +478,25 @@ export class PatchNotesGeneratorComponent implements OnInit {
       cardChangeContent = cardChangeContent + '\n' + cardAddedContent;
     }
     const blob = new Blob([cardChangeContent], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, `${this.patchIDs.new}_CardChangesList.txt`);
+    saveAs(blob, `${this.selectedPatch}_CardChangesList.txt`);
   }
 
   convertNewCards() {
     let addedCards = this.logs.filter(l => l.type = 'add').map(l => l.data)
     var result = {};
 
-    let database = {}
-    Object.keys(this.setContents).forEach(setID => {
-      JSON.parse(this.setContents[setID][this.patchIDs.new]).forEach(rawData => {
-        database[rawData.cardCode] = rawData;
-      })
-    });
+    let database = {};
+    if (this.selectedPatch !== 'custom') {
+      database = this.selectedDatabase;
+    } else {
+      database = this.customDatabase;
+    }
 
     addedCards.forEach(addedCard => {
-      let cardData = database[addedCard.code];
+      let cardData = database[addedCard.code]._data;
+      // console.log(cardData)
       let subtype = Utility.capitalize(cardData.subtype);
-      if (subtype) {
 
-      }
       result[cardData.cardCode] = Utility.cleanObject({
         name: cardData.name,
         type: cardData.type,
@@ -622,6 +527,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     }, 4).replace(/"\uE000([^\uE000]+)\uE000"/g, match => match.substr(2, match.length - 4).replace(/\\"/g, '"').replace(/\uE001/g, '\\\"'));
 
     fileContent = fileContent.split(`\\r\\n`).join(`<br />`);
+    fileContent = fileContent.split(`\\n`).join(`<br />`);
     fileContent = fileContent.split(`[`).join(`{`);
     fileContent = fileContent.split(`]`).join(`}`);
     fileContent = fileContent.split(`"0`).join(`["0`);
@@ -635,7 +541,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     fileContent = fileContent.split(`": {`).join(`"] = {`);
 
     const blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, `${this.patchIDs.new}_AddedCardsData.txt`);
+    saveAs(blob, `${this.selectedPatch}_AddedCardsData.txt`);
   }
 
   getCleanedDiffParts(diffParts) {

@@ -7,10 +7,12 @@ import { PatchNotesGeneratorComponent } from './patch-notes-generator/patch-note
 
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { ExpeditionGeneratorComponent } from './expedition-generator/expedition-generator.component';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SafeHtmlPipe } from './shared/pipe.safehtml';
 import { AboutComponent } from './about/about.component';
+import { DatabaseComponent } from './database/database.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -18,16 +20,19 @@ import { AboutComponent } from './about/about.component';
     SafeHtmlPipe,
     PatchNotesGeneratorComponent,
     ExpeditionGeneratorComponent,
-    AboutComponent
+    AboutComponent,
+    DatabaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxDropzoneModule,
     FormsModule,
+    ReactiveFormsModule,
+    LazyLoadImageModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

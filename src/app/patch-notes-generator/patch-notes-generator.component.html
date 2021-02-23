@@ -23,9 +23,10 @@
   <div class="form-inline" *ngIf="getChangedCard().length || getAddedCard().length">
     <div class="form-group">
       <label for="resourceImageFolder">Resource Image Folder</label>
-      <button *ngIf="getChangedCard().length" type="button" class="btn btn-secondary ml-1"
+      <button *ngIf="getChangedCard().length" type="button" class="btn btn-secondary ms-1"
         (click)="copyResourceImages()">File Changed List</button>
-      <button *ngIf="getAddedCard().length" type="button" class="btn btn-secondary ml-1" (click)="convertNewCards()">Convert New Cards</button>
+      <button *ngIf="getAddedCard().length" type="button" class="btn btn-secondary ms-1"
+        (click)="convertNewCards()">Convert New Cards</button>
     </div>
   </div>
 
@@ -45,13 +46,13 @@
   </div>
 
   <div class="mt-3">
-    <button type="button" class="btn btn-success mr-3" (click)="optionChanged('display')">Display</button>
-    <button type="button" class="btn btn-success mr-3" (click)="optionChanged('patchNote')">Patch Note</button>
-    <button type="button" class="btn btn-success mr-3" (click)="optionChanged('newChangeLog')">Change Log</button>
+    <button type="button" class="btn btn-success me-3" (click)="optionChanged('display')">Display</button>
+    <button type="button" class="btn btn-success me-3" (click)="optionChanged('patchNote')">Patch Note</button>
+    <button type="button" class="btn btn-success me-3" (click)="optionChanged('newChangeLog')">Change Log</button>
   </div>
 
-  <div class="mt-2" *ngIf="getAddedCard().length">There are {{getAddedCard().length}} card added</div>
-  <div *ngIf="getChangedCard().length">There are {{getChangedCard().length}} card changes</div>
+  <div class="mt-2" *ngIf="getAddedCard().length">There are {{getAddedCard().length}} card(s) added.</div>
+  <div *ngIf="getChangedCard().length">There are {{getChangedCard().length}} card(s) changed.</div>
 
   <table class="table mt-3" style="table-layout: fixed">
     <colgroup>
@@ -59,7 +60,7 @@
       <col style="width: 20%;">
       <col style="width: 60%;">
     </colgroup>
-    <thead class="thead-dark text-center">
+    <thead class="table-dark text-center">
       <tr>
         <th scope="col" colspan="2">Card</th>
         <th scope="col">Differences</th>
@@ -69,11 +70,12 @@
       <ng-container *ngFor="let log of logs">
         <tr>
           <td>
-            <img *ngIf="log.type != 'add'" [attr.src]="getAPIImage(PatchInfo[this.patchIDs.old].code, log.data.code)"
-              width="150px">
+            <img *ngIf="log.type != 'add'" [attr.src]="getAPIImage(log.data.code, PatchInfo[this.comparingPatch].code)"
+              width="200px">
           </td>
           <td>
-            <img *ngIf="log.type != 'remove'" [attr.src]="getAPIImage(PatchInfo[this.patchIDs.new].code, log.data.code)" width="150px">
+            <img *ngIf="log.type != 'remove'"
+              [attr.src]="getAPIImage(log.data.code, PatchInfo[this.selectedPatch].code)" width="200px">
           </td>
           <td rowspan="2">
             <div *ngFor="let diff of log.diff" [innerHTML]="diff | safeHtml"></div>
