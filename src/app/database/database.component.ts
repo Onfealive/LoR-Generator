@@ -1,7 +1,10 @@
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DatabaseService } from '../shared/database.service';
+import * as Utility from "../shared/utility";
 
+declare var $: any;
 @Component({
   selector: 'app-database',
   templateUrl: './database.component.html',
@@ -12,48 +15,63 @@ export class DatabaseComponent implements OnInit {
   database = {};
 
   form: FormGroup;
+  defaultFormValues = null;
+  sortType = null;
 
   defaultImage = `./assets/icons/Queue Card Back.png`;
 
-  regionsData = [
-    // { id: 'NE', name: 'Runeterra', icon: true },
-    { id: 'BW', name: 'Bilgewater', icon: true },
-    { id: 'DE', name: 'Demacia', icon: true },
-    { id: 'FR', name: 'Freljord', icon: true },
-    { id: 'IO', name: 'Ionia', icon: true },
-    { id: 'NX', name: 'Noxus', icon: true },
-    { id: 'PZ', name: 'Piltover and Zaun', icon: true },
-    { id: 'SI', name: 'Shadow Isles', icon: true },
-    { id: 'SH', name: 'Shurima', icon: true },
-    { id: 'MT', name: 'Targon', icon: true }
+  sortData: Array<FormOption> = [
+    { id: 'name', name: 'Name' },
+    { id: 'code', name: 'Code' },
+    { id: 'cost', name: 'Cost' }
   ];
 
-  setsData = [
-    { id: '01', name: 'Foundations', icon: true },
-    { id: '02', name: 'Rising Tides', icon: true },
-    { id: '03', name: 'Call of the Mountain', icon: true },
+  regionsData: Array<FormOption> = [
+    { id: 'BW', icon: 'Bilgewater' },
+    { id: 'DE', icon: 'Demacia' },
+    { id: 'FR', icon: 'Freljord' },
+    { id: 'IO', icon: 'Ionia' },
+    { id: 'NX', icon: 'Noxus' },
+    { id: 'PZ', icon: 'Piltover and Zaun' },
+    { id: 'SI', icon: 'Shadow Isles' },
+    { id: 'SH', icon: 'Shurima' },
+    { id: 'MT', icon: 'Targon' }
+  ];
+
+  setsData: Array<FormOption> = [
+    { id: '01', icon: 'Foundations' },
+    { id: '02', icon: 'Rising Tides' },
+    { id: '03', icon: 'Call of the Mountain' },
     { id: '04', name: 'Empires of the Ascended' }
   ];
 
-  cardTypesData = [
-    { id: 'Champion', name: 'Champion', icon: true },
-    { id: 'Follower', name: 'Follower', icon: true },
-    { id: 'Spell', name: 'Spell', icon: true },
-    { id: 'Landmark', name: 'Landmark', icon: true },
-    { id: 'Skill', name: 'Skill', icon: true },
+  cardTypesData: Array<FormOption> = [
+    { id: 'Champion', icon: 'Champion' },
+    { id: 'Follower', icon: 'Follower' },
+    { id: 'Spell', icon: 'Spell' },
+    { id: 'Landmark', icon: 'Landmark' },
+    { id: 'Skill', icon: 'Skill' },
     { id: 'Trap', name: 'Trap' }
+  ];
+
+  collectibleData: Array<FormOption> = [
+    { id: 'true', icon: 'Collectible', default: true, name: 'Collectible' },
+    { id: 'false', icon: 'Uncollectible', name: 'Uncollectible' }
   ];
 
   searchResults = [];
 
-  get regionsFormArray() {
+  get regionFormArray() {
     return this.form.get('regions') as FormArray;
   }
-  get setsFormArray() {
+  get setFormArray() {
     return this.form.get('sets') as FormArray;
   }
-  get cardTypesFormArray() {
+  get cardTypeFormArray() {
     return this.form.get('cardTypes') as FormArray;
+  }
+  get collectibleFormArray() {
+    return this.form.get('collectibles') as FormArray;
   }
 
   constructor(
@@ -63,22 +81,28 @@ export class DatabaseComponent implements OnInit {
     this.form = this.formBuilder.group({
       regions: this.formBuilder.array([]),
       sets: this.formBuilder.array([]),
-      cardTypes: this.formBuilder.array([])
+      cardTypes: this.formBuilder.array([]),
+      collectibles: this.formBuilder.array([]),
+      text: this.formBuilder.control('')
     });
 
     this.databaseService.getCardData().subscribe(database => {
       this.database = database;
     });
 
+    this.sortType = 'name';
+
     this.addCheckboxData();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   private addCheckboxData() {
-    this.regionsData.forEach(() => this.regionsFormArray.push(new FormControl(false)));
-    this.setsData.forEach(() => this.setsFormArray.push(new FormControl(false)));
-    this.cardTypesData.forEach(() => this.cardTypesFormArray.push(new FormControl(false)));
+    this.regionsData.forEach((o) => this.regionFormArray.push(new FormControl(o.default)));
+    this.setsData.forEach((o) => this.setFormArray.push(new FormControl(o.default)));
+    this.cardTypesData.forEach((o) => this.cardTypeFormArray.push(new FormControl(o.default)));
+    this.collectibleData.forEach((o) => this.collectibleFormArray.push(new FormControl(o.default)));
+    this.defaultFormValues = this.form.value;
   }
 
   getAPIImage(cardcode) {
@@ -86,7 +110,12 @@ export class DatabaseComponent implements OnInit {
   }
 
   clearFilters() {
-    this.form.reset();
+    this.form.setValue(this.defaultFormValues);
+  }
+
+  changeSort(sortCode) {
+    this.sortType = sortCode;
+    this.submit();
   }
 
   submit() {
@@ -105,13 +134,12 @@ export class DatabaseComponent implements OnInit {
       .map((checked, i) => checked ? this.cardTypesData[i].id : null)
       .filter(v => v !== null);
 
-    let nameSort = (a, b) => {
-      if (a['name'] < b['name']) { return -1; }
-      if (a['name'] > b['name']) { return 1; }
-      return 0;
-    };
+    const selectedCollectibleIds = this.form.value['collectibles']
+      .map((checked, i) => checked ? this.collectibleData[i].id : null)
+      .filter(v => v !== null);
 
-    let sortList = [nameSort];
+    const searchText = this.form.value['text'];
+
     let filterList = [];
     if (selectedRegionIds.length) {
       filterList.push(c => {
@@ -139,11 +167,30 @@ export class DatabaseComponent implements OnInit {
       filterList.push(c => {
         let found = false;
         selectedCardTypeIds.forEach(cardTypeCode => {
-          console.log(c.type, cardTypeCode)
           if (c.type == cardTypeCode) {
             found = true;
           }
         });
+        return found;
+      });
+    }
+    if (selectedCollectibleIds.length) {
+      filterList.push(c => {
+        let found = false;
+        selectedCollectibleIds.forEach(collectibleCode => {
+          if (c.collectible.toString() == collectibleCode) {
+            found = true;
+          }
+        });
+        return found;
+      });
+    }
+    if (searchText) {
+      filterList.push(c => {
+        let found = false;
+        if ([c.name, c.description, c.levelupDescription].find((text: string) => text.toLowerCase().includes(searchText.toLowerCase()))) {
+          found = true;
+        }
         return found;
       })
     }
@@ -153,13 +200,27 @@ export class DatabaseComponent implements OnInit {
       searchResult = searchResult.filter(filterLogic);
     });
 
-    sortList.forEach(sortLogic => {
-      searchResult = searchResult.sort(sortLogic);
-    });
+    let sortOrders = ['name'];
+    sortOrders.unshift(this.sortType);
+    sortOrders = [...new Set(sortOrders)];
+
+    searchResult = Utility.sortArrayByValues(searchResult, sortOrders);
 
     this.searchResults = searchResult;
 
     this.isCompleted = true;
-    console.log(searchResult)
+
+    setTimeout(() => {
+      $([document.documentElement, document.body]).animate({
+        scrollTop: $(".search-result").offset().top
+      }, 750);
+    }, 0);
   }
+}
+
+export class FormOption {
+  id: string;
+  icon?: string;
+  name?: string;
+  default?: boolean = false;
 }

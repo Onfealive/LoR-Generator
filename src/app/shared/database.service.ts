@@ -65,6 +65,7 @@ export class DatabaseService {
           _data: cardData,
           code: cardData.cardCode,
           name: cardData.name,
+          collectible: cardData.collectible,
           cost: cardData.cost,
           power: cardData.attack,
           health: cardData.health,

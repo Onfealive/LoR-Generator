@@ -17,6 +17,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
   files: File[] = [];
   error = '';
 
+  defaultImage = `./assets/icons/Queue Card Back.png`;
+
   resourceImageFolder = '';
 
   isDisplayAddedData = true;
@@ -99,7 +101,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
       this.databaseService.getCardData().subscribe(database => {
         this.comparingDatabase = database;
         setTimeout(() => {
-          console.log(1)
           this._compareJson(options);
         }, 0);
       });
@@ -140,7 +141,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
     this.customDatabase = {};
     this.selectedPatch = 'custom';
 
+    let customDatabase = {};
     let countFiles = 0;
+
     this.files.forEach(file => {
       let currentFile = file.name.replace('.json', '').split('_');
 
@@ -148,13 +151,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
       const fileReader = new FileReader();
       fileReader.readAsText(selectedFile, "UTF-8");
       fileReader.onload = () => {
-        if (!this.customDatabase[currentFile[0]]) {
-          this.customDatabase[currentFile[0]] = {};
+        if (!customDatabase[currentFile[0]]) {
+          customDatabase[currentFile[0]] = {};
         }
-        this.customDatabase[currentFile[0]][currentFile[1]] = fileReader.result as string;
+        customDatabase[currentFile[0]][currentFile[1]] = fileReader.result as string;
 
         countFiles += 1;
         if (countFiles == this.files.length) {
+          this.customDatabase = this.databaseService._convertData2Database(customDatabase, currentFile[1])
           this.compare();
         }
       }
@@ -459,6 +463,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         }
       }
     });
+
+    console.log(this.logs)
   }
 
   copyResourceImages() {

@@ -60,7 +60,8 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
     this.files.push(...draggedFiles);
 
-    this.database = {};
+    let database = {};
+    let countFiles = 0;
 
     this.files.forEach(file => {
       let currentFile = file.name.replace('.json', '').split('_');
@@ -69,10 +70,15 @@ export class ExpeditionGeneratorComponent implements OnInit {
       const fileReader = new FileReader();
       fileReader.readAsText(selectedFile, "UTF-8");
       fileReader.onload = () => {
-        if (!this.database[currentFile[0]]) {
-          this.database[currentFile[0]] = {};
+        if (!database[currentFile[0]]) {
+          database[currentFile[0]] = {};
         }
-        this.database[currentFile[0]][currentFile[1]] = fileReader.result as string;
+        database[currentFile[0]][currentFile[1]] = fileReader.result as string;
+
+        countFiles += 1;
+        if (countFiles == this.files.length) {
+          this.database = this.databaseService._convertData2Database(database, currentFile[1]);
+        }
       }
       fileReader.onerror = (error) => {
         console.log(error);

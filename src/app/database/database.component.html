@@ -1,14 +1,14 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()" id="top">
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">Regions</label>
         <div class="col-sm-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="regions"
-                *ngFor="let region of regionsFormArray.controls; let i = index">
+                *ngFor="let region of regionFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
                     [formControlName]="i">
                 <label class="form-check-label" [for]="'region' + regionsData[i].id">
-                    <img *ngIf="regionsData[i].icon" [src]="'./assets/icons/' + regionsData[i].name + '.png'">
-                    <span *ngIf="!regionsData[i].icon">{{regionsData[i].name }}</span>
+                    <img *ngIf="regionsData[i].icon" [src]="'./assets/icons/' + regionsData[i].icon + '.png'">
+                    <span *ngIf="regionsData[i].name">{{regionsData[i].name }}</span>
                 </label>
             </div>
         </div>
@@ -17,11 +17,11 @@
         <label class="col-sm-1 col-form-label">Sets</label>
         <div class="col-sm-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="sets"
-                *ngFor="let region of setsFormArray.controls; let i = index">
+                *ngFor="let region of setFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id" [formControlName]="i">
                 <label class="form-check-label" [for]="'set' + setsData[i].id">
-                    <img *ngIf="setsData[i].icon" [src]="'./assets/icons/' + setsData[i].name + '.png'">
-                    <span *ngIf="!setsData[i].icon">{{setsData[i].name }}</span>
+                    <img *ngIf="setsData[i].icon" [src]="'./assets/icons/' + setsData[i].icon + '.png'">
+                    <span *ngIf="setsData[i].name">{{setsData[i].name }}</span>
                 </label>
             </div>
         </div>
@@ -30,20 +30,40 @@
         <label class="col-sm-1 col-form-label">Card Types</label>
         <div class="col-sm-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="cardTypes"
-                *ngFor="let region of cardTypesFormArray.controls; let i = index">
+                *ngFor="let region of cardTypeFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'cardType' + cardTypesData[i].id"
                     [formControlName]="i">
                 <label class="form-check-label" [for]="'cardType' + cardTypesData[i].id">
-                    <img *ngIf="cardTypesData[i].icon" [src]="'./assets/icons/' + cardTypesData[i].name + '.png'">
-                    <span *ngIf="!cardTypesData[i].icon">{{cardTypesData[i].name }}</span>
+                    <img *ngIf="cardTypesData[i].icon" [src]="'./assets/icons/' + cardTypesData[i].icon + '.png'">
+                    <span *ngIf="cardTypesData[i].name">{{cardTypesData[i].name }}</span>
                 </label>
             </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Collectible</label>
+        <div class="col-sm-11 image-checkboxes-container">
+            <div class="form-check form-check-inline" formArrayName="collectibles"
+                *ngFor="let region of collectibleFormArray.controls; let i = index">
+                <input class="form-check-input" type="checkbox" [id]="'collectible' + collectibleData[i].id"
+                    [formControlName]="i">
+                <label class="form-check-label" [for]="'collectible' + collectibleData[i].id">
+                    <img *ngIf="collectibleData[i].icon" [src]="'./assets/icons/' + collectibleData[i].icon + '.png'">
+                    <span *ngIf="collectibleData[i].name">{{collectibleData[i].name }}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Card Search</label>
+        <div class="col-sm-11">
+            <input type="text" class="form-control" formControlName="text" placeholder="Card Name, Card Text, Keywords">
         </div>
     </div>
 
     <div class="form-group row text-center">
         <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" (click)="clearFilters()">Clear Filters</button>
+            <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
             <button type="submit" class="btn btn-primary ms-2">Search</button>
         </div>
     </div>
@@ -51,7 +71,15 @@
 
 <div class="search-result" *ngIf="isCompleted">
     <div class="mt-3">Found {{searchResults.length}} card(s).</div>
-    <div class="row row-cols-auto row-cols-md-6 g-4 mt-3">
+
+    <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group" *ngIf="isCompleted">
+        <ng-container *ngFor="let sort of sortData">
+            <input type="radio" class="btn-check" name="btnradio" [id]="'btnradio_' + sort.id" autocomplete="off" (change)="changeSort(sort.id)" [checked]="sort.id == sortType">
+            <label class="btn btn-outline-primary" [for]="'btnradio_' + sort.id">{{sort.name}}</label>
+        </ng-container>
+    </div>
+    
+    <div class="row row-cols-auto row-cols-md-6 g-4 mt-2">
         <div class="col" *ngFor="let card of searchResults">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -64,5 +92,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="back-to-top-wrapper">
+        <a href="database#top" class="back-to-top-link" aria-label="Scroll to Top">▲</a>
     </div>
 </div>

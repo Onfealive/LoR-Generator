@@ -7,26 +7,34 @@ export function sortObjectByKey(unordered) {
   return ordered;
 }
 
-export function sortObjectByValues(unordered, keys, ascending = true) {
+const compareFunction = (a, b, keys, ascending) => {
+  let key = Array.isArray(keys) ? keys[0] : keys;
+  keys = keys.slice(1);
+  if (a[key] < b[key]) {
+    return ascending ? -1 : 1;
+  } else if (a[key] > b[key]) {
+    return ascending ? 1 : -1;
+  }
+
+  return keys.length ? compareFunction(a, b, keys, ascending) : 0;
+}
+
+export function sortArrayByValues(sortable: Array<any>, keys, ascending = true) {
+  sortable.sort(function (a, b) {
+    return compareFunction(a, b, keys, ascending);
+  });
+
+  return sortable;
+}
+
+export function sortObjectByValues(unordered : object, keys, ascending = true) {
   let sortable = [];
   for (var item in unordered) {
     sortable.push([item, unordered[item]]);
   }
 
-  const compareFunction = (a, b, keys) => {
-    let key = Array.isArray(keys) ? keys[0] : keys;
-    keys = keys.slice(1);
-    if (a[key] < b[key]) {
-      return ascending ? -1 : 1;
-    } else if (a[key] > b[key]) {
-      return ascending ? 1 : -1;
-    }
-
-    return keys.length ? compareFunction(a, b, keys) : 0;
-  }
-
   sortable.sort(function (a, b) {
-    return compareFunction(a[1], b[1], keys);
+    return compareFunction(a[1], b[1], keys, ascending);
   });
 
   let objSorted = {}
