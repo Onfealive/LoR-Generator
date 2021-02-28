@@ -41,6 +41,20 @@
         </div>
     </div>
     <div class="form-group row">
+        <label class="col-sm-1 col-form-label">Cost</label>
+        <div class="col-sm-11 image-checkboxes-container">
+            <div class="form-check form-check-inline" formArrayName="costs"
+                *ngFor="let region of costFormArray.controls; let i = index">
+                <input class="form-check-input" type="checkbox" [id]="'cost' + costsData[i].id" [formControlName]="i">
+                <label class="form-check-label" [for]="'cost' + costsData[i].id"
+                    [ngClass]="{'circle': !!costsData[i].circle}">
+                    <img *ngIf="costsData[i].icon" [src]="'./assets/icons/' + costsData[i].icon + '.png'">
+                    <span *ngIf="costsData[i].name">{{costsData[i].name }}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
         <label class="col-sm-1 col-form-label">Collectible</label>
         <div class="col-sm-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="collectibles"
@@ -57,7 +71,8 @@
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">Card Search</label>
         <div class="col-sm-11">
-            <input type="text" class="form-control" formControlName="text" placeholder="Card Name, Card Text, Keywords">
+            <input type="text" class="form-control" formControlName="text"
+                placeholder="Card Name, Card Text, Keywords or even Card Code">
         </div>
     </div>
 
@@ -74,11 +89,12 @@
 
     <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group" *ngIf="isCompleted">
         <ng-container *ngFor="let sort of sortData">
-            <input type="radio" class="btn-check" name="btnradio" [id]="'btnradio_' + sort.id" autocomplete="off" (change)="changeSort(sort.id)" [checked]="sort.id == sortType">
+            <input type="radio" class="btn-check" name="btnradio" [id]="'btnradio_' + sort.id" autocomplete="off"
+                (change)="changeSort(sort.id)" [checked]="sort.id == sortType">
             <label class="btn btn-outline-primary" [for]="'btnradio_' + sort.id">{{sort.name}}</label>
         </ng-container>
     </div>
-    
+
     <div class="row row-cols-auto row-cols-md-6 g-4 mt-2">
         <div class="col" *ngFor="let card of searchResults">
             <div class="card h-100">
@@ -88,7 +104,19 @@
                 <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
                     [alt]="card.code">
                 <div class="card-body">
-                    <h5 class="card-title text-center">{{card.name}}</h5>
+                    <h5 class="card-title text-center">
+                        {{card.name}}
+                        <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
+                            target="_blank">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24">
+                                <g stroke="#0d6efd" stroke-width="1.5"
+                                    fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline>
+                                    <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </h5>
                 </div>
             </div>
         </div>

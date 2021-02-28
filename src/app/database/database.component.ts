@@ -22,7 +22,7 @@ export class DatabaseComponent implements OnInit {
 
   sortData: Array<FormOption> = [
     { id: 'name', name: 'Name' },
-    { id: 'code', name: 'Code' },
+    { id: 'sortedCode', name: 'Code' },
     { id: 'cost', name: 'Cost' }
   ];
 
@@ -54,6 +54,20 @@ export class DatabaseComponent implements OnInit {
     { id: 'Trap', name: 'Trap' }
   ];
 
+  costsData: Array<FormOption> = [
+    { id: '0', icon: 'Cost', circle: true, name: '0' },
+    { id: '1', icon: 'Cost', circle: true, name: '1' },
+    { id: '2', icon: 'Cost', circle: true, name: '2' },
+    { id: '3', icon: 'Cost', circle: true, name: '3' },
+    { id: '4', icon: 'Cost', circle: true, name: '4' },
+    { id: '5', icon: 'Cost', circle: true, name: '5' },
+    { id: '6', icon: 'Cost', circle: true, name: '6' },
+    { id: '7', icon: 'Cost', circle: true, name: '7' },
+    { id: '8', icon: 'Cost', circle: true, name: '8' },
+    { id: '9', icon: 'Cost', circle: true, name: '9' },
+    { id: '10', icon: 'Cost', circle: true, name: '10+' },
+  ];
+
   collectibleData: Array<FormOption> = [
     { id: 'true', icon: 'Collectible', default: true, name: 'Collectible' },
     { id: 'false', icon: 'Uncollectible', name: 'Uncollectible' }
@@ -70,6 +84,9 @@ export class DatabaseComponent implements OnInit {
   get cardTypeFormArray() {
     return this.form.get('cardTypes') as FormArray;
   }
+  get costFormArray() {
+    return this.form.get('costs') as FormArray;
+  }
   get collectibleFormArray() {
     return this.form.get('collectibles') as FormArray;
   }
@@ -82,6 +99,7 @@ export class DatabaseComponent implements OnInit {
       regions: this.formBuilder.array([]),
       sets: this.formBuilder.array([]),
       cardTypes: this.formBuilder.array([]),
+      costs: this.formBuilder.array([]),
       collectibles: this.formBuilder.array([]),
       text: this.formBuilder.control('')
     });
@@ -101,6 +119,7 @@ export class DatabaseComponent implements OnInit {
     this.regionsData.forEach((o) => this.regionFormArray.push(new FormControl(o.default)));
     this.setsData.forEach((o) => this.setFormArray.push(new FormControl(o.default)));
     this.cardTypesData.forEach((o) => this.cardTypeFormArray.push(new FormControl(o.default)));
+    this.costsData.forEach((o) => this.costFormArray.push(new FormControl(o.default)));
     this.collectibleData.forEach((o) => this.collectibleFormArray.push(new FormControl(o.default)));
     this.defaultFormValues = this.form.value;
   }
@@ -132,6 +151,10 @@ export class DatabaseComponent implements OnInit {
 
     const selectedCardTypeIds = this.form.value['cardTypes']
       .map((checked, i) => checked ? this.cardTypesData[i].id : null)
+      .filter(v => v !== null);
+
+    const selectedCostIds = this.form.value['costs']
+      .map((checked, i) => checked ? this.costsData[i].id : null)
       .filter(v => v !== null);
 
     const selectedCollectibleIds = this.form.value['collectibles']
@@ -174,6 +197,17 @@ export class DatabaseComponent implements OnInit {
         return found;
       });
     }
+    if (selectedCostIds.length) {
+      filterList.push(c => {
+        let found = false;
+        selectedCostIds.forEach(costCode => {
+          if ((costCode == 10 && c.cost >= costCode) || (costCode != 10 && c.cost == costCode)) {
+            found = true;
+          }
+        });
+        return found;
+      });
+    }
     if (selectedCollectibleIds.length) {
       filterList.push(c => {
         let found = false;
@@ -188,7 +222,7 @@ export class DatabaseComponent implements OnInit {
     if (searchText) {
       filterList.push(c => {
         let found = false;
-        if ([c.name, c.description, c.levelupDescription].find((text: string) => text.toLowerCase().includes(searchText.toLowerCase()))) {
+        if ([c.name, c.description, c.levelupDescription, c.code].find((text: string) => text.toLowerCase().includes(searchText.toLowerCase()))) {
           found = true;
         }
         return found;
@@ -223,4 +257,5 @@ export class FormOption {
   icon?: string;
   name?: string;
   default?: boolean = false;
+  circle? : boolean = false;
 }

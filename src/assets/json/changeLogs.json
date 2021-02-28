@@ -1,5 +1,26 @@
 [
     {
+        "version": "1.4.2",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added - V2.3 until day 2021/02/27."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added Filter: Cost.",
+                    "Added Card Search: Card Code.",
+                    "Miscellaneous: There will now be a link to the League of Legends Wiki for each card.",
+                    "Miscellaneous: Reduce the size of the filter part.",
+                    "Bugfixed: Now arrange associated cards in their correct order, eg T10 will be after T9."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.4.1",
         "changes": [
             {
@@ -36,7 +57,7 @@
                 "title": "Patch Note Generator",
                 "details": [
                     "Updated: Now use all local files as database, instead of qualifying.",
-                    "Fix some typos."
+                    "Bugfixed: Fix some typos."
                 ]
             },
             {
@@ -61,7 +82,7 @@
                 "title": "Data",
                 "details": [
                     "Added - V2.3 until day 2021/02/21.",
-                    "Bugfix: Add missing data of V1.7."
+                    "Bugfixed: Add missing data of V1.7."
                 ]
             },
             {

@@ -48,7 +48,6 @@ export class DatabaseService {
             rawLatestDatabase['set' + (set + 1)][patch] = JSON.stringify(result || []);
           });
 
-
           observer.next(this._convertData2Database(rawLatestDatabase, patch));
           observer.complete();
         }, err => observer.error(err));
@@ -61,8 +60,16 @@ export class DatabaseService {
       const rawSetData = rawData[setID][patch];
       let setData = {};
       JSON.parse(rawSetData).forEach(cardData => {
+        let sortedCode : string = cardData.cardCode;
+        if (sortedCode.includes('T')) {
+          let wordTIndex = sortedCode.lastIndexOf('T');
+          let associatedText = sortedCode.slice(wordTIndex + 1)
+          sortedCode = sortedCode.slice(0, wordTIndex) +  associatedText.padStart(3, '0');
+        }
+
         setData[cardData.cardCode] = {
           _data: cardData,
+          sortedCode: sortedCode,
           code: cardData.cardCode,
           name: cardData.name,
           collectible: cardData.collectible,
