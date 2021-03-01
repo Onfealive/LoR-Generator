@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()" id="top">
     <div class="form-group row">
-        <label class="col-sm-1 col-form-label">Regions</label>
-        <div class="col-sm-11 image-checkboxes-container">
+        <label class="col-1 col-form-label">Regions</label>
+        <div class="col-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="regions"
                 *ngFor="let region of regionFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
@@ -14,8 +14,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-1 col-form-label">Sets</label>
-        <div class="col-sm-11 image-checkboxes-container">
+        <label class="col-1 col-form-label">Sets</label>
+        <div class="col-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="sets"
                 *ngFor="let region of setFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id" [formControlName]="i">
@@ -27,8 +27,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-1 col-form-label">Card Types</label>
-        <div class="col-sm-11 image-checkboxes-container">
+        <label class="col-1 col-form-label">Card Types</label>
+        <div class="col-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="cardTypes"
                 *ngFor="let region of cardTypeFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'cardType' + cardTypesData[i].id"
@@ -41,8 +41,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-1 col-form-label">Cost</label>
-        <div class="col-sm-11 image-checkboxes-container">
+        <label class="col-1 col-form-label">Cost</label>
+        <div class="col-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="costs"
                 *ngFor="let region of costFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'cost' + costsData[i].id" [formControlName]="i">
@@ -55,8 +55,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-1 col-form-label">Collectible</label>
-        <div class="col-sm-11 image-checkboxes-container">
+        <label class="col-1 col-form-label">Collectible</label>
+        <div class="col-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="collectibles"
                 *ngFor="let region of collectibleFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'collectible' + collectibleData[i].id"
@@ -69,15 +69,15 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-1 col-form-label">Card Search</label>
-        <div class="col-sm-11">
+        <label class="col-1 col-form-label">Card Search</label>
+        <div class="col-11">
             <input type="text" class="form-control" formControlName="text"
                 placeholder="Card Name, Card Text, Keywords or even Card Code">
         </div>
     </div>
 
     <div class="form-group row text-center">
-        <div class="col-sm-12">
+        <div class="col-12">
             <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
             <button type="submit" class="btn btn-primary ms-2">Search</button>
         </div>
@@ -95,31 +95,145 @@
         </ng-container>
     </div>
 
-    <div class="row row-cols-auto row-cols-md-6 g-4 mt-2">
-        <div class="col" *ngFor="let card of searchResults">
-            <div class="card h-100">
-                <div class="card-header text-center">
-                    <small class="text-muted ">{{card.code}}</small>
-                </div>
-                <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
-                    [alt]="card.code">
-                <div class="card-body">
-                    <h5 class="card-title text-center">
-                        {{card.name}}
-                        <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
-                            target="_blank">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24">
-                                <g stroke="#0d6efd" stroke-width="1.5"
-                                    fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline>
-                                    <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </h5>
+    <div class="row row-cols-auto g-4 mt-2">
+        <ng-container *ngFor="let card of searchResults; let resultIndex = index"
+            [ngTemplateOutlet]='!card.detail ? cardInfo : cardDetail'
+            [ngTemplateOutletContext]="{card: card, resultIndex: resultIndex}">
+        </ng-container>
+        <ng-template #cardInfo let-card="card" let-resultIndex="resultIndex">
+            <div class="card-info col-2" [id]="'card_' + card.code">
+                <div class="card h-100">
+                    <div class="card-header text-center" (click)="selectCardInfo(resultIndex)">
+                        <small class="text-muted ">{{card.code}}</small>
+                    </div>
+                    <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
+                        [alt]="card.code" (click)="selectCardInfo(resultIndex)">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            {{card.name}}
+                            <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
+                                target="_blank">
+                                <svg width="24px" height="24px" viewBox="0 0 24 24">
+                                    <g stroke="#0d6efd" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline>
+                                        <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </h5>
+                    </div>
                 </div>
             </div>
-        </div>
+        </ng-template>
+        <ng-template #cardDetail let-card="card" let-resultIndex="resultIndex">
+            <div class="card-detail col-12" [id]="'detail_' + card.code">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <small class="text-muted ">{{card.code}}</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-11">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img class="card-image" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
+                                            [alt]="card.code" width="250px">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <h5 class="card-title text-center">
+                                                {{card.name}}
+                                                <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
+                                                    target="_blank">
+                                                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                                                        <g stroke="#0d6efd" stroke-width="1.5" fill="none"
+                                                            fill-rule="evenodd" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5">
+                                                            </polyline>
+                                                            <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div class="row">
+                                            <form class="border-0">
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Type</label>
+                                                    <div class="col-4">
+                                                        <input class="form-control-plaintext" type="text" readonly
+                                                            value="{{card.type}}">
+                                                    </div>
+                                                    <label class="col-2 col-form-label">Region</label>
+                                                    <div class="col-4 position-relative">
+                                                        <img class="position-absolute top-50 start-0 translate-middle"
+                                                            [src]="'./assets/icons/' + getRegion(card.code) + '.png'"
+                                                            width="50xp">
+                                                    </div>
+                                                    <label class="col-2 col-form-label">Cost</label>
+                                                    <div class="col-4">
+                                                        <input class="form-control-plaintext" type="text" readonly
+                                                            value="{{card.cost}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row" *ngIf="card.description">
+                                                    <label class="col-2 col-form-label">Description</label>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control-plaintext" rows="3"
+                                                            readonly>{{card.description}}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row" *ngIf="card.levelupDescription">
+                                                    <label class="col-2 col-form-label">Level Up</label>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control-plaintext" rows="2"
+                                                            readonly>{{card.levelupDescription}}</textarea>
+                                                    </div>
+                                                </div>
+                                                <fieldset class="form-group row"
+                                                    *ngIf="['Follower','Champion'].includes(card.type)">
+                                                    <label class="col-2 col-form-label">Power</label>
+                                                    <div class="col-4"><input class="form-control-plaintext" type="text"
+                                                            readonly value="{{card.power}}"></div>
+                                                    <label class="col-2 col-form-label">Health</label>
+                                                    <div class="col-4"><input class="form-control-plaintext" type="text"
+                                                            readonly value="{{card.health}}"></div>
+                                                </fieldset>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Flavor</label>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control-plaintext" rows="5"
+                                                            readonly>{{card.flavor}}</textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div>Artwork:</div>
+                                        <img class="rounded mx-auto d-block" [defaultImage]="defaultArtwork"
+                                            [lazyLoad]="getAPIArtwork(card.code)" [alt]="card.code" height="500px"
+                                            width="auto">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-1 d-grid gap-2">
+                                <button class="btn btn-primary" type="button"
+                                    (click)="selectCardDetail(resultIndex)">Hide</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </ng-template>
+
     </div>
 
     <div class="back-to-top-wrapper">

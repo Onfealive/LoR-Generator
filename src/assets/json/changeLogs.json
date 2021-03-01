@@ -1,5 +1,23 @@
 [
     {
+        "version": "1.4.3",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added - V2.3 until day 2021/03/01."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added Card Detail: Now can click on Card Code or Card Image to see more basic details like Flavor or Full Artwork.",
+                    "Miscellaneous: Now will automatically search the first time access."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.4.2",
         "changes": [
             {

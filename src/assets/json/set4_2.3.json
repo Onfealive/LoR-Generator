@@ -5436,5 +5436,665 @@
     "type": "Unit",
     "collectible": true,
     "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04NX005",
+      "04NX004T1",
+      "04NX004T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX004-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 5,
+    "cost": 3,
+    "health": 2,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "I've seen you deal 15+ damage<style=Variable></style>.",
+    "levelupDescriptionRaw": "I've seen you deal 15+ damage.",
+    "flavorText": "\"Now now, no need to squabble amongst ourselves. For the moment, we will refrain from any rash action. Let us reconvene once we've heard from our emissary. After all...\"",
+    "artistName": "SIXMOREVODKA",
+    "name": "LeBlanc",
+    "cardCode": "04NX004",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04NX005",
+      "04NX004T1",
+      "04NX004"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX004T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX004T2-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 6,
+    "cost": 3,
+    "health": 3,
+    "description": "Each time I see you deal 15+ damage, create a <link=card.create><style=AssociatedCard>Mirror Image</style></link> in hand. If you already have one, reduce its cost by 1 instead. <style=Variable></style>",
+    "descriptionRaw": "Each time I see you deal 15+ damage, create a Mirror Image in hand. If you already have one, reduce its cost by 1 instead. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"...we all want the same thing.\"",
+    "artistName": "SIXMOREVODKA",
+    "name": "LeBlanc",
+    "cardCode": "04NX004T2",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX006-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 3,
+    "cost": 2,
+    "health": 2,
+    "description": "<link=vocab.Aftermath><style=Vocab>Reputation</style></link>: When I'm summoned, transform me into an exact copy of the <link=vocab.Strongest><style=Vocab>Strongest</style></link> ally that <link=vocab.Strike><style=Vocab>struck</style></link> this round. <style=Variable></style>",
+    "descriptionRaw": "Reputation: When I'm summoned, transform me into an exact copy of the Strongest ally that struck this round. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"A secret is only worth the cost of keeping it.\"",
+    "artistName": "Grafit Studio",
+    "name": "Black Rose Spy",
+    "cardCode": "04NX006",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04NX004",
+      "04NX004T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX004T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX004T1-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=vocab.Aftermath><style=Vocab>Reputation</style></link>: I cost 1. <style=Variable></style>\r\nDeal 2 to anything.\r\nCreate a <link=card.level1><style=AssociatedCard>LeBlanc</style></link> in your deck.",
+    "descriptionRaw": "Reputation: I cost 1. \r\nDeal 2 to anything.\r\nCreate a LeBlanc in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Once the battle is won, one must not hesitate, but press on, pursue, and annihilate their foe.",
+    "artistName": "Kudos Productions",
+    "name": "LeBlanc's Sigil of Malice",
+    "cardCode": "04NX004T1",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX003-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=vocab.Aftermath><style=Vocab>Reputation</style></link>: I cost 1. <style=Variable></style>\r\nDeal 2 to anything.",
+    "descriptionRaw": "Reputation: I cost 1. \r\nDeal 2 to anything.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Once the battle is won, one must not hesitate, but press on, pursue, and annihilate their foe.",
+    "artistName": "Kudos Productions",
+    "name": "Sigil of Malice",
+    "cardCode": "04NX003",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX002-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=vocab.Aftermath><style=Vocab>Reputation</style></link>: I cost 2. <style=Variable></style>\r\nDraw 2.",
+    "descriptionRaw": "Reputation: I cost 2. \r\nDraw 2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Before the news, the rumors. Before the rumors, the play. Before the play, the plot.",
+    "artistName": "Kudos Productions",
+    "name": "Whispered Words",
+    "cardCode": "04NX002",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX001-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "<link=vocab.Aftermath><style=Vocab>Reputation</style></link>: I cost 1. <style=Variable></style>\r\nPick a spell in play or in hand and create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> copy of it in hand.",
+    "descriptionRaw": "Reputation: I cost 1. \r\nPick a spell in play or in hand and create a Fleeting copy of it in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Imitation is flattery, and flattery can be quite deadly.",
+    "artistName": "Kudos Productions",
+    "name": "Mimic",
+    "cardCode": "04NX001",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX015.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX015-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "An ally with 5+ Power <link=vocab.Strike><style=Vocab>strikes</style></link> an enemy.",
+    "descriptionRaw": "An ally with 5+ Power strikes an enemy.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"The greatest threats are the ones that go unseen.\" - LeBlanc",
+    "artistName": "Kudos Productions",
+    "name": "Bloody Business",
+    "cardCode": "04NX015",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01NX049"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX010-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 5,
+    "cost": 3,
+    "health": 1,
+    "description": "When I'm summoned, create a <link=card.guile><style=AssociatedCard>Guile</style></link> in hand.",
+    "descriptionRaw": "When I'm summoned, create a Guile in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Aelana, my dearest friend and colleague! Have you seen Lord Duin about...?  Ah, what a shame. I was very much looking forward to catching up. I do hope he paced himself tonight. I would hate for anything to happen to the old boy...\" - Lady Auvray, Black Rose Spy",
+    "artistName": "Grafit Studio",
+    "name": "Thorn of the Rose",
+    "cardCode": "04NX010",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04NX005-full.png"
+      }
+    ],
+    "region": "Noxus",
+    "regionRef": "Noxus",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Summon an exact <link=keyword.Ephemeral><sprite name=Ephemeral><style=Keyword>Ephemeral</style></link> copy of an ally with 5+ Power.",
+    "descriptionRaw": "Summon an exact Ephemeral copy of an ally with 5+ Power.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Seeing double?\" - LeBlanc",
+    "artistName": "Kudos Productions",
+    "name": "Mirror Image",
+    "cardCode": "04NX005",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH003T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH003T1-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 1,
+    "cost": 1,
+    "health": 1,
+    "description": "<link=vocab.NexusStrike><style=Vocab>Nexus Strike</style></link>: Deal 1 to the enemy Nexus.",
+    "descriptionRaw": "Nexus Strike: Deal 1 to the enemy Nexus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Azir's legions were reputed to be unstoppable even before Shurima was reborn, but now they are truly innumerable.",
+    "artistName": "Kudos Productions",
+    "name": "Sand Soldier",
+    "cardCode": "04SH003T1",
+    "keywords": [
+      "Ephemeral"
+    ],
+    "keywordRefs": [
+      "Ephemeral"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH003T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH026.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH026-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 2,
+    "cost": 1,
+    "health": 1,
+    "description": "When I'm summoned, summon a <link=card.summon><style=AssociatedCard>Sand Soldier</style></link>.",
+    "descriptionRaw": "When I'm summoned, summon a Sand Soldier.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"As the emperor commands, both the sand and I obey.\"\n-------\n\"Word of Azir's return has spread across the deserts, from Shurima to the world beyond. I have ensured that myself.\"",
+    "artistName": "Kudos Productions",
+    "name": "Dunekeeper",
+    "cardCode": "04SH026",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH003T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH051.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH051-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "When allies attack, summon an attacking <link=card.create><style=AssociatedCard>Sand Soldier</style></link>.",
+    "descriptionRaw": "When allies attack, summon an attacking Sand Soldier.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The Sandcrafters lifted their hands, willing the sand into the familiar shape of armored, faceless soldiers, a tireless army ready to fight for their god-emperor. ",
+    "artistName": "Kudos Productions",
+    "name": "Emperor's Dais",
+    "cardCode": "04SH051",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH003T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH058.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH058-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 3,
+    "cost": 4,
+    "health": 5,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Summon an attacking <link=card.summon><style=AssociatedCard>Sand Soldier</style></link>.",
+    "descriptionRaw": "Attack: Summon an attacking Sand Soldier.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Few are taught the ways of the desert, and even fewer given the ability to command its sands as Azir can. To wield this power and know the secrets of the sands is a gift given only to Azir's most faithful and capable followers.",
+    "artistName": "Kudos Productions",
+    "name": "Sandcrafter",
+    "cardCode": "04SH058",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH003T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH114.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH114-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Grant allied <link=card.summon><style=AssociatedCard>Sand Soldiers</style></link> <link=vocab.Everywhere><style=Vocab>everywhere</style></link> +1|+0.\r\nSummon 2 <link=card.summon><style=AssociatedCard>Sand Soldiers</style></link>.",
+    "descriptionRaw": "Grant allied Sand Soldiers everywhere +1|+0.\r\nSummon 2 Sand Soldiers.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "They do not rest. They do not hesitate. They are uncompromising, unfeeling, unyielding.",
+    "artistName": "Kudos Productions",
+    "name": "Desert's Wrath",
+    "cardCode": "04SH114",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH057.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH057-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 4,
+    "cost": 5,
+    "health": 6,
+    "description": "When you summon another ally, give it +2|+0 this round.",
+    "descriptionRaw": "When you summon another ally, give it +2|+0 this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "To receive the blessing of Azir is a great honor - to give a blessing in his name, an honor greater still.",
+    "artistName": "Kudos Productions",
+    "name": "Inspiring Marshal",
+    "cardCode": "04SH057",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH046.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_3_0/set4/en_us/img/cards/04SH046-full.png"
+      }
+    ],
+    "region": "Shurima",
+    "regionRef": "Shurima",
+    "attack": 6,
+    "cost": 12,
+    "health": 6,
+    "description": "Reduce my cost by 1 for each time an ally attacked this game.",
+    "descriptionRaw": "Reduce my cost by 1 for each time an ally attacked this game.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Upon Azir's return, Shurimans caught sight of ancient beasts of legend, made of sand but no less impressive.",
+    "artistName": "Kudos Production",
+    "name": "Sandstone Chimera",
+    "cardCode": "04SH046",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set4"
   }
 ]

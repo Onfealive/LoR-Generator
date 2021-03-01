@@ -121,6 +121,16 @@ export class DatabaseService {
 
     return url;
   }
+
+  public getAPIArtwork(cardcode, patchCode = null) {
+    if (!patchCode) {
+      patchCode = this.newestPatchCode;
+    }
+    let set = parseInt(cardcode.substring(0, 2));
+    let url = `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardcode}-full.png`;
+
+    return url;
+  }
 }
 
 export class PendingRequest {
