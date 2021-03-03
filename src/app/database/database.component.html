@@ -103,7 +103,7 @@
         <ng-template #cardInfo let-card="card" let-resultIndex="resultIndex">
             <div class="card-info col-2" [id]="'card_' + card.code">
                 <div class="card h-100">
-                    <div class="card-header text-center" (click)="selectCardInfo(resultIndex)">
+                    <div class="card-header text-center">
                         <small class="text-muted ">{{card.code}}</small>
                     </div>
                     <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"

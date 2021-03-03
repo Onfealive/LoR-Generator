@@ -1,5 +1,30 @@
 [
     {
+        "version": "1.4.4",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Updated: V2.3 to live."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Bugfixed: Now arrange associated cards in their correct order, eg T10 will be after T9.",
+                    "Bugfixed: Fixed display issue when adding or changing Keywords.",
+                    "Bugfixed: Fixed issue of not recognizing Focus spell speed."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Removed: No longer able to click on Card Code to view Card Detail."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.4.3",
         "changes": [
             {

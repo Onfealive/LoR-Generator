@@ -56,6 +56,8 @@ export class DatabaseService {
 
   _convertData2Database(rawData, patch) {
     let database = {}
+    let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
+    
     Object.keys(rawData).forEach(setID => {
       const rawSetData = rawData[setID][patch];
       let setData = {};
@@ -65,6 +67,11 @@ export class DatabaseService {
           let wordTIndex = sortedCode.lastIndexOf('T');
           let associatedText = sortedCode.slice(wordTIndex + 1)
           sortedCode = sortedCode.slice(0, wordTIndex) +  associatedText.padStart(3, '0');
+        }
+
+        let realSpellSpeed = cardData.spellSpeed;
+        if (cardData.keywords.filter(k => spellSpeedKeywords.includes(k))) {
+          realSpellSpeed = cardData.keywords.find(k => spellSpeedKeywords.includes(k));
         }
 
         setData[cardData.cardCode] = {
@@ -79,10 +86,10 @@ export class DatabaseService {
           description: cardData.descriptionRaw.split("\r\n").join(" ").trim(),
           levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" ").trim(),
           type: this.getCardType(cardData),
-          spellSpeed: cardData.spellSpeed,
+          spellSpeed: realSpellSpeed,
           group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-          keywords: cardData.keywords.filter(k => !['Slow', 'Fast', 'Burst'].includes(k)),
+          keywords: cardData.keywords.filter(k => !spellSpeedKeywords.includes(k)),
         }
       });
 

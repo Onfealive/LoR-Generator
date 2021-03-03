@@ -137,8 +137,8 @@
     "attack": 0,
     "cost": 1,
     "health": 0,
-    "description": "Give an ally <link=keyword.Overwhelm><sprite name=Overwhelm><style=Keyword>Overwhelm</style></link> this round.\r\nCan't be cast in combat or in response to a spell.\r\n<style=Variable></style>",
-    "descriptionRaw": "Give an ally Overwhelm this round.\r\nCan't be cast in combat or in response to a spell.\r\n",
+    "description": "Give an ally <link=keyword.Overwhelm><sprite name=Overwhelm><style=Keyword>Overwhelm</style></link> this round.\r\n<style=Variable></style>",
+    "descriptionRaw": "Give an ally Overwhelm this round.\r\n",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"A warrior must know the weight of their weapon, burdened heavy with guilt.\" - Riven",
@@ -146,10 +146,10 @@
     "name": "Heavy Blade Fragment",
     "cardCode": "03NX008",
     "keywords": [
-      "Burst"
+      "Focus"
     ],
     "keywordRefs": [
-      "Burst"
+      "Focus"
     ],
     "spellSpeed": "Burst",
     "spellSpeedRef": "Burst",
@@ -265,8 +265,8 @@
     "attack": 0,
     "cost": 1,
     "health": 0,
-    "description": "Give an ally <link=keyword.Quick Strike><sprite name=QuickStrike><style=Keyword>Quick Attack</style></link> this round.\r\nCan't be cast in combat or in response to a spell.\r\n<style=Variable></style>",
-    "descriptionRaw": "Give an ally Quick Attack this round.\r\nCan't be cast in combat or in response to a spell.\r\n",
+    "description": "Give an ally <link=keyword.Quick Strike><sprite name=QuickStrike><style=Keyword>Quick Attack</style></link> this round.\r\n<style=Variable></style>",
+    "descriptionRaw": "Give an ally Quick Attack this round.\r\n",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"A warrior must know the sharpness of their blade, an edge that cuts both friends and foes.\" - Riven",
@@ -274,10 +274,10 @@
     "name": "Keen Blade Fragment",
     "cardCode": "03NX010",
     "keywords": [
-      "Burst"
+      "Focus"
     ],
     "keywordRefs": [
-      "Burst"
+      "Focus"
     ],
     "spellSpeed": "Burst",
     "spellSpeedRef": "Burst",
@@ -350,8 +350,8 @@
     "attack": 0,
     "cost": 1,
     "health": 0,
-    "description": "Give an ally +2|+0 this round.\r\nCan't be cast in combat or in response to a spell.\r\n<style=Variable></style>",
-    "descriptionRaw": "Give an ally +2|+0 this round.\r\nCan't be cast in combat or in response to a spell.\r\n",
+    "description": "Give an ally +2|+0 this round.\r\n<style=Variable></style>",
+    "descriptionRaw": "Give an ally +2|+0 this round.\r\n",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"A warrior must know their weapon's history... every bloody piece.\" - Riven",
@@ -359,10 +359,10 @@
     "name": "Glinting Blade Fragment",
     "cardCode": "03NX012",
     "keywords": [
-      "Burst"
+      "Focus"
     ],
     "keywordRefs": [
-      "Burst"
+      "Focus"
     ],
     "spellSpeed": "Burst",
     "spellSpeedRef": "Burst",
@@ -759,7 +759,7 @@
     "descriptionRaw": "When I'm summoned, Reforge.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
-    "flavorText": "\"Most weapons are crude tools, no better than than the hands that wield them. But a weapon infused with runic magic is so much more than mere steel.\"",
+    "flavorText": "\"Most weapons are crude tools, no better than the hands that wield them. But a weapon infused with runic magic is so much more than mere steel.\"",
     "artistName": "SIXMOREVODKA",
     "name": "Runeweaver",
     "cardCode": "03NX001",
@@ -1814,8 +1814,8 @@
     "attack": 0,
     "cost": 1,
     "health": 0,
-    "description": "<link=keyword.Recall><style=Keyword>Recall</style></link> an ally.\r\nCan't be cast in combat or in response to a spell.",
-    "descriptionRaw": "Recall an ally.\r\nCan't be cast in combat or in response to a spell.",
+    "description": "<link=keyword.Recall><style=Keyword>Recall</style></link> an ally.",
+    "descriptionRaw": "Recall an ally.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"The monastery welcomes all who seek refuge.\" - Elder Souma",
@@ -1823,11 +1823,11 @@
     "name": "Sanctuary",
     "cardCode": "03IO016",
     "keywords": [
-      "Burst",
+      "Focus",
       "Fleeting"
     ],
     "keywordRefs": [
-      "Burst",
+      "Focus",
       "Fleeting"
     ],
     "spellSpeed": "Burst",
@@ -2059,7 +2059,7 @@
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"Take back what is ours!\" - Captain Arrika",
-    "artistName": "Kudos Production",
+    "artistName": "Kudos Productions",
     "name": "Claim",
     "cardCode": "03DE004T1",
     "keywords": [
@@ -3507,7 +3507,7 @@
     "regionRef": "Targon",
     "attack": 3,
     "cost": 3,
-    "health": 3,
+    "health": 2,
     "description": "<link=keyword.Nightfall><style=Keyword>Nightfall</style></link>: Pick a Moon Weapon to create in hand.\r\nEach round, the first time you play 2 other cards, create the <link=vocab.Phase><style=Vocab>Phased</style></link> Moon Weapon in hand if you don't already have one.<style=Variable></style>",
     "descriptionRaw": "Nightfall: Pick a Moon Weapon to create in hand.\r\nEach round, the first time you play 2 other cards, create the Phased Moon Weapon in hand if you don't already have one.",
     "levelupDescription": "You've cast 4+ Moon Weapons.<style=Variable></style>",
@@ -4075,7 +4075,7 @@
     "regionRef": "Targon",
     "attack": 4,
     "cost": 3,
-    "health": 4,
+    "health": 3,
     "description": "<link=keyword.Nightfall><style=Keyword>Nightfall</style></link>: Pick a Moon Weapon to create in hand.\r\nEach round, the first time you play 2 other cards or <link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Create the <link=vocab.Phase><style=Vocab>Phased</style></link> Moon Weapon in hand if you don't already have one.<style=Variable></style>\r\nYour Moon Weapons cost 1 less.",
     "descriptionRaw": "Nightfall: Pick a Moon Weapon to create in hand.\r\nEach round, the first time you play 2 other cards or Round Start: Create the Phased Moon Weapon in hand if you don't already have one.\r\nYour Moon Weapons cost 1 less.",
     "levelupDescription": "",
@@ -6807,8 +6807,12 @@
     "artistName": "Kudos Productions",
     "name": "The Veiled Temple",
     "cardCode": "03MT219",
-    "keywords": [],
-    "keywordRefs": [],
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
     "spellSpeed": "",
     "spellSpeedRef": "",
     "rarity": "RARE",
@@ -6834,8 +6838,8 @@
     "attack": 0,
     "cost": 1,
     "health": 0,
-    "description": "Heal an ally 1 and grant it +1|+0.\r\nCan't be cast in combat or in response to a spell.",
-    "descriptionRaw": "Heal an ally 1 and grant it +1|+0.\r\nCan't be cast in combat or in response to a spell.",
+    "description": "Heal an ally 1 and grant it +1|+0.",
+    "descriptionRaw": "Heal an ally 1 and grant it +1|+0.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"You don't need to see to believe. Just have a little faith.\" - Tyari the Traveler",
@@ -6843,10 +6847,10 @@
     "name": "Gem",
     "cardCode": "03MT092T1",
     "keywords": [
-      "Burst"
+      "Focus"
     ],
     "keywordRefs": [
-      "Burst"
+      "Focus"
     ],
     "spellSpeed": "Burst",
     "spellSpeedRef": "Burst",
@@ -9668,8 +9672,8 @@
     "attack": 0,
     "cost": 1,
     "health": 0,
-    "description": "Give an ally <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> or an enemy <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> this round.\r\nCan't be cast in combat or in response to a spell.",
-    "descriptionRaw": "Give an ally Barrier or an enemy Vulnerable this round.\r\nCan't be cast in combat or in response to a spell.",
+    "description": "Give an ally <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> or an enemy <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> this round.",
+    "descriptionRaw": "Give an ally Barrier or an enemy Vulnerable this round.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "Pix protec... or Pix attac...? ",
@@ -9677,11 +9681,11 @@
     "name": "Help, Pix!",
     "cardCode": "03IO002T4",
     "keywords": [
-      "Burst",
+      "Focus",
       "Fleeting"
     ],
     "keywordRefs": [
-      "Burst",
+      "Focus",
       "Fleeting"
     ],
     "spellSpeed": "Burst",

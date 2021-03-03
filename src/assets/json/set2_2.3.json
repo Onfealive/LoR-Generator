@@ -3182,7 +3182,7 @@
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"Ain't nothin' like a hot streak to keep the chips comin'.\" - Twisted Fate",
-    "artistName": "Kudos Production",
+    "artistName": "Kudos Productions",
     "name": "Pocket Aces",
     "cardCode": "02BW061",
     "keywords": [
@@ -3573,8 +3573,8 @@
     "attack": 0,
     "cost": 7,
     "health": 0,
-    "description": "This round, grow all allies' Power and Health to the number of spells you've played this game. <style=Variable></style>",
-    "descriptionRaw": "This round, grow all allies' Power and Health to the number of spells you've played this game. ",
+    "description": "This round, grow all allies' Power and Health to the number of spells you've resolved this game. <style=Variable></style>",
+    "descriptionRaw": "This round, grow all allies' Power and Health to the number of spells you've resolved this game. ",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "The currents and tides around Bilgewater are rightly feared for their strength and sudden turns. But no sailor knows the true power within those waters.",
@@ -4479,7 +4479,7 @@
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "The Winter's Claw has no equal in the Freljord, and all know the ferocity of these merciless raiders. Once their bloodlust takes over, one can only pray for a quick death.",
-    "artistName": "Kudos Production",
+    "artistName": "Kudos Productions",
     "name": "Ruthless Raider",
     "cardCode": "02FR006",
     "keywords": [
@@ -6642,7 +6642,7 @@
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"You did not see me leave, nor will you see me return.\" - Tail of the Dragon",
-    "artistName": "Kudos Production",
+    "artistName": "Kudos Productions",
     "name": "Concussive Palm",
     "cardCode": "02IO005",
     "keywords": [
@@ -6802,7 +6802,7 @@
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "Meditation is a journey with no destination--a path that can only be followed by getting lost along the way.",
-    "artistName": "Kudos Production",
+    "artistName": "Kudos Productions",
     "name": "Deep Meditation",
     "cardCode": "02IO009",
     "keywords": [

@@ -190,7 +190,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     let totalNewJSONData = this.selectedDatabase;
 
     // Sort for Patch Note
-    const sortRules = ['code'];
+    const sortRules = ['sortedCode'];
     totalOldJSONData = Utility.sortObjectByValues(totalOldJSONData, sortRules);
     totalNewJSONData = Utility.sortObjectByValues(totalNewJSONData, sortRules);
 
@@ -279,11 +279,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
           let newKeywords = newCard.keywords.filter(x => !oldCard.keywords.includes(x));
           if (newKeywords.length) {
             let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
-
-            let span = document.createElement('span');
-            span.appendChild(document.createTextNode(content));
-
-            log.diff.push(span);
+            
+            log.diff.push(content);
           }
 
           if (removedKeywords.length) {
@@ -500,7 +497,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
     addedCards.forEach(addedCard => {
       let cardData = database[addedCard.code]._data;
-      // console.log(cardData)
       let subtype = Utility.capitalize(cardData.subtype);
 
       result[cardData.cardCode] = Utility.cleanObject({
