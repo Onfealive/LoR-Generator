@@ -1,17 +1,16 @@
 .set-component {
-  display: inline-block;
-  width: 50%;
+    display: inline-block;
+    width: 50%;
 }
 
 .patch-label {
-  width: 70px;
-  display: inline-block;
+    width: 70px;
+    display: inline-block;
 }
 
-#imagepreview {
-  max-width: 200px !important;
-
-  img {
-    width: 100%;
+table {
+  .subheader {
+    background-color: grey;
+    color: white;
   }
 }

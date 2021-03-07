@@ -4,55 +4,47 @@
     <label class="patch-label">
       <input [disabled]="i == 0" name="options" ng-control="options" type="radio" [value]="pInfo.code"
         [checked]="pInfo.checked" (change)="selectPatchInfo(pInfo)">
-      {{pInfo.name}}
+      {{ pInfo.name }}
     </label>
   </ng-container>
   <button type="button" class="btn btn-success mb-2" (click)="compare()">Compare</button>
 
   <div>Or use your data files:</div>
   <ngx-dropzone (change)="onSelect($event)">
-    <ngx-dropzone-label>{{title}}</ngx-dropzone-label>
+    <ngx-dropzone-label>{{ title }}</ngx-dropzone-label>
     <ngx-dropzone-preview *ngFor="let f of files">
       <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
     </ngx-dropzone-preview>
   </ngx-dropzone>
-  {{error}}
+  {{ error }}
 </div>
 
 <ng-container *ngIf="isCompleted">
-  <div class="form-inline" *ngIf="getChangedCard().length || getAddedCard().length">
+  <div class="form-inline" *ngIf="getChangedCards.length || getAddedCards.length">
     <div class="form-group">
       <label for="resourceImageFolder">Resource Image Folder</label>
-      <button *ngIf="getChangedCard().length" type="button" class="btn btn-secondary ms-1"
+      <button *ngIf="getChangedCards.length" type="button" class="btn btn-secondary ms-1"
         (click)="copyResourceImages()">File Changed List</button>
-      <button *ngIf="getAddedCard().length" type="button" class="btn btn-secondary ms-1"
+      <button *ngIf="getAddedCards.length" type="button" class="btn btn-secondary ms-1"
         (click)="convertNewCards()">Convert New Cards</button>
     </div>
   </div>
 
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="" id="add-display" [(ngModel)]="isDisplayAddedData"
-      (change)="compare()">
-    <label class="form-check-label" for="add-display">
-      Added data
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="" id="change-display" [(ngModel)]="isDisplayChangedData"
-      (change)="compare()">
-    <label class="form-check-label" for="change-display">
-      Changed data
+  <div class="form-check form-check-inline" *ngFor="let modifyType of modifyTypes">
+    <input class="form-check-input" type="checkbox" [id]="modifyType.id + '-display'"
+      (change)="optionModifyChanged(modifyType.type)" [checked]="modifyType.value" [disabled]="!getCards(modifyType.type).length">
+    <label class="form-check-label" [for]="modifyType.id + '-display'">
+      {{modifyType.text}} cards
+      {{ getCards(modifyType.type).length ? '(' + getCards(modifyType.type).length + ')' : ''}}
     </label>
   </div>
 
   <div class="mt-3">
-    <button type="button" class="btn btn-success me-3" (click)="optionChanged('display')">Display</button>
-    <button type="button" class="btn btn-success me-3" (click)="optionChanged('patchNote')">Patch Note</button>
-    <button type="button" class="btn btn-success me-3" (click)="optionChanged('newChangeLog')">Change Log</button>
+    <button type="button" class="btn btn-success me-3" (click)="optionDisplayChanged('display')">Display</button>
+    <button type="button" class="btn btn-success me-3" (click)="optionDisplayChanged('patchNote')">Patch Note</button>
+    <button type="button" class="btn btn-success me-3" (click)="optionDisplayChanged('newChangeLog')">Change
+      Log</button>
   </div>
-
-  <div class="mt-2" *ngIf="getAddedCard().length">There are {{getAddedCard().length}} card(s) added.</div>
-  <div *ngIf="getChangedCard().length">There are {{getChangedCard().length}} card(s) changed.</div>
 
   <table class="table mt-3" style="table-layout: fixed">
     <colgroup>
@@ -67,25 +59,27 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let log of logs">
+      <ng-container *ngFor="let logGroup of logs">
         <tr>
-          <td>
-            <img *ngIf="log.type != 'add' && PatchInfo[this.comparingPatch]" [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.comparingPatch].code)"
-              width="200px" [defaultImage]="defaultImage">
-          </td>
-          <td>
-            <img *ngIf="log.type != 'remove' && PatchInfo[this.selectedPatch]"
-              [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.selectedPatch].code)" width="200px"
-              [defaultImage]="defaultImage">
-          </td>
-          <td rowspan="2">
-            <div *ngFor="let diff of log.diff" [innerHTML]="diff | safeHtml"></div>
-          </td>
+          <td colspan="3" class="subheader">{{ logGroup.type }}</td>
         </tr>
-        <tr>
-          <td colspan="2" class="text-center">{{log.data.name}} ({{log.data.code}})</td>
-          <td></td>
-        </tr>
+        <ng-container *ngFor="let log of logGroup.list">
+          <tr *ngIf="log.display">
+            <td>
+              <img *ngIf="log.type != MODIFY_TYPE.ADD && PatchInfo[this.comparingPatch]"
+                [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.comparingPatch].code)" width="200px"
+                [defaultImage]="defaultImage">
+            </td>
+            <td>
+              <img *ngIf="log.type != MODIFY_TYPE.REMOVE && PatchInfo[this.selectedPatch]"
+                [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.selectedPatch].code)" width="200px"
+                [defaultImage]="defaultImage">
+            </td>
+            <td>
+              <div *ngFor="let diff of log.diff" [innerHTML]="diff | safeHtml"></div>
+            </td>
+          </tr>
+        </ng-container>
       </ng-container>
     </tbody>
   </table>

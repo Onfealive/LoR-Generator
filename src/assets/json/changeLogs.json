@@ -1,5 +1,28 @@
 [
     {
+        "version": "1.4.5",
+        "changes": [
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Added: Toggle for removed cards.",
+                    "Updated: Now show the Card Name and Card Code on the right as V1.2.1 version.",
+                    "Miscellaneous: Now toggle is disabled if there are no cards in that category.",
+                    "Miscellaneous: Now will sort by Card Type, Name and then Card Code.",
+                    "Miscellaneous: The list will now be grouped by Card Type."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added: Clear button for Card Text Search.",
+                    "Added Sorts: Power (Descending), Health (Descending).",
+                    "Updated: Update icons to latest."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.4.4",
         "changes": [
             {
@@ -131,7 +154,7 @@
             {
                 "title": "Patch Note Generator",
                 "details": [
-                    "Updated: Update Layout: Table display with old and new card images (if any)."
+                    "Updated - Layout: Table display with old and new card images (if any)."
                 ]
             },
             {

@@ -21,10 +21,12 @@ export class DatabaseComponent implements OnInit {
     defaultImage = `./assets/icons/Queue Card Back.png`;
     defaultArtwork = `./assets/gifs/Loading.gif`;
 
-    sortData: Array<FormOption> = [
-        { id: 'name', name: 'Name' },
-        { id: 'sortedCode', name: 'Code' },
-        { id: 'cost', name: 'Cost' },
+    sortData: Array<any> = [
+        { id: 'name', name: 'Name', sort: 'name' },
+        { id: 'sortedCode', name: 'Code', sort: 'sortedCode' },
+        { id: 'cost', name: 'Cost', sort: 'cost,name' },
+        { id: 'power', name: 'Power (⇓)', sort: 'power,health,name', sortOrder: { 'power': false, 'health': false } },
+        { id: 'health', name: 'Health (⇓)', sort: 'health,power,name', sortOrder: { 'power': false, 'health': false } },
     ];
 
     regionsData: Array<FormOption> = [
@@ -43,7 +45,7 @@ export class DatabaseComponent implements OnInit {
         { id: '01', icon: 'Foundations' },
         { id: '02', icon: 'Rising Tides' },
         { id: '03', icon: 'Call of the Mountain' },
-        { id: '04', name: 'Empires of the Ascended' },
+        { id: '04', icon: 'Empires of the Ascended' },
     ];
 
     cardTypesData: Array<FormOption> = [
@@ -150,6 +152,10 @@ export class DatabaseComponent implements OnInit {
     getRegion(cardCode) {
         let regionCode = cardCode.substring(2, 4);
         return this.regionsData.find((r) => r.id == regionCode).icon;
+    }
+
+    clearTextSearch() {
+        this.form.controls['text'].setValue('');
     }
 
     clearFilters() {
@@ -310,11 +316,11 @@ export class DatabaseComponent implements OnInit {
             searchResult = searchResult.filter(filterLogic);
         });
 
-        let sortOrders = ['name'];
-        sortOrders.unshift(this.sortType);
-        sortOrders = [...new Set(sortOrders)];
+        // Sort settings
+        let selectedSortData = this.sortData.find(s => s.id == this.sortType);
+        console.log(selectedSortData)
 
-        searchResult = Utility.sortArrayByValues(searchResult, sortOrders);
+        searchResult = Utility.sortArrayByValues(searchResult, selectedSortData.sort.split(','), selectedSortData.sortOrder);
 
         this.searchResults = searchResult;
 

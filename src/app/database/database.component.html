@@ -71,8 +71,12 @@
     <div class="form-group row">
         <label class="col-1 col-form-label">Card Search</label>
         <div class="col-11">
-            <input type="text" class="form-control" formControlName="text"
+            <div class="input-group mb-3">
+                <button class="btn btn-secondary" type="button" (click)="clearTextSearch()">Clear</button>
+                <input type="text" class="form-control" formControlName="text"
                 placeholder="Card Name, Card Text, Keywords or even Card Code">
+              </div>
+            
         </div>
     </div>
 

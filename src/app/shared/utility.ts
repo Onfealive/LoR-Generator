@@ -7,8 +7,9 @@ export function sortObjectByKey(unordered) {
   return ordered;
 }
 
-const compareFunction = (a, b, keys, ascending) => {
+const compareFunction = (a, b, keys, sortOrder = {}) => {
   let key = Array.isArray(keys) ? keys[0] : keys;
+  let ascending = (sortOrder != undefined && sortOrder[key] != undefined) ? sortOrder[key] : true;
   keys = keys.slice(1);
   if (a[key] < b[key]) {
     return ascending ? -1 : 1;
@@ -16,25 +17,25 @@ const compareFunction = (a, b, keys, ascending) => {
     return ascending ? 1 : -1;
   }
 
-  return keys.length ? compareFunction(a, b, keys, ascending) : 0;
+  return keys.length ? compareFunction(a, b, keys, sortOrder) : 0;
 }
 
-export function sortArrayByValues(sortable: Array<any>, keys, ascending = true) {
+export function sortArrayByValues(sortable: Array<any>, keys, sortOrder = {}) {
   sortable.sort(function (a, b) {
-    return compareFunction(a, b, keys, ascending);
+    return compareFunction(a, b, keys, sortOrder);
   });
 
   return sortable;
 }
 
-export function sortObjectByValues(unordered : object, keys, ascending = true) {
+export function sortObjectByValues(unordered : object, keys, sortOrder = {}) {
   let sortable = [];
   for (var item in unordered) {
     sortable.push([item, unordered[item]]);
   }
 
   sortable.sort(function (a, b) {
-    return compareFunction(a[1], b[1], keys, ascending);
+    return compareFunction(a[1], b[1], keys, sortOrder);
   });
 
   let objSorted = {}

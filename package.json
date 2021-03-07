@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 1337",
-    "build": "ng build",
-    "deploy": "ng build && firebase deploy",
+    "build": "ng build --prod",
+    "deploy": "ng build --prod && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
