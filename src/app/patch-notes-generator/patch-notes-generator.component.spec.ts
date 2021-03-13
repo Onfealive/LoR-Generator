@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PatchNotesGeneratorComponent } from './patch-notes-generator.component';
 
@@ -6,7 +6,7 @@ describe('PatchNotesGeneratorComponent', () => {
   let component: PatchNotesGeneratorComponent;
   let fixture: ComponentFixture<PatchNotesGeneratorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PatchNotesGeneratorComponent ]
     })
