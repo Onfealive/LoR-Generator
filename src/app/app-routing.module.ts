@@ -19,10 +19,6 @@ const routerOptions: ExtraOptions = {
     useHash: false,
     anchorScrolling: 'enabled',
     relativeLinkResolution: 'legacy'
-}{
-    useHash: false,
-    anchorScrolling: 'enabled',
-    relativeLinkResolution: 'legacy'
 };
 
 @NgModule({
