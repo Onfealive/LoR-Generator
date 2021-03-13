@@ -29,7 +29,7 @@
     "jquery": "^3.5.1",
     "ng-lazyload-image": "^9.1.0",
     "ngx-dropzone": "^2.2.2",
-    "rxjs": "~6.5.4",
+    "rxjs": "~6.6.6",
     "semver": "^7.3.4",
     "text-diff": "^1.0.1",
     "tslib": "^1.10.0",
