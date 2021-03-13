@@ -1,0 +1,18 @@
+<div>Newest Patch: {{newestPatch}}.</div>
+<div>Or use your data file:</div>
+<ngx-dropzone (change)="onSelect($event)">
+  <ngx-dropzone-label>{{title}}</ngx-dropzone-label>
+  <ngx-dropzone-preview *ngFor="let f of files">
+    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+  </ngx-dropzone-preview>
+</ngx-dropzone>
+{{error}}
+<div class="input-group mt-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text text-content">Text Content</span>
+  </div>
+  <textarea #text class="form-control" aria-label="Text Content" [(ngModel)]="textContent"></textarea>
+</div>
+<div class="mt-3">
+  <button type="button" class="btn btn-success" (click)="executeText()" [disabled]="!isCompleted || textContent.length == 0">Excecute</button>
+</div>

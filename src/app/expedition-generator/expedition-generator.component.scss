@@ -1,3 +1,15 @@
-.expedition-content {
-  min-height: 400px;
+.expedition-container {
+    position: relative;
+
+    .expedition-scrollpsy {
+        right: 5%;
+        max-height: 60vh;
+        overflow-y: scroll;
+        background-color: white;
+        border: 1px solid green;
+
+        .nav {
+            padding: 0 5px 5px 5px;
+        }
+    }
 }

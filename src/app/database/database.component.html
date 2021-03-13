@@ -226,9 +226,12 @@
                                 </div>
                             </div>
 
-                            <div class="col-1 d-grid gap-2">
-                                <button class="btn btn-primary" type="button"
+                            <div class="col-1 d-grid gap-5">
+                                <button class="invisible"></button>
+                                <button class="btn btn-primary gap-2" type="button"
                                     (click)="selectCardDetail(resultIndex)">Hide</button>
+                                <button class="btn btn-secondary" type="button"
+                                    (click)="hideAllCardDetails(resultIndex)">Hide All</button>
                             </div>
                         </div>
 

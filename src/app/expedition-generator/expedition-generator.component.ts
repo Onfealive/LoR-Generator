@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import $ from "jquery";
-import { PatchInfo } from '../shared/patches';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import * as Utiliy from "../shared/utility";
 import { Observable } from 'rxjs';
+
+import * as Utility from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
+
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-expedition-generator',
@@ -13,108 +14,152 @@ import { DatabaseService } from '../shared/database.service';
   styleUrls: ['./expedition-generator.component.scss']
 })
 export class ExpeditionGeneratorComponent implements OnInit {
-  @ViewChild('expedition') expeditionElement: ElementRef;
-
-  title = 'Drop JSON patch files. Example: set2_1.5.json.';
-  files: File[] = [];
-  error = '';
-
-  expeditionContent = '';
+  expeditionDatabase = null;
   database = {};
-
-  newestPatch = '';
-  isCompleted = false;
 
   constructor(
     private http: HttpClient,
     private databaseService: DatabaseService
-    ) {
-  }
-
-  ngOnInit(): void {
-    this.newestPatch = this.databaseService.newestPatch;
-    this.databaseService.getCardData().subscribe(database => {
-      this.isCompleted = true;
+  ) {
+    this.databaseService.getCardData().subscribe((database) => {
       this.database = database;
     });
   }
 
-  onSelect(event) {
-    this.files = [];
+  ngOnInit(): void {
 
-    const draggedFiles = [...event.addedFiles];
+  }
 
-    draggedFiles.sort((a, b) => {
-      return a.name - b.name;
-    });
+  ngAfterViewInit() {
+    setTimeout(() => {
+      var oReq = new XMLHttpRequest();
+      oReq.open("GET", `./assets/others/expedition/v2.3.xlsx`, true);
+      oReq.responseType = "arraybuffer";
 
-    for (let i = 0; i <= draggedFiles.length - 2; i += 2) {
-      let currentFile = draggedFiles[i].name.replace('.json', '').split('_');
-      let nextFile = draggedFiles[i + 1].name.replace('.json', '').split('_');
+      oReq.onload = (oEvent) => {
+        var arrayBuffer = oReq.response; // Note: not oReq.responseText
+        if (arrayBuffer) {
+          const data = new Uint8Array(arrayBuffer);
+          const arr = new Array();
+          for (let i = 0; i !== data.length; ++i) { arr[i] = String.fromCharCode(data[i]); }
+          const bstr = arr.join('');
+          const workbook = XLSX.read(bstr, { type: 'binary' });
+          const first_sheet_name = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[first_sheet_name];
+          
+          const JSON_Object = XLSX.utils.sheet_to_json(worksheet, {header: "A"});
 
-      if (!["set1", "set2", "set3","set4"].includes(currentFile[0]) || !["set1", "set2", "set3","set4"].includes(nextFile[0])) {
-        this.error = 'Only support Set 1 to 4.';
-        return;
+          console.log(JSON_Object)
+          this.expeditionDatabase = this.handleExpeditionJSON(JSON_Object);
+        }
+      };
+      oReq.send(null);
+    }, 0);
+  }
+
+  handleExpeditionJSON(expeditionJSON) {
+    let eDatabase = {};
+    let headers = {};
+
+    for (let i = 0; i <= 32; i++) {
+      let rowData = expeditionJSON[i];
+      if (i == 0) {
+        let maxColumn = Object.keys(expeditionJSON[5]);
+
+        for (let j = 0; j < maxColumn.length; j++) {
+          let letter = this.columnIndex2Letter(j);
+          if (letter != 'A') {
+            if (rowData[letter]) {
+              headers[letter] = Utility.capitalize(rowData[letter]);
+            } else {
+              let previousLetter = this.columnIndex2Letter(j - 1);
+              headers[letter] = Utility.capitalize(headers[previousLetter]);
+            }
+          }
+        }
+      } else if (i >= 5) {
+        Object.keys(rowData).forEach(key => {
+          if (key == 'A') {
+            return;
+          }
+          let archetype = headers[key];
+          if (!archetype) {
+            return;
+          }
+
+          let cards = rowData[key].split(' / ');
+          cards.forEach(cardName => {
+
+            let card = Object.values(this.database).find(c => c['name'].toLowerCase() == cardName.toLowerCase());
+            let type = Utility.camelize(card ? (card['type'] + 's') : 'Unknown');
+
+            if (!eDatabase[archetype]['cards']) {
+              eDatabase[archetype]['cards'] = {};
+            }
+
+            if (!eDatabase[archetype]['cards'][type]) {
+              eDatabase[archetype]['cards'][type] = [];
+            }
+            eDatabase[archetype]['cards'][type].push(card ? card['name'] : cardName);
+          });
+        });
+      } else {
+        let subject = '';
+        Object.keys(rowData).forEach(key => {
+          if (key == 'A') {
+            subject = Utility.camelize(rowData[key].replace('(S)', '').replace('%', ''));
+            return;
+          }
+          let archetype = headers[key];
+          if (!archetype) {
+            return;
+          }
+
+          if (!eDatabase[archetype]) {
+            eDatabase[archetype] = {
+              'name': archetype
+            };
+          }
+
+          let subjectValue = rowData[key];
+          if (eDatabase[archetype][subject] && subject == 'region') {
+            subjectValue = eDatabase[archetype][subject] + ', ' + subjectValue;
+          }
+
+          eDatabase[archetype][subject] = subjectValue;
+        });
       }
     }
 
-    this.files.push(...draggedFiles);
+    let expeditionDatabase = Object.values(eDatabase);
 
-    let database = {};
-    let countFiles = 0;
+    Utility.sortArrayByValues(expeditionDatabase, 'name');
 
-    this.files.forEach(file => {
-      let currentFile = file.name.replace('.json', '').split('_');
-
-      const selectedFile = file;
-      const fileReader = new FileReader();
-      fileReader.readAsText(selectedFile, "UTF-8");
-      fileReader.onload = () => {
-        if (!database[currentFile[0]]) {
-          database[currentFile[0]] = {};
-        }
-        database[currentFile[0]][currentFile[1]] = fileReader.result as string;
-
-        countFiles += 1;
-        if (countFiles == this.files.length) {
-          this.database = this.databaseService._convertData2Database(database, currentFile[1]);
-        }
-      }
-      fileReader.onerror = (error) => {
-        console.log(error);
-      }
-    });
+    return expeditionDatabase;
   }
 
-  executeExpedition() {
-    this.expeditionContent = this.expeditionContent.replace(/(^[ \t]*\n)/gm, "");
-    $(this.expeditionElement.nativeElement).scrollTop(0);
+  columnIndex2Letter(n) {
+    var ordA = 'a'.charCodeAt(0);
+    var ordZ = 'z'.charCodeAt(0);
+    var len = ordZ - ordA + 1;
 
-    // Handling
-    let database = this.database;
+    var s = "";
+    while (n >= 0) {
+      s = String.fromCharCode(n % len + ordA) + s;
+      n = Math.floor(n / len) - 1;
+    }
+    return s.toUpperCase();
+  }
 
-    // Sort for Patch Note
-    const sortRules = ['name'];
-    database = Utiliy.sortObjectByValues(database, sortRules, false);
+  letterToColumnIndex(letter) {
+    var column = 0, length = letter.length;
+    for (var i = 0; i < length; i++) {
+      column += (letter.charCodeAt(i) - 64) * Math.pow(26, length - i - 1);
+    }
+    return column;
+  }
 
-    let replaceCards = [];
-    Object.keys(database).sort((a, b) => {
-      return database[b].name.length - database[a].length;
-    }).forEach(cardCode => {
-      const cardData = database[cardCode];
-
-      if (this.expeditionContent.indexOf(cardData.name) >= 0) {
-        if (replaceCards.find(cardName => cardName.indexOf(cardData.name) >= 0)) {
-          return;
-        }
-
-        const isChampion = cardData.type == 'Unit' && cardData.supertype;
-        replaceCards.push(cardData.name);
-
-        this.expeditionContent = this.expeditionContent
-          .split(cardData.name)
-          .join(isChampion ? `{{LoR|${cardData.name}}}` : `{{LoR|${cardData.name}|code=${cardData.code}}}`);
-      }
-    });
+  getChangeLogJSON(): Observable<any> {
+    return this.http.get(`./assets/jsons/expedition/v2.3.json`);
   }
 }

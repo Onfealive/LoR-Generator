@@ -30,6 +30,6 @@ export class AboutComponent implements OnInit {
   }
 
   getChangeLogJSON(): Observable<any> {
-    return this.http.get(`./assets/json/changeLogs.json`);
+    return this.http.get(`./assets/jsons/changeLogs.json`);
   }
 }

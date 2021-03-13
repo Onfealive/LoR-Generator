@@ -20,7 +20,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     defaultImage = `./assets/icons/Queue Card Back.png`;
 
     modifyTypes = [];
-    displaytype  = 'display';
+    displaytype = 'display';
 
     selectedPatch = null;
     comparingPatch = null;
@@ -51,13 +51,22 @@ export class PatchNotesGeneratorComponent implements OnInit {
             })
         });
 
-        this.modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: true });
-        this.modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE, value: true });
-        this.modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
+        this.addModifyTypes();
 
         let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
         this.selectedPatch = this.patchInfo[selectedPatchIndex].name;
         this.comparingPatch = this.patchInfo[selectedPatchIndex - 1].name;
+    }
+
+    addModifyTypes() {
+        this.modifyTypes = [];
+
+        let modifyTypes = [];
+        modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: true });
+        modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE, value: true });
+        modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
+
+        this.modifyTypes = modifyTypes;
     }
 
     getCards(modifyType: MODIFY_TYPE) {
@@ -86,6 +95,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
         this.selectedPatch = this.patchInfo[selectedPatchIndex].name;
         this.comparingPatch = this.patchInfo[selectedPatchIndex - 1].name;
+
+        this.addModifyTypes();
     }
 
     compare() {
@@ -191,7 +202,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     }
 
     _compareJson() {
-        this.isCompleted = true;        
+        this.isCompleted = true;
 
         let options: any = {};
         options[this.displaytype] = true;

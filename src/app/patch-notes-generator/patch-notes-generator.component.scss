@@ -13,4 +13,10 @@ table {
     background-color: grey;
     color: white;
   }
+
+  .removed-cards {
+    img {
+      opacity: 0.5;
+    }
+  }
 }

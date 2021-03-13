@@ -57,7 +57,7 @@ export class DatabaseService {
   _convertData2Database(rawData, patch) {
     let database = {}
     let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
-    
+
     Object.keys(rawData).forEach(setID => {
       const rawSetData = rawData[setID][patch];
       let setData = {};
@@ -78,7 +78,7 @@ export class DatabaseService {
           _data: cardData,
           sortedCode: sortedCode,
           code: cardData.cardCode,
-          name: cardData.name,
+          name: cardData.name.trim(),
           collectible: cardData.collectible,
           cost: cardData.cost,
           power: cardData.attack,
@@ -116,7 +116,7 @@ export class DatabaseService {
   }
 
   public getDataJSON(patch, set = 1): Observable<any> {
-    return this.http.get(`./assets/json/set${set}_${patch}.json`);
+    return this.http.get(`./assets/jsons/data/set${set}_${patch}.json`);
   }
 
   public getAPIImage(cardcode, patchCode = null) {
@@ -127,6 +127,14 @@ export class DatabaseService {
     let url = `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardcode}.png`;
 
     return url;
+  }
+
+  public getExpeditionJSON(patchCode) {
+    if (!patchCode) {
+      patchCode = this.newestPatchCode;
+    }
+
+    return this.http.get(`./assets/jsons/expedition/v${patchCode}.json`);
   }
 
   public getAPIArtwork(cardcode, patchCode = null) {
