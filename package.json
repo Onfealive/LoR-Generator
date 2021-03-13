@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@angular-devkit/architect": "^0.1002.3",
-    "@angular-devkit/build-angular": "^0.901.15",
+    "@angular-devkit/build-angular": "^0.1102.4",
     "@angular/cli": "^11.2.4",
     "@angular/compiler-cli": "~11.2.5",
     "@types/jasmine": "~3.5.0",
@@ -52,7 +52,7 @@
     "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~5.0.0",
+    "karma": "~6.2.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
