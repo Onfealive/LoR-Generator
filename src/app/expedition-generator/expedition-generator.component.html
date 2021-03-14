@@ -1,14 +1,14 @@
 <div class="expedition-container" *ngIf="expeditionDatabase">
-    <div id="#expedition-scrollpsy" class="expedition-scrollpsy navbar position-fixed">
+    <nav id="expedition-scroll" class="expedition-scroll navbar navbar-light bg-light position-fixed">
         <nav class="nav nav-pills flex-column">
-            <a *ngFor="let archetype of expeditionDatabase;let i = index" class="nav-link" [routerLink]="[]"
-                [fragment]="'archetype_' + i">
+            <a *ngFor="let archetype of expeditionDatabase;let i = index" class="nav-link" [href]="'#archetype_' + i"
+                (click)="scrollToElement($event, '#archetype_' + i)">
                 {{archetype.name}}
             </a>
         </nav>
-    </div>
+    </nav>
 
-    <div data-bs-spy="scroll" data-bs-target="#expedition-scrollpsy" data-bs-offset="0" tabindex="0">
+    <div class="expedition-scrollpsy">
         <ng-container *ngFor="let archetype of expeditionDatabase; let i = index">
             <h4 [id]="'archetype_' + i">{{archetype.name}}</h4>
             <p>Cohesiveness: {{archetype.cohesiveness}}</p>

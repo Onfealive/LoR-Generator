@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import * as XLSX from 'xlsx';
 
 import * as Utility from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
 
-import * as XLSX from 'xlsx';
+
+declare var $: any;
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-expedition-generator',
@@ -14,16 +17,22 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./expedition-generator.component.scss']
 })
 export class ExpeditionGeneratorComponent implements OnInit {
+
   expeditionDatabase = null;
   database = {};
 
   constructor(
     private http: HttpClient,
-    private databaseService: DatabaseService
-  ) {
+    private databaseService: DatabaseService  ) {
+
     this.databaseService.getCardData().subscribe((database) => {
       this.database = database;
     });
+
+    window.onload = () => {
+      this.hotfixScrollSpy();
+      window.scrollBy(0, 1);
+    }
   }
 
   ngOnInit(): void {
@@ -46,15 +55,53 @@ export class ExpeditionGeneratorComponent implements OnInit {
           const workbook = XLSX.read(bstr, { type: 'binary' });
           const first_sheet_name = workbook.SheetNames[0];
           const worksheet = workbook.Sheets[first_sheet_name];
-          
-          const JSON_Object = XLSX.utils.sheet_to_json(worksheet, {header: "A"});
 
-          console.log(JSON_Object)
+          const JSON_Object = XLSX.utils.sheet_to_json(worksheet, { header: "A" });
+
           this.expeditionDatabase = this.handleExpeditionJSON(JSON_Object);
+
+          setTimeout(() => {
+            let scrollSpy = bootstrap.ScrollSpy.getInstance(document.body);
+            if (scrollSpy) {
+              scrollSpy.dispose();
+            }
+
+            if (!$('#expedition-scroll').hasClass('scrollSpied')) {
+              $('#expedition-scroll').addClass('scrollSpied');
+
+              new bootstrap.ScrollSpy(document.body, {
+                target: '#expedition-scroll',
+                offset: 10,
+                method: 'position'
+              });
+            }
+
+          }, 500);
         }
       };
       oReq.send(null);
     }, 0);
+  }
+
+  hotfixScrollSpy() {
+    var dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
+    let curScroll = window.pageYOffset || document.documentElement.scrollTop;
+    dataSpyList.forEach(function (dataSpyEl) {
+      let offsets = bootstrap.ScrollSpy.getInstance(dataSpyEl)['_offsets'];
+      for (let i = 0; i < offsets.length; i++) {
+        offsets[i] += curScroll;
+      }
+    })
+  }
+
+  scrollToElement($event, selector) {
+    $event.preventDefault();
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $(selector).offset().top - 20,
+      },
+      250
+    );
   }
 
   handleExpeditionJSON(expeditionJSON) {
