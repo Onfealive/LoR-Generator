@@ -64,7 +64,7 @@
           <td colspan="3" class="subheader">{{ logGroup.type }}</td>
         </tr>
         <ng-container *ngFor="let log of logGroup.list">
-          <tr *ngIf="log.display">
+          <tr *ngIf="log.display" [ngClass]="{'removed-cards': log.type == MODIFY_TYPE.REMOVE, 'flavor-changed-cards': log.type == MODIFY_TYPE.CHANGE_FLAVOR }">
             <td>
               <img *ngIf="log.type != MODIFY_TYPE.ADD && PatchInfo[this.comparingPatch]"
                 [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.comparingPatch].code)" width="200px"

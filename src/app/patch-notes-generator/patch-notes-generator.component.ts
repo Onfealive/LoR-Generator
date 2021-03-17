@@ -20,7 +20,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     defaultImage = `./assets/icons/Queue Card Back.png`;
 
     modifyTypes = [];
-    displaytype  = 'display';
+    displaytype = 'display';
 
     selectedPatch = null;
     comparingPatch = null;
@@ -51,18 +51,27 @@ export class PatchNotesGeneratorComponent implements OnInit {
             })
         });
 
-        this.modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: true });
-        this.modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE, value: true });
-        this.modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
+        this.addModifyTypes();
 
         let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
         this.selectedPatch = this.patchInfo[selectedPatchIndex].name;
         this.comparingPatch = this.patchInfo[selectedPatchIndex - 1].name;
     }
 
+    addModifyTypes() {
+        this.modifyTypes = [];
+
+        let modifyTypes = [];
+        modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: true });
+        modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE | MODIFY_TYPE.CHANGE_FLAVOR, value: true });
+        modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
+
+        this.modifyTypes = modifyTypes;
+    }
+
     getCards(modifyType: MODIFY_TYPE) {
         return this.logs.map(function (logGroup) {
-            return logGroup.list.filter(l => l.type == modifyType).map(l => l.data)
+            return logGroup.list.filter(l => l.type & modifyType).map(l => l.data)
         }).flat();
     }
 
@@ -71,7 +80,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     }
 
     get getChangedCards() {
-        return this.getCards(MODIFY_TYPE.CHANGE);
+        return this.getCards(MODIFY_TYPE.CHANGE | MODIFY_TYPE.CHANGE_FLAVOR);
     }
 
     get getRemovedCards() {
@@ -86,6 +95,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
         this.selectedPatch = this.patchInfo[selectedPatchIndex].name;
         this.comparingPatch = this.patchInfo[selectedPatchIndex - 1].name;
+
+        this.addModifyTypes();
     }
 
     compare() {
@@ -191,7 +202,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     }
 
     _compareJson() {
-        this.isCompleted = true;        
+        this.isCompleted = true;
 
         let options: any = {};
         options[this.displaytype] = true;
@@ -248,16 +259,30 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 return;
             }
 
-            log.display = this.modifyTypes.find(type => type.type == log.type).value == true;
+            log.display = this.modifyTypes.find(type => type.type & log.type).value == true;
             let unshiftContents = [];
+
+            let href = `
+                <a href="${'https://leagueoflegends.fandom.com/wiki/' + log.data.code + ' (Legends_of_Runeterra)'}"
+                    target="_blank">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                        <g stroke="#0d6efd" stroke-width="1.5" fill="none"
+                            fill-rule="evenodd" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5">
+                            </polyline>
+                            <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
+                        </g>
+                    </svg>
+                </a>`;
             if (options.display) {
                 unshiftContents = [
-                    `${log.data.name} (${log.data.code})`
+                    `${log.data.name} (${log.data.code}) ${href}`
                 ]
             }
             if (options.patchNote) {
                 unshiftContents = [
-                    `: {{LoR|${log.data.name}|code=${log.data.code}}}`
+                    `: {{LoR|${log.data.name}|code=${log.data.code}}} ${href}`
                 ]
             }
             if (options.newChangeLog) {
@@ -266,15 +291,16 @@ export class PatchNotesGeneratorComponent implements OnInit {
                     edittedCardName += ' (Level 2)';
                 }
 
-                if (options.newChangeLog && log.type == MODIFY_TYPE.ADD) {
+                if (options.newChangeLog && (log.type & MODIFY_TYPE.ADD)) {
                     unshiftContents = [
+                        `<i>To Wiki</i> ${href}`,
                         `== Change Log ==`,
                         `{| class="article-table ruling-table"`,
                         `! colspan="2" | <b>${edittedCardName}</b>`
                     ];
                 } else {
                     unshiftContents = [
-                        `<b>${edittedCardName}</b>`
+                        `<b>${edittedCardName}</b> ${href}`
                     ];
                 }
 
@@ -285,7 +311,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 ]);
             }
 
-            if (options.newChangeLog && log.type == MODIFY_TYPE.ADD) {
+            if (options.newChangeLog && (log.type & MODIFY_TYPE.ADD)) {
                 log.diff.push(`|}`);
             }
 
@@ -388,14 +414,18 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         }
                     ]
 
+                    let flag = 0;
                     largeContents.forEach(largeContent => {
                         if (oldCard[largeContent.object] != newCard[largeContent.object]) {
+                            flag++;
+                            if (largeContent.object == 'flavor' && flag == 1) {
+                                log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                            }
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
                                 log.diff.push(commonPrefix + `Visual Updated.`);
                             } else {
                                 const diffParts = Diff.diffWords(oldCard[largeContent.object], "\n" + newCard[largeContent.object], {
-                                    newlineIsToken: false,
-                                    // ignoreCase: true
+                                    newlineIsToken: false
                                 });
 
                                 let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
@@ -662,7 +692,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
 }
 
 enum MODIFY_TYPE {
-    ADD,
-    CHANGE,
-    REMOVE
+    ADD = 1,
+    CHANGE = 2,
+    CHANGE_FLAVOR = 4,
+    REMOVE = 8
 }

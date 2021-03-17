@@ -1,5 +1,43 @@
 [
     {
+        "version": "1.5",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.4."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Miscellaneous: Now will show additional Wiki link for each card.",
+                    "Miscellaneous: Now the removed cards will be grayed out.",
+                    "Miscellaneous: Now the cards only change flavor will be lighter."
+                ]
+            },
+            {
+                "title": "Expedition",
+                "details": [
+                    "Reworked - Used to display list and compare archetypes between versions.",
+                    "Added Data: V2.3 and V2.4"
+                ]
+            },
+            {
+                "title": "Text Formatter",
+                "details": [
+                    "Renamed from old Expedition - Use to replace the text card with Database."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Miscellaneous: Add button able to close all Details."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.4.5",
         "changes": [
             {

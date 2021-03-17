@@ -13,6 +13,7 @@ import { SafeHtmlPipe } from './shared/pipe.safehtml';
 import { AboutComponent } from './about/about.component';
 import { DatabaseComponent } from './database/database.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { TextFormatterComponent } from './text-formatter/text-formatter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     PatchNotesGeneratorComponent,
     ExpeditionGeneratorComponent,
     AboutComponent,
-    DatabaseComponent
+    DatabaseComponent,
+    TextFormatterComponent
   ],
   imports: [
     BrowserModule,

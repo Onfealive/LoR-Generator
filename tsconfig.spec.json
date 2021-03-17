@@ -11,8 +11,15 @@
     "src/test.ts",
     "src/polyfills.ts"
   ],
+  // "include": [
+  //   "src/**/*.spec.ts",
+  //   "src/**/*.d.ts"
+  // ]
   "include": [
-    "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.spec.ts"
+ ]
 }

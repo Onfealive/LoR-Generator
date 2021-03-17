@@ -207,6 +207,21 @@ export class DatabaseComponent implements OnInit {
         }, 0);
     }
 
+    hideAllCardDetails(resultIndex) {
+        let cardData = this.searchResults[resultIndex];
+
+        $('.card-detail').hide();
+
+        setTimeout(() => {
+            $([document.documentElement, document.body]).animate(
+                {
+                    scrollTop: $('#card_' + cardData.code).offset().top - 20,
+                },
+                0
+            );
+        }, 0);
+    }
+
     submit(isFirstTime = false) {
         this.isCompleted = false;
         this.searchResults = [];
@@ -318,8 +333,6 @@ export class DatabaseComponent implements OnInit {
 
         // Sort settings
         let selectedSortData = this.sortData.find(s => s.id == this.sortType);
-        console.log(selectedSortData)
-
         searchResult = Utility.sortArrayByValues(searchResult, selectedSortData.sort.split(','), selectedSortData.sortOrder);
 
         this.searchResults = searchResult;

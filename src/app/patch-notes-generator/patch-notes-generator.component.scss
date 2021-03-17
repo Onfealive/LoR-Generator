@@ -13,4 +13,16 @@ table {
     background-color: grey;
     color: white;
   }
+
+  .removed-cards {
+    img {
+      filter: grayscale(80%);
+    }
+  }
+  
+  .flavor-changed-cards {
+    img {
+      opacity: 0.5;
+    }
+  }
 }

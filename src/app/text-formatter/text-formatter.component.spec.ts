@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { DatabaseComponent } from './database.component';
+import { TextFormatterComponent } from './text-formatter.component';
 
-describe('DatabaseComponent', () => {
-  let component: DatabaseComponent;
-  let fixture: ComponentFixture<DatabaseComponent>;
+describe('TextFormatterComponent', () => {
+  let component: TextFormatterComponent;
+  let fixture: ComponentFixture<TextFormatterComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DatabaseComponent ]
+      declarations: [ TextFormatterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DatabaseComponent);
+    fixture = TestBed.createComponent(TextFormatterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

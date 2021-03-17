@@ -1,18 +1,86 @@
-<div>Newest Patch: {{newestPatch}}.</div>
-<div>Or use your data file:</div>
-<ngx-dropzone (change)="onSelect($event)">
-  <ngx-dropzone-label>{{title}}</ngx-dropzone-label>
-  <ngx-dropzone-preview *ngFor="let f of files">
-    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-  </ngx-dropzone-preview>
-</ngx-dropzone>
-{{error}}
-<div class="input-group mt-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text expedition-content">Expedition Content</span>
-  </div>
-  <textarea #expedition class="form-control" aria-label="Expedition Content" [(ngModel)]="expeditionContent"></textarea>
+<ng-container *ngFor="let eInfo of expeditionInfo">
+    <label class="expedition-label">
+        <input name="options" ng-control="options" type="radio" [value]="eInfo.code" [checked]="eInfo.checked"
+            (change)="changeExpeditionInfo(eInfo)">
+        {{ eInfo.name }}
+    </label>
+</ng-container>
+
+<div class="form-inline">
+    <div class="form-group">
+        <label>Options:</label>
+        <button type="button" class="btn btn-success ms-1" (click)="displayExpedition(selectedExpeditionInfo.name)" [disabled]="!selectedExpeditionInfo.compareable">Display</button>
+        <button *ngIf="selectedExpeditionInfo.compareable" type="button" class="btn btn-success ms-1" (click)="compareExpedition(selectedExpeditionInfo.name)">Compare</button>
+    </div>
 </div>
-<div class="mt-3">
-  <button type="button" class="btn btn-success" (click)="executeExpedition()" [disabled]="!isCompleted || expeditionContent.length == 0">Excecute</button>
+
+<div class="expedition-container mt-3" *ngIf="!comparingData && expeditionDatabase[selectedExpeditionInfo.name]">
+    <nav id="expedition-scroll" class="expedition-scroll navbar navbar-light bg-light position-fixed">
+        <nav class="nav nav-pills flex-column">
+            <a *ngFor="let archetype of expeditionDatabase[selectedExpeditionInfo.name];let i = index" class="nav-link" [href]="'#archetype_' + i"
+                (click)="scrollToElement($event, '#archetype_' + i)">
+                {{archetype.name}}
+            </a>
+        </nav>
+    </nav>
+
+    <div class="expedition-scrollpsy">
+        <ng-container *ngFor="let archetype of expeditionDatabase[selectedExpeditionInfo.name]; let i = index ">
+            <h4 [id]="'archetype_' + i">{{archetype.name}}</h4>
+            <p>Cohesiveness: {{archetype.cohesiveness}}</p>
+            <p>Offering Rate: {{archetype.offeringRate * 100}}%</p>
+            <p>Wild Pick Bonus: {{archetype.wildPickBonus}}</p>
+            <p>Regions: {{archetype.region}}</p>
+            <p>Cards:</p>
+            <div class="row" *ngIf="archetype.cards.champions">
+                <div class="col-8 offset-md-1">Champions</div>
+                <div class="col-8 offset-md-1">
+                    <ul class="row row-cols-3">
+                        <li class="col" *ngFor="let card of archetype.cards.champions">{{card}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" *ngIf="archetype.cards.followers">
+                <div class="col-8 offset-md-1">Followers</div>
+                <div class="col-8 offset-md-1">
+                    <ul class="row row-cols-3">
+                        <li class="col" *ngFor="let card of archetype.cards.followers">{{card}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" *ngIf="archetype.cards.landmarks">
+                <div class="col-8 offset-md-1">Landmarks</div>
+                <div class="col-8 offset-md-1">
+                    <ul class="row row-cols-3">
+                        <li class="col" *ngFor="let card of archetype.cards.landmarks">{{card}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" *ngIf="archetype.cards.spells">
+                <div class="col-8 offset-md-1">Spells</div>
+                <div class="col-8 offset-md-1">
+                    <ul class="row row-cols-3">
+                        <li class="col" *ngFor="let card of archetype.cards.spells">{{card}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" *ngIf="archetype.cards.unknown">
+                <div class="col-8 offset-md-1">Unknown</div>
+                <div class="col-8 offset-md-1">
+                    <ul class="row row-cols-3">
+                        <li class="col" *ngFor="let card of archetype.cards.unknown">{{card}}</li>
+                    </ul>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="comparing-expedtions" *ngIf="comparingData">
+    <ng-container *ngFor="let archetype of comparingData">
+        <h4>{{archetype.name}}</h4>
+        <ul>
+            <li *ngFor="let diff of archetype.diff">{{diff}}</li>
+        </ul>
+    </ng-container>
 </div>
