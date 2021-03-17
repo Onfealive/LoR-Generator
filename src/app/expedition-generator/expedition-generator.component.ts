@@ -8,6 +8,7 @@ import * as Utility from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
 import { ExpeditionInfo } from '../shared/expeditions';
 
+import { DeckEncoder } from 'runeterra';
 
 declare var $: any;
 declare var bootstrap: any;
@@ -36,8 +37,6 @@ export class ExpeditionGeneratorComponent implements OnInit {
         'checked': index == ExpeditionInfo.length - 1,
         'compareable': index != 0
       });
-
-      console.log(this.expeditionInfo)
     });
 
     this.selectedExpeditionInfo = this.expeditionInfo[this.expeditionInfo.length - 1];
@@ -212,6 +211,49 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
     Utility.sortArrayByValues(expeditionDatabase, 'name');
 
+    let FACTIONS = {
+      DE: 0,
+      FR: 1,
+      IO: 2,
+      NX: 3,
+      PZ: 4,
+      SI: 5,
+      BW: 6,
+      MT: 9,
+      SH: 7
+    };
+    expeditionDatabase.forEach(archetype => {
+      let archetypeCards = archetype['cards'];
+
+      let deck = [];
+      Object.keys(archetypeCards).forEach(type => {
+        archetypeCards[type].forEach(cardName => {
+          if (type == 'unknown') {
+            return;
+          }
+          let card = Object.values(this.database).find(c =>
+             c['name'] == cardName && !c['code'].replace('MT', '').includes('T'));
+
+          if (!card) {
+            console.log(cardName)
+          } else {
+            deck.push({
+              code: card['code'],
+              count: 1,
+              faction: {
+                id: FACTIONS[card['code'].substring(2, 4)],
+                shortCode: card['code'].substring(2, 4)
+              },
+              id: parseInt(card['code'].slice(-3)),
+              set: parseInt(card['code'].substring(0, 2))
+            });
+          }
+        });
+      });
+
+      archetype['code'] = DeckEncoder.encode(deck);
+    });
+
     return expeditionDatabase;
   }
 
@@ -302,13 +344,13 @@ export class ExpeditionGeneratorComponent implements OnInit {
         };
 
         if (selectedArchetype.cohesiveness != comparingArchetype.cohesiveness) {
-          log.diff.push(`Cohesiveness changed from ${comparingArchetype.cohesiveness} to ${selectedArchetype.cohesiveness}.`);
+          log.diff.push(`Cohesiveness changed to ${selectedArchetype.cohesiveness} from ${comparingArchetype.cohesiveness}.`);
         }
         if (selectedArchetype.offeringRate != comparingArchetype.offeringRate) {
-          log.diff.push(`Offering Rate ${selectedArchetype.offeringRate > comparingArchetype.offeringRate ? 'increased from' : 'reduced from'} ${comparingArchetype.offeringRate * 100}% to ${selectedArchetype.offeringRate * 100}%.`);
+          log.diff.push(`Offering Rate ${selectedArchetype.offeringRate > comparingArchetype.offeringRate ? 'increased to' : 'reduced to'} ${selectedArchetype.offeringRate * 100}% from ${comparingArchetype.offeringRate * 100}.`);
         }
         if (selectedArchetype.wildPickBonus != comparingArchetype.wildPickBonus) {
-          log.diff.push(`Wild Pick Bonus changed from ${comparingArchetype.wildPickBonus} to ${selectedArchetype.wildPickBonus}.`);
+          log.diff.push(`Wild Pick Bonus changed to ${selectedArchetype.wildPickBonus} from ${comparingArchetype.wildPickBonus}.`);
         }
 
         if (JSON.stringify(selectedArchetype.cards) != JSON.stringify(comparingArchetype.cards)) {

@@ -1,5 +1,17 @@
 [
     {
+        "version": "1.5.1",
+        "changes": [            
+            {
+                "title": "Expedition",
+                "details": [
+                    "Added: Deck Code for each archetype.",
+                    "Update Data: V2.3 and V2.4 to match live"
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.5",
         "changes": [
             {
@@ -11,9 +23,9 @@
             {
                 "title": "Patch Note Generator",
                 "details": [
-                    "Miscellaneous: Now will show additional Wiki link for each card.",
-                    "Miscellaneous: Now the removed cards will be grayed out.",
-                    "Miscellaneous: Now the cards only change flavor will be lighter."
+                    "Now will show additional Wiki link for each card.",
+                    "Now the removed cards will be grayed out.",
+                    "Now the cards only change flavor will be lighter."
                 ]
             },
             {
@@ -32,7 +44,7 @@
             {
                 "title": "Database",
                 "details": [
-                    "Miscellaneous: Add button able to close all Details."
+                    "Add button able to close all Details."
                 ]
             }
         ]
@@ -45,9 +57,9 @@
                 "details": [
                     "Added: Toggle for removed cards.",
                     "Updated: Now show the Card Name and Card Code on the right as V1.2.1 version.",
-                    "Miscellaneous: Now toggle is disabled if there are no cards in that category.",
-                    "Miscellaneous: Now will sort by Card Type, Name and then Card Code.",
-                    "Miscellaneous: The list will now be grouped by Card Type."
+                    "Now toggle is disabled if there are no cards in that category.",
+                    "Now will sort by Card Type, Name and then Card Code.",
+                    "The list will now be grouped by Card Type."
                 ]
             },
             {
@@ -66,7 +78,7 @@
             {
                 "title": "Data",
                 "details": [
-                    "Updated: V2.3 to live."
+                    "Updated: V2.3 to match live."
                 ]
             },
             {
@@ -91,14 +103,14 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - V2.3 until day 2021/03/01."
+                    "Updated: V2.3 until day 2021/03/01."
                 ]
             },
             {
                 "title": "Database",
                 "details": [
                     "Added Card Detail: Now can click on Card Code or Card Image to see more basic details like Flavor or Full Artwork.",
-                    "Miscellaneous: Now will automatically search the first time access."
+                    "Now will automatically search the first time access."
                 ]
             }
         ]
@@ -109,7 +121,7 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - V2.3 until day 2021/02/27."
+                    "Updated: V2.3 until day 2021/02/27."
                 ]
             },
             {
@@ -117,8 +129,8 @@
                 "details": [
                     "Added Filter: Cost.",
                     "Added Card Search: Card Code.",
-                    "Miscellaneous: There will now be a link to the League of Legends Wiki for each card.",
-                    "Miscellaneous: Reduce the size of the filter part.",
+                    "There will now be a link to the League of Legends Wiki for each card.",
+                    "Reduce the size of the filter part.",
                     "Bugfixed: Now arrange associated cards in their correct order, eg T10 will be after T9."
                 ]
             }
@@ -130,13 +142,13 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - V2.3 until day 2021/02/24."
+                    "Updated: V2.3 until day 2021/02/24."
                 ]
             },
             {
                 "title": "Patch Note Generator",
                 "details": [
-                    "Miscellaneous: Now use lazy loading for image, like Database."
+                    "Now use lazy loading for image, like Database."
                 ]
             },
             {
@@ -154,7 +166,7 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - V2.3 until day 2021/02/22."
+                    "Updated: V2.3 until day 2021/02/22."
                 ]
             },
             {
@@ -173,7 +185,7 @@
             {
                 "title": "Database",
                 "details": [
-                    "Added - Use to searching for your cards.",
+                    "Introduced - Use to searching for your cards.",
                     "Filters: Region, Set and Card Type."
                 ]
             }
@@ -185,20 +197,20 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - V2.3 until day 2021/02/21.",
+                    "Introduced - V2.3 until day 2021/02/21.",
                     "Bugfixed: Add missing data of V1.7."
                 ]
             },
             {
                 "title": "Patch Note Generator",
                 "details": [
-                    "Updated - Layout: Table display with old and new card images (if any)."
+                    "Updated Layout: Table display with old and new card images (if any)."
                 ]
             },
             {
                 "title": "About",
                 "details": [
-                    "Added - With Change Logs."
+                    "Introduced - With Change Logs."
                 ]
             }
         ]
@@ -209,7 +221,7 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - V2.3 until day 2021/02/20."
+                    "Updated: V2.3 until day 2021/02/20."
                 ]
             },
             {
@@ -237,7 +249,7 @@
             {
                 "title": "Data",
                 "details": [
-                    "Added - From V0.9.1 to V2.1."
+                    "Added: From V0.9.1 to V2.1."
                 ]
             },
             {
@@ -261,13 +273,13 @@
             {
                 "title": "Patch Note Generator",
                 "details": [
-                    "Added - Used to collect changes to Patch Note, as well as for writing Patch Note on Wiki."
+                    "Introduced - Used to collect changes to Patch Note, as well as for writing Patch Note on Wiki."
                 ]
             },
             {
                 "title": "Expedition Generator",
                 "details": [
-                    "Added - Use to replace the text card related to the Expedition of Patch Note."
+                    "Introduced - Use to replace the text card related to the Expedition of Patch Note."
                 ]
             }
         ]
