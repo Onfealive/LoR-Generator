@@ -6,6 +6,7 @@ import * as XLSX from 'xlsx';
 
 import * as Utility from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
+import { ExpeditionInfo } from '../shared/expeditions';
 
 
 declare var $: any;
@@ -17,20 +18,36 @@ declare var bootstrap: any;
   styleUrls: ['./expedition-generator.component.scss']
 })
 export class ExpeditionGeneratorComponent implements OnInit {
+  expeditionInfo = [];
 
-  expeditionDatabase = null;
   database = {};
+
+  selectedExpeditionInfo = null;
+  expeditionDatabase = {};
+  comparingData = [];
 
   constructor(
     private http: HttpClient,
-    private databaseService: DatabaseService  ) {
+    private databaseService: DatabaseService) {
+
+    ExpeditionInfo.forEach((expeditionVersion, index) => {
+      this.expeditionInfo.push({
+        'name': expeditionVersion,
+        'checked': index == ExpeditionInfo.length - 1,
+        'compareable': index != 0
+      });
+
+      console.log(this.expeditionInfo)
+    });
+
+    this.selectedExpeditionInfo = this.expeditionInfo[this.expeditionInfo.length - 1];
 
     this.databaseService.getCardData().subscribe((database) => {
       this.database = database;
     });
 
     window.onload = () => {
-      this.hotfixScrollSpy();
+      this._hotfixScrollSpy();
       window.scrollBy(0, 1);
     }
   }
@@ -41,11 +58,27 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
+      this.displayExpedition(this.selectedExpeditionInfo.name);
+    }, 500);
+  }
+
+
+
+  private getExpeditionData(version, callback = null) {
+    if (this.expeditionDatabase[version]) {
+      if (typeof callback == 'function') {
+        callback(this.expeditionDatabase[version])
+      }
+    }
+    else {
+
+      let selectedExpeditionVersion = version || this.expeditionInfo.find(e => e.checked).name;
+
       var oReq = new XMLHttpRequest();
-      oReq.open("GET", `./assets/others/expedition/v2.3.xlsx`, true);
+      oReq.open("GET", `./assets/others/expedition/v${selectedExpeditionVersion}.xlsx`, true);
       oReq.responseType = "arraybuffer";
 
-      oReq.onload = (oEvent) => {
+      oReq.onload = () => {
         var arrayBuffer = oReq.response; // Note: not oReq.responseText
         if (arrayBuffer) {
           const data = new Uint8Array(arrayBuffer);
@@ -58,32 +91,16 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
           const JSON_Object = XLSX.utils.sheet_to_json(worksheet, { header: "A" });
 
-          this.expeditionDatabase = this.handleExpeditionJSON(JSON_Object);
-
-          setTimeout(() => {
-            let scrollSpy = bootstrap.ScrollSpy.getInstance(document.body);
-            if (scrollSpy) {
-              scrollSpy.dispose();
-            }
-
-            if (!$('#expedition-scroll').hasClass('scrollSpied')) {
-              $('#expedition-scroll').addClass('scrollSpied');
-
-              new bootstrap.ScrollSpy(document.body, {
-                target: '#expedition-scroll',
-                offset: 10,
-                method: 'position'
-              });
-            }
-
-          }, 500);
+          if (typeof callback == 'function') {
+            callback(this._handleExpeditionJSON(JSON_Object))
+          }
         }
       };
       oReq.send(null);
-    }, 0);
+    }
   }
 
-  hotfixScrollSpy() {
+  _hotfixScrollSpy() {
     var dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
     let curScroll = window.pageYOffset || document.documentElement.scrollTop;
     dataSpyList.forEach(function (dataSpyEl) {
@@ -92,6 +109,14 @@ export class ExpeditionGeneratorComponent implements OnInit {
         offsets[i] += curScroll;
       }
     })
+  }
+
+  changeExpeditionInfo(expeditionInfo) {
+    this.expeditionInfo.find(p => p.checked).checked = false;
+    expeditionInfo.checked = true;
+
+    this.selectedExpeditionInfo = expeditionInfo;
+    this.displayExpedition(expeditionInfo.name);
   }
 
   scrollToElement($event, selector) {
@@ -104,11 +129,16 @@ export class ExpeditionGeneratorComponent implements OnInit {
     );
   }
 
-  handleExpeditionJSON(expeditionJSON) {
+  _handleExpeditionJSON(expeditionJSON) {
     let eDatabase = {};
     let headers = {};
 
-    for (let i = 0; i <= 32; i++) {
+    let maxIndex = expeditionJSON.findIndex(row => row['A'] && row['A'] == 'LAST UPDATED');
+    if (!maxIndex) {
+      maxIndex = 32;
+    }
+
+    for (let i = 0; i <= maxIndex - 1; i++) {
       let rowData = expeditionJSON[i];
       if (i == 0) {
         let maxColumn = Object.keys(expeditionJSON[5]);
@@ -208,5 +238,107 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
   getChangeLogJSON(): Observable<any> {
     return this.http.get(`./assets/jsons/expedition/v2.3.json`);
+  }
+
+  displayExpedition(version) {
+    this.comparingData = null;
+    $('#expedition-scroll').hide();
+
+    let scrollSpy = bootstrap.ScrollSpy.getInstance(document.body);
+    if (scrollSpy) {
+      scrollSpy.dispose();
+    }
+
+    this.getExpeditionData(version, (eDatabase) => {
+      this.expeditionDatabase[version] = eDatabase;
+
+      setTimeout(() => {
+        $('#expedition-scroll').show();
+        new bootstrap.ScrollSpy(document.body, {
+          target: '#expedition-scroll',
+          offset: 10,
+          method: 'position'
+        });
+      }, 500);
+    });
+  }
+
+  compareExpedition(version) {
+    $('.expedition-scroll').hide();
+
+    let scrollSpy = bootstrap.ScrollSpy.getInstance(document.body);
+    if (scrollSpy) {
+      scrollSpy.dispose();
+    }
+
+    let selectedVersion = version;
+    let compareVersion = this.expeditionInfo[this.expeditionInfo.findIndex(v => v.name == version) - 1].name;
+
+    let flag = 0;
+    console.log(compareVersion);
+
+    [selectedVersion, compareVersion].forEach(ver => {
+      this.getExpeditionData(ver, (eDatabase) => {
+        this.expeditionDatabase[ver] = eDatabase;
+        flag++;
+
+        if (flag == 2) {
+          this._compareExpedition(selectedVersion, compareVersion);
+        }
+      });
+    });
+  }
+
+  _compareExpedition(selectedVersion, compareVersion) {
+    let logs = [];
+    // New and Changed Archetypes
+    this.expeditionDatabase[selectedVersion].forEach(selectedArchetype => {
+      let comparingArchetype = this.expeditionDatabase[compareVersion].find(a => a.name == selectedArchetype.name);
+
+      if (JSON.stringify(selectedArchetype) != JSON.stringify(comparingArchetype)) {
+        let log = {
+          'name': selectedArchetype.name,
+          'diff': []
+        };
+
+        if (selectedArchetype.cohesiveness != comparingArchetype.cohesiveness) {
+          log.diff.push(`Cohesiveness changed from ${comparingArchetype.cohesiveness} to ${selectedArchetype.cohesiveness}.`);
+        }
+        if (selectedArchetype.offeringRate != comparingArchetype.offeringRate) {
+          log.diff.push(`Offering Rate ${selectedArchetype.offeringRate > comparingArchetype.offeringRate ? 'increased from' : 'reduced from'} ${comparingArchetype.offeringRate * 100}% to ${selectedArchetype.offeringRate * 100}%.`);
+        }
+        if (selectedArchetype.wildPickBonus != comparingArchetype.wildPickBonus) {
+          log.diff.push(`Wild Pick Bonus changed from ${comparingArchetype.wildPickBonus} to ${selectedArchetype.wildPickBonus}.`);
+        }
+
+        if (JSON.stringify(selectedArchetype.cards) != JSON.stringify(comparingArchetype.cards)) {
+
+          let newChampions = selectedArchetype.cards.champions.filter(x => !comparingArchetype.cards.champions.includes(x));
+          let removedChampions = comparingArchetype.cards.champions.filter(x => !selectedArchetype.cards.champions.includes(x));
+
+          let otherSelectedCards = [].concat(selectedArchetype.cards.followers, selectedArchetype.cards.landmarks, selectedArchetype.cards.spells, selectedArchetype.cards.unknown);
+          let otherCompartingCards = [].concat(comparingArchetype.cards.followers, comparingArchetype.cards.landmarks, comparingArchetype.cards.spells, comparingArchetype.cards.unknown);
+
+          let otherNewCards = otherSelectedCards.filter(x => !otherCompartingCards.includes(x));
+          let otherRemovedCards = otherCompartingCards.filter(x => !otherSelectedCards.includes(x));
+          otherNewCards.sort();
+          otherRemovedCards.sort();
+
+          let addedCards = [].concat(newChampions, otherNewCards);
+          let removedCards = [].concat(removedChampions, otherRemovedCards);
+
+          if (addedCards.length) {
+            log.diff.push(`Added: ${addedCards.join(', ')}.`);
+          }
+          if (removedCards.length) {
+            log.diff.push(`Removed: ${removedCards.join(', ')}.`);
+          }
+        }
+
+        logs.push(log);
+      }
+    });
+
+    this.comparingData = logs;
   }
 }
