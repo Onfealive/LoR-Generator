@@ -86,6 +86,7 @@ export class TextFormatterComponent implements OnInit {
 
   executeText() {
     this.textContent = this.textContent.replace(/(^[ \t]*\n)/gm, "");
+    this.textContent = this.textContent.split('’').join("'");
     $(this.textElement.nativeElement).scrollTop(0);
 
     // Handling

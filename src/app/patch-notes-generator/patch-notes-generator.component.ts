@@ -287,8 +287,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
             }
             if (options.newChangeLog) {
                 let edittedCardName = log.data.name;
-                if (log.data.type == 'Champion' && log.data.code.indexOf('T') >= 0) {
-                    edittedCardName += ' (Level 2)';
+                if (log.data.type == 'Champion' && log.data.code.lastIndexOf('T') >= 0) {
+                    edittedCardName += ' - Level 2';
                 }
 
                 if (options.newChangeLog && (log.type & MODIFY_TYPE.ADD)) {
@@ -317,17 +317,18 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
             log.diff.unshift(unshiftContents.join('<br />'));
 
-
-            let logGroup = this.logs.find(l => l.type == log.data.type);
+            let logGroup = this.logs.find(l => l.type == log.data.groupType);
             if (!logGroup) {
                 logGroup = {
-                    type: log.data.type,
+                    type: log.data.groupType,
                     list: []
                 }
                 this.logs.push(logGroup);
             }
             logGroup.list.push(log);
         }
+
+        let skippingKeywords = ['Missing Translation'];
 
         Object.keys(totalNewJSONData).forEach(cardCode => {
             const oldCard = totalOldJSONData[cardCode];
@@ -380,8 +381,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         }
                     }
 
-                    let removedKeywords = oldCard.keywords.filter(x => !newCard.keywords.includes(x));
-                    let newKeywords = newCard.keywords.filter(x => !oldCard.keywords.includes(x));
+                    let removedKeywords = oldCard.keywords.filter(x => !skippingKeywords.includes(x) && !newCard.keywords.includes(x));
+                    let newKeywords = newCard.keywords.filter(x => !skippingKeywords.includes(x) && !oldCard.keywords.includes(x));
                     if (newKeywords.length) {
                         let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
 

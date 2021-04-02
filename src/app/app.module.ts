@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { DatabaseComponent } from './database/database.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TextFormatterComponent } from './text-formatter/text-formatter.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TextFormatterComponent } from './text-formatter/text-formatter.componen
     FormsModule,
     ReactiveFormsModule,
     LazyLoadImageModule,
-    HttpClientModule
+    HttpClientModule,
+    ClipboardModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

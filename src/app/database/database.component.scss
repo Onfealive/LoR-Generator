@@ -166,6 +166,11 @@ form {
     .card-img-top {
         cursor: pointer;
     }
+
+    .to-clipboard {
+        margin-left: 5px;
+        user-select: none;
+    }
 }
 
 .card-detail {

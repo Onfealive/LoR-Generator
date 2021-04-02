@@ -62,11 +62,19 @@ export class DatabaseService {
       const rawSetData = rawData[setID][patch];
       let setData = {};
       JSON.parse(rawSetData).forEach(cardData => {
-        let sortedCode : string = cardData.cardCode;
-        if (sortedCode.includes('T')) {
+        let sortedCode: string = cardData.cardCode;
+        let isAssociatedCard = false;
+        if (sortedCode.includes('MT')) {
+          if (sortedCode.lastIndexOf('T') != sortedCode.lastIndexOf('MT') + 1) {
+            isAssociatedCard = true;
+          }
+        } else if (sortedCode.includes('T')) {
+          isAssociatedCard = true;
+        }
+        if (isAssociatedCard) {
           let wordTIndex = sortedCode.lastIndexOf('T');
           let associatedText = sortedCode.slice(wordTIndex + 1)
-          sortedCode = sortedCode.slice(0, wordTIndex) +  associatedText.padStart(3, '0');
+          sortedCode = sortedCode.slice(0, wordTIndex) + associatedText.padStart(3, '0');
         }
 
         let realSpellSpeed = cardData.spellSpeed;
@@ -86,6 +94,7 @@ export class DatabaseService {
           description: cardData.descriptionRaw.split("\r\n").join(" ").trim(),
           levelupDescription: cardData.levelupDescriptionRaw.split("\r\n").join(" ").trim(),
           type: this.getCardType(cardData),
+          groupType: this.getCardType(cardData, true),
           spellSpeed: realSpellSpeed,
           group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
@@ -99,7 +108,7 @@ export class DatabaseService {
     return database;
   }
 
-  private getCardType = (cardData) => {
+  private getCardType = (cardData, isGroupType = false) => {
     if (cardData.type == 'Unit') {
       if (cardData.supertype) {
         return 'Champion';
@@ -110,6 +119,12 @@ export class DatabaseService {
 
     if (cardData.type == 'Ability') {
       return 'Skill'
+    }
+
+    if (isGroupType) {
+      if (cardData.type == 'Spell' && cardData.supertype == 'Champion') {
+        return 'Champion'
+      }
     }
 
     return cardData.type;

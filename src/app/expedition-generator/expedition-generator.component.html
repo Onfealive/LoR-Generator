@@ -27,10 +27,10 @@
     <div class="expedition-scrollpsy">
         <ng-container *ngFor="let archetype of expeditionDatabase[selectedExpeditionInfo.name]; let i = index ">
             <h4 [id]="'archetype_' + i">{{archetype.name}}</h4>
-            <p>Cohesiveness: {{archetype.cohesiveness}}</p>
-            <p>Offering Rate: {{archetype.offeringRate * 100}}%</p>
-            <p>Wild Pick Bonus: {{archetype.wildPickBonus}}</p>
             <p>Regions: {{archetype.region}}</p>
+            <p>Offering Rate: {{archetype.offeringRate * 100}}%</p>
+            <p>Cohesiveness Rating: {{archetype.cohesiveness}}</p>
+            <p>Wild Pick Bonus Ratio: {{archetype.wildPickBonus}}</p>
             <p>Cards:</p>
             <div class="row" *ngIf="archetype.cards.champions">
                 <div class="col-8 offset-md-1">Champions</div>
@@ -72,7 +72,9 @@
                     </ul>
                 </div>
             </div>
-            <p>Deck Code: {{archetype.code}}</p>
+            <div class="row">
+                <p class="col-8 text-break">Deck Code: {{archetype.code}}</p>
+            </div>
         </ng-container>
     </div>
 </div>

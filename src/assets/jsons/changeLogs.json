@@ -1,7 +1,38 @@
 [
     {
+        "version": "1.5.2",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.5."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Now group Champion Spells into group \"Champion\"."
+                ]
+            },
+            {
+                "title": "Expedition",
+                "details": [
+                    "Added Data: V2.5",
+                    "Bugfixed: Some Archetypes are not displayed."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Add indicator to copy LoRCode for each card.",
+                    "Bugfixed: Targon's cards are now in the correct order."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.5.1",
-        "changes": [            
+        "changes": [
             {
                 "title": "Expedition",
                 "details": [

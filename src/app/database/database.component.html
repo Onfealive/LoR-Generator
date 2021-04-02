@@ -74,9 +74,8 @@
             <div class="input-group mb-3">
                 <button class="btn btn-secondary" type="button" (click)="clearTextSearch()">Clear</button>
                 <input type="text" class="form-control" formControlName="text"
-                placeholder="Card Name, Card Text, Keywords or even Card Code">
-              </div>
-            
+                    placeholder="Card Name, Card Text, Keywords or even Card Code">
+            </div>
         </div>
     </div>
 
@@ -108,7 +107,8 @@
             <div class="card-info col-2" [id]="'card_' + card.code">
                 <div class="card h-100">
                     <div class="card-header text-center">
-                        <small class="text-muted ">{{card.code}}</small>
+                        <small class="text-muted ">{{card.code}}<span class="to-clipboard"
+                                (click)="card2Clipboard(card)">📋</span></small>
                     </div>
                     <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
                         [alt]="card.code" (click)="selectCardInfo(resultIndex)">
@@ -141,8 +141,8 @@
                             <div class="col-11">
                                 <div class="row">
                                     <div class="col-3">
-                                        <img class="card-image" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
-                                            [alt]="card.code" width="250px">
+                                        <img class="card-image" [defaultImage]="defaultImage"
+                                            [lazyLoad]="getAPIImage(card.code)" [alt]="card.code" width="250px">
                                     </div>
                                     <div class="col-9">
                                         <div class="row">

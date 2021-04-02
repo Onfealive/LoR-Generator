@@ -140,7 +140,7 @@ export class ExpeditionGeneratorComponent implements OnInit {
     for (let i = 0; i <= maxIndex - 1; i++) {
       let rowData = expeditionJSON[i];
       if (i == 0) {
-        let maxColumn = Object.keys(expeditionJSON[5]);
+        let maxColumn = Object.keys(expeditionJSON[6]); // Card column
 
         for (let j = 0; j < maxColumn.length; j++) {
           let letter = this.columnIndex2Letter(j);
@@ -317,7 +317,6 @@ export class ExpeditionGeneratorComponent implements OnInit {
     let compareVersion = this.expeditionInfo[this.expeditionInfo.findIndex(v => v.name == version) - 1].name;
 
     let flag = 0;
-    console.log(compareVersion);
 
     [selectedVersion, compareVersion].forEach(ver => {
       this.getExpeditionData(ver, (eDatabase) => {
@@ -337,24 +336,28 @@ export class ExpeditionGeneratorComponent implements OnInit {
     this.expeditionDatabase[selectedVersion].forEach(selectedArchetype => {
       let comparingArchetype = this.expeditionDatabase[compareVersion].find(a => a.name == selectedArchetype.name);
 
-      if (JSON.stringify(selectedArchetype) != JSON.stringify(comparingArchetype)) {
+      if (JSON.stringify(selectedArchetype, Object.keys(selectedArchetype).sort()) != JSON.stringify(comparingArchetype, Object.keys(comparingArchetype).sort())) {
         let log = {
           'name': selectedArchetype.name,
           'diff': []
         };
 
-        if (selectedArchetype.cohesiveness != comparingArchetype.cohesiveness) {
-          log.diff.push(`Cohesiveness changed to ${selectedArchetype.cohesiveness} from ${comparingArchetype.cohesiveness}.`);
+        if (log.name == 'Shadows And Dust') {
+          console.log(JSON.stringify(selectedArchetype))
+          console.log(JSON.stringify(comparingArchetype))
         }
+
         if (selectedArchetype.offeringRate != comparingArchetype.offeringRate) {
           log.diff.push(`Offering Rate ${selectedArchetype.offeringRate > comparingArchetype.offeringRate ? 'increased to' : 'reduced to'} ${selectedArchetype.offeringRate * 100}% from ${comparingArchetype.offeringRate * 100}.`);
         }
+        if (selectedArchetype.cohesiveness != comparingArchetype.cohesiveness) {
+          log.diff.push(`Cohesiveness Rating changed to ${selectedArchetype.cohesiveness} from ${comparingArchetype.cohesiveness}.`);
+        }
         if (selectedArchetype.wildPickBonus != comparingArchetype.wildPickBonus) {
-          log.diff.push(`Wild Pick Bonus changed to ${selectedArchetype.wildPickBonus} from ${comparingArchetype.wildPickBonus}.`);
+          log.diff.push(`Wild Pick Bonus Ratio changed to ${selectedArchetype.wildPickBonus} from ${comparingArchetype.wildPickBonus}.`);
         }
 
         if (JSON.stringify(selectedArchetype.cards) != JSON.stringify(comparingArchetype.cards)) {
-
           let newChampions = selectedArchetype.cards.champions.filter(x => !comparingArchetype.cards.champions.includes(x));
           let removedChampions = comparingArchetype.cards.champions.filter(x => !selectedArchetype.cards.champions.includes(x));
 

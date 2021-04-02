@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DatabaseService } from '../shared/database.service';
 import * as Utility from '../shared/utility';
+import { ClipboardService } from 'ngx-clipboard'
 
 declare var $: any;
 @Component({
@@ -96,7 +97,8 @@ export class DatabaseComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private databaseService: DatabaseService
+        private databaseService: DatabaseService,
+        private clipboardService: ClipboardService
     ) {
         this.form = this.formBuilder.group({
             regions: this.formBuilder.array([]),
@@ -165,6 +167,10 @@ export class DatabaseComponent implements OnInit {
     changeSort(sortCode) {
         this.sortType = sortCode;
         this.submit();
+    }
+
+    card2Clipboard(card) {
+        this.clipboardService.copy(`{{LoR|${card.name}|code=${card.code}}}`);
     }
 
     selectCardInfo(resultIndex) {
