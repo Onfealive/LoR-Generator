@@ -1,0 +1,25 @@
+<h2>JSON Links</h2>
+<div class="input-group mb-3">
+    <span class="input-group-text" id="version">Version</span>
+    <input type="text" class="form-control" placeholder="Version" aria-label="Version" aria-describedby="version"
+        [(ngModel)]="currentPatch" pattern="^(\d+\.)?(\d+\.)?(\*|\d+)$">
+</div>
+<table class="table" *ngIf="isValidVersion(currentPatch)">
+    <thead>
+        <tr>
+            <th scope="col">JSON Link</th>
+            <th scope="col">Latest JSON Link</th>
+            <th scope="col">Upcoming JSON Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let set of [1, 2, 3, 4]">
+            <td><a [href]="getJSONLink(patch2code(currentPatch), set)" target="_blank">Set {{set}} - V{{
+                    patch2code(currentPatch, true) }}</a></td>
+            <td><a [href]="getJSONLink('latest', set)" target="_blank">Set {{set}} - Latest</a></td>
+            <td><a *ngIf="upcomingPatch(currentPatch) > newestPatch"
+                    [href]="getJSONLink(upcomingPatch(currentPatch), set)" target="_blank">Set {{set}} - V{{
+                    upcomingPatch(currentPatch, true) }}</a></td>
+        </tr>
+    </tbody>
+</table>

@@ -71,6 +71,17 @@ export function camelize(str) {
   }).replace(/\s+/g, '');
 }
 
+export function cleanNewline(str: string) {
+  if (!str) {
+    return str;
+  }
+  ['\r\n','\r','\n'].forEach(indicator => {
+    str = str.split(indicator).map(s => s.trim()).join(' ');
+  });
+
+  return str;
+}
+
 export function cleanObject(obj) {
   for (var propName in obj) {
     if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {

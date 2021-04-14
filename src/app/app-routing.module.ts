@@ -5,12 +5,14 @@ import { ExpeditionGeneratorComponent } from './expedition-generator/expedition-
 import { AboutComponent } from './about/about.component';
 import { DatabaseComponent } from './database/database.component';
 import { TextFormatterComponent } from './text-formatter/text-formatter.component';
+import { UtilityComponent } from './utility/utility.component';
 
 const routes: Routes = [
   { path: "patch-note", component: PatchNotesGeneratorComponent },
   { path: "expedition", component: ExpeditionGeneratorComponent },
   { path: "text-formatter", component: TextFormatterComponent },
   { path: "database", component: DatabaseComponent },
+  { path: "utility", component: UtilityComponent },
   { path: "about", component: AboutComponent },
   { path: '', redirectTo: '/patch-note', pathMatch: 'full' }
 ];

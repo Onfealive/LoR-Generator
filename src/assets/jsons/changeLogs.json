@@ -1,5 +1,23 @@
 [
     {
+        "version": "1.5.3",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.6."
+                ]
+            },
+            {
+                "title": "Utility",
+                "details": [
+                    "Introduced - Provides some special tools.",
+                    "Added JSON Links - Quickly open JSON links on Riot's APi site."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.5.2",
         "changes": [
             {

@@ -15,6 +15,7 @@ import { DatabaseComponent } from './database/database.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TextFormatterComponent } from './text-formatter/text-formatter.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { UtilityComponent } from './utility/utility.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     ExpeditionGeneratorComponent,
     AboutComponent,
     DatabaseComponent,
-    TextFormatterComponent
+    TextFormatterComponent,
+    UtilityComponent
   ],
   imports: [
     BrowserModule,
