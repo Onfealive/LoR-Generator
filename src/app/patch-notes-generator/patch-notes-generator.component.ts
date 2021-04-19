@@ -398,12 +398,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
                     let largeContents = [
                         {
                             object: 'description',
+                            text: 'Description has',
                             newPrefix: newPrefixText,
                             oldPrefix: oldPrefixText,
                             isCheckedVisual: true
                         },
                         {
                             object: 'levelupDescription',
+                            text: 'Level Up has',
                             newPrefix: newPrefixLevelUp,
                             oldPrefix: oldPrefixLevelUp,
                             isCheckedVisual: true
@@ -423,7 +425,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                                 log.type = MODIFY_TYPE.CHANGE_FLAVOR;
                             }
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
-                                log.diff.push(commonPrefix + `Visual Updated.`);
+                                log.diff.push(commonPrefix + largeContent.text + ` Visual Updated.`);
                             } else {
                                 const diffParts = Diff.diffWords(oldCard[largeContent.object], "\n" + newCard[largeContent.object], {
                                     newlineIsToken: false
@@ -474,6 +476,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
                                     log.diff.push(oldDiv.join(''));
                                 }
+                            }
+                        } else if (largeContent.isCheckedVisual) {
+                            if (Utility.cleanNewline(oldCard['_data'][largeContent.object]) != Utility.cleanNewline(newCard['_data'][largeContent.object])) {
+                                log.diff.push(commonPrefix + largeContent.text + ` Visual Updated.`);
                             }
                         }
                     });

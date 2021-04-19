@@ -1,5 +1,23 @@
 [
     {
+        "version": "1.5.4",
+        "changes": [
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Now the Visual Updated will show up in Description or Level Up."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added Filter: Keywords.",
+                    "Updated the interface to be able to view on Mobile."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.5.3",
         "changes": [
             {

@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()" id="top">
     <div class="form-group row">
-        <label class="col-1 col-form-label">Regions</label>
-        <div class="col-11 image-checkboxes-container">
+        <label class="col-3 col-md-1 col-form-label">Regions</label>
+        <div class="col-9 col-md-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="regions"
                 *ngFor="let region of regionFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
@@ -14,8 +14,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-1 col-form-label">Sets</label>
-        <div class="col-11 image-checkboxes-container">
+        <label class="col-3 col-md-1 col-form-label">Sets</label>
+        <div class="col-9 col-md-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="sets"
                 *ngFor="let region of setFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id" [formControlName]="i">
@@ -27,8 +27,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-1 col-form-label">Card Types</label>
-        <div class="col-11 image-checkboxes-container">
+        <label class="col-3 col-md-1 col-form-label">Card Types</label>
+        <div class="col-9 col-md-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="cardTypes"
                 *ngFor="let region of cardTypeFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'cardType' + cardTypesData[i].id"
@@ -41,8 +41,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-1 col-form-label">Cost</label>
-        <div class="col-11 image-checkboxes-container">
+        <label class="col-3 col-md-1 col-form-label">Cost</label>
+        <div class="col-9 col-md-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="costs"
                 *ngFor="let region of costFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'cost' + costsData[i].id" [formControlName]="i">
@@ -55,8 +55,8 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-1 col-form-label">Collectible</label>
-        <div class="col-11 image-checkboxes-container">
+        <label class="col-3 col-md-1 col-form-label">Collectible</label>
+        <div class="col-9 col-md-11 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="collectibles"
                 *ngFor="let region of collectibleFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'collectible' + collectibleData[i].id"
@@ -69,13 +69,24 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-1 col-form-label">Card Search</label>
-        <div class="col-11">
+        <label class="col-3 col-md-1 col-form-label">Card Search</label>
+        <div class="col-9 col-md-11">
             <div class="input-group mb-3">
                 <button class="btn btn-secondary" type="button" (click)="clearTextSearch()">Clear</button>
                 <input type="text" class="form-control" formControlName="text"
                     placeholder="Card Name, Card Text, Keywords or even Card Code">
             </div>
+        </div>
+    </div>
+    <div class="form-group row keyword-container">
+        <label class="col-3 col-md-1 col-form-label">Keywords</label>
+        <div class="col-9 col-md-11">
+            <ng-select #keywordSelector [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}" [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
+                <ng-option *ngFor="let keyword of keywords" [value]="keyword.name">
+                    <img *ngIf="keyword.icon" [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
+                    {{keyword.name}}
+                </ng-option>
+            </ng-select>
         </div>
     </div>
 
@@ -104,7 +115,7 @@
             [ngTemplateOutletContext]="{card: card, resultIndex: resultIndex}">
         </ng-container>
         <ng-template #cardInfo let-card="card" let-resultIndex="resultIndex">
-            <div class="card-info col-2" [id]="'card_' + card.code">
+            <div class="card-info col-6 col-md-2" [id]="'card_' + card.code">
                 <div class="card h-100">
                     <div class="card-header text-center">
                         <small class="text-muted ">{{card.code}}<span class="to-clipboard"
@@ -226,7 +237,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-1 d-grid gap-5">
+                            <div class="col-3 col-md-1d-grid gap-5">
                                 <button class="invisible"></button>
                                 <button class="btn btn-primary gap-2" type="button"
                                     (click)="selectCardDetail(resultIndex)">Close</button>

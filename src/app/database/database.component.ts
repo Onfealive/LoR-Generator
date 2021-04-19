@@ -1,9 +1,11 @@
 import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DatabaseService } from '../shared/database.service';
 import * as Utility from '../shared/utility';
 import { ClipboardService } from 'ngx-clipboard'
+import { NgSelectComponent } from '@ng-select/ng-select';
+import { Keywords } from '../shared/keywords';
 
 declare var $: any;
 @Component({
@@ -12,6 +14,8 @@ declare var $: any;
     styleUrls: ['./database.component.scss'],
 })
 export class DatabaseComponent implements OnInit {
+    @ViewChild('keywordSelector') keywordSelectorComponent: NgSelectComponent;
+
     isCompleted = false;
     database = {};
 
@@ -21,6 +25,10 @@ export class DatabaseComponent implements OnInit {
 
     defaultImage = `./assets/icons/Queue Card Back.png`;
     defaultArtwork = `./assets/gifs/Loading.gif`;
+
+    selectedKeywords: [];
+
+    keywords = Keywords;
 
     sortData: Array<any> = [
         { id: 'name', name: 'Name', sort: 'name' },
@@ -254,6 +262,8 @@ export class DatabaseComponent implements OnInit {
 
         const searchText = this.form.value['text'];
 
+        const searchKeywords = this.selectedKeywords || [];
+
         let filterList = [];
         if (selectedRegionIds.length) {
             filterList.push((c) => {
@@ -332,6 +342,18 @@ export class DatabaseComponent implements OnInit {
             });
         }
 
+        if (searchKeywords.length) {
+            filterList.push((c) => {
+                let found = 0;
+                searchKeywords.forEach((keyword) => {
+                    if (c.keywords.includes(keyword)) {
+                        found++;
+                    }
+                });
+                return found == searchKeywords.length;
+            });
+        }
+
         let searchResult = Object.values(this.database);
         filterList.forEach((filterLogic) => {
             searchResult = searchResult.filter(filterLogic);
@@ -346,6 +368,7 @@ export class DatabaseComponent implements OnInit {
         this.isCompleted = true;
 
         if (!isFirstTime) {
+            console.log('here')
             setTimeout(() => {
                 $([document.documentElement, document.body]).animate(
                     {

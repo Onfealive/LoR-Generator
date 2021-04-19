@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.ng-select .ng-select-container {
+    min-height: 38px;
+    .ng-value-container {
+        .ng-value-icon.left {
+            float: right;
+            padding-left: 7px;
+            padding-right: 0;
+        }
+    }
+}

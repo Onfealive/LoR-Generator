@@ -5,12 +5,12 @@ import { PatchInfo } from '../shared/patches';
 import * as Utility from "../shared/utility";
 import { Observable, Observer, Subject } from 'rxjs';
 import { forkJoin } from 'rxjs';
+import { Keywords } from './keywords';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
-  private queue: PendingRequest[] = [];
 
   newestPatch = null;
   private newestPatchCode = null;
@@ -57,6 +57,7 @@ export class DatabaseService {
   _convertData2Database(rawData, patch) {
     let database = {}
     let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
+    let specialKeywords = Keywords.map(k => k.name);
 
     Object.keys(rawData).forEach(setID => {
       const rawSetData = rawData[setID][patch];
@@ -98,8 +99,31 @@ export class DatabaseService {
           spellSpeed: realSpellSpeed,
           group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-          keywords: cardData.keywords.filter(k => !spellSpeedKeywords.includes(k)),
+          keywords: cardData.keywords
         }
+
+        if (!setData[cardData.cardCode]['keywords'].length) {
+          setData[cardData.cardCode]['keywords'] = [];
+        }
+
+        if (cardData.keywordRefs.includes('AuraVisualFakeKeyword')) {
+          setData[cardData.cardCode]['keywords'].push('Aura');
+        }
+
+        specialKeywords.forEach(keyword => {
+          let keywordText = [`<link=vocab.${keyword}>`, `<link=keyword.${keyword}>`, `<style=Vocab>${keyword}`];
+          keywordText.forEach(kText => {
+            if (cardData.description.toLowerCase().includes(kText.toLowerCase())) {
+              setData[cardData.cardCode]['keywords'].push(keyword);
+            }
+          });
+        });
+
+        if (setData[cardData.cardCode]['keywords'].includes('Immobile')) {
+          setData[cardData.cardCode]['keywords'] = setData[cardData.cardCode]['keywords'].concat(["Can't Attack", "Can't Block"]);
+        }
+
+        setData[cardData.cardCode]['keywords'] = [...new Set(setData[cardData.cardCode]['keywords'])];
       });
 
       database = Object.assign(database, setData);
@@ -160,19 +184,5 @@ export class DatabaseService {
     let url = `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardcode}-full.png`;
 
     return url;
-  }
-}
-
-export class PendingRequest {
-  url: string;
-  method: string;
-  options: any;
-  subscription: Subject<any>;
-
-  constructor(url: string, method: string, options: any, subscription: Subject<any>) {
-    this.url = url;
-    this.method = method;
-    this.options = options;
-    this.subscription = subscription;
   }
 }

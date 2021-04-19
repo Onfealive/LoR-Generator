@@ -16,6 +16,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TextFormatterComponent } from './text-formatter/text-formatter.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { UtilityComponent } from './utility/utility.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UtilityComponent } from './utility/utility.component';
     ReactiveFormsModule,
     LazyLoadImageModule,
     HttpClientModule,
-    ClipboardModule
+    ClipboardModule,
+    NgSelectModule 
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
