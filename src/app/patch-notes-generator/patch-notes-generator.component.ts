@@ -328,8 +328,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
             logGroup.list.push(log);
         }
 
-        let skippingKeywords = ['Missing Translation'];
-
         Object.keys(totalNewJSONData).forEach(cardCode => {
             const oldCard = totalOldJSONData[cardCode];
             const newCard = totalNewJSONData[cardCode];
@@ -381,8 +379,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         }
                     }
 
-                    let removedKeywords = oldCard.keywords.filter(x => !skippingKeywords.includes(x) && !newCard.keywords.includes(x));
-                    let newKeywords = newCard.keywords.filter(x => !skippingKeywords.includes(x) && !oldCard.keywords.includes(x));
+                    let removedKeywords = oldCard.keywords.filter(x => !newCard.keywords.includes(x));
+                    let newKeywords = newCard.keywords.filter(x => !oldCard.keywords.includes(x));
                     if (newKeywords.length) {
                         let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
 
@@ -483,6 +481,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             }
                         }
                     });
+
+                    if (oldCard.artist != newCard.artist) {
+                        if (!oldCard.artist) {
+                            log.diff.push(commonPrefix + `Artist added: ${newCard.artist}.`);
+                        } else {
+                            log.diff.push(commonPrefix + `Artist changed to ${newCard.artist} from ${oldCard.artist}.`);
+                        }
+                    }
                 }
 
                 handleLogDiff(log);

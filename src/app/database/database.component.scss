@@ -174,8 +174,19 @@ form {
 }
 
 .card-detail {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     .card-image {
         max-width: 100%;
+    }
+
+    .card-body {
+        .region {
+            transform: translate(0, -50%);
+        }
     }
 }
 .keyword-container {

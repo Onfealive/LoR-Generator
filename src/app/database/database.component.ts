@@ -6,6 +6,7 @@ import * as Utility from '../shared/utility';
 import { ClipboardService } from 'ngx-clipboard'
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { Keywords } from '../shared/keywords';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 declare var $: any;
 @Component({
@@ -15,6 +16,8 @@ declare var $: any;
 })
 export class DatabaseComponent implements OnInit {
     @ViewChild('keywordSelector') keywordSelectorComponent: NgSelectComponent;
+
+    isMobile = false;
 
     isCompleted = false;
     database = {};
@@ -106,8 +109,11 @@ export class DatabaseComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private databaseService: DatabaseService,
-        private clipboardService: ClipboardService
+        private clipboardService: ClipboardService,
+        private deviceService: DeviceDetectorService
     ) {
+        this.isMobile = this.deviceService.isMobile();
+
         this.form = this.formBuilder.group({
             regions: this.formBuilder.array([]),
             sets: this.formBuilder.array([]),

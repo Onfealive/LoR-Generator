@@ -57,7 +57,9 @@ export class DatabaseService {
   _convertData2Database(rawData, patch) {
     let database = {}
     let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
-    let specialKeywords = Keywords.map(k => k.name);
+    let keywords = Keywords.filter(k => !k.specialIndicator);
+    let specialKeywords = Keywords.filter(k => k.specialIndicator);
+    let skippingKeywords = ['Missing Translation'];
 
     Object.keys(rawData).forEach(setID => {
       const rawSetData = rawData[setID][patch];
@@ -99,7 +101,8 @@ export class DatabaseService {
           spellSpeed: realSpellSpeed,
           group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-          keywords: cardData.keywords
+          keywords: cardData.keywords,
+          artist: cardData.artistName
         }
 
         if (!setData[cardData.cardCode]['keywords'].length) {
@@ -110,20 +113,36 @@ export class DatabaseService {
           setData[cardData.cardCode]['keywords'].push('Aura');
         }
 
-        specialKeywords.forEach(keyword => {
-          let keywordText = [`<link=vocab.${keyword}>`, `<link=keyword.${keyword}>`, `<style=Vocab>${keyword}`];
+        keywords.forEach(keywordData => {
+          let keywordText = [`<link=vocab.${keywordData.name}>`, `<link=keyword.${keywordData.name}>`, `<style=Vocab>${keywordData.name}`];
           keywordText.forEach(kText => {
             if (cardData.description.toLowerCase().includes(kText.toLowerCase())) {
-              setData[cardData.cardCode]['keywords'].push(keyword);
+              setData[cardData.cardCode]['keywords'].push(keywordData.name);
+              return;
             }
           });
         });
 
-        if (setData[cardData.cardCode]['keywords'].includes('Immobile')) {
-          setData[cardData.cardCode]['keywords'] = setData[cardData.cardCode]['keywords'].concat(["Can't Attack", "Can't Block"]);
-        }
+        specialKeywords.forEach(keywordData => {
+          if (cardData['keywords'].includes(keywordData.specialIndicator)) {
+            setData[cardData.cardCode]['keywords'].push(keywordData.name);
+            return;
+          }
+          if (cardData['levelupDescription'].includes(keywordData.specialIndicator)) {
+            setData[cardData.cardCode]['keywords'].push(keywordData.name);
+            return;
+          }
+          if (cardData['description'].includes(keywordData.specialIndicator)) {
+            setData[cardData.cardCode]['keywords'].push(keywordData.name);
+            return;
+          }
+          if (cardData['descriptionRaw'].includes(keywordData.specialIndicator)) {
+            setData[cardData.cardCode]['keywords'].push(keywordData.name);
+            return;
+          }
+        })
 
-        setData[cardData.cardCode]['keywords'] = [...new Set(setData[cardData.cardCode]['keywords'])];
+        setData[cardData.cardCode]['keywords'] = [...new Set(setData[cardData.cardCode]['keywords'].filter(x => !skippingKeywords.includes(x)))];
       });
 
       database = Object.assign(database, setData);

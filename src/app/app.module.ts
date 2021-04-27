@@ -17,6 +17,7 @@ import { TextFormatterComponent } from './text-formatter/text-formatter.componen
 import { ClipboardModule } from 'ngx-clipboard';
 import { UtilityComponent } from './utility/utility.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AutosizeModule } from 'ngx-autosize';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     LazyLoadImageModule,
     HttpClientModule,
     ClipboardModule,
-    NgSelectModule 
+    NgSelectModule,
+    AutosizeModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

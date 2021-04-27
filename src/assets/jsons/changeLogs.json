@@ -1,5 +1,29 @@
 [
     {
+        "version": "1.5.5",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.7 until day 2021/04/27."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Added Artist Change detector."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Add some special Keywords",
+                    "Bugfixed: Updated the interface to be able to view on Mobile (the previous version could not do it yet)."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.5.4",
         "changes": [
             {

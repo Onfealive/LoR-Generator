@@ -81,7 +81,8 @@
     <div class="form-group row keyword-container">
         <label class="col-3 col-md-1 col-form-label">Keywords</label>
         <div class="col-9 col-md-11">
-            <ng-select #keywordSelector [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}" [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
+            <ng-select #keywordSelector [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}"
+                [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
                 <ng-option *ngFor="let keyword of keywords" [value]="keyword.name">
                     <img *ngIf="keyword.icon" [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
                     {{keyword.name}}
@@ -149,13 +150,13 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-11">
+                            <div class="col-12 col-md-11">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 d-none d-md-block">
                                         <img class="card-image" [defaultImage]="defaultImage"
                                             [lazyLoad]="getAPIImage(card.code)" [alt]="card.code" width="250px">
                                     </div>
-                                    <div class="col-9">
+                                    <div class="col-12 col-md-9">
                                         <div class="row">
                                             <h5 class="card-title text-center">
                                                 {{card.name}}
@@ -176,50 +177,50 @@
                                         <div class="row">
                                             <form class="border-0">
                                                 <div class="form-group row">
-                                                    <label class="col-2 col-form-label">Type</label>
-                                                    <div class="col-4">
+                                                    <label class="col-4 col-md-2 col-form-label">Type</label>
+                                                    <div class="col-8 col-md-4">
                                                         <input class="form-control-plaintext" type="text" readonly
                                                             value="{{card.type}}">
                                                     </div>
-                                                    <label class="col-2 col-form-label">Region</label>
-                                                    <div class="col-4 position-relative">
-                                                        <img class="position-absolute top-50 start-0 translate-middle"
+                                                    <label class="col-4 col-md-2 col-form-label">Region</label>
+                                                    <div class="col-8 col-md-4 position-relative">
+                                                        <img class="position-absolute top-50 region"
                                                             [src]="'./assets/icons/' + getRegion(card.code) + '.png'"
                                                             width="50xp">
                                                     </div>
-                                                    <label class="col-2 col-form-label">Cost</label>
-                                                    <div class="col-4">
+                                                    <label class="col-4 col-md-2 col-form-label">Cost</label>
+                                                    <div class="col-8 col-md-4">
                                                         <input class="form-control-plaintext" type="text" readonly
                                                             value="{{card.cost}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row" *ngIf="card.description">
-                                                    <label class="col-2 col-form-label">Description</label>
-                                                    <div class="col-10">
-                                                        <textarea class="form-control-plaintext" rows="3"
+                                                    <label class="col-4 col-md-2 col-form-label">Description</label>
+                                                    <div class="col-8 col-md-10">
+                                                        <textarea autosize class="form-control-plaintext"
                                                             readonly>{{card.description}}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row" *ngIf="card.levelupDescription">
-                                                    <label class="col-2 col-form-label">Level Up</label>
-                                                    <div class="col-10">
-                                                        <textarea class="form-control-plaintext" rows="2"
+                                                    <label class="col-4 col-md-2 col-form-label">Level Up</label>
+                                                    <div class="col-8 col-md-10">
+                                                        <textarea autosize class="form-control-plaintext"
                                                             readonly>{{card.levelupDescription}}</textarea>
                                                     </div>
                                                 </div>
                                                 <fieldset class="form-group row"
                                                     *ngIf="['Follower','Champion'].includes(card.type)">
-                                                    <label class="col-2 col-form-label">Power</label>
-                                                    <div class="col-4"><input class="form-control-plaintext" type="text"
-                                                            readonly value="{{card.power}}"></div>
-                                                    <label class="col-2 col-form-label">Health</label>
-                                                    <div class="col-4"><input class="form-control-plaintext" type="text"
-                                                            readonly value="{{card.health}}"></div>
+                                                    <label class="col-4 col-md-2 col-form-label">Power</label>
+                                                    <div class="col-8 col-md-4"><input class="form-control-plaintext"
+                                                            type="text" readonly value="{{card.power}}"></div>
+                                                    <label class="col-4 col-md-2 col-form-label">Health</label>
+                                                    <div class="col-8 col-md-4"><input class="form-control-plaintext"
+                                                            type="text" readonly value="{{card.health}}"></div>
                                                 </fieldset>
                                                 <div class="form-group row">
-                                                    <label class="col-2 col-form-label">Flavor</label>
-                                                    <div class="col-10">
-                                                        <textarea class="form-control-plaintext" rows="5"
+                                                    <label class="col-4 col-md-2 col-form-label">Flavor</label>
+                                                    <div class="col-8 col-md-10">
+                                                        <textarea autosize class="form-control-plaintext"
                                                             readonly>{{card.flavor}}</textarea>
                                                     </div>
                                                 </div>
@@ -231,17 +232,18 @@
                                     <div class="col-12">
                                         <div>Artwork:</div>
                                         <img class="rounded mx-auto d-block" [defaultImage]="defaultArtwork"
-                                            [lazyLoad]="getAPIArtwork(card.code)" [alt]="card.code" height="500px"
-                                            width="auto">
+                                            [lazyLoad]="getAPIArtwork(card.code)" [alt]="card.code"
+                                            [attr.width]="isMobile ? '100%' : 'auto'"
+                                            [attr.height]="isMobile ? 'auto' : '500px'">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-3 col-md-1d-grid gap-5">
-                                <button class="invisible"></button>
-                                <button class="btn btn-primary gap-2" type="button"
+                            <div [ngClass]="{'col-md-1 mt-md-0 d-grid gap-5': !isMobile, 'col-12 mt-3 d-flex justify-content-around gap-3': isMobile }">
+                                <button *ngIf="!isMobile" class="invisible"></button>
+                                <button class="btn btn-primary gap-2 w-100" type="button"
                                     (click)="selectCardDetail(resultIndex)">Close</button>
-                                <button class="btn btn-secondary" type="button"
+                                <button class="btn btn-secondary w-100" type="button"
                                     (click)="hideAllCardDetails(resultIndex)">Close All</button>
                             </div>
                         </div>
