@@ -374,7 +374,6 @@ export class DatabaseComponent implements OnInit {
         this.isCompleted = true;
 
         if (!isFirstTime) {
-            console.log('here')
             setTimeout(() => {
                 $([document.documentElement, document.body]).animate(
                     {

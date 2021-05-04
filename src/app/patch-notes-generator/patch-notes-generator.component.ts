@@ -155,15 +155,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
         draggedFiles.sort((a, b) => {
             return a.name - b.name;
         });
-        for (let i = 0; i <= draggedFiles.length - 2; i += 2) {
-            let currentFile = draggedFiles[i].name.replace('.json', '').split('_');
-            let nextFile = draggedFiles[i + 1].name.replace('.json', '').split('_');
-
-            if (!["set1", "set2", "set3", "set4"].includes(currentFile[0]) || !["set1", "set2", "set3", "set4"].includes(nextFile[0])) {
-                this.error = 'Only support Set 1 to 4.';
-                return;
-            }
-        }
 
         this.files.push(...draggedFiles);
 
@@ -180,19 +171,29 @@ export class PatchNotesGeneratorComponent implements OnInit {
             const fileReader = new FileReader();
             fileReader.readAsText(selectedFile, "UTF-8");
             fileReader.onload = () => {
-                if (!customDatabase[currentFile[0]]) {
-                    customDatabase[currentFile[0]] = {};
-                }
-                customDatabase[currentFile[0]][currentFile[1]] = fileReader.result as string;
+                try {
+                    if (!customDatabase[currentFile[0]]) {
+                        customDatabase[currentFile[0]] = {};
+                    }
+                    customDatabase[currentFile[0]][currentFile[1]] = fileReader.result as string;
 
-                countFiles += 1;
-                if (countFiles == this.files.length) {
-                    this.customDatabase = this.databaseService._convertData2Database(customDatabase, currentFile[1])
-                    this.compare();
+                    countFiles += 1;
+                    if (countFiles == this.files.length) {
+                        if ($.isEmptyObject(customDatabase)) {
+                            throw 'Empty Object';
+                        }
+                        this.customDatabase = this.databaseService._convertData2Database(customDatabase, currentFile[1])
+                        this.compare();
+                    }
+                } catch (error) {
+                    console.log(error);
+                    this.error = 'The file contains no data, or is not formatted in Riot. Please refer to the "Utility" tab.';
                 }
+
             }
             fileReader.onerror = (error) => {
                 console.log(error);
+                    this.error = 'The file contains no data, or is not formatted in Riot. Please refer to the "Utility" tab.';
             }
         });
     }
@@ -544,27 +545,31 @@ export class PatchNotesGeneratorComponent implements OnInit {
         }
 
         addedCards.forEach(addedCard => {
-            let cardData = database[addedCard.code]._data;
-            let subtype = Utility.capitalize(cardData.subtype);
+            let cardData = database[addedCard.code];
+            let rawCardData = cardData._data;
+            let subtype = Utility.capitalize(rawCardData.subtype);
 
-            result[cardData.cardCode] = Utility.cleanObject({
-                name: cardData.name,
-                type: cardData.type,
-                rarity: cardData.collectible ? cardData.rarityRef : 'None',
+            let keywords = cardData.keywords;
+            keywords.sort();
+
+            result[rawCardData.cardCode] = Utility.cleanObject({
+                name: rawCardData.name,
+                type: rawCardData.type,
+                rarity: rawCardData.collectible ? rawCardData.rarityRef : 'None',
                 subtype: subtype ? [subtype] : '',
-                supertype: cardData.supertype,
-                keywords: cardData.keywords,
-                keywordRefs: cardData.keywords,
-                collectible: cardData.collectible,
-                cost: cardData.cost,
-                power: cardData.attack,
-                health: cardData.health,
-                desc: cardData.descriptionRaw,
-                lvldesc: cardData.levelupDescriptionRaw,
+                supertype: rawCardData.supertype,
+                keywords: rawCardData.keywords,
+                keywordRefs: keywords,
+                collectible: rawCardData.collectible,
+                cost: rawCardData.cost,
+                power: rawCardData.attack,
+                health: rawCardData.health,
+                desc: rawCardData.descriptionRaw,
+                lvldesc: rawCardData.levelupDescriptionRaw,
                 categoryRefs: subtype ? [subtype] : '',
-                flavor: cardData.flavorText,
-                artist: cardData.artistName
-            })
+                flavor: rawCardData.flavorText,
+                artist: rawCardData.artistName
+            });
         });
 
         result = Utility.sortObjectByKey(result);

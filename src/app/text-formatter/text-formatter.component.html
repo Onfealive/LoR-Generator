@@ -13,6 +13,7 @@
   </div>
   <textarea #text class="form-control" aria-label="Text Content" [(ngModel)]="textContent"></textarea>
 </div>
-<div class="mt-3">
-  <button type="button" class="btn btn-success" (click)="executeText()" [disabled]="!isCompleted || textContent.length == 0">Excecute</button>
+<div class="d-flex flex-row-reverse mt-3 align-right ">
+  <button type="button" class="btn btn-success" (click)="executeText()" [disabled]="error ||  !isCompleted || textContent.length == 0">Excecute</button>
+  <button type="button" class="btn btn-info me-3" (click)="text2Clipboard()" [disabled]="!isCompleted || textContent.length == 0">Copy</button>
 </div>

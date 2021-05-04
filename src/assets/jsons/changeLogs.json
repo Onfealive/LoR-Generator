@@ -1,5 +1,30 @@
 [
     {
+        "version": "1.6",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.7 until day 2021/05/03."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "No longer checks the filename, but instead checks the content.",
+                    "Bugfixed: keywords and keywordRefs when Convert New Cards will display correctly."
+                ]
+            },
+            {
+                "title": "Text Formatter",
+                "details": [
+                    "Add feature copy content to Clipboard.",
+                    "No longer checks the filename, but instead checks the content."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.5.5",
         "changes": [
             {
@@ -17,7 +42,7 @@
             {
                 "title": "Database",
                 "details": [
-                    "Add some special Keywords",
+                    "Add some special Keywords.",
                     "Bugfixed: Updated the interface to be able to view on Mobile (the previous version could not do it yet)."
                 ]
             }

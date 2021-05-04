@@ -7,6 +7,7 @@ export const Keywords = [
     { name: "Aura", icon: "Aura" },
     { name: "Barrier", icon: "Barrier" },
     { name: "Behold" },
+    { name: "Blade Dance" },
     { name: "Blockade", specialIndicator: "can't take damage or die" },
     { name: "Burst", icon: "Burst" },
     { name: "Can block Elusives", specialIndicator: 'can block units with Elusive' },

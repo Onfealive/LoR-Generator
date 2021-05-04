@@ -342,11 +342,6 @@ export class ExpeditionGeneratorComponent implements OnInit {
           'diff': []
         };
 
-        if (log.name == 'Shadows And Dust') {
-          console.log(JSON.stringify(selectedArchetype))
-          console.log(JSON.stringify(comparingArchetype))
-        }
-
         if (selectedArchetype.offeringRate != comparingArchetype.offeringRate) {
           log.diff.push(`Offering Rate ${selectedArchetype.offeringRate > comparingArchetype.offeringRate ? 'increased to' : 'reduced to'} ${selectedArchetype.offeringRate * 100}% from ${comparingArchetype.offeringRate * 100}.`);
         }

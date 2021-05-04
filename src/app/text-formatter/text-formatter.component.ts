@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import $ from "jquery";
-import { HttpClient } from '@angular/common/http';
 
 import * as Utiliy from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
 
+import $ from "jquery";
+import { ClipboardService } from 'ngx-clipboard';
 @Component({
   selector: 'app-text-formatter-generator',
   templateUrl: './text-formatter.component.html',
@@ -24,9 +24,9 @@ export class TextFormatterComponent implements OnInit {
   isCompleted = false;
 
   constructor(
-    private http: HttpClient,
-    private databaseService: DatabaseService
-    ) {
+    private databaseService: DatabaseService,
+    private clipboardService: ClipboardService,
+  ) {
   }
 
   ngOnInit(): void {
@@ -46,16 +46,6 @@ export class TextFormatterComponent implements OnInit {
       return a.name - b.name;
     });
 
-    for (let i = 0; i <= draggedFiles.length - 2; i += 2) {
-      let currentFile = draggedFiles[i].name.replace('.json', '').split('_');
-      let nextFile = draggedFiles[i + 1].name.replace('.json', '').split('_');
-
-      if (!["set1", "set2", "set3","set4"].includes(currentFile[0]) || !["set1", "set2", "set3","set4"].includes(nextFile[0])) {
-        this.error = 'Only support Set 1 to 4.';
-        return;
-      }
-    }
-
     this.files.push(...draggedFiles);
 
     let database = {};
@@ -68,18 +58,27 @@ export class TextFormatterComponent implements OnInit {
       const fileReader = new FileReader();
       fileReader.readAsText(selectedFile, "UTF-8");
       fileReader.onload = () => {
-        if (!database[currentFile[0]]) {
-          database[currentFile[0]] = {};
-        }
-        database[currentFile[0]][currentFile[1]] = fileReader.result as string;
+        try {
+          if (!database[currentFile[0]]) {
+            database[currentFile[0]] = {};
+          }
+          database[currentFile[0]][currentFile[1]] = fileReader.result as string;
 
-        countFiles += 1;
-        if (countFiles == this.files.length) {
-          this.database = this.databaseService._convertData2Database(database, currentFile[1]);
+          countFiles += 1;
+          if (countFiles == this.files.length) {
+            if ($.isEmptyObject(database)) {
+              throw 'Empty Object';
+            }
+            this.database = this.databaseService._convertData2Database(database, currentFile[1]);
+          }
+        } catch (error) {
+          console.log(error);
+          this.error = 'The file contains no data, or is not formatted in Riot. Please refer to the "Utility" tab.';
         }
       }
       fileReader.onerror = (error) => {
         console.log(error);
+        this.error = 'The file contains no data, or is not formatted in Riot. Please refer to the "Utility" tab.';
       }
     });
   }
@@ -114,5 +113,9 @@ export class TextFormatterComponent implements OnInit {
         this.textContent = this.textContent.replace(regex, isChampion ? `{{LoR|${cardData.name}}}` : `{{LoR|${cardData.name}|code=${cardData.code}}}`);
       }
     });
+  }
+
+  text2Clipboard() {
+    this.clipboardService.copy(this.textContent);
   }
 }

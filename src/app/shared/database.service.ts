@@ -74,6 +74,7 @@ export class DatabaseService {
         } else if (sortedCode.includes('T')) {
           isAssociatedCard = true;
         }
+        
         if (isAssociatedCard) {
           let wordTIndex = sortedCode.lastIndexOf('T');
           let associatedText = sortedCode.slice(wordTIndex + 1)
@@ -101,7 +102,7 @@ export class DatabaseService {
           spellSpeed: realSpellSpeed,
           group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-          keywords: cardData.keywords,
+          keywords: [...cardData.keywords],
           artist: cardData.artistName
         }
 
