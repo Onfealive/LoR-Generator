@@ -30,8 +30,23 @@ export class DatabaseComponent implements OnInit {
     defaultArtwork = `./assets/gifs/Loading.gif`;
 
     selectedKeywords: [];
-
     keywords = Keywords;
+
+    selectedGroups: [];
+    groups = [
+        { name: 'Ascended'},
+        { name: 'Celestial'},
+        { name: 'Dragon'},
+        { name: 'Elite'},
+        { name: 'Elnuk'},
+        { name: 'Moon Weapon'},
+        { name: 'Poro'},
+        { name: 'Sea Monster'},
+        { name: 'Spider'},
+        { name: 'Tech'},
+        { name: 'Treasure'},
+        { name: 'Yeti'},
+    ];
 
     sortData: Array<any> = [
         { id: 'name', name: 'Name', sort: 'name' },
@@ -60,14 +75,21 @@ export class DatabaseComponent implements OnInit {
         { id: '04', icon: 'Empires of the Ascended' },
     ];
 
-    cardTypesData: Array<FormOption> = [
+    cardTypesData: Array<FormOption> = this._reformatFormOptions([
         { id: 'Champion', icon: 'Champion' },
         { id: 'Follower', icon: 'Follower' },
-        { id: 'Spell', icon: 'Spell' },
+        {
+            id: 'Spell', icon: 'Spell', children: [
+                { id: 'Burst', icon: 'Burst' },
+                { id: 'Fast', icon: 'Fast' },
+                { id: 'Focus', icon: 'Focus' },
+                { id: 'Slow', icon: 'Slow' },
+            ]
+        },
         { id: 'Landmark', icon: 'Landmark' },
         { id: 'Skill', icon: 'Skill' },
         { id: 'Trap', name: 'Trap' },
-    ];
+    ]);
 
     costsData: Array<FormOption> = [
         { id: '0', icon: 'Cost', circle: true, name: '0' },
@@ -138,6 +160,26 @@ export class DatabaseComponent implements OnInit {
         }, 500);
     }
 
+    private _reformatFormOptions(formOptions: Array<FormOption>, isRealIndex: boolean = false): Array<FormOption> {
+        let index = 0;
+        let results = [];
+        formOptions.forEach(o => {
+            o.index = index;
+            isRealIndex && results.push(o);
+            index++;
+
+            if (o.children && o.children.length) {
+                o.children.forEach(c => {
+                    c.index = index;
+                    isRealIndex && results.push(c);
+                    index++;
+                });
+            }
+        });
+
+        return isRealIndex ? results : formOptions;
+    }
+
     private addCheckboxData() {
         this.regionsData.forEach((o) =>
             this.regionFormArray.push(new FormControl(o.default))
@@ -145,9 +187,16 @@ export class DatabaseComponent implements OnInit {
         this.setsData.forEach((o) =>
             this.setFormArray.push(new FormControl(o.default))
         );
-        this.cardTypesData.forEach((o) =>
-            this.cardTypeFormArray.push(new FormControl(o.default))
-        );
+
+        this.cardTypesData.forEach((o) => {
+            this.cardTypeFormArray.push(new FormControl(o.default));
+            if (o.children && o.children.length) {
+                o.children.forEach(c => {
+                    this.cardTypeFormArray.push(new FormControl(c.default))
+                });
+            }
+        });
+
         this.costsData.forEach((o) =>
             this.costFormArray.push(new FormControl(o.default))
         );
@@ -176,6 +225,8 @@ export class DatabaseComponent implements OnInit {
 
     clearFilters() {
         this.form.setValue(this.defaultFormValues);
+        this.selectedGroups = [];
+        this.selectedKeywords = [];
     }
 
     changeSort(sortCode) {
@@ -254,8 +305,9 @@ export class DatabaseComponent implements OnInit {
             .map((checked, i) => (checked ? this.setsData[i].id : null))
             .filter((v) => v !== null);
 
+        let realCardTypesData = this._reformatFormOptions(this.cardTypesData, true);
         const selectedCardTypeIds = this.form.value['cardTypes']
-            .map((checked, i) => (checked ? this.cardTypesData[i].id : null))
+            .map((checked, i) => (checked ? realCardTypesData[i].id : null))
             .filter((v) => v !== null);
 
         const selectedCostIds = this.form.value['costs']
@@ -269,6 +321,8 @@ export class DatabaseComponent implements OnInit {
         const searchText = this.form.value['text'];
 
         const searchKeywords = this.selectedKeywords || [];
+
+        const searchGroups = this.selectedGroups || [];
 
         let filterList = [];
         if (selectedRegionIds.length) {
@@ -294,15 +348,31 @@ export class DatabaseComponent implements OnInit {
             });
         }
         if (selectedCardTypeIds.length) {
-            filterList.push((c) => {
-                let found = false;
-                selectedCardTypeIds.forEach((cardTypeCode) => {
-                    if (c.type == cardTypeCode) {
-                        found = true;
-                    }
-                });
-                return found;
+            let parents = this.cardTypesData.filter(c => c.children);
+            let removedParents = [];
+            let removedChildrens = [];
+            parents.forEach(parent => {
+                if (parent.children.some(o => selectedCardTypeIds.includes(o.id))) {
+                    removedParents.push(parent.id);
+                }
+                if (!selectedCardTypeIds.includes(parent.id)) {
+                    removedChildrens = removedChildrens.concat(parent.children.map(c => c.id));
+                }
             });
+
+            let realSelectedCardTypeIds = selectedCardTypeIds.filter(c => !removedParents.concat(removedChildrens).includes(c));
+
+            if (realSelectedCardTypeIds.length) {
+                filterList.push((c) => {
+                    let found = false;
+                    realSelectedCardTypeIds.forEach((cardTypeCode) => {
+                        if (c.type == cardTypeCode || c.spellSpeed == cardTypeCode) {
+                            found = true;
+                        }
+                    });
+                    return found;
+                });
+            }
         }
         if (selectedCostIds.length) {
             filterList.push((c) => {
@@ -360,6 +430,18 @@ export class DatabaseComponent implements OnInit {
             });
         }
 
+        if (searchGroups.length) {
+            filterList.push((c) => {
+                let found = 0;
+                searchGroups.forEach((group) => {
+                    if (c.group.includes(group)) {
+                        found++;
+                    }
+                });
+                return found == searchGroups.length;
+            });
+        }
+
         let searchResult = Object.values(this.database);
         filterList.forEach((filterLogic) => {
             searchResult = searchResult.filter(filterLogic);
@@ -388,8 +470,10 @@ export class DatabaseComponent implements OnInit {
 
 export class FormOption {
     id: string;
+    index?: number;
     icon?: string;
     name?: string;
     default?: boolean = false;
     circle?: boolean = false;
+    children?: Array<FormOption>;
 }

@@ -159,6 +159,31 @@ form {
         color: white;
         height: auto;
     }
+
+    .secondary-controls {
+        img {
+            height: 40px;
+        }
+    }
+}
+
+
+.secondary-controls {
+    transition: all 0.3s;
+
+    &:not(.active) {
+        width: 0;
+        margin: 0;
+        padding: 0;
+
+        &.form-check {
+            padding: 0;
+        }
+
+        .form-check-label {
+            display: none;
+        }
+    }
 }
 
 .card-info {
@@ -189,8 +214,9 @@ form {
         }
     }
 }
+
 .keyword-container {
     .col-form-label {
-        margin-top: .84375em;
+        margin-top: 0.84375em;
     }
 }

@@ -1,11 +1,36 @@
 [
     {
+        "version": "1.6.1",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Updated: V2.7 to match live."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Bugfixed: The cards with no Group change were displayed incorrectly.",
+                    "Bugfixed: The cards with no Keyword change were displayed incorrectly."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Add Filters: Spell Speeds of Spells, and Card Groups.",
+                    "Bugfixed: Fix the issue of not clear keyword when using the Clear button."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.6",
         "changes": [
             {
                 "title": "Data",
                 "details": [
-                    "Added: V2.7 until day 2021/05/03."
+                    "Updated: V2.7 until day 2021/05/03."
                 ]
             },
             {

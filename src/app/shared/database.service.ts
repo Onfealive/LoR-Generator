@@ -74,7 +74,7 @@ export class DatabaseService {
         } else if (sortedCode.includes('T')) {
           isAssociatedCard = true;
         }
-        
+
         if (isAssociatedCard) {
           let wordTIndex = sortedCode.lastIndexOf('T');
           let associatedText = sortedCode.slice(wordTIndex + 1)
@@ -84,6 +84,17 @@ export class DatabaseService {
         let realSpellSpeed = cardData.spellSpeed;
         if (cardData.keywords.filter(k => spellSpeedKeywords.includes(k))) {
           realSpellSpeed = cardData.keywords.find(k => spellSpeedKeywords.includes(k));
+        }
+
+        let group = [];
+        if (cardData.subtypes) {
+          if (cardData.subtypes.length) {
+            group = cardData.subtypes;
+          }
+        } else if (cardData.subtype) {
+          if (!Array.isArray(cardData.subtype)) {
+            group = [cardData.subtype];
+          }
         }
 
         setData[cardData.cardCode] = {
@@ -98,9 +109,9 @@ export class DatabaseService {
           description: Utility.cleanNewline(cardData.descriptionRaw),
           levelupDescription: Utility.cleanNewline(cardData.levelupDescriptionRaw),
           type: this.getCardType(cardData),
-          groupType: this.getCardType(cardData, true),
+          groupedType: this.getCardType(cardData, true),
           spellSpeed: realSpellSpeed,
-          group: Utility.capitalize(cardData.subtypes ? cardData.subtypes[0] : cardData.subtype),
+          group: Utility.capitalize(group),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
           keywords: [...cardData.keywords],
           artist: cardData.artistName
@@ -152,7 +163,7 @@ export class DatabaseService {
     return database;
   }
 
-  private getCardType = (cardData, isGroupType = false) => {
+  private getCardType = (cardData, isgroupedType = false) => {
     if (cardData.type == 'Unit') {
       if (cardData.supertype) {
         return 'Champion';
@@ -165,7 +176,7 @@ export class DatabaseService {
       return 'Skill'
     }
 
-    if (isGroupType) {
+    if (isgroupedType) {
       if (cardData.type == 'Spell' && cardData.supertype == 'Champion') {
         return 'Champion'
       }

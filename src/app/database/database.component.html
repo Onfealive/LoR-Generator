@@ -29,15 +29,25 @@
     <div class="form-group row">
         <label class="col-3 col-md-1 col-form-label">Card Types</label>
         <div class="col-9 col-md-11 image-checkboxes-container">
-            <div class="form-check form-check-inline" formArrayName="cardTypes"
-                *ngFor="let region of cardTypeFormArray.controls; let i = index">
-                <input class="form-check-input" type="checkbox" [id]="'cardType' + cardTypesData[i].id"
-                    [formControlName]="i">
-                <label class="form-check-label" [for]="'cardType' + cardTypesData[i].id">
-                    <img *ngIf="cardTypesData[i].icon" [src]="'./assets/icons/' + cardTypesData[i].icon + '.png'">
-                    <span *ngIf="cardTypesData[i].name">{{cardTypesData[i].name }}</span>
-                </label>
-            </div>
+            <ng-container *ngFor="let cardType of cardTypesData; let i = index">
+                <div class="form-check form-check-inline" formArrayName="cardTypes">
+                    <input class="form-check-input" type="checkbox" [id]="'cardType' + cardType.id"
+                        [formControlName]="cardType.index">
+                    <label class="form-check-label" [for]="'cardType' + cardType.id">
+                        <img *ngIf="cardType.icon" [src]="'./assets/icons/' + cardType.icon + '.png'">
+                        <span *ngIf="cardType.name">{{cardType.name }}</span>
+                    </label>
+                </div>
+                <ng-container *ngFor="let cardTypeChild of cardType.children; let j = index">
+                    <div class="form-check form-check-inline secondary-controls" formArrayName="cardTypes" [ngClass]="{'active': cardTypeFormArray.controls[cardType.index].value }">
+                        <input class="form-check-input" type="checkbox" [id]="'cardType' + cardTypeChild.id" [formControlName]="cardTypeChild.index">
+                        <label class="form-check-label" [for]="'cardType' + cardTypeChild.id">
+                            <img *ngIf="cardTypeChild.icon" [src]="'./assets/icons/' + cardTypeChild.icon + '.png'">
+                            <span *ngIf="cardTypeChild.name">{{cardType.name }}</span>
+                        </label>
+                    </div>
+                </ng-container>
+            </ng-container>
         </div>
     </div>
     <div class="form-group row">
@@ -56,7 +66,7 @@
     </div>
     <div class="form-group row">
         <label class="col-3 col-md-1 col-form-label">Collectible</label>
-        <div class="col-9 col-md-11 image-checkboxes-container">
+        <div class="col-9 col-md-5 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="collectibles"
                 *ngFor="let region of collectibleFormArray.controls; let i = index">
                 <input class="form-check-input" type="checkbox" [id]="'collectible' + collectibleData[i].id"
@@ -66,6 +76,15 @@
                     <span *ngIf="collectibleData[i].name">{{collectibleData[i].name }}</span>
                 </label>
             </div>
+        </div>
+        <label class="col-3 col-md-1 col-form-label">Groups</label>
+        <div class="col-9 col-md-5">
+            <ng-select #groupSelector [(ngModel)]="selectedGroups" [ngModelOptions]="{standalone: true}"
+                [multiple]="true" [markFirst]="true" [placeholder]="'Groups like Tech, Dragon'">
+                <ng-option *ngFor="let group of groups" [value]="group.name">
+                    {{group.name}}
+                </ng-option>
+            </ng-select>
         </div>
     </div>
     <div class="form-group row">
@@ -239,7 +258,8 @@
                                 </div>
                             </div>
 
-                            <div [ngClass]="{'col-md-1 mt-md-0 d-grid gap-5': !isMobile, 'col-12 mt-3 d-flex justify-content-around gap-3': isMobile }">
+                            <div
+                                [ngClass]="{'col-md-1 mt-md-0 d-grid gap-5': !isMobile, 'col-12 mt-3 d-flex justify-content-around gap-3': isMobile }">
                                 <button *ngIf="!isMobile" class="invisible"></button>
                                 <button class="btn btn-primary gap-2 w-100" type="button"
                                     (click)="selectCardDetail(resultIndex)">Close</button>

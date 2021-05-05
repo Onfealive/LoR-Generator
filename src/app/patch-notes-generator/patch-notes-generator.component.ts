@@ -318,10 +318,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
             log.diff.unshift(unshiftContents.join('<br />'));
 
-            let logGroup = this.logs.find(l => l.type == log.data.groupType);
+            let logGroup = this.logs.find(l => l.type == log.data.groupedType);
             if (!logGroup) {
                 logGroup = {
-                    type: log.data.groupType,
+                    type: log.data.groupedType,
                     list: []
                 }
                 this.logs.push(logGroup);
@@ -366,22 +366,24 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
                     }
 
-                    if (oldCard.group != newCard.group) {
-                        if (!newCard.group) {
-                            const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
+                    let removedGroups = oldCard.group.filter(x => !newCard.group.includes(x));
+                    let newGroups = newCard.group.filter(x => !oldCard.group.includes(x));
+                    if (removedGroups.length || newGroups.length) {
+                        if (removedGroups.length && !newGroups.length) {
+                            const removedGroupContent = addedHighlightedContent + removedGroups.join(', ') + addedHighlightedContent;
                             log.diff.push(commonPrefix + `No longer belong to ${removedGroupContent}.`);
-                        } else if (!oldCard.group) {
-                            const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
+                        } else if (!removedGroups.length && newGroups.length) {
+                            const newGroupContent = addedHighlightedContent + newGroups.join(', ') + addedHighlightedContent;
                             log.diff.push(commonPrefix + `Now belong to ${newGroupContent}.`);
                         } else {
-                            const removedGroupContent = addedHighlightedContent + oldCard.group + addedHighlightedContent;
-                            const newGroupContent = addedHighlightedContent + newCard.group + addedHighlightedContent;
+                            const removedGroupContent = addedHighlightedContent + removedGroups.join(', ') + addedHighlightedContent;
+                            const newGroupContent = addedHighlightedContent + newGroups.join(', ') + addedHighlightedContent;
                             log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
                         }
                     }
 
-                    let removedKeywords = oldCard.keywords.filter(x => !newCard.keywords.includes(x));
-                    let newKeywords = newCard.keywords.filter(x => !oldCard.keywords.includes(x));
+                    let removedKeywords = oldCard._data.keywords.filter(x => !newCard._data.keywords.includes(x));
+                    let newKeywords = newCard._data.keywords.filter(x => !oldCard._data.keywords.includes(x));
                     if (newKeywords.length) {
                         let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
 

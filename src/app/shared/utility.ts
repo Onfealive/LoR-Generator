@@ -61,8 +61,11 @@ export function isElement(obj) {
   }
 }
 
-export function capitalize(text) {
-  return (text || '').trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+export function capitalize(input) {
+  if (Array.isArray(input)) {
+    return input.map(a => capitalize(a));
+  }
+  return (input || '').trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
 }
 
 export function camelize(str) {
