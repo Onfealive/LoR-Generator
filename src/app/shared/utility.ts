@@ -28,7 +28,7 @@ export function sortArrayByValues(sortable: Array<any>, keys, sortOrder = {}) {
   return sortable;
 }
 
-export function sortObjectByValues(unordered : object, keys, sortOrder = {}) {
+export function sortObjectByValues(unordered: object, keys, sortOrder = {}) {
   let sortable = [];
   for (var item in unordered) {
     sortable.push([item, unordered[item]]);
@@ -69,7 +69,7 @@ export function capitalize(input) {
 }
 
 export function camelize(str) {
-  return str.trim().toLowerCase().replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+  return str.trim().toLowerCase().replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
     return index === 0 ? word.toLowerCase() : word.toUpperCase();
   }).replace(/\s+/g, '');
 }
@@ -78,7 +78,7 @@ export function cleanNewline(str: string) {
   if (!str) {
     return str;
   }
-  ['\r\n','\r','\n'].forEach(indicator => {
+  ['\r\n', '\r', '\n'].forEach(indicator => {
     str = str.split(indicator).map(s => s.trim()).join(' ');
   });
 
@@ -99,4 +99,10 @@ export function cleanObject(obj) {
     }
   }
   return obj;
+}
+
+export function unique(array: Array<any>) {
+  return array.filter((value, index, self) => {
+    return self.indexOf(value) === index;
+  });
 }

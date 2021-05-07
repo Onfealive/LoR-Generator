@@ -1,5 +1,24 @@
 [
     {
+        "version": "1.6.2",
+        "changes": [
+            {
+                "title": "Text Formatter",
+                "details": [
+                    "Now will automatically copy to Clipboard when Execute, and there is notice in the lower left corner.",
+                    "Added: Clear button.",
+                    "Removed: Copy button."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Add Filters: Artists."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.6.1",
         "changes": [
             {

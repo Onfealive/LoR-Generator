@@ -5,7 +5,7 @@ import { PatchInfo } from '../shared/patches';
 import * as Utility from "../shared/utility";
 import { Observable, Observer, Subject } from 'rxjs';
 import { forkJoin } from 'rxjs';
-import { Keywords } from './keywords';
+import { Artists, Keywords } from './gameMechanics';
 
 @Injectable({
   providedIn: 'root'
@@ -97,6 +97,19 @@ export class DatabaseService {
           }
         }
 
+        let artist = cardData.artistName;
+        Artists.forEach(artistData => {
+          let artists = [artistData.name];
+          if (artistData.specialIndicator && artistData.specialIndicator.length) {
+            artists = artists.concat(artistData.specialIndicator);
+          }
+
+          if (artists.includes(artist)) {
+            artist = artistData.name;
+            return;
+          }
+        })
+
         setData[cardData.cardCode] = {
           _data: cardData,
           sortedCode: sortedCode,
@@ -114,7 +127,7 @@ export class DatabaseService {
           group: Utility.capitalize(group),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
           keywords: [...cardData.keywords],
-          artist: cardData.artistName
+          artist: artist
         }
 
         if (!setData[cardData.cardCode]['keywords'].length) {

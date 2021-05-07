@@ -5,8 +5,8 @@ import { DatabaseService } from '../shared/database.service';
 import * as Utility from '../shared/utility';
 import { ClipboardService } from 'ngx-clipboard'
 import { NgSelectComponent } from '@ng-select/ng-select';
-import { Keywords } from '../shared/keywords';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { Artists, Groups, Keywords } from '../shared/gameMechanics';
 
 declare var $: any;
 @Component({
@@ -33,20 +33,10 @@ export class DatabaseComponent implements OnInit {
     keywords = Keywords;
 
     selectedGroups: [];
-    groups = [
-        { name: 'Ascended'},
-        { name: 'Celestial'},
-        { name: 'Dragon'},
-        { name: 'Elite'},
-        { name: 'Elnuk'},
-        { name: 'Moon Weapon'},
-        { name: 'Poro'},
-        { name: 'Sea Monster'},
-        { name: 'Spider'},
-        { name: 'Tech'},
-        { name: 'Treasure'},
-        { name: 'Yeti'},
-    ];
+    groups = Groups;
+
+    selectedArtists: [];
+    artist = Artists;
 
     sortData: Array<any> = [
         { id: 'name', name: 'Name', sort: 'name' },
@@ -156,7 +146,7 @@ export class DatabaseComponent implements OnInit {
 
     ngOnInit(): void {
         setTimeout(() => {
-            this.submit(true);
+            this.searchCards(true);
         }, 500);
     }
 
@@ -227,11 +217,12 @@ export class DatabaseComponent implements OnInit {
         this.form.setValue(this.defaultFormValues);
         this.selectedGroups = [];
         this.selectedKeywords = [];
+        this.selectedArtists = [];
     }
 
     changeSort(sortCode) {
         this.sortType = sortCode;
-        this.submit();
+        this.searchCards();
     }
 
     card2Clipboard(card) {
@@ -293,7 +284,7 @@ export class DatabaseComponent implements OnInit {
         }, 0);
     }
 
-    submit(isFirstTime = false) {
+    searchCards(isFirstTime = false) {
         this.isCompleted = false;
         this.searchResults = [];
 
@@ -319,10 +310,9 @@ export class DatabaseComponent implements OnInit {
             .filter((v) => v !== null);
 
         const searchText = this.form.value['text'];
-
         const searchKeywords = this.selectedKeywords || [];
-
         const searchGroups = this.selectedGroups || [];
+        const searchArtists = this.selectedArtists || [];
 
         let filterList = [];
         if (selectedRegionIds.length) {
@@ -442,10 +432,24 @@ export class DatabaseComponent implements OnInit {
             });
         }
 
+        if (searchArtists.length) {
+            filterList.push((c) => {
+                let found = 0;
+                searchArtists.forEach((artist) => {
+                    if (c.artist == artist) {
+                        found++;
+                    }
+                });
+                return found == searchArtists.length;
+            });
+        }
+
         let searchResult = Object.values(this.database);
         filterList.forEach((filterLogic) => {
             searchResult = searchResult.filter(filterLogic);
         });
+
+        console.log(Utility.unique(searchResult.map(c => c['artist'])))
 
         // Sort settings
         let selectedSortData = this.sortData.find(s => s.id == this.sortType);

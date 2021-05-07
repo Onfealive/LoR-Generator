@@ -113,6 +113,17 @@ export class TextFormatterComponent implements OnInit {
         this.textContent = this.textContent.replace(regex, isChampion ? `{{LoR|${cardData.name}}}` : `{{LoR|${cardData.name}|code=${cardData.code}}}`);
       }
     });
+
+    this.text2Clipboard();
+
+    $('.alert').addClass('show');
+    setTimeout(() => {
+      $('.alert').removeClass('show');
+    }, 1500);
+  }
+
+  clearText() {
+    this.textContent = '';
   }
 
   text2Clipboard() {

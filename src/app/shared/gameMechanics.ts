@@ -65,4 +65,41 @@ export const Keywords = [
     // { name: "Trigger", icon: "Trigger" },
     { name: "Vulnerable", icon: "Vulnerable" },
     { name: "Weakest" },
-]
+];
+
+export const Groups = [
+    { name: 'Ascended' },
+    { name: 'Celestial' },
+    { name: 'Dragon' },
+    { name: 'Elite' },
+    { name: 'Elnuk' },
+    { name: 'Moon Weapon' },
+    { name: 'Poro' },
+    { name: 'Sea Monster' },
+    { name: 'Spider' },
+    { name: 'Tech' },
+    { name: 'Treasure' },
+    { name: 'Yeti' }
+];
+
+export const Artists = [
+    { name: '<Unknown>', specialIndicator: [''] },
+    { name: 'Alex Heath' },
+    { name: 'Aron Elekes' },
+    { name: 'Chin LikHui' },
+    { name: 'Dao Le' },
+    { name: 'Eunice' },
+    { name: 'Grafit Studio' },
+    { name: 'Greg Faillace' },
+    { name: 'JiHun Lee', specialIndicator: ['Jihun Lee'] },
+    { name: 'Kudos Productions', specialIndicator: ['Kudos Production'] },
+    { name: 'MAR Studio' },
+    { name: 'Max Grecke' },
+    { name: 'Oliver Chipping' },
+    { name: 'Original Force' },
+    { name: 'Polar Engine Studio', specialIndicator: ['Polar Engine'] },
+    { name: 'Rafael Zanchetin' },
+    { name: 'SIXMOREVODKA' },
+    { name: 'Slawomir Maniak' },
+    { name: 'Wild Blue Studios', specialIndicator: ['Wild Blue Studio', 'Wild Blue'] }
+];
