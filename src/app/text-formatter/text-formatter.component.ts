@@ -97,7 +97,7 @@ export class TextFormatterComponent implements OnInit {
 
     let replaceCards = [];
     Object.keys(database).sort((a, b) => {
-      return database[b].name.length - database[a].length;
+      return database[b].name.length - database[a].name.length;
     }).forEach(cardCode => {
       const cardData = database[cardCode];
 

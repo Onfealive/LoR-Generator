@@ -39,8 +39,8 @@ export class DatabaseComponent implements OnInit {
     artist = Artists;
 
     sortData: Array<any> = [
-        { id: 'name', name: 'Name', sort: 'name' },
         { id: 'sortedCode', name: 'Code', sort: 'sortedCode' },
+        { id: 'name', name: 'Name', sort: 'name' },
         { id: 'cost', name: 'Cost', sort: 'cost,name' },
         { id: 'power', name: 'Power (⇓)', sort: 'power,health,name', sortOrder: { 'power': false, 'health': false } },
         { id: 'health', name: 'Health (⇓)', sort: 'health,power,name', sortOrder: { 'power': false, 'health': false } },
@@ -139,7 +139,7 @@ export class DatabaseComponent implements OnInit {
             this.database = database;
         });
 
-        this.sortType = 'name';
+        this.sortType = this.sortData[0].id;
 
         this.addCheckboxData();
     }

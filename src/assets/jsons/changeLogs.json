@@ -1,5 +1,30 @@
 [
     {
+        "version": "1.6.3",
+        "changes": [
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Added: Copy button for Change content.",
+                    "Updated: GUI.",
+                    "Updated: Now the image list will separate two lists, New and Change."
+                ]
+            },
+            {
+                "title": "Text Formatter",
+                "details": [
+                    "Bugfixed: Fixed some card names being replaced by other cards, like \"Boomrang Blade\" being replaced by \"Blade\" card."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Now default sort is changed to Cost from Name."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.6.2",
         "changes": [
             {

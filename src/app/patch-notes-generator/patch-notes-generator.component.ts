@@ -4,6 +4,7 @@ import * as Utility from "../shared/utility";
 import { saveAs } from 'file-saver';
 import { PatchInfo } from '../shared/patches';
 import { DatabaseService } from '../shared/database.service';
+import { ClipboardService } from 'ngx-clipboard';
 
 declare var $: any;
 
@@ -20,7 +21,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     defaultImage = `./assets/icons/Queue Card Back.png`;
 
     modifyTypes = [];
-    displaytype = 'display';
+    displayType = 'display';
 
     selectedPatch = null;
     comparingPatch = null;
@@ -37,7 +38,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
     MODIFY_TYPE = MODIFY_TYPE; // for Client-only
 
     constructor(
-        private databaseService: DatabaseService
+        private databaseService: DatabaseService,
+        private clipboardService: ClipboardService
     ) { }
 
     ngOnInit(): void {
@@ -136,7 +138,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     }
 
     optionDisplayChanged(inputOption) {
-        this.displaytype = inputOption;
+        this.displayType = inputOption;
         this.compare();
     }
 
@@ -193,7 +195,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
             }
             fileReader.onerror = (error) => {
                 console.log(error);
-                    this.error = 'The file contains no data, or is not formatted in Riot. Please refer to the "Utility" tab.';
+                this.error = 'The file contains no data, or is not formatted in Riot. Please refer to the "Utility" tab.';
             }
         });
     }
@@ -206,7 +208,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         this.isCompleted = true;
 
         let options: any = {};
-        options[this.displaytype] = true;
+        options[this.displayType] = true;
         // Init
         const defaults = {
             display: false,
@@ -266,6 +268,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
             let href = `
                 <a href="${'https://leagueoflegends.fandom.com/wiki/' + log.data.code + ' (Legends_of_Runeterra)'}"
                     target="_blank">
+                    <i>To Wiki</i>
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
                         <g stroke="#0d6efd" stroke-width="1.5" fill="none"
                             fill-rule="evenodd" stroke-linecap="round"
@@ -283,7 +286,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
             }
             if (options.patchNote) {
                 unshiftContents = [
-                    `: {{LoR|${log.data.name}|code=${log.data.code}}} ${href}`
+                    `${href}`,
+                    `: {{LoR|${log.data.name}|code=${log.data.code}}}`
                 ]
             }
             if (options.newChangeLog) {
@@ -294,7 +298,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
                 if (options.newChangeLog && (log.type & MODIFY_TYPE.ADD)) {
                     unshiftContents = [
-                        `<i>To Wiki</i> ${href}`,
+                        `${href}`,
                         `== Change Log ==`,
                         `{| class="article-table ruling-table"`,
                         `! colspan="2" | <b>${edittedCardName}</b>`
@@ -316,7 +320,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 log.diff.push(`|}`);
             }
 
-            log.diff.unshift(unshiftContents.join('<br />'));
+            unshiftContents.reverse().forEach(u => log.diff.unshift(u));
 
             let logGroup = this.logs.find(l => l.type == log.data.groupedType);
             if (!logGroup) {
@@ -516,22 +520,25 @@ export class PatchNotesGeneratorComponent implements OnInit {
         });
     }
 
-    copyResourceImages() {
+    generateChangedCardList() {
         let changedCards = this.getChangedCards;
-        let addedCards = this.getAddedCards;
 
         let cardChangeContent = changedCards.map(card => card.code + '.png').join('\n');
         cardChangeContent += ('\n') + changedCards.map(card => card.code + '-alt.png').join('\n');
 
-        if (addedCards.length) {
-            let cardAddedContent = addedCards.map(card => card.code + '.png').join('\n');
-            cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt.png').join('\n');
-            cardAddedContent += ('\n') + addedCards.map(card => card.code + '-full.png').join('\n');
-            cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt-full.png').join('\n');
-
-            cardChangeContent = cardChangeContent + '\n' + cardAddedContent;
-        }
         const blob = new Blob([cardChangeContent], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, `${this.selectedPatch}_CardChangesList.txt`);
+    }
+
+    generateNewCardList() {
+        let addedCards = this.getAddedCards;
+
+        let cardAddedContent = addedCards.map(card => card.code + '.png').join('\n');
+        cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt.png').join('\n');
+        cardAddedContent += ('\n') + addedCards.map(card => card.code + '-full.png').join('\n');
+        cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt-full.png').join('\n');
+
+        const blob = new Blob([cardAddedContent], { type: "text/plain;charset=utf-8" });
         saveAs(blob, `${this.selectedPatch}_CardChangesList.txt`);
     }
 
@@ -599,6 +606,20 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         const blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
         saveAs(blob, `${this.selectedPatch}_AddedCardsData.txt`);
+    }
+
+    copy2Clipboard(diffData) {
+        var htmlElementRegex = /(<([^>]+)>)/ig;
+
+        let copiedText = diffData.slice(1, diffData.length).join('\n').replace(htmlElementRegex, "");
+        copiedText = copiedText.replace(/  +/g, '');
+
+        console.log(diffData)
+        console.log(copiedText)
+        copiedText = copiedText.replace(/(\r\n|\r|\n){2}/g, '$1');
+        copiedText = copiedText.replace(/(\r\n|\r|\n){3,}/g, '$1\n');
+
+        this.clipboardService.copy(copiedText);
     }
 
     getCleanedDiffParts(diffParts) {
