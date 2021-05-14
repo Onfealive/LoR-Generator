@@ -6,6 +6,9 @@ import * as Utility from "../shared/utility";
 import { Observable, Observer, Subject } from 'rxjs';
 import { forkJoin } from 'rxjs';
 import { Artists, Keywords } from './gameMechanics';
+import { ClipboardService } from 'ngx-clipboard';
+
+import { Toast } from 'bootstrap';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +18,21 @@ export class DatabaseService {
   newestPatch = null;
   private newestPatchCode = null;
   latestDatabase = {};
+  copyToast;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private clipboardService: ClipboardService,
   ) {
     let newestPatch = this.newestPatch = Object.keys(PatchInfo).slice(-1)[0];
     this.newestPatchCode = PatchInfo[newestPatch].code;
     this.getCardData(newestPatch).subscribe(database => this.latestDatabase = database);
+  }
+
+  setCopyToast() {
+    setTimeout(() => {
+      this.copyToast = new Toast(document.getElementById('copyToast'));
+    }, 0);
   }
 
   getCardData(patch = null): Observable<any> {
@@ -228,5 +239,10 @@ export class DatabaseService {
     let url = `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardcode}-full.png`;
 
     return url;
+  }
+
+  public copy2Clipboard(text) {
+    this.clipboardService.copy(text);
+    this.copyToast.show();
   }
 }

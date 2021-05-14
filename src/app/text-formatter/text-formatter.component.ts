@@ -4,7 +4,6 @@ import * as Utiliy from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
 
 import $ from "jquery";
-import { ClipboardService } from 'ngx-clipboard';
 @Component({
   selector: 'app-text-formatter-generator',
   templateUrl: './text-formatter.component.html',
@@ -25,7 +24,6 @@ export class TextFormatterComponent implements OnInit {
 
   constructor(
     private databaseService: DatabaseService,
-    private clipboardService: ClipboardService,
   ) {
   }
 
@@ -127,6 +125,6 @@ export class TextFormatterComponent implements OnInit {
   }
 
   text2Clipboard() {
-    this.clipboardService.copy(this.textContent);
+    this.databaseService.copy2Clipboard(this.textContent);
   }
 }

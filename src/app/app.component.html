@@ -1,25 +1,61 @@
-<div class="container">
-  <ul class="nav nav-tabs mb-3">
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['patch-note']" [routerLinkActive]="['active']">Patch Note</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['expedition']" [routerLinkActive]="['active']">Expedition</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['text-formatter']" [routerLinkActive]="['active']">Text Formatter</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['database']" [routerLinkActive]="['active']">Database</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['utility']" [routerLinkActive]="['active']">Utility</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['about']" [routerLinkActive]="['active']">About</a>
-    </li>
-  </ul>
-  <div class="border-top-0">
-    <router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg border-bottom navbar-light" aria-label="Main navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">LoR Generator</a>
+    <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['patch-note']" [routerLinkActive]="['active']">Patch Note</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['expedition']" [routerLinkActive]="['active']">Expedition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['database']" [routerLinkActive]="['active']">Database</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['utility']" [routerLinkActive]="['active']">Utility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['about']" [routerLinkActive]="['active']">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- toggler -->
+<button class="btn btn-sm fixed-bottom bg-secondary w-100 border-top p-0 text-light" data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasBottom" role="button">
+  <i class="bi bi-arrow-up fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"></i>
+</button>
+
+<main class="container mt-3 pb-10">
+  <router-outlet></router-outlet>
+</main>
+
+<div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+  id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Text Formatter</h5>
+    <p class="ps-2 mb-0 mt-1">Replace "Blade" by "{{ '{{LoR|Blade|code=04IO010}}' }}"</p>
+    <button type="button" class="btn-close bg-secondary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small pt-0">
+    <app-text-formatter-generator></app-text-formatter-generator>
+  </div>
+</div>
+
+<div class="position-fixed end-0 bottom-50 p-3" style="z-index: 5">
+  <div id="copyToast" class="toast hide bg-info text-light" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Copied to Clipboard.
+      </div>
+      <button type="button" class="btn-close me-2 m-auto text-light" data-bs-dismiss="toast"
+        aria-label="Close"></button>
+    </div>
   </div>
 </div>

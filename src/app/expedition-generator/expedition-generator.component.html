@@ -9,16 +9,19 @@
 <div class="form-inline">
     <div class="form-group">
         <label>Options:</label>
-        <button type="button" class="btn btn-success ms-1" (click)="displayExpedition(selectedExpeditionInfo.name)" [disabled]="!selectedExpeditionInfo.compareable">Display</button>
-        <button *ngIf="selectedExpeditionInfo.compareable" type="button" class="btn btn-success ms-1" (click)="compareExpedition(selectedExpeditionInfo.name)">Compare</button>
+        <button type="button" class="btn btn-success btn-sm ms-1"
+            (click)="displayExpedition(selectedExpeditionInfo.name)"
+            [disabled]="!selectedExpeditionInfo.compareable">Display</button>
+        <button *ngIf="selectedExpeditionInfo.compareable" type="button" class="btn btn-success btn-sm ms-1"
+            (click)="compareExpedition(selectedExpeditionInfo.name)">Compare</button>
     </div>
 </div>
 
 <div class="expedition-container mt-3" *ngIf="!comparingData && expeditionDatabase[selectedExpeditionInfo.name]">
     <nav id="expedition-scroll" class="expedition-scroll navbar navbar-light bg-light position-fixed">
         <nav class="nav nav-pills flex-column">
-            <a *ngFor="let archetype of expeditionDatabase[selectedExpeditionInfo.name];let i = index" class="nav-link" [href]="'#archetype_' + i"
-                (click)="scrollToElement($event, '#archetype_' + i)">
+            <a *ngFor="let archetype of expeditionDatabase[selectedExpeditionInfo.name];let i = index" class="nav-link"
+                [href]="'#archetype_' + i" (click)="scrollToElement($event, '#archetype_' + i)">
                 {{archetype.name}}
             </a>
         </nav>
@@ -35,7 +38,7 @@
             <div class="row" *ngIf="archetype.cards.champions">
                 <div class="col-8 offset-md-1">Champions</div>
                 <div class="col-8 offset-md-1">
-                    <ul class="row row-cols-3">
+                    <ul class="row row-cols-1 row-cols-md-3">
                         <li class="col" *ngFor="let card of archetype.cards.champions">{{card}}</li>
                     </ul>
                 </div>
@@ -43,7 +46,7 @@
             <div class="row" *ngIf="archetype.cards.followers">
                 <div class="col-8 offset-md-1">Followers</div>
                 <div class="col-8 offset-md-1">
-                    <ul class="row row-cols-3">
+                    <ul class="row row-cols-1 row-cols-md-3">
                         <li class="col" *ngFor="let card of archetype.cards.followers">{{card}}</li>
                     </ul>
                 </div>
@@ -51,7 +54,7 @@
             <div class="row" *ngIf="archetype.cards.landmarks">
                 <div class="col-8 offset-md-1">Landmarks</div>
                 <div class="col-8 offset-md-1">
-                    <ul class="row row-cols-3">
+                    <ul class="row row-cols-1 row-cols-md-3">
                         <li class="col" *ngFor="let card of archetype.cards.landmarks">{{card}}</li>
                     </ul>
                 </div>
@@ -59,7 +62,7 @@
             <div class="row" *ngIf="archetype.cards.spells">
                 <div class="col-8 offset-md-1">Spells</div>
                 <div class="col-8 offset-md-1">
-                    <ul class="row row-cols-3">
+                    <ul class="row row-cols-1 row-cols-md-3">
                         <li class="col" *ngFor="let card of archetype.cards.spells">{{card}}</li>
                     </ul>
                 </div>
@@ -67,7 +70,7 @@
             <div class="row" *ngIf="archetype.cards.unknown">
                 <div class="col-8 offset-md-1">Unknown</div>
                 <div class="col-8 offset-md-1">
-                    <ul class="row row-cols-3">
+                    <ul class="row row-cols-1 row-cols-md-3">
                         <li class="col" *ngFor="let card of archetype.cards.unknown">{{card}}</li>
                     </ul>
                 </div>

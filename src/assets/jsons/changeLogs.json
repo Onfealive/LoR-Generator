@@ -1,5 +1,34 @@
 [
     {
+        "version": "1.6.4",
+        "changes": [
+            {
+                "title": "LoR Generator",
+                "details": [
+                    "Updated: GUI."
+                ]
+            },
+            {
+                "title": "Patch Generator",
+                "details": [
+                    "Updated: Copy button will not be displayed in Display mode."
+                ]
+            },
+            {
+                "title": "Expedition Generator",
+                "details": [
+                    "Bugfixed: Fix display errors on Mobile."
+                ]
+            },
+            {
+                "title": "Text Formatter",
+                "details": [
+                    "It will now become a separate function, which can be used throughout the App."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.6.3",
         "changes": [
             {

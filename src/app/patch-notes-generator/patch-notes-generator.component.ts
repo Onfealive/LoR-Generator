@@ -4,7 +4,6 @@ import * as Utility from "../shared/utility";
 import { saveAs } from 'file-saver';
 import { PatchInfo } from '../shared/patches';
 import { DatabaseService } from '../shared/database.service';
-import { ClipboardService } from 'ngx-clipboard';
 
 declare var $: any;
 
@@ -38,8 +37,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     MODIFY_TYPE = MODIFY_TYPE; // for Client-only
 
     constructor(
-        private databaseService: DatabaseService,
-        private clipboardService: ClipboardService
+        private databaseService: DatabaseService
     ) { }
 
     ngOnInit(): void {
@@ -619,7 +617,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         copiedText = copiedText.replace(/(\r\n|\r|\n){2}/g, '$1');
         copiedText = copiedText.replace(/(\r\n|\r|\n){3,}/g, '$1\n');
 
-        this.clipboardService.copy(copiedText);
+        this.databaseService.copy2Clipboard(copiedText);
     }
 
     getCleanedDiffParts(diffParts) {

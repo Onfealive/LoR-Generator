@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DatabaseService } from './shared/database.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lor-generator';
+
+  constructor(
+    private databaseService: DatabaseService,
+  ) {
+
+  }
+
+  ngAfterViewInit() {
+    this.databaseService.setCopyToast();
+  }
 }

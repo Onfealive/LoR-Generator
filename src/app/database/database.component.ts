@@ -3,7 +3,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DatabaseService } from '../shared/database.service';
 import * as Utility from '../shared/utility';
-import { ClipboardService } from 'ngx-clipboard'
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Artists, Groups, Keywords } from '../shared/gameMechanics';
@@ -121,7 +120,6 @@ export class DatabaseComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private databaseService: DatabaseService,
-        private clipboardService: ClipboardService,
         private deviceService: DeviceDetectorService
     ) {
         this.isMobile = this.deviceService.isMobile();
@@ -226,7 +224,7 @@ export class DatabaseComponent implements OnInit {
     }
 
     card2Clipboard(card) {
-        this.clipboardService.copy(`{{LoR|${card.name}|code=${card.code}}}`);
+        this.databaseService.copy2Clipboard(`{{LoR|${card.name}|code=${card.code}}}`);
     }
 
     selectCardInfo(resultIndex) {

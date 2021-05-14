@@ -1,26 +1,17 @@
-<div>Newest Patch: {{newestPatch}}.</div>
-<div>Or use your data file:</div>
-<ngx-dropzone (change)="onSelect($event)">
-  <ngx-dropzone-label>{{title}}</ngx-dropzone-label>
-  <ngx-dropzone-preview *ngFor="let f of files">
-    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-  </ngx-dropzone-preview>
-</ngx-dropzone>
-{{error}}
-<div class="input-group mt-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text text-content">Text Content</span>
+<div class="row">
+  <div class="col-12 col-md-10">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text text-content">Text Content</span>
+      </div>
+      <textarea #text class="form-control" aria-label="Text Content" [(ngModel)]="textContent"></textarea>
+    </div>
   </div>
-  <textarea #text class="form-control" aria-label="Text Content" [(ngModel)]="textContent"></textarea>
-</div>
 
-<div class="d-flex flex-row-reverse mt-3 align-right ">
-  <button type="button" class="btn btn-success" (click)="executeText()"
-    [disabled]="error ||  !isCompleted || textContent.length == 0">Excecute</button>
-  <button type="button" class="btn btn-info me-3" (click)="clearText()"
-    [disabled]="!isCompleted || textContent.length == 0">Clear</button>
-
-  <div class="alert alert-primary position-absolute start-0 fade p-1" role="alert">
-    <strong>Copied to the Clipboard</strong>
+  <div class="col-12 col-md-2 d-grid gap-2  mt-2 mt-md-0">
+    <button type="button" class="btn btn-success" (click)="executeText()"
+      [disabled]="error ||  !isCompleted || textContent.length == 0">Excecute</button>
+    <button type="button" class="btn btn-info" (click)="clearText()"
+      [disabled]="!isCompleted || textContent.length == 0">Clear</button>
   </div>
 </div>

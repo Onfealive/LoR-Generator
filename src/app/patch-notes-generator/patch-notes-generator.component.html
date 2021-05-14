@@ -108,7 +108,8 @@
             </td>
             <td>
               <div *ngFor="let diff of log.diff" [innerHTML]="diff | safeHtml"></div>
-              <button type="button" (click)="copy2Clipboard(log.diff)">Copy</button>
+              <button *ngIf="displayType != 'display'" type="button" class="btn btn-warning btn-sm"
+                (click)="copy2Clipboard(log.diff)">Copy</button>
             </td>
           </tr>
         </ng-container>
