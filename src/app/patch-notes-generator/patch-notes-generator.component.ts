@@ -182,7 +182,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         if ($.isEmptyObject(customDatabase)) {
                             throw 'Empty Object';
                         }
-                        this.customDatabase = this.databaseService._convertData2Database(customDatabase, currentFile[1])
+                        this.customDatabase = this.databaseService.convertData2Database(customDatabase, currentFile[1])
                         this.compare();
                     }
                 } catch (error) {

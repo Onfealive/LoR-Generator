@@ -5,10 +5,11 @@ import { PatchInfo } from '../shared/patches';
 import * as Utility from "../shared/utility";
 import { Observable, Observer, Subject } from 'rxjs';
 import { forkJoin } from 'rxjs';
-import { Artists, Keywords } from './gameMechanics';
+import { Artists, Card, Keywords, Regions } from './gameMechanics';
 import { ClipboardService } from 'ngx-clipboard';
 
 import { Toast } from 'bootstrap';
+import { DeckEncoder } from 'runeterra';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,33 @@ export class DatabaseService {
   private newestPatchCode = null;
   latestDatabase = {};
   copyToast;
+
+  private FACTIONS = {
+    DE: 0,
+    FR: 1,
+    IO: 2,
+    NX: 3,
+    PZ: 4,
+    SI: 5,
+    BW: 6,
+    MT: 9,
+    SH: 7
+  };
+
+  private SHARDS = {
+    'Common': 100,
+    'Rare': 300,
+    'Epic': 1200,
+    'Champion': 3000
+  }
+
+  WEIGHT_RARITY = {
+    'Champion': 0,
+    'Epic': 1,
+    'Rare': 2,
+    'Common': 3,
+    'None': 3,
+  }
 
   constructor(
     private http: HttpClient,
@@ -59,13 +87,13 @@ export class DatabaseService {
             rawLatestDatabase['set' + (set + 1)][patch] = JSON.stringify(result || []);
           });
 
-          observer.next(this._convertData2Database(rawLatestDatabase, patch));
+          observer.next(this.convertData2Database(rawLatestDatabase, patch));
           observer.complete();
         }, err => observer.error(err));
     })
   }
 
-  _convertData2Database(rawData, patch) {
+  convertData2Database(rawData, patch) {
     let database = {}
     let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
     let keywords = Keywords.filter(k => !k.specialIndicator);
@@ -119,9 +147,11 @@ export class DatabaseService {
             artist = artistData.name;
             return;
           }
-        })
+        });
 
-        setData[cardData.cardCode] = {
+        let rarity = cardData.collectible ? cardData.rarityRef : 'None';
+
+        let card: Card = {
           _data: cardData,
           sortedCode: sortedCode,
           code: cardData.cardCode,
@@ -138,8 +168,13 @@ export class DatabaseService {
           group: Utility.capitalize(group),
           flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
           keywords: [...cardData.keywords],
-          artist: artist
+          artist: artist,
+          region: Regions.find(r => r.id == cardData.cardCode.substring(2, 4)).name,
+          rarity: rarity,
+          weightRarity: this.WEIGHT_RARITY[rarity]
         }
+
+        setData[cardData.cardCode] = card;
 
         if (!setData[cardData.cardCode]['keywords'].length) {
           setData[cardData.cardCode]['keywords'] = [];
@@ -244,5 +279,42 @@ export class DatabaseService {
   public copy2Clipboard(text) {
     this.clipboardService.copy(text);
     this.copyToast.show();
+  }
+
+  public deck2Code(inputDeck) {
+    let deck = [];
+
+    inputDeck.forEach(card => {
+      deck.push({
+        code: card['code'],
+        count: card['count'] || 1,
+        faction: {
+          id: this.FACTIONS[card['code'].substring(2, 4)],
+          shortCode: card['code'].substring(2, 4)
+        },
+        id: parseInt(card['code'].slice(-3)),
+        set: parseInt(card['code'].substring(0, 2))
+      });
+    });
+
+    return DeckEncoder.encode(deck);
+  }
+
+  public deck2Shards(inputDeck, isMissingDeck = false): number {
+    return inputDeck.map(card => this.SHARDS[card.rarity] * (isMissingDeck ? 3 - card.count : card.count)).reduce((a, current) => a + current, 0);
+  }
+
+  public deck2WildCards(inputDeck, isMissingDeck = false) {
+    let wildcards = {};
+
+    inputDeck.forEach(card => {
+      if (!wildcards[card.rarity]) {
+        wildcards[card.rarity] = 0;
+      }
+
+      wildcards[card.rarity] += (isMissingDeck ? 3 - card.count : card.count);
+    });
+
+    return wildcards;
   }
 }

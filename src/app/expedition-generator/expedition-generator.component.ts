@@ -61,8 +61,6 @@ export class ExpeditionGeneratorComponent implements OnInit {
     }, 500);
   }
 
-
-
   private getExpeditionData(version, callback = null) {
     if (this.expeditionDatabase[version]) {
       if (typeof callback == 'function') {
@@ -209,19 +207,8 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
     let expeditionDatabase = Object.values(eDatabase);
 
-    Utility.sortArrayByValues(expeditionDatabase, 'name');
+    Utility.sortArrayByValues(expeditionDatabase, ['name']);
 
-    let FACTIONS = {
-      DE: 0,
-      FR: 1,
-      IO: 2,
-      NX: 3,
-      PZ: 4,
-      SI: 5,
-      BW: 6,
-      MT: 9,
-      SH: 7
-    };
     expeditionDatabase.forEach(archetype => {
       let archetypeCards = archetype['cards'];
 
@@ -232,26 +219,17 @@ export class ExpeditionGeneratorComponent implements OnInit {
             return;
           }
           let card = Object.values(this.database).find(c =>
-             c['name'] == cardName && !c['code'].replace('MT', '').includes('T'));
+            c['name'] == cardName && !c['code'].replace('MT', '').includes('T'));
 
           if (!card) {
             console.log(cardName)
           } else {
-            deck.push({
-              code: card['code'],
-              count: 1,
-              faction: {
-                id: FACTIONS[card['code'].substring(2, 4)],
-                shortCode: card['code'].substring(2, 4)
-              },
-              id: parseInt(card['code'].slice(-3)),
-              set: parseInt(card['code'].substring(0, 2))
-            });
+            deck.push(card);
           }
         });
       });
 
-      archetype['code'] = DeckEncoder.encode(deck);
+      archetype['code'] = this.databaseService.deck2Code(deck)
     });
 
     return expeditionDatabase;

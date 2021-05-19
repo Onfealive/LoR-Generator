@@ -103,3 +103,38 @@ export const Artists = [
     { name: 'Slawomir Maniak' },
     { name: 'Wild Blue Studios', specialIndicator: ['Wild Blue Studio', 'Wild Blue'] }
 ];
+
+export class Card {
+    _data: object;
+    sortedCode: string;
+    code: string;
+    name: string;
+    collectible: boolean;
+    cost: number;
+    power: number;
+    health: number;
+    description: string;
+    levelupDescription: string;
+    type: string;
+    groupedType: string;
+    spellSpeed: string;
+    group: Array<string>;
+    flavor: string;
+    keywords: Array<string>;
+    artist: string;
+    region: string;
+    rarity: string;
+    weightRarity: number;
+}
+
+export const Regions = [
+    { id: 'BW', icon: 'Bilgewater', name: 'Bilgewater' },
+    { id: 'DE', icon: 'Demacia', name: 'Demacia' },
+    { id: 'FR', icon: 'Freljord', name: 'Freljord' },
+    { id: 'IO', icon: 'Ionia', name: 'Ionia' },
+    { id: 'NX', icon: 'Noxus', name: 'Noxus' },
+    { id: 'PZ', icon: 'Piltover and Zaun', name: 'Piltover and Zaun' },
+    { id: 'SI', icon: 'Shadow Isles', name: 'Shadow Isles' },
+    { id: 'SH', icon: 'Shurima', name: 'Shurima' },
+    { id: 'MT', icon: 'Targon', name: 'Targon' },
+];

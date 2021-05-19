@@ -1,5 +1,55 @@
 [
     {
+        "version": "1.7",
+        "changes": [
+            {
+                "title": "LoR Generator",
+                "details": [
+                    "Updated: GUI."
+                ]
+            },
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.8."
+                ]
+            },
+            {
+                "title": "Patch Generator",
+                "details": [
+                    "Updated: Copy button will not be displayed in Display mode."
+                ]
+            },
+            {
+                "title": "Expedition Generator",
+                "details": [
+                    "Bugfixed: Fix display issues on Mobile."
+                ]
+            },
+            {
+                "title": "Unowned Cards",
+                "details": [
+                    "Introduced - Summary of unowned cards.",
+                    "With \"General\": The ratio of cards and shards, as well as wildcards are missing.",
+                    "With \"Missing Cards\": List of missing cards.",
+                    "With \"Deckcode\": Deckcodes contain missing cards."
+                ]
+            },
+            {
+                "title": "Text Formatter",
+                "details": [
+                    "Added: Text indicator."
+                ]
+            },
+            {
+                "title": "About",
+                "details": [
+                    "Added: Email and Feedback link."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.6.4",
         "changes": [
             {

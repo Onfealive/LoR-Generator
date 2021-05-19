@@ -20,7 +20,7 @@ const compareFunction = (a, b, keys, sortOrder = {}) => {
   return keys.length ? compareFunction(a, b, keys, sortOrder) : 0;
 }
 
-export function sortArrayByValues(sortable: Array<any>, keys, sortOrder = {}) {
+export function sortArrayByValues(sortable: Array<any>, keys: Array<string>, sortOrder = {}) {
   sortable.sort(function (a, b) {
     return compareFunction(a, b, keys, sortOrder);
   });
@@ -105,4 +105,16 @@ export function unique(array: Array<any>) {
   return array.filter((value, index, self) => {
     return self.indexOf(value) === index;
   });
+}
+
+export function numberFormat(no) {
+  var str = no + '';
+  var ar = [];
+  var i = str.length - 1;
+
+  while (i >= 0) {
+    ar.push((str[i - 2] || '') + (str[i - 1] || '') + (str[i] || ''));
+    i = i - 3;
+  }
+  return ar.reverse().join(',');
 }

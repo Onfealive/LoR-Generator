@@ -67,7 +67,7 @@ export class TextFormatterComponent implements OnInit {
             if ($.isEmptyObject(database)) {
               throw 'Empty Object';
             }
-            this.database = this.databaseService._convertData2Database(database, currentFile[1]);
+            this.database = this.databaseService.convertData2Database(database, currentFile[1]);
           }
         } catch (error) {
           console.log(error);

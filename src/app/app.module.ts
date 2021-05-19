@@ -18,17 +18,21 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { UtilityComponent } from './utility/utility.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AutosizeModule } from 'ngx-autosize';
+import { UnownedCardsComponent } from './unowned-cards/unowned-cards.component';
+import { RangePipe } from './shared/pipe.range';
 
 @NgModule({
   declarations: [
     AppComponent,
     SafeHtmlPipe,
+    RangePipe,
     PatchNotesGeneratorComponent,
     ExpeditionGeneratorComponent,
     AboutComponent,
     DatabaseComponent,
     TextFormatterComponent,
-    UtilityComponent
+    UtilityComponent,
+    UnownedCardsComponent
   ],
   imports: [
     BrowserModule,

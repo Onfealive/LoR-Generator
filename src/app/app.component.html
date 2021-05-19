@@ -16,6 +16,9 @@
           <a class="nav-link" [routerLink]="['database']" [routerLinkActive]="['active']">Database</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" [routerLink]="['unowned-cards']" [routerLinkActive]="['active']">Unowned Cards</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" [routerLink]="['utility']" [routerLinkActive]="['active']">Utility</a>
         </li>
         <li class="nav-item">
@@ -27,9 +30,10 @@
 </nav>
 
 <!-- toggler -->
-<button class="btn btn-sm fixed-bottom bg-secondary w-100 border-top p-0 text-light" data-bs-toggle="offcanvas"
+<button class="btn btn-sm fixed-bottom bg-secondary w-100 border-top p-0 text-light fs-5" data-bs-toggle="offcanvas"
   data-bs-target="#offcanvasBottom" role="button">
-  <i class="bi bi-arrow-up fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"></i>
+  <span>Text Formatter</span>
+  <i class="bi bi-arrow-up" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"></i>
 </button>
 
 <main class="container mt-3 pb-10">
