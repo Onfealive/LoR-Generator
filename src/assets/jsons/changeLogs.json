@@ -1,5 +1,15 @@
 [
     {
+        "version": "1.7.1",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.9."
+                ]
+            }
+        ]
+    },{
         "version": "1.7",
         "changes": [
             {
