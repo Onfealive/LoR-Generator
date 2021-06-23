@@ -17,8 +17,7 @@
             <td><a [href]="getJSONLink(patch2code(currentPatch), set)" target="_blank">Set {{set}} - V{{
                     patch2code(currentPatch, true) }}</a></td>
             <td><a [href]="getJSONLink('latest', set)" target="_blank">Set {{set}} - Latest</a></td>
-            <td><a *ngIf="upcomingPatch(currentPatch) > newestPatch"
-                    [href]="getJSONLink(upcomingPatch(currentPatch), set)" target="_blank">Set {{set}} - V{{
+            <td><a [href]="getJSONLink(upcomingPatch(currentPatch), set)" target="_blank">Set {{set}} - V{{
                     upcomingPatch(currentPatch, true) }}</a></td>
         </tr>
     </tbody>
