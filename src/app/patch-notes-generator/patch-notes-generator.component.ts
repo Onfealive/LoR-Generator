@@ -430,7 +430,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Visual Updated.`);
                             } else {
-                                const diffParts = Diff.diffWords(oldCard[largeContent.object], "\n" + newCard[largeContent.object], {
+                                const diffParts = Diff.diffWords(oldCard[largeContent.object], newCard[largeContent.object], {
                                     newlineIsToken: false
                                 });
 
@@ -610,10 +610,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         var htmlElementRegex = /(<([^>]+)>)/ig;
 
         let copiedText = diffData.slice(1, diffData.length).join('\n').replace(htmlElementRegex, "");
-        copiedText = copiedText.replace(/  +/g, '');
+        copiedText = copiedText.replace(/  +/g, ' ');
 
-        console.log(diffData)
-        console.log(copiedText)
         copiedText = copiedText.replace(/(\r\n|\r|\n){2}/g, '$1');
         copiedText = copiedText.replace(/(\r\n|\r|\n){3,}/g, '$1\n');
 

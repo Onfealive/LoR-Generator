@@ -122,5 +122,9 @@ export const PatchInfo = {
     '2.10': {
         'code': '2_10_0',
         'maxSet': 4
+    },
+    '2.11': {
+        'code': '2_11_0',
+        'maxSet': 4
     }
 }

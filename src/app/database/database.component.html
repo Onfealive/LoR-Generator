@@ -281,7 +281,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div>Artwork:</div>
+                                        <div>Artwork ({{card.artist || 'Unknown'}}):</div>
                                         <img class="rounded mx-auto d-block" [defaultImage]="defaultArtwork"
                                             [lazyLoad]="getAPIArtwork(card.code)" [alt]="card.code"
                                             [attr.width]="isMobile ? '100%' : 'auto'"

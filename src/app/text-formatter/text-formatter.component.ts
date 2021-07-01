@@ -109,6 +109,7 @@ export class TextFormatterComponent implements OnInit {
 
         let regex = new RegExp(`(?<!{{LoR\\|)\\b${cardData.name}\\b(?!}})`, "gm");
         this.textContent = this.textContent.replace(regex, isChampion ? `{{LoR|${cardData.name}}}` : `{{LoR|${cardData.name}|code=${cardData.code}}}`);
+        this.textContent = this.textContent.replace('    ', '');
       }
     });
 
