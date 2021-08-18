@@ -368,6 +368,25 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
                     }
 
+                    let removedRegions = oldCard.regions.filter(x => !newCard.regions.includes(x));
+                    let newRegions = newCard.regions.filter(x => !oldCard.regions.includes(x));
+                    if (newCard.code == '02BW046') {
+                        console.log(oldCard, newCard)
+                    }
+                    if (removedRegions.length || newRegions.length) {
+                        if (removedRegions.length && !newRegions.length) {
+                            const removedRegionContent = addedHighlightedContent + removedRegions.join(', ') + addedHighlightedContent;
+                            log.diff.push(commonPrefix + `No longer belong to ${removedRegionContent}.`);
+                        } else if (!removedRegions.length && newRegions.length) {
+                            const newRegionContent = addedHighlightedContent + newRegions.join(', ') + addedHighlightedContent;
+                            log.diff.push(commonPrefix + `Now belong to ${newRegionContent}.`);
+                        } else {
+                            const removedRegionContent = addedHighlightedContent + removedRegions.join(', ') + addedHighlightedContent;
+                            const newRegionContent = addedHighlightedContent + newRegions.join(', ') + addedHighlightedContent;
+                            log.diff.push(commonPrefix + `Now belong to ${newRegionContent} instead of ${removedRegionContent}.`);
+                        }
+                    }
+
                     let removedGroups = oldCard.group.filter(x => !newCard.group.includes(x));
                     let newGroups = newCard.group.filter(x => !oldCard.group.includes(x));
                     if (removedGroups.length || newGroups.length) {
@@ -428,7 +447,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                                 log.type = MODIFY_TYPE.CHANGE_FLAVOR;
                             }
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
-                                log.diff.push(commonPrefix + largeContent.text + ` Visual Updated.`);
+                                log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
                             } else {
                                 const diffParts = Diff.diffWords(oldCard[largeContent.object], newCard[largeContent.object], {
                                     newlineIsToken: false
@@ -482,7 +501,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             }
                         } else if (largeContent.isCheckedVisual) {
                             if (Utility.cleanNewline(oldCard['_data'][largeContent.object]) != Utility.cleanNewline(newCard['_data'][largeContent.object])) {
-                                log.diff.push(commonPrefix + largeContent.text + ` Visual Updated.`);
+                                log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
                             }
                         }
                     });

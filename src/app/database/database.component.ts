@@ -46,6 +46,7 @@ export class DatabaseComponent implements OnInit {
     ];
 
     regionsData: Array<FormOption> = [
+        { id: 'BC', name: 'Bandle City' },
         { id: 'BW', icon: 'Bilgewater' },
         { id: 'DE', icon: 'Demacia' },
         { id: 'FR', icon: 'Freljord' },
@@ -62,6 +63,7 @@ export class DatabaseComponent implements OnInit {
         { id: '02', icon: 'Rising Tides' },
         { id: '03', icon: 'Call of the Mountain' },
         { id: '04', icon: 'Empires of the Ascended' },
+        { id: '05', name: '"Set 5"' },
     ];
 
     cardTypesData: Array<FormOption> = this._reformatFormOptions([
@@ -286,8 +288,8 @@ export class DatabaseComponent implements OnInit {
         this.isCompleted = false;
         this.searchResults = [];
 
-        const selectedRegionIds = this.form.value['regions']
-            .map((checked, i) => (checked ? this.regionsData[i].id : null))
+        const selectedRegionNames = this.form.value['regions']
+            .map((checked, i) => (checked ? (this.regionsData[i].name || this.regionsData[i].icon) : null))
             .filter((v) => v !== null);
 
         const selectedSetIds = this.form.value['sets']
@@ -313,11 +315,11 @@ export class DatabaseComponent implements OnInit {
         const searchArtists = this.selectedArtists || [];
 
         let filterList = [];
-        if (selectedRegionIds.length) {
+        if (selectedRegionNames.length) {
             filterList.push((c) => {
                 let found = false;
-                selectedRegionIds.forEach((regionCode) => {
-                    if (c.code.includes(regionCode)) {
+                selectedRegionNames.forEach((regionName) => {
+                    if (c.regions.includes(regionName)) {
                         found = true;
                     }
                 });
@@ -443,11 +445,10 @@ export class DatabaseComponent implements OnInit {
         }
 
         let searchResult = Object.values(this.database);
+        console.log(searchResult)
         filterList.forEach((filterLogic) => {
             searchResult = searchResult.filter(filterLogic);
         });
-
-        console.log(Utility.unique(searchResult.map(c => c['artist'])))
 
         // Sort settings
         let selectedSortData = this.sortData.find(s => s.id == this.sortType);

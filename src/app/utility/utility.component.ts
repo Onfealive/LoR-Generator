@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../shared/database.service';
+import { PatchInfo } from '../shared/patches';
 
 @Component({
     selector: 'app-utility',
@@ -10,6 +11,7 @@ export class UtilityComponent implements OnInit {
     versionPattern = /^(\d+\.)?(\d+\.)?(\*|\d+)$/;
 
     newestPatch = '';
+    rawNewestPatch = '';
     currentPatch = '';
 
     constructor(
@@ -18,7 +20,32 @@ export class UtilityComponent implements OnInit {
 
     ngOnInit(): void {
         this.currentPatch = this.databaseService.newestPatch;
+        this.rawNewestPatch = this.currentPatch;
         this.newestPatch = this.patch2code(this.currentPatch);
+    }
+
+    getSetArray() {
+        let setArray = [];
+
+        if (!this.rawNewestPatch) {
+            return setArray;
+        }
+
+        console.log(this.rawNewestPatch)
+
+        let maxSet = PatchInfo[this.rawNewestPatch].maxSet;
+        let patchInfo = PatchInfo[this.currentPatch];
+
+        if (patchInfo) {
+            maxSet = patchInfo.maxSet;
+        }
+
+
+        for (let i = 1; i <= maxSet; i++) {
+            setArray.push(i)
+        }
+
+        return setArray;
     }
 
     isValidVersion(version) {

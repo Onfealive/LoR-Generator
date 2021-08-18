@@ -1,0 +1,2958 @@
+[
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC194.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC194-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Create a follower from a new region in hand. Win the game if you've summoned units from 10 regions. <style=Variable></style>",
+    "descriptionRaw": "Round Start: Create a follower from a new region in hand. Win the game if you've summoned units from 10 regions. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Stretching an unknowable distance into the heavens above, The Bandle Tree is an impossible fixture at the heart of the city. Under its great, gnarled branches, some yordles see a beacon of hope and friendship while others see an ominous, riddle-filled monolith. All agree that to gaze upon the Bandle Tree is to glance into the soul of something very old and very powerful.",
+    "artistName": "Kudos Productions",
+    "name": "The Bandle Tree",
+    "cardCode": "05BC194",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC152.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC152-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "PiltoverZaun"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 4,
+    "description": "When I’m summoned, both players draw 1, then your opponent discards their highest cost card.",
+    "descriptionRaw": "When I’m summoned, both players draw 1, then your opponent discards their highest cost card.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Worst. Trip. Ever.\" - Elle",
+    "artistName": "Kudos Productions",
+    "name": "Aloof Travelers",
+    "cardCode": "05BC152",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC070.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC070-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 4,
+    "cost": 6,
+    "health": 4,
+    "description": "When I'm summoned and <link=vocab.RoundEnd><style=Vocab>Round End</style></link>: Plant 3 <link=card.puffcap><style=AssociatedCard>Poison Puffcaps</style></link> on random cards in the enemy deck. \r\nTraps on enemy cards are doubled when activated.",
+    "descriptionRaw": "When I'm summoned and Round End: Plant 3 Poison Puffcaps on random cards in the enemy deck. \r\nTraps on enemy cards are doubled when activated.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Rule 378: A good scout is always brave, always prepared, and always daring!\"",
+    "artistName": "Kudos Productions",
+    "name": "Ava Achiever",
+    "cardCode": "05BC070",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC164"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC069.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC069-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 5,
+    "description": "When I'm summoned or <link=vocab.Attack><style=Vocab>Attack</style></link>: Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.create><style=AssociatedCard>Poison Dart</style></link> in hand.",
+    "descriptionRaw": "When I'm summoned or Attack: Create a Fleeting Poison Dart in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Don't get him started.",
+    "artistName": "Kudos Productions",
+    "name": "Lecturing Yordle",
+    "cardCode": "05BC069",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC100.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC100-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 2,
+    "description": "<link=vocab.Strike><style=Vocab>Strike</style></link>: Plant 3 <link=card.shuffle><style=AssociatedCard>Poison Puffcaps</style></link> on random cards in the enemy deck. ",
+    "descriptionRaw": "Strike: Plant 3 Poison Puffcaps on random cards in the enemy deck. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"What's that, boy? Two of the recruits were scouting in the woods and stumbled across a scary grass monster, and now they might die a long and painful death? Lead the way!\" - Teemo",
+    "artistName": "Kudos Productions",
+    "name": "Puffcap Pup",
+    "cardCode": "05BC100",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC099.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC099-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 2,
+    "description": "When I’m summoned, if you've added 2+ cards to your hand this round, grant me +1|+0 and <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link>.",
+    "descriptionRaw": "When I’m summoned, if you've added 2+ cards to your hand this round, grant me +1|+0 and Elusive.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"What's my secret? You'll have to ask the biceps. They do all the talking.\"",
+    "artistName": "Kudos Productions",
+    "name": "Swole Scout",
+    "cardCode": "05BC099",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC122.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC122-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 3,
+    "cost": 3,
+    "health": 2,
+    "description": "When I’m summoned, if you’ve added 2+ cards to your hand this round, grant me +1|+2.",
+    "descriptionRaw": "When I’m summoned, if you’ve added 2+ cards to your hand this round, grant me +1|+2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Giantus grassicus. These terrifying creatures camouflage themselves by laying like ordinary grass and attack any unfortunate enough to walk over them. If encountered, run away forever!\" - Ava Achiever",
+    "artistName": "Kudos Productions",
+    "name": "Yordle Newbie",
+    "cardCode": "05BC122",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC223.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC223-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Pick 1 of 3 units or spells from the enemy deck and plant 3 <link=card.puffcap><style=AssociatedCard>Poison Puffcaps</style></link> on all copies of it.",
+    "descriptionRaw": "Pick 1 of 3 units or spells from the enemy deck and plant 3 Poison Puffcaps on all copies of it.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Rule 986: Traps are NOT toys... but they sure are fun!\"",
+    "artistName": "Kudos Productions",
+    "name": "Entrapment",
+    "cardCode": "05BC223",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC223T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC223T1-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Pick 1 of 3 units from the enemy deck and plant 3 <link=card.puffcap><style=AssociatedCard>Poison Puffcaps</style></link> on all copies of it.",
+    "descriptionRaw": "Pick 1 of 3 units from the enemy deck and plant 3 Poison Puffcaps on all copies of it.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Rule 986: Traps are NOT toys... but they sure are fun!\"",
+    "artistName": "Kudos Productions",
+    "name": "Entrapment",
+    "cardCode": "05BC223T1",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC223T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC223T2-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Pick 1 of 3 spells from the enemy deck and plant 3 <link=card.puffcap><style=AssociatedCard>Poison Puffcaps</style></link> on all copies of it.",
+    "descriptionRaw": "Pick 1 of 3 spells from the enemy deck and plant 3 Poison Puffcaps on all copies of it.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Rule 986: Traps are NOT toys... but they sure are fun!\"\n",
+    "artistName": "Kudos Productions",
+    "name": "Entrapment",
+    "cardCode": "05BC223T2",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC164.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC164-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Deal 1 to anything and plant 3 <link=card.shuffle><style=AssociatedCard>Poison Puffcaps</style></link> on random cards in the enemy deck. ",
+    "descriptionRaw": "Deal 1 to anything and plant 3 Poison Puffcaps on random cards in the enemy deck. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Haha! Bullseye!\" - Teemo",
+    "artistName": "Kudos Productions",
+    "name": "Poison Dart",
+    "cardCode": "05BC164",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ017.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ017-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Deal 2 to a unit. If you've added 2+ cards to your hand this round, deal 3 to it instead.",
+    "descriptionRaw": "Deal 2 to a unit. If you've added 2+ cards to your hand this round, deal 3 to it instead.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Better let 'em air out a minute. Greenies can't take the smell. But lemme tells ya... once you're accustomed, nothin' like it!\" - Puffcap Peddler",
+    "artistName": "Kudos Productions",
+    "name": "Sump Fumes",
+    "cardCode": "05PZ017",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01PZ022"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ035.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ035-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 2,
+    "cost": 1,
+    "health": 1,
+    "description": "<link=keyword.Last Breath><sprite name=LastBreath><style=Keyword>Last Breath</style></link>: Create a copy of me in the enemy deck with 2 <link=card.shuffle><style=AssociatedCard>Poison Puffcaps</style></link> attached. ",
+    "descriptionRaw": "Last Breath: Create a copy of me in the enemy deck with 2 Poison Puffcaps attached. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The stink of a whump in the height of puffcap season is unlike any other. Imagine an open sewer full of week-old fish and rotten eggs, and you're halfway there.",
+    "artistName": "Kudos Productions",
+    "name": "Stinky Whump",
+    "cardCode": "05PZ035",
+    "keywords": [
+      "Last Breath"
+    ],
+    "keywordRefs": [
+      "LastBreath"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC140.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC140-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Freljord"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Freljord"
+    ],
+    "attack": 5,
+    "cost": 5,
+    "health": 5,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Summon an attacking random 1 cost Poro.",
+    "descriptionRaw": "Attack: Summon an attacking random 1 cost Poro.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"An' den DAT Bobjim da poro was like \"DAT WAY!\" an' so off dey went into da horizahn, with da other poros scamperin' behind, tryin' their bestest to keep up!\" - Ingvar the Younger",
+    "artistName": "Dao Le",
+    "name": "Poro Sled",
+    "cardCode": "05BC140",
+    "keywords": [
+      "Impact"
+    ],
+    "keywordRefs": [
+      "Impact"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "PORO",
+    "subtypes": [
+      "PORO"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC160.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC160-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Freljord"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Freljord"
+    ],
+    "attack": 1,
+    "cost": 1,
+    "health": 1,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The poros of yesteryear had much thicker heads than their contemporary kin, making them a little bit dumber, and a whole lot headbuttier.",
+    "artistName": "Kudos Productions",
+    "name": "Proto Poro",
+    "cardCode": "05BC160",
+    "keywords": [
+      "Impact"
+    ],
+    "keywordRefs": [
+      "Impact"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [
+      "PORO"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC007-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 2,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Yordles haven't quite figured out gravity yet, but then, gravity hasn't quite figured out Bandle City, either.",
+    "artistName": "Kudos Productions",
+    "name": "Stone Stackers",
+    "cardCode": "05BC007",
+    "keywords": [
+      "Tough",
+      "Impact"
+    ],
+    "keywordRefs": [
+      "Tough",
+      "Impact"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC129.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC129-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Noxus"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Noxus"
+    ],
+    "attack": 4,
+    "cost": 3,
+    "health": 2,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"There's a sucker born every minute, and I'm gonna take 'em for all they got... this mech arena's gonna be a GOLD MINE.\"",
+    "artistName": "Kudos Productions",
+    "name": "Arena Kingpin",
+    "cardCode": "05BC129",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC052.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC052-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 10,
+    "health": 0,
+    "description": "Fill your hand with random cards. They cost 0 and are<link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link>. You can only play 3 more cards this round.",
+    "descriptionRaw": "Fill your hand with random cards. They cost 0 and areFleeting. You can only play 3 more cards this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "One mortal's trash is another yordle's giant pile of scrap parts.\n",
+    "artistName": "Kudos Productions",
+    "name": "Treasured Trash",
+    "cardCode": "05BC052",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC026.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC026-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "Costs 2 less if you've created 2+ cards this game. Draw 2.",
+    "descriptionRaw": "Costs 2 less if you've created 2+ cards this game. Draw 2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Very few outsiders know the way to Bandle City, but strange markings in the rocks and trees of Runeterra offer hints to those who know what to look for.",
+    "artistName": "Kudos Productions",
+    "name": "Hidden Pathways",
+    "cardCode": "05BC026",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC175.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC175-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Targon"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Targon"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 1,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: <link=vocab.Manifest><style=Vocab>Manifest</style></link> a random Celestial that costs 3 or less, Epic, or multi-region follower.",
+    "descriptionRaw": "Play: Manifest a random Celestial that costs 3 or less, Epic, or multi-region follower.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The strangest part wasn't that the telescope got up, stretched, and started walking around, but that it insisted on dressing for the weather, so it had to find a suitably comfortable scarf.",
+    "artistName": "Kudos Productions",
+    "name": "Loping Telescope",
+    "cardCode": "05BC175",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "FAE",
+    "subtypes": [
+      "FAE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC167T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC167.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC167-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 1,
+    "cost": 2,
+    "health": 2,
+    "description": "<link=vocab.NexusStrike><style=Vocab>Nexus Strike</style></link>: Create a <link=card.create><style=AssociatedCard>Hungry Owlcat</style></link> in hand.",
+    "descriptionRaw": "Nexus Strike: Create a Hungry Owlcat in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Gunnin' in the streets and tuckin' kiddos into sheets!\"",
+    "artistName": "Wild Blue Studio",
+    "name": "Bandle Commando",
+    "cardCode": "05BC167",
+    "keywords": [
+      "Elusive"
+    ],
+    "keywordRefs": [
+      "Elusive"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC167T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC184.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC184-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 3,
+    "health": 4,
+    "description": "When I'm summoned, create a <link=card.create><style=AssociatedCard>Hungry Owlcat</style></link> in hand. ",
+    "descriptionRaw": "When I'm summoned, create a Hungry Owlcat in hand. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"This is a song\nAbout Poppy the strong!\nPoppy the mightiest, frightiest... sprong!\" \n- Scratched-out lyrics from the 'Songbook of Reginaldactyl and Faltimisquee, Bards Extraordinaire'",
+    "artistName": "Dao Le",
+    "name": "Babbling Balladeers",
+    "cardCode": "05BC184",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC167T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC167T1-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Ionia"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Ionia"
+    ],
+    "attack": 2,
+    "cost": 1,
+    "health": 1,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"...But one day he arrived, empty-handed,\nAnd one by one, the greedy birds landed.\nThey pecked and scratched and mauled\n'Til there was nothing left of him at all!\"\n- Bandle City tall tale",
+    "artistName": "Kudos Productions",
+    "name": "Hungry Owlcat",
+    "cardCode": "05BC167T1",
+    "keywords": [
+      "SpellShield"
+    ],
+    "keywordRefs": [
+      "SpellShield"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "FAE",
+    "subtypes": [
+      "FAE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC148.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC148-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "PiltoverZaun"
+    ],
+    "attack": 5,
+    "cost": 7,
+    "health": 4,
+    "description": "When I'm summoned, if you've dealt damage to the enemy Nexus 4+ times, grant me <link=keyword.Impact><sprite name=Impact><style=Keyword>Impact</style></link> 4 times. <style=Variable></style>",
+    "descriptionRaw": "When I'm summoned, if you've dealt damage to the enemy Nexus 4+ times, grant me Impact 4 times. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Chewy outside, tough and gritty center.",
+    "artistName": "Kudos Productions",
+    "name": "Furious Faefolk",
+    "cardCode": "05BC148",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "FAE",
+    "subtypes": [
+      "FAE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05MT009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05MT009-full.png"
+      }
+    ],
+    "region": "Targon",
+    "regionRef": "Targon",
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Grant 2 allies +2|+2.",
+    "descriptionRaw": "Grant 2 allies +2|+2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Warring against the gods seemed a fool's errand, but through the scars and through the screams, those brave few learned lessons. The gods thought singularly, selfishly, and had lost the gift of camaraderie. This would be their weapon. This would be their armor.",
+    "artistName": "Kudos Productions",
+    "name": "Battle Bonds",
+    "cardCode": "05MT009",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC195.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC195-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Pick 1 of 2 non-champion cards in the enemy's hand or deck and Prank it.",
+    "descriptionRaw": "Pick 1 of 2 non-champion cards in the enemy's hand or deck and Prank it.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Gotcha!\" - Fizz",
+    "artistName": "Kudos Productions",
+    "name": "Prank",
+    "cardCode": "05BC195",
+    "keywords": [
+      "Focus"
+    ],
+    "keywordRefs": [
+      "Focus"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC195"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC050.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC050-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 4,
+    "cost": 4,
+    "health": 3,
+    "description": "When I'm summoned, create 2 <link=card.create><style=AssociatedCard>Pranks</style></link> in hand.",
+    "descriptionRaw": "When I'm summoned, create 2 Pranks in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Those who are prone to nausea should approach this gentle giant with EXTREME caution. Your insides will thank you... On a related note, I really shouldn't have eaten that second mushroom sandwich...\" \n- Conchologist Ecological Entry, Day 3",
+    "artistName": "Kudos Productions",
+    "name": "Benemone",
+    "cardCode": "05BC050",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC049.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC049-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 2,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: <link=vocab.Manifest><style=Vocab>Manifest</style></link> a spell from your regions that costs 3 or less.",
+    "descriptionRaw": "Play: Manifest a spell from your regions that costs 3 or less.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Today is indeed a red letter day! An exploration into the deep! I expect things to proceed quite... swimmingly! Ho ho!\" \n- Conchologist Ecological Entry, Day 1",
+    "artistName": "Kudos Productions",
+    "name": "Conchologist",
+    "cardCode": "05BC049",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC195"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC005-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 1,
+    "description": "<link=vocab.NexusStrike><style=Vocab>Nexus Strike</style></link>: Create a <link=card.create><style=AssociatedCard>Prank</style></link> in hand.",
+    "descriptionRaw": "Nexus Strike: Create a Prank in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Dear me, I've just had the oddest dream. One moment, I'm scrambling through the kelp, looking for my shell hat, when suddenly I hear the most wonderful melody. Next thing I know, I'm seated here, pen in hand, writing these words. I don't recall sitting down for a nap...\"\n- Conchologist Ecological Entry, Day 22",
+    "artistName": "Kudos Productions",
+    "name": "Kelp Maidens",
+    "cardCode": "05BC005",
+    "keywords": [
+      "Elusive"
+    ],
+    "keywordRefs": [
+      "Elusive"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC195"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC004-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 1,
+    "cost": 1,
+    "health": 1,
+    "description": "When I'm summoned, create a <link=card.create><style=AssociatedCard>Prank</style></link> in hand.",
+    "descriptionRaw": "When I'm summoned, create a Prank in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Curious and playful, the otterpus are an immensely cheery bunch. Or is it otterpi? Say, didn't I pack a third sandwich?\" \n- Conchologist Ecological Entry, Day 7",
+    "artistName": "Kudos Productions",
+    "name": "Otterpus",
+    "cardCode": "05BC004",
+    "keywords": [
+      "Attune"
+    ],
+    "keywordRefs": [
+      "Attune"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC010T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC010-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Bilgewater"
+    ],
+    "attack": 6,
+    "cost": 7,
+    "health": 6,
+    "description": "When allies attack, spend 1 spell mana to summon an attacking <link=card.create><style=AssociatedCard>Short Tooth</style></link>.",
+    "descriptionRaw": "When allies attack, spend 1 spell mana to summon an attacking Short Tooth.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The Trainer's routine is the same each night. Fish 'n ale for supper, a quick puff of his bubblepipe, followed by kisses on snouts and a story for his sharks before bedtime.",
+    "artistName": "Kudos Productions",
+    "name": "Shark Trainer",
+    "cardCode": "05BC010",
+    "keywords": [
+      "Attune"
+    ],
+    "keywordRefs": [
+      "Attune"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC010T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC010T1-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 4,
+    "cost": 1,
+    "health": 2,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"They say don't bite the hand that feeds--but by Bandle--they bit my hand AND anything else they could reach!\" \n- Conchologist Ecological Note, Day 13",
+    "artistName": "Kudos Productions",
+    "name": "Short Tooth",
+    "cardCode": "05BC010T1",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC013.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC013-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Your opponent discards their lowest cost card.",
+    "descriptionRaw": "Your opponent discards their lowest cost card.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Note to self: On next expedition, keep all valuables in my FRONT pockets.\" \n- Conchologist Ecological Entry, Day 19",
+    "artistName": "Kudos Productions",
+    "name": "Tricksy Tentacles",
+    "cardCode": "05BC013",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC185.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC185-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "Refill your spell mana. Give an ally <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link> and +1|+1 this round.",
+    "descriptionRaw": "Refill your spell mana. Give an ally Elusive and +1|+1 this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I SEE them enter the left shell, yet when I CHOOSE that shell, it's empty. I'm beginning to suspect this game might be rigged...\"\n- Conchologist Ecological Entry, Day 14",
+    "artistName": "Kudos Productions",
+    "name": "Shell Game",
+    "cardCode": "05BC185",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC004"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC040.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC040-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "<link=vocab.Manifest><style=Vocab>Manifest</style></link> an <link=card.create1><style=AssociatedCard>Otterpus</style></link> or one of 2 spells from your regions that cost 3 or less.",
+    "descriptionRaw": "Manifest an Otterpus or one of 2 spells from your regions that cost 3 or less.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Unhand my sandwich this instant!\" - Conchologist",
+    "artistName": "Kudos Productions",
+    "name": "Trinket Trade",
+    "cardCode": "05BC040",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC041T3",
+      "05BC041T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC041.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC041-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Demacia"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Demacia"
+    ],
+    "attack": 4,
+    "cost": 4,
+    "health": 3,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Grant me and all allies with equal or less power than me +1|+1.",
+    "descriptionRaw": "Attack: Grant me and all allies with equal or less power than me +1|+1.",
+    "levelupDescription": "I've attacked with allies 3 times.<style=Variable></style>",
+    "levelupDescriptionRaw": "I've attacked with allies 3 times.",
+    "flavorText": "Humility is a mark of heroism, but many historians would agree that Poppy is kind of pushing it.",
+    "artistName": "Dao Le",
+    "name": "Poppy",
+    "cardCode": "05BC041",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC041T3",
+      "05BC041"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC041T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC041T1-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Demacia"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Demacia"
+    ],
+    "attack": 5,
+    "cost": 4,
+    "health": 4,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Grant me and all allies with equal or less power than me +2|+2 and <link=keyword.Impact><sprite name=Impact><style=Keyword>Impact</style></link>.",
+    "descriptionRaw": "Attack: Grant me and all allies with equal or less power than me +2|+2 and Impact.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Power is a famously corrupting influence, but Poppy proves that its corruption is no match for a good heart and stubborn, steadfast obliviousness.",
+    "artistName": "Dao Le",
+    "name": "Poppy",
+    "cardCode": "05BC041T1",
+    "keywords": [
+      "Impact"
+    ],
+    "keywordRefs": [
+      "Impact"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC041T1",
+      "05BC041"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC041T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC041T3-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 6,
+    "health": 0,
+    "description": "Place an enemy unit on top of the enemy deck. Create a <link=card.level1><style=AssociatedCard>Poppy</style></link> in your deck.",
+    "descriptionRaw": "Place an enemy unit on top of the enemy deck. Create a Poppy in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"And don't come back!\" - Poppy",
+    "artistName": "Kudos Productions",
+    "name": "Poppy's Keeper's Verdict",
+    "cardCode": "05BC041T3",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC191.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC191-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 6,
+    "health": 0,
+    "description": "Place an enemy unit on top of the enemy deck. ",
+    "descriptionRaw": "Place an enemy unit on top of the enemy deck. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"And don't come back!\" - Poppy",
+    "artistName": "Kudos Productions",
+    "name": "Keeper's Verdict",
+    "cardCode": "05BC191",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC179.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC179-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Demacia"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Demacia"
+    ],
+    "attack": 5,
+    "cost": 6,
+    "health": 5,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Grant me and all allies with equal or less power than me +0|+1.",
+    "descriptionRaw": "Attack: Grant me and all allies with equal or less power than me +0|+1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Poppy! Excellent execution of our latest tactic. What do you think of calling it 'Peanut Petalstorm'?\"\n\"I, uh, kinda just hit the baddie with my hammer. Can't we just call this one 'Hammer'?\"\n\"That's what we called the last three!\" - Kip and Poppy",
+    "artistName": "Polar Engine",
+    "name": "Yordle Ranger",
+    "cardCode": "05BC179",
+    "keywords": [
+      "Scout"
+    ],
+    "keywordRefs": [
+      "Scout"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC018.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC018-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City",
+      "Demacia"
+    ],
+    "regionRefs": [
+      "BandleCity",
+      "Demacia"
+    ],
+    "attack": 1,
+    "cost": 3,
+    "health": 1,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Nine hundred ninety-eight... nine hundred ninety-nine... one thousand! There we are, Bawky, you look impeccable as ever. Okay, now do mine!\"",
+    "artistName": "Kudos Productions",
+    "name": "Pompous Cavalier",
+    "cardCode": "05BC018",
+    "keywords": [
+      "Double Attack"
+    ],
+    "keywordRefs": [
+      "DoubleStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC235.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC235-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 2,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Give all allies with equal or less Power than me <link=keyword.Quick Strike><sprite name=QuickStrike><style=Keyword>Quick Attack</style></link> this round.",
+    "descriptionRaw": "Attack: Give all allies with equal or less Power than me Quick Attack this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Poppy never listens t'me, so you better: It's not about the hammer, it's about the yordle who swings it.\"\n",
+    "artistName": "Kudos Productions",
+    "name": "Yordle Smith",
+    "cardCode": "05BC235",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC209.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC209-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Set a unit's stats to 1|6 this round.",
+    "descriptionRaw": "Set a unit's stats to 1|6 this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The Bawkatrice is a loyal, steadfast mount under normal circumstances. However, when put under too much stress they are known to react in... unusual ways.",
+    "artistName": "Kudos Productions",
+    "name": "Stress Defense",
+    "cardCode": "05BC209",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC208.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC208-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "An ally <link=vocab.Strike><style=Vocab>strikes</style></link> an enemy. If it survives, <link=keyword.Stun><sprite name=Stunned><style=Keyword>Stun</style></link> it.",
+    "descriptionRaw": "An ally strikes an enemy. If it survives, Stun it.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Move it!\" - Poppy",
+    "artistName": "Kudos Productions",
+    "name": "Heroic Charge",
+    "cardCode": "05BC208",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC145T1",
+      "05BC145T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC145.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC145-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 1,
+    "health": 1,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Create a <link=card.create1><style=AssociatedCard>Tiny Spear</style></link> or a <link=card.create2><style=AssociatedCard>Tiny Shield</style></link> in hand.",
+    "descriptionRaw": "Play: Create a Tiny Spear or a Tiny Shield in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"My hammer used to belong to a great hero, too... I made Poppy hold it for a minute!\"",
+    "artistName": "Envar Studio",
+    "name": "Yordle Squire",
+    "cardCode": "05BC145",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "YORDLE",
+    "subtypes": [
+      "YORDLE"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC145T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC145T1-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Grant an ally +1|+0.",
+    "descriptionRaw": "Grant an ally +1|+0.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"A small spear is still a spear.\" - Yordle saying, probably",
+    "artistName": "Kudos Productions",
+    "name": "Tiny Spear",
+    "cardCode": "05BC145T1",
+    "keywords": [
+      "Focus"
+    ],
+    "keywordRefs": [
+      "Focus"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC145T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05BC145T2-full.png"
+      }
+    ],
+    "region": "Bandle City",
+    "regionRef": "BandleCity",
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Grant an ally +0|+1.",
+    "descriptionRaw": "Grant an ally +0|+1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I found it! But you can use it!!\" - Yordle Squire",
+    "artistName": "Kudos Productions",
+    "name": "Tiny Shield",
+    "cardCode": "05BC145T2",
+    "keywords": [
+      "Focus"
+    ],
+    "keywordRefs": [
+      "Focus"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008",
+      "05PZ006T1",
+      "05PZ006T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ006-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 3,
+    "cost": 3,
+    "health": 3,
+    "description": "<link=vocab.Strike><style=Vocab>Strike</style></link>: Plant 2 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 10 cards in the enemy deck.",
+    "descriptionRaw": "Strike: Plant 2 Flashbomb Traps randomly in the top 10 cards in the enemy deck.",
+    "levelupDescription": "5 of your traps have been activated.<style=Variable></style>",
+    "levelupDescriptionRaw": "5 of your traps have been activated.",
+    "flavorText": "Caitlyn was always a dogged and thorough investigator, a quality that helped propel her fast through the ranks of Piltover enforcement. But when a case concerning a certain 'C' came along, one that countless other enforcers had abandoned, it seemed almost as though Caitlyn had finally met her match. Almost.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Caitlyn",
+    "cardCode": "05PZ006",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ006",
+      "05PZ008",
+      "05PZ006T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ006T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ006T2-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 4,
+    "cost": 3,
+    "health": 4,
+    "description": "<link=vocab.Strike><style=Vocab>Strike</style></link>: Plant 4 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 10 cards in the enemy deck and deal damage to the enemy Nexus equal to the number of your traps activated this round. <style=Variable></style>",
+    "descriptionRaw": "Strike: Plant 4 Flashbomb Traps randomly in the top 10 cards in the enemy deck and deal damage to the enemy Nexus equal to the number of your traps activated this round. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "She burst in, leveled her rifle at the culprit, and looked down the scope. There, smiling through the looking glass, was a familiar face.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Caitlyn",
+    "cardCode": "05PZ006T2",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008",
+      "05PZ006T2",
+      "05PZ006"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ006T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ006T1-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Deal 2 to an enemy and plant 2 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 10 cards of the enemy deck.\r\nCreate a <link=card.level1><style=AssociatedCard>Caitlyn</style></link> in your deck.",
+    "descriptionRaw": "Deal 2 to an enemy and plant 2 Flashbomb Traps randomly in the top 10 cards of the enemy deck.\r\nCreate a Caitlyn in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Here's MY calling card.\" - Caitlyn",
+    "artistName": "Kudos Productions",
+    "name": "Caitlyn's Piltover Peacemaker",
+    "cardCode": "05PZ006T1",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ008-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Deal 1 damage to a random ally.",
+    "descriptionRaw": "Deal 1 damage to a random ally.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Boom.\" - Caitlyn",
+    "artistName": "Kudos Productions",
+    "name": "Flashbomb Trap",
+    "cardCode": "05PZ008",
+    "keywords": [
+      "Trap"
+    ],
+    "keywordRefs": [
+      "Autoplay"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Trap",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ013.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ013-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Deal 2 to an enemy and plant 2 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 10 cards of the enemy deck.",
+    "descriptionRaw": "Deal 2 to an enemy and plant 2 Flashbomb Traps randomly in the top 10 cards of the enemy deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Here's MY calling card.\" - Caitlyn",
+    "artistName": "Kudos Productions",
+    "name": "Piltover Peacemaker",
+    "cardCode": "05PZ013",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008",
+      "05PZ014T1",
+      "05PZ014T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ014.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ014-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 5,
+    "cost": 6,
+    "health": 5,
+    "description": "<link=keyword.PlaySkillMark><sprite name=SkillMark><style=Keyword>Play</style></link>: Plant 5 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly or activate the effects of all traps in the top 5 cards of the enemy deck.",
+    "descriptionRaw": "Play: Plant 5 Flashbomb Traps randomly or activate the effects of all traps in the top 5 cards of the enemy deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Corina smiled as the Piltover Wardens burst down her door, as they trampled her precious flowers underfoot, as they sent up clouds of toxic pollen. All as planned.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Corina, Mastermind",
+    "cardCode": "05PZ014",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ014T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ014T1-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Plant 5 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 5 cards of the enemy deck.",
+    "descriptionRaw": "Play: Plant 5 Flashbomb Traps randomly in the top 5 cards of the enemy deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Watch your step...\" - Corina Veraza",
+    "artistName": "Kudos Productions",
+    "name": "Beguiling Blossom",
+    "cardCode": "05PZ014T1",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ014T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ014T2-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Activate the effects of all traps in the top 5 cards of the enemy deck.",
+    "descriptionRaw": "Play: Activate the effects of all traps in the top 5 cards of the enemy deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Right where I want you.\" - Corina Veraza",
+    "artistName": "Kudos Productions",
+    "name": "Volatile Bloom",
+    "cardCode": "05PZ014T2",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ015.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ015-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 4,
+    "description": "Whenever your opponent draws, plant 1 <link=card.shuffle><style=AssociatedCard>Flashbomb Trap</style></link> randomly in the top 10 cards in the enemy deck. ",
+    "descriptionRaw": "Whenever your opponent draws, plant 1 Flashbomb Trap randomly in the top 10 cards in the enemy deck. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Officer was witnessed pursuing suspect at a high speed into a trap of her own making. Following the arrest, officer proceeded to submit her own speeding citation and fine, claiming (somewhat dramatically) 'Justice is a two-way street.'\" \n- Excerpt from a Warden beat report",
+    "artistName": "SIXMOREVODKA",
+    "name": "Justice Rider",
+    "cardCode": "05PZ015",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ019"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ004-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 4,
+    "cost": 5,
+    "health": 5,
+    "description": "When I’m summoned, create a <link=card.create><style=AssociatedCard>Most Wanted</style></link> in hand.",
+    "descriptionRaw": "When I’m summoned, create a Most Wanted in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "From unloading silently into the street to prepping the ram, setup didn't take long. It was just a matter of waiting on Caitlyn's cue.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Officer Squad",
+    "cardCode": "05PZ004",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ019.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ019-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "Pick a player to discard their lowest cost card to draw 3.",
+    "descriptionRaw": "Pick a player to discard their lowest cost card to draw 3.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Everything has a cost.\" - Corina Veraza",
+    "artistName": "Kudos Productions",
+    "name": "Most Wanted",
+    "cardCode": "05PZ019",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ012.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ012-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 3,
+    "cost": 3,
+    "health": 3,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Pick a spell in the top 5 cards of your deck and create an exact <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> copy in hand.",
+    "descriptionRaw": "Play: Pick a spell in the top 5 cards of your deck and create an exact Fleeting copy in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Detectives are nothing without leads. An archivist's job is to collect every scrap of intel and create new possibilities where none previously existed.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Station Archivist",
+    "cardCode": "05PZ012",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ009-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 1,
+    "description": "<link=vocab.NexusStrike><style=Vocab>Nexus Strike</style></link>: Plant 2 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 10 cards of the enemy deck.",
+    "descriptionRaw": "Nexus Strike: Plant 2 Flashbomb Traps randomly in the top 10 cards of the enemy deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Zayne Asako, like all Zaunite kids, had to grow up fast on those violent and dark understreets. After losing his brother to yet another senseless gang crime, he committed himself to Piltover enforcement, hoping reason and law would make his home finally safe.",
+    "artistName": "SIXMOREVODKA",
+    "name": "Sting Officer",
+    "cardCode": "05PZ009",
+    "keywords": [
+      "Elusive"
+    ],
+    "keywordRefs": [
+      "Elusive"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ020.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ020-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Give a unit +2|+0 this round. If you've added 2+ cards to your hand this round, give it <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link> this round.",
+    "descriptionRaw": "Give a unit +2|+0 this round. If you've added 2+ cards to your hand this round, give it Elusive this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"We'll surround the location while using smokespinners to mask our movements...\" - Caitlyn",
+    "artistName": "Kudos Productions",
+    "name": "Ambush",
+    "cardCode": "05PZ020",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ016.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ016-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "Place an enemy follower into the enemy deck, then your opponent draws 1.",
+    "descriptionRaw": "Place an enemy follower into the enemy deck, then your opponent draws 1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The grand city of Piltover is home to some of the finest minds in Runeterra. Piltover's jails are also home to some of the finest minds in Runeterra.",
+    "artistName": "Kudos Productions",
+    "name": "Coup de Grace",
+    "cardCode": "05PZ016",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05PZ008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ010-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Plant 2 <link=card.shuffle><style=AssociatedCard>Flashbomb Traps</style></link> randomly in the top 10 cards of the enemy deck.",
+    "descriptionRaw": "Plant 2 Flashbomb Traps randomly in the top 10 cards of the enemy deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"On my signal.\" - Caitlyn",
+    "artistName": "Kudos Productions",
+    "name": "Advanced Intel",
+    "cardCode": "05PZ010",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/2_14_0/set5/en_us/img/cards/05PZ002-full.png"
+      }
+    ],
+    "region": "Piltover & Zaun",
+    "regionRef": "PiltoverZaun",
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Both players draw 2.",
+    "descriptionRaw": "Both players draw 2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"This a popular case, you know. Just had a chap in here earlier looking at it. Enjoy!\" - Station Archivist",
+    "artistName": "Kudos Productions",
+    "name": "Insider Knowledge",
+    "cardCode": "05PZ002",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtype": "",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set5"
+  }
+]

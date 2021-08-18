@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let set of [1, 2, 3, 4]">
+        <tr *ngFor="let set of getSetArray()">
             <td><a [href]="getJSONLink(patch2code(currentPatch), set)" target="_blank">Set {{set}} - V{{
                     patch2code(currentPatch, true) }}</a></td>
             <td><a [href]="getJSONLink('latest', set)" target="_blank">Set {{set}} - Latest</a></td>

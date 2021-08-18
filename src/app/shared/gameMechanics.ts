@@ -32,9 +32,11 @@ export const Keywords = [
     { name: "Fury", icon: "Fury" },
     { name: "Imbue", icon: "Imbue" },
     { name: "Invoke", icon: "Invoke" },
+    { name: "Impact" },
     { name: "Last Breath", icon: "Last Breath" },
     { name: "Lifesteal", icon: "Lifesteal" },
     { name: "Lurk" },
+    { name: "Manifest" },
     { name: "Nab" },
     { name: "Nexus Strike" },
     { name: "Nightfall" },
@@ -74,6 +76,7 @@ export const Groups = [
     { name: 'Dragon' },
     { name: 'Elite' },
     { name: 'Elnuk' },
+    { name: 'Fae' },
     { name: 'Lurker' },
     { name: 'Moon Weapon' },
     { name: 'Poro' },
@@ -81,7 +84,8 @@ export const Groups = [
     { name: 'Spider' },
     { name: 'Tech' },
     { name: 'Treasure' },
-    { name: 'Yeti' }
+    { name: 'Yeti' },
+    { name: 'Yordle' }
 ];
 
 export const Artists = [
@@ -124,12 +128,13 @@ export class Card {
     flavor: string;
     keywords: Array<string>;
     artist: string;
-    region: string;
+    regions: string;
     rarity: string;
     weightRarity: number;
 }
 
 export const Regions = [
+    { id: 'BC', name: 'Bandle City' },
     { id: 'BW', icon: 'Bilgewater', name: 'Bilgewater' },
     { id: 'DE', icon: 'Demacia', name: 'Demacia' },
     { id: 'FR', icon: 'Freljord', name: 'Freljord' },

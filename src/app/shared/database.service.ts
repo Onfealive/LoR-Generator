@@ -169,7 +169,7 @@ export class DatabaseService {
                     flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
                     keywords: [...cardData.keywords],
                     artist: artist,
-                    region: Regions.find(r => r.id == cardData.cardCode.substring(2, 4)).name,
+                    regions: cardData.regions ? cardData.regions : [cardData.region],
                     rarity: rarity,
                     weightRarity: this.WEIGHT_RARITY[rarity]
                 }

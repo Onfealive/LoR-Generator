@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Utility from "../shared/utility";
 import { DeckEncoder } from 'runeterra';
 import { DatabaseService } from '../shared/database.service';
-import { Card } from '../shared/gameMechanics';
+import { Card, Regions } from '../shared/gameMechanics';
 import { AttachSession } from 'protractor/built/driverProviders';
 
 @Component({
@@ -98,13 +98,17 @@ export class UnownedCardsComponent implements OnInit {
 
     unownedCards.forEach((card: Card) => {
       let set = card.code.substring(0, 2);
-      if (!cardByRegions[card.region]) {
-        cardByRegions[card.region] = {
+
+      let regionCode = card.code.substring(2, 4);
+      let region = Regions.find(region => region.id == regionCode);
+      if (!cardByRegions[region.name]) {
+        cardByRegions[region.name] = {
           'count': 0,
           'totalDeck': [],
           'deckCode': [],
-          'name': card.region,
-          'shards': []
+          'name': region.name,
+          'shards': [],
+          'icon': region.icon
         }
       }
 
@@ -116,8 +120,8 @@ export class UnownedCardsComponent implements OnInit {
         }
       }
 
-      cardByRegions[card.region]['count'] += card['count'] || 1;
-      cardByRegions[card.region]['totalDeck'].push(Object.assign({}, card));
+      cardByRegions[region.name]['count'] += card['count'] || 1;
+      cardByRegions[region.name]['totalDeck'].push(Object.assign({}, card));
 
       cardBySets[set]['count'] += card['count'] || 1;
       cardBySets[set]['cards'].push(Object.assign({}, card));

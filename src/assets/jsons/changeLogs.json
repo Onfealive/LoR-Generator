@@ -1,5 +1,29 @@
 [
     {
+        "version": "1.8",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V2.12, V2.13, V2.14 until 2021-08-17.",
+                    "Updated: Multi-Regions for all related features."
+                ]
+            },
+            {
+                "title": "Expedition",
+                "details": [
+                    "Added Data: V2.12."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added - New Region, Set, Groups and Keywords."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.7.3",
         "changes": [
             {
@@ -11,7 +35,7 @@
             {
                 "title": "Expedition",
                 "details": [
-                    "Added Data: V2.11"
+                    "Added Data: V2.11."
                 ]
             },
             {
@@ -34,7 +58,7 @@
             {
                 "title": "Expedition",
                 "details": [
-                    "Added Data: V2.10",
+                    "Added Data: V2.10.",
                     "Bugfixed: Broken when having new archetypes."
                 ]
             },
