@@ -134,7 +134,7 @@ export class Card {
 }
 
 export const Regions = [
-    { id: 'BC', name: 'Bandle City' },
+    { id: 'BC', icon: 'Bandle City', name: 'Bandle City' },
     { id: 'BW', icon: 'Bilgewater', name: 'Bilgewater' },
     { id: 'DE', icon: 'Demacia', name: 'Demacia' },
     { id: 'FR', icon: 'Freljord', name: 'Freljord' },

@@ -46,7 +46,7 @@ export class DatabaseComponent implements OnInit {
     ];
 
     regionsData: Array<FormOption> = [
-        { id: 'BC', name: 'Bandle City' },
+        { id: 'BC', icon: 'Bandle City' },
         { id: 'BW', icon: 'Bilgewater' },
         { id: 'DE', icon: 'Demacia' },
         { id: 'FR', icon: 'Freljord' },
@@ -63,7 +63,7 @@ export class DatabaseComponent implements OnInit {
         { id: '02', icon: 'Rising Tides' },
         { id: '03', icon: 'Call of the Mountain' },
         { id: '04', icon: 'Empires of the Ascended' },
-        { id: '05', name: '"Set 5"' },
+        { id: '05', icon: 'Beyond the Bandlewood' },
     ];
 
     cardTypesData: Array<FormOption> = this._reformatFormOptions([

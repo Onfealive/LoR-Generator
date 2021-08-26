@@ -4,5 +4,6 @@ export const ExpeditionInfo = [
     '2.5',
     '2.10',
     '2.11',
-    '2.12'
+    '2.12',
+    '2.14'
 ]

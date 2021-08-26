@@ -594,6 +594,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 lvldesc: rawCardData.levelupDescriptionRaw,
                 categoryRefs: subtype ? [subtype] : '',
                 flavor: rawCardData.flavorText,
+                regions: rawCardData.regions,
                 artist: rawCardData.artistName
             });
         });
@@ -613,7 +614,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         fileContent = fileContent.split(`]`).join(`}`);
         fileContent = fileContent.split(`"0`).join(`["0`);
 
-        let titles = ['name', 'type', 'rarity', 'subtype', 'supertype', 'keywords', 'keywordRefs', 'collectible', 'cost', 'power', 'health', 'desc', 'lvldesc', 'categoryRefs', 'flavor', 'artist']
+        let titles = ['name', 'type', 'rarity', 'subtype', 'supertype', 'keywords', 'keywordRefs', 'collectible', 'cost', 'power', 'health', 'desc', 'lvldesc', 'categoryRefs', 'flavor', 'artist', 'regions']
 
         titles.forEach(title => {
             fileContent = fileContent.split(`"${title}": `).join(`["${title}"]`.padEnd(17, ' ') + '= ');
