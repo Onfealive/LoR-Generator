@@ -507,10 +507,16 @@ export class PatchNotesGeneratorComponent implements OnInit {
                     });
 
                     if (oldCard.artist != newCard.artist) {
-                        if (!oldCard.artist) {
-                            log.diff.push(commonPrefix + `Artist added: ${newCard.artist}.`);
+                        let oldArtist = oldCard.artist != '<Unknown>' ? oldCard.artist : '';
+                        let newArtist = newCard.artist != '<Unknown>' ? newCard.artist : '';
+                        if (!oldArtist) {
+                            log.diff.push(commonPrefix + `Artist added: ${newArtist}.`);
                         } else {
-                            log.diff.push(commonPrefix + `Artist changed to ${newCard.artist} from ${oldCard.artist}.`);
+                            if (!newArtist) {
+                                log.diff.push(commonPrefix + `Artist removed, before that was ${oldArtist}.`);
+                            } else {
+                                log.diff.push(commonPrefix + `Artist changed to ${newArtist} from ${oldArtist}.`);
+                            }
                         }
                     }
                 }
