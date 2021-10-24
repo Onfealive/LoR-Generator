@@ -1,5 +1,18 @@
 [
     {
+        "version": "1.8.4",
+        "changes": [
+            {
+                "title": "Data",
+                "details": ["Added: V2.18."]
+            },
+            {
+                "title": "Patch Generator",
+                "details": ["Updated: Artist change will be less impressive."]
+            }
+        ]
+    },
+    {
         "version": "1.8.3",
         "changes": [
             {

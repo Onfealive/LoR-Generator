@@ -338,7 +338,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 let log = {
                     'data': newCard,
                     'diff': [],
-                    'type': MODIFY_TYPE.CHANGE
+                    'type': null
                 };
 
                 if (!oldCard) {
@@ -348,31 +348,36 @@ export class PatchNotesGeneratorComponent implements OnInit {
                     // newCard.code == '03SI015' && console.log(JSON.stringify(oldCard), JSON.stringify(newCard))
                     if (oldCard.name != newCard.name) {
                         log.diff.push(commonPrefix + `Renamed from ${addedHighlightedContent + oldCard.name + addedHighlightedContent}.`);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (oldCard.cost != newCard.cost) {
                         log.diff.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} from ${oldCard.cost}.`);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (oldCard.power != newCard.power) {
                         log.diff.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} from ${oldCard.power}.`);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (oldCard.health != newCard.health) {
                         log.diff.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} from ${oldCard.health}.`);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (oldCard.spellSpeed != newCard.spellSpeed) {
                         const startTip = startTipContent + newCard.spellSpeed + endTipContent;
                         const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
                         log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     let removedRegions = oldCard.regions.filter(x => !newCard.regions.includes(x));
                     let newRegions = newCard.regions.filter(x => !oldCard.regions.includes(x));
-                    if (newCard.code == '02BW046') {
-                        console.log(oldCard, newCard)
-                    }
+                    // if (newCard.code == '02BW046') {
+                    //     console.log(oldCard, newCard)
+                    // }
                     if (removedRegions.length || newRegions.length) {
                         if (removedRegions.length && !newRegions.length) {
                             const removedRegionContent = addedHighlightedContent + removedRegions.join(', ') + addedHighlightedContent;
@@ -385,6 +390,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             const newRegionContent = addedHighlightedContent + newRegions.join(', ') + addedHighlightedContent;
                             log.diff.push(commonPrefix + `Now belong to ${newRegionContent} instead of ${removedRegionContent}.`);
                         }
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     let removedGroups = oldCard.group.filter(x => !newCard.group.includes(x));
@@ -401,6 +407,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             const newGroupContent = addedHighlightedContent + newGroups.join(', ') + addedHighlightedContent;
                             log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
                         }
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     let removedKeywords = oldCard._data.keywords.filter(x => !newCard._data.keywords.includes(x));
@@ -409,12 +416,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
 
                         log.diff.push(content);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (removedKeywords.length) {
                         let content = commonPrefix + removedKeywordPrefix + startTipContent + removedKeywords.join(endTipContent + ', ') + endTipContent + '.';
 
                         log.diff.push(content);
+                        log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     let largeContents = [
@@ -445,7 +454,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             flag++;
                             if (largeContent.object == 'flavor' && flag == 1) {
                                 log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                            } else {
+                                log.type = MODIFY_TYPE.CHANGE;
                             }
+
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
                             } else {
@@ -502,6 +514,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         } else if (largeContent.isCheckedVisual) {
                             if (Utility.cleanNewline(oldCard['_data'][largeContent.object]) != Utility.cleanNewline(newCard['_data'][largeContent.object])) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
+                                log.type = MODIFY_TYPE.CHANGE;
                             }
                         }
                     });
@@ -517,6 +530,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             } else {
                                 log.diff.push(commonPrefix + `Artist changed to ${newArtist} from ${oldArtist}.`);
                             }
+                        }
+
+                        if (!log.type) {
+                            log.type = MODIFY_TYPE.CHANGE_FLAVOR;
                         }
                     }
                 }

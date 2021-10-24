@@ -151,5 +151,9 @@ export const PatchInfo = {
     '2.17': {
         'code': '2_17_0',
         'maxSet': 5
+    },
+    '2.18': {
+        'code': '2_18_0',
+        'maxSet': 5
     }
 }
