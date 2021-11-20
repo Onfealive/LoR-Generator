@@ -52,7 +52,7 @@ export class DatabaseComponent implements OnInit {
         { id: 'FR', icon: 'Freljord' },
         { id: 'IO', icon: 'Ionia' },
         { id: 'NX', icon: 'Noxus' },
-        { id: 'PZ', icon: 'Piltover and Zaun' },
+        { id: 'PZ', icon: 'Piltover and Zaun', name: 'Piltover & Zaun' },
         { id: 'SI', icon: 'Shadow Isles' },
         { id: 'SH', icon: 'Shurima' },
         { id: 'MT', icon: 'Targon' },
@@ -97,8 +97,8 @@ export class DatabaseComponent implements OnInit {
     ];
 
     collectibleData: Array<FormOption> = [
-        { id: 'true', icon: 'Collectible', default: true, name: 'Collectible' },
-        { id: 'false', icon: 'Uncollectible', name: 'Uncollectible' },
+        { id: 'true', icon: 'Collectible', name: 'Collectible', default: true },
+        { id: 'false', icon: 'Uncollectible', name: 'Uncollectible', default: true },
     ];
 
     searchResults = [];
@@ -445,7 +445,6 @@ export class DatabaseComponent implements OnInit {
         }
 
         let searchResult = Object.values(this.database);
-        console.log(searchResult)
         filterList.forEach((filterLogic) => {
             searchResult = searchResult.filter(filterLogic);
         });

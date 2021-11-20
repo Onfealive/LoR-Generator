@@ -220,6 +220,9 @@ export class DatabaseService {
 
             database = Object.assign(database, setData);
         });
+        Object.values(database).filter(card => card['groupedType'] == null).forEach((cardData: any) => {
+            database[cardData.code].groupedType = this.getCardType(cardData._data, true);
+        });
 
         return database;
     }
@@ -238,8 +241,19 @@ export class DatabaseService {
         }
 
         if (isgroupedType) {
-            if (cardData.type == 'Spell' && cardData.supertype == 'Champion') {
-                return 'Champion'
+            if (cardData.supertype == 'Champion') {
+                if (cardData.type == 'Spell') {
+                    return 'Champion'
+                }
+            } else if (cardData.cardCode.length > 7) {
+                let mainCardCode = cardData.cardCode.substring(0, 7);
+                if (this.latestDatabase[mainCardCode]) {
+                    if (this.latestDatabase[mainCardCode]._data.supertype == 'Champion') {
+                        return 'Champion'
+                    }
+                } else {
+                    return null;
+                }
             }
         }
 

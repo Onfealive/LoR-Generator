@@ -1,12 +1,28 @@
 [
     {
+        "version": "1.8.6",
+        "changes": [
+            {
+                "title": "Patch Generator",
+                "details": [
+                    "Updated: Champion Spells will now be placed under the Champion category."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Updated: Now default will always search for Uncollectible cards.",
+                    "Bugfixed: Fixed an issue where Region Piltover & Zaun's cards could not be searched."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.8.5",
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.19."
-                ]
+                "details": ["Added: V2.19."]
             }
         ]
     },
@@ -15,15 +31,11 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.18."
-                ]
+                "details": ["Added: V2.18."]
             },
             {
                 "title": "Patch Generator",
-                "details": [
-                    "Updated: Artist change will be less impressive."
-                ]
+                "details": ["Updated: Artist change will be less impressive."]
             }
         ]
     },
@@ -32,9 +44,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.16, V2.17."
-                ]
+                "details": ["Added: V2.16, V2.17."]
             }
         ]
     },
@@ -43,15 +53,11 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.15."
-                ]
+                "details": ["Added: V2.15."]
             },
             {
                 "title": "Patch Generator",
-                "details": [
-                    "Fixed: Fix the wrong Artist change."
-                ]
+                "details": ["Fixed: Fix the wrong Artist change."]
             }
         ]
     },
@@ -60,15 +66,11 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.14 to match live."
-                ]
+                "details": ["Updated: V2.14 to match live."]
             },
             {
                 "title": "Expedition",
-                "details": [
-                    "Added Data: V2.14."
-                ]
+                "details": ["Added Data: V2.14."]
             }
         ]
     },
@@ -84,15 +86,11 @@
             },
             {
                 "title": "Expedition",
-                "details": [
-                    "Added Data: V2.12."
-                ]
+                "details": ["Added Data: V2.12."]
             },
             {
                 "title": "Database",
-                "details": [
-                    "Added - New Region, Set, Groups and Keywords."
-                ]
+                "details": ["Added - New Region, Set, Groups and Keywords."]
             }
         ]
     },
@@ -101,21 +99,15 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.11."
-                ]
+                "details": ["Added: V2.11."]
             },
             {
                 "title": "Expedition",
-                "details": [
-                    "Added Data: V2.11."
-                ]
+                "details": ["Added Data: V2.11."]
             },
             {
                 "title": "Database",
-                "details": [
-                    "Added - Artist, beside Artwork."
-                ]
+                "details": ["Added - Artist, beside Artwork."]
             }
         ]
     },
@@ -124,9 +116,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.10."
-                ]
+                "details": ["Added: V2.10."]
             },
             {
                 "title": "Expedition",
@@ -148,9 +138,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.9."
-                ]
+                "details": ["Added: V2.9."]
             }
         ]
     },
@@ -159,15 +147,11 @@
         "changes": [
             {
                 "title": "LoR Generator",
-                "details": [
-                    "Updated: GUI."
-                ]
+                "details": ["Updated: GUI."]
             },
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.8."
-                ]
+                "details": ["Added: V2.8."]
             },
             {
                 "title": "Patch Generator",
@@ -177,9 +161,7 @@
             },
             {
                 "title": "Expedition Generator",
-                "details": [
-                    "Bugfixed: Fix display issues on Mobile."
-                ]
+                "details": ["Bugfixed: Fix display issues on Mobile."]
             },
             {
                 "title": "Unowned Cards",
@@ -192,15 +174,11 @@
             },
             {
                 "title": "Text Formatter",
-                "details": [
-                    "Added: Text indicator."
-                ]
+                "details": ["Added: Text indicator."]
             },
             {
                 "title": "About",
-                "details": [
-                    "Added: Email and Feedback link."
-                ]
+                "details": ["Added: Email and Feedback link."]
             }
         ]
     },
@@ -209,9 +187,7 @@
         "changes": [
             {
                 "title": "LoR Generator",
-                "details": [
-                    "Updated: GUI."
-                ]
+                "details": ["Updated: GUI."]
             },
             {
                 "title": "Patch Generator",
@@ -221,9 +197,7 @@
             },
             {
                 "title": "Expedition Generator",
-                "details": [
-                    "Bugfixed: Fix display errors on Mobile."
-                ]
+                "details": ["Bugfixed: Fix display errors on Mobile."]
             },
             {
                 "title": "Text Formatter",
@@ -252,9 +226,7 @@
             },
             {
                 "title": "Database",
-                "details": [
-                    "Now default sort is changed to Cost from Name."
-                ]
+                "details": ["Now default sort is changed to Cost from Name."]
             }
         ]
     },
@@ -271,9 +243,7 @@
             },
             {
                 "title": "Database",
-                "details": [
-                    "Add Filters: Artists."
-                ]
+                "details": ["Add Filters: Artists."]
             }
         ]
     },
@@ -282,9 +252,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.7 to match live."
-                ]
+                "details": ["Updated: V2.7 to match live."]
             },
             {
                 "title": "Patch Note Generator",
@@ -307,9 +275,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.7 until day 2021/05/03."
-                ]
+                "details": ["Updated: V2.7 until day 2021/05/03."]
             },
             {
                 "title": "Patch Note Generator",
@@ -332,15 +298,11 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.7 until day 2021/04/27."
-                ]
+                "details": ["Added: V2.7 until day 2021/04/27."]
             },
             {
                 "title": "Patch Note Generator",
-                "details": [
-                    "Added Artist Change detector."
-                ]
+                "details": ["Added Artist Change detector."]
             },
             {
                 "title": "Database",
@@ -374,9 +336,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.6."
-                ]
+                "details": ["Added: V2.6."]
             },
             {
                 "title": "Utility",
@@ -392,9 +352,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.5."
-                ]
+                "details": ["Added: V2.5."]
             },
             {
                 "title": "Patch Note Generator",
@@ -435,9 +393,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.4."
-                ]
+                "details": ["Added: V2.4."]
             },
             {
                 "title": "Patch Note Generator",
@@ -462,9 +418,7 @@
             },
             {
                 "title": "Database",
-                "details": [
-                    "Add button able to close all Details."
-                ]
+                "details": ["Add button able to close all Details."]
             }
         ]
     },
@@ -496,9 +450,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.3 to match live."
-                ]
+                "details": ["Updated: V2.3 to match live."]
             },
             {
                 "title": "Patch Note Generator",
@@ -521,9 +473,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.3 until day 2021/03/01."
-                ]
+                "details": ["Updated: V2.3 until day 2021/03/01."]
             },
             {
                 "title": "Database",
@@ -539,9 +489,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.3 until day 2021/02/27."
-                ]
+                "details": ["Updated: V2.3 until day 2021/02/27."]
             },
             {
                 "title": "Database",
@@ -560,15 +508,11 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.3 until day 2021/02/24."
-                ]
+                "details": ["Updated: V2.3 until day 2021/02/24."]
             },
             {
                 "title": "Patch Note Generator",
-                "details": [
-                    "Now use lazy loading for image, like Database."
-                ]
+                "details": ["Now use lazy loading for image, like Database."]
             },
             {
                 "title": "Database",
@@ -584,9 +528,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.3 until day 2021/02/22."
-                ]
+                "details": ["Updated: V2.3 until day 2021/02/22."]
             },
             {
                 "title": "Patch Note Generator",
@@ -628,9 +570,7 @@
             },
             {
                 "title": "About",
-                "details": [
-                    "Introduced - With Change Logs."
-                ]
+                "details": ["Introduced - With Change Logs."]
             }
         ]
     },
@@ -639,15 +579,11 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Updated: V2.3 until day 2021/02/20."
-                ]
+                "details": ["Updated: V2.3 until day 2021/02/20."]
             },
             {
                 "title": "Patch Note Generator",
-                "details": [
-                    "Add toggle for added and changes cards."
-                ]
+                "details": ["Add toggle for added and changes cards."]
             }
         ]
     },
@@ -656,9 +592,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: V2.2, V2.3 until day 2021/02/29."
-                ]
+                "details": ["Added: V2.2, V2.3 until day 2021/02/29."]
             }
         ]
     },
@@ -667,9 +601,7 @@
         "changes": [
             {
                 "title": "Data",
-                "details": [
-                    "Added: From V0.9.1 to V2.1."
-                ]
+                "details": ["Added: From V0.9.1 to V2.1."]
             },
             {
                 "title": "Patch Note Generator",

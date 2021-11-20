@@ -31,8 +31,6 @@ export class UtilityComponent implements OnInit {
             return setArray;
         }
 
-        console.log(this.rawNewestPatch)
-
         let maxSet = PatchInfo[this.rawNewestPatch].maxSet;
         let patchInfo = PatchInfo[this.currentPatch];
 
