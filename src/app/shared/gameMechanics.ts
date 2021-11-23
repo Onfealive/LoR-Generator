@@ -32,7 +32,7 @@ export const Keywords = [
     { name: "Fury", icon: "Fury" },
     { name: "Imbue", icon: "Imbue" },
     { name: "Invoke", icon: "Invoke" },
-    { name: "Impact" },
+    { name: "Impact", icon: "Impact" },
     { name: "Last Breath", icon: "Last Breath" },
     { name: "Lifesteal", icon: "Lifesteal" },
     { name: "Lurk" },
