@@ -211,7 +211,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         const defaults = {
             display: false,
             patchNote: false,
-            newChangeLog: false
+            changeLog: false
         };
 
         options = Object.assign({}, defaults, options);
@@ -263,8 +263,13 @@ export class PatchNotesGeneratorComponent implements OnInit {
             log.display = this.modifyTypes.find(type => type.type & log.type).value == true;
             let unshiftContents = [];
 
+            let additionalHref = '';
+            if (options.changeLog) {
+                additionalHref = '#Change_Log';
+            }
+
             let href = `
-                <a href="${'https://leagueoflegends.fandom.com/wiki/' + log.data.code + ' (Legends_of_Runeterra)'}"
+                <a href="${'https://leagueoflegends.fandom.com/wiki/' + log.data.code + ' (Legends_of_Runeterra)' + additionalHref}"
                     target="_blank">
                     <i>To Wiki</i>
                     <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -288,13 +293,13 @@ export class PatchNotesGeneratorComponent implements OnInit {
                     `: {{LoR|${log.data.name}|code=${log.data.code}}}`
                 ]
             }
-            if (options.newChangeLog) {
+            if (options.changeLog) {
                 let edittedCardName = log.data.name;
                 if (log.data.type == 'Champion' && log.data.code.lastIndexOf('T') >= 0) {
                     edittedCardName += ' - Level 2';
                 }
 
-                if (options.newChangeLog && (log.type & MODIFY_TYPE.ADD)) {
+                if (options.changeLog && (log.type & MODIFY_TYPE.ADD)) {
                     unshiftContents = [
                         `${href}`,
                         `== Change Log ==`,
@@ -314,7 +319,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 ]);
             }
 
-            if (options.newChangeLog && (log.type & MODIFY_TYPE.ADD)) {
+            if (options.changeLog && (log.type & MODIFY_TYPE.ADD)) {
                 log.diff.push(`|}`);
             }
 
@@ -596,7 +601,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         addedCards.forEach(addedCard => {
             let cardData = database[addedCard.code];
             let rawCardData = cardData._data;
-            let subtype = Utility.capitalize(rawCardData.subtype);
+            let subtypes = Utility.capitalize(rawCardData.subtypes);
 
             let keywords = cardData.keywords;
             keywords.sort();
@@ -605,7 +610,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 name: rawCardData.name,
                 type: rawCardData.type,
                 rarity: rawCardData.collectible ? rawCardData.rarityRef : 'None',
-                subtype: subtype ? [subtype] : '',
+                subtype: subtypes.length ? subtypes : '',
                 supertype: rawCardData.supertype,
                 keywords: rawCardData.keywords,
                 keywordRefs: keywords,
@@ -615,7 +620,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 health: rawCardData.health,
                 desc: rawCardData.descriptionRaw,
                 lvldesc: rawCardData.levelupDescriptionRaw,
-                categoryRefs: subtype ? [subtype] : '',
+                categoryRefs: subtypes.length ? subtypes : '',
                 flavor: rawCardData.flavorText,
                 regions: rawCardData.regions,
                 artist: rawCardData.artistName
@@ -631,6 +636,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
             return value;
         }, 4).replace(/"\uE000([^\uE000]+)\uE000"/g, match => match.substr(2, match.length - 4).replace(/\\"/g, '"').replace(/\uE001/g, '\\\"'));
 
+        fileContent = fileContent.split(`’`).join(`'`);
         fileContent = fileContent.split(`\\r\\n`).join(`<br />`);
         fileContent = fileContent.split(`\\n`).join(`<br />`);
         fileContent = fileContent.split(`[`).join(`{`);

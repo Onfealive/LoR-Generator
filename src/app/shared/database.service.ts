@@ -166,6 +166,7 @@ export class DatabaseService {
                     groupedType: this.getCardType(cardData, true),
                     spellSpeed: realSpellSpeed,
                     group: Utility.capitalize(group),
+                    subtype: Utility.capitalize(group),
                     flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
                     keywords: [...cardData.keywords],
                     artist: artist,

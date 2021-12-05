@@ -25,6 +25,7 @@ export const Keywords = [
     { name: "Ephemeral", icon: "Ephemeral" },
     { name: "Everywhere", icon: "Ephemeral" },
     { name: "Fast", icon: "Fast" },
+    { name: "Fated" },
     { name: "Fearsome", icon: "Fearsome" },
     { name: "Fleeting", icon: "Fleeting" },
     { name: "Focus", icon: "Focus" },
@@ -78,6 +79,7 @@ export const Groups = [
     { name: 'Elnuk' },
     { name: 'Fae' },
     { name: 'Lurker' },
+    { name: 'Mecha-Yordle' },
     { name: 'Moon Weapon' },
     { name: 'Poro' },
     { name: 'Sea Monster' },
@@ -125,6 +127,7 @@ export class Card {
     groupedType: string;
     spellSpeed: string;
     group: Array<string>;
+    subtype: Array<string>;
     flavor: string;
     keywords: Array<string>;
     artist: string;
