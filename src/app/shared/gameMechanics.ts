@@ -25,7 +25,7 @@ export const Keywords = [
     { name: "Ephemeral", icon: "Ephemeral" },
     { name: "Everywhere", icon: "Ephemeral" },
     { name: "Fast", icon: "Fast" },
-    { name: "Fated" },
+    { name: "Fated", icon: "Fated" },
     { name: "Fearsome", icon: "Fearsome" },
     { name: "Fleeting", icon: "Fleeting" },
     { name: "Focus", icon: "Focus" },

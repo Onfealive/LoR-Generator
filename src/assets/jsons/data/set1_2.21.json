@@ -8,8 +8,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO012-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -37,7 +35,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -53,8 +50,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO012T2-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -82,7 +77,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -98,8 +92,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO012T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -127,7 +119,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -146,8 +137,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO015-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -175,7 +164,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -194,8 +182,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO015T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -223,7 +209,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -242,8 +227,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO015T2-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -271,7 +254,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -287,8 +269,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO020-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -312,7 +292,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -328,8 +307,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO045-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -353,7 +330,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -369,8 +345,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO008-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -398,7 +372,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -416,8 +389,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO040-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -447,7 +418,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -466,8 +436,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO041-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -491,7 +459,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -510,8 +477,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO041T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -539,7 +504,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -558,8 +522,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO041T2-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -587,7 +549,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -603,8 +564,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO011-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -632,7 +591,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -652,8 +610,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO009-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -681,7 +637,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -701,8 +656,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO009T2-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -730,7 +683,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -750,8 +702,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO009T3-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -779,7 +729,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -795,8 +744,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO009T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -824,7 +771,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -840,8 +786,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO014-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -865,7 +809,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -881,8 +824,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO005-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -910,7 +851,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -928,8 +868,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO044-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -957,7 +895,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -973,8 +910,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO023-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -998,7 +933,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1014,8 +948,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO029-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1043,7 +975,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1059,8 +990,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO003-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1088,7 +1017,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1104,8 +1032,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO047-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1133,7 +1059,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1149,8 +1074,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO026-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1174,7 +1097,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1190,8 +1112,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO024-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1219,7 +1139,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1235,8 +1154,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO028-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1260,7 +1177,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1276,8 +1192,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO057-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1305,7 +1219,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1321,8 +1234,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO028T2-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1346,7 +1257,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1362,8 +1272,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO028T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1387,7 +1295,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1406,8 +1313,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO032-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1431,7 +1336,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -1450,8 +1354,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO032T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1475,7 +1377,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -1494,8 +1395,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO032T2-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1523,7 +1422,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -1539,8 +1437,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO013-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1568,7 +1464,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1584,8 +1479,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO018-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1613,7 +1506,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1631,8 +1523,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO056-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1656,7 +1546,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1672,8 +1561,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO056T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1701,7 +1588,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -1717,8 +1603,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO016-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1742,7 +1626,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1758,8 +1641,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO036-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1783,7 +1664,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -1803,8 +1683,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO033-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1832,7 +1710,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1848,8 +1725,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO001-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1877,7 +1752,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1893,8 +1767,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO010-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1922,7 +1794,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1938,8 +1809,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO022-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -1967,7 +1836,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -1983,8 +1851,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO021-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2012,7 +1878,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2028,8 +1893,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO054-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2057,7 +1920,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -2073,8 +1935,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO027-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2104,7 +1964,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2120,8 +1979,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO031-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2149,7 +2006,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2165,8 +2021,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO002-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2194,7 +2048,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -2210,8 +2063,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO033T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2239,7 +2090,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -2255,8 +2105,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO017-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2280,7 +2128,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -2298,8 +2145,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO042-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2323,7 +2168,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2339,8 +2183,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO006-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2368,7 +2210,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2384,8 +2225,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO050-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2409,7 +2248,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2425,8 +2263,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO048-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2456,7 +2292,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2474,8 +2309,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO007-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2503,7 +2336,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2519,8 +2351,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO053-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2548,7 +2378,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2564,8 +2393,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO004-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2593,7 +2420,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -2609,8 +2435,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO049-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2638,7 +2462,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -2656,8 +2479,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO052-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2681,7 +2502,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2697,8 +2517,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO052T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2722,7 +2540,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2738,8 +2555,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO030-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2767,7 +2582,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "DRAGON",
     "subtypes": [
       "DRAGON"
     ],
@@ -2785,8 +2599,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO019-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2810,7 +2622,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2826,8 +2637,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO046-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2855,7 +2664,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -2871,8 +2679,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO037-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2900,7 +2706,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -2916,8 +2721,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO043-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2941,7 +2744,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2957,8 +2759,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO038-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -2986,7 +2786,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -3004,8 +2803,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO039-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -3033,7 +2830,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3049,8 +2845,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01IO055-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -3078,7 +2872,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3098,8 +2891,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX020-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3127,7 +2918,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3147,8 +2937,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX020T3-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3178,7 +2966,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3197,8 +2984,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX020T2-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3226,7 +3011,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -3244,8 +3028,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX020T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3273,7 +3055,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3293,8 +3074,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX006-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3318,7 +3097,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3336,8 +3114,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX006T4-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3365,7 +3141,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3383,8 +3158,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX006T2-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3412,7 +3185,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3432,8 +3204,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX006T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3461,7 +3231,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3480,8 +3249,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX006T3-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3509,7 +3276,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -3525,8 +3291,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX004-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3554,7 +3318,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3576,8 +3339,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX048-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3601,7 +3362,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -3620,8 +3380,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX038-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3649,7 +3407,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3665,8 +3422,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX023-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3690,7 +3445,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -3708,8 +3462,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX013-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3737,7 +3489,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3755,8 +3506,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX046-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3780,7 +3529,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -3798,8 +3546,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX046T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3827,7 +3573,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3843,8 +3588,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX047-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3872,7 +3615,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3890,8 +3632,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX040-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3915,7 +3655,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -3934,8 +3673,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX038T2-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -3963,7 +3700,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3982,8 +3718,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX038T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4011,7 +3745,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -4027,8 +3760,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX025-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4056,7 +3787,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4074,8 +3804,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX055-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4099,7 +3827,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -4117,8 +3844,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX030-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4142,7 +3867,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4158,8 +3882,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX007-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4183,7 +3905,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4199,8 +3920,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX021-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4224,7 +3943,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4240,8 +3958,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX009-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4269,7 +3985,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4285,8 +4000,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX011-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4314,7 +4027,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4330,8 +4042,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX053-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4359,7 +4069,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4375,8 +4084,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX040T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4404,7 +4111,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -4420,8 +4126,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX054-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4449,7 +4153,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4465,8 +4168,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX029-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4490,7 +4191,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4506,8 +4206,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX014-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4531,7 +4229,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4551,8 +4248,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX042-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4580,7 +4275,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -4599,8 +4293,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX042T2-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4628,7 +4320,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -4647,8 +4338,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX042T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4676,7 +4365,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -4694,8 +4382,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX051-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4723,7 +4409,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4739,8 +4424,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX012-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4768,7 +4451,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4784,8 +4466,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX043-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4813,7 +4493,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4829,8 +4508,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX037-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4858,7 +4535,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4874,8 +4550,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX010-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4903,7 +4577,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4919,8 +4592,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX017-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4944,7 +4615,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4960,8 +4630,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX003-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -4985,7 +4653,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -5003,8 +4670,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX039-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5032,7 +4697,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5048,8 +4712,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX041-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5077,7 +4739,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5093,8 +4754,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX036-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5118,7 +4777,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5134,8 +4792,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX044-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5163,7 +4819,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5179,8 +4834,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX005-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5204,7 +4857,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5220,8 +4872,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX016-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5245,7 +4895,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5261,8 +4910,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX019-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5290,7 +4937,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5306,8 +4952,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX015-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5335,7 +4979,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -5353,8 +4996,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX050-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5382,7 +5023,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5398,8 +5038,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX056-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5427,7 +5065,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5443,8 +5080,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX033-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5468,7 +5103,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5484,8 +5118,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX052-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5513,7 +5145,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5529,8 +5160,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX045-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5560,7 +5189,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5576,8 +5204,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX031-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5607,7 +5233,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5623,8 +5248,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX002-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5652,7 +5275,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5668,8 +5290,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX008-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5693,7 +5313,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5709,8 +5328,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX034-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5738,7 +5355,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -5758,8 +5374,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX035-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5783,7 +5397,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5799,8 +5412,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX026-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5828,7 +5439,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5844,8 +5454,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX027-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5873,7 +5481,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5889,8 +5496,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX022-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5918,7 +5523,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5934,8 +5538,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX032-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5959,7 +5561,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5975,8 +5576,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX024-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -6000,7 +5599,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6016,8 +5614,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01NX049-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -6045,7 +5641,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6061,8 +5656,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE031-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6086,7 +5679,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6107,8 +5699,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE022-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6136,7 +5726,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6152,8 +5741,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE019-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6181,7 +5768,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6201,8 +5787,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE042-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6230,7 +5814,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6249,8 +5832,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE042T1-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6278,7 +5859,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -6298,8 +5878,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE042T2-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6327,7 +5905,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6343,8 +5920,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE042T3-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6376,7 +5951,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6392,8 +5966,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE010-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6423,7 +5995,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6439,8 +6010,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE020-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6468,7 +6037,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -6486,8 +6054,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE034-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6511,7 +6077,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6527,8 +6092,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE002-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6556,7 +6119,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6575,8 +6137,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE012-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6604,7 +6164,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -6625,8 +6184,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE012T1-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6654,7 +6211,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -6675,8 +6231,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE012T2-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6704,7 +6258,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -6720,8 +6273,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE017-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6749,7 +6300,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6768,8 +6318,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE045-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6797,7 +6345,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6813,8 +6360,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE052-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6838,7 +6383,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6854,8 +6398,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE021-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6883,7 +6425,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6902,8 +6443,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE022T2-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6931,7 +6470,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -6950,8 +6488,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE022T1-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6979,7 +6515,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6995,8 +6530,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE025-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7024,7 +6557,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7040,8 +6572,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE007-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7069,7 +6599,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7085,8 +6614,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE055-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7110,7 +6637,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7126,8 +6652,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE048-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7151,7 +6675,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7167,8 +6690,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE001-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7192,7 +6713,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -7210,8 +6730,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE043-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7235,7 +6753,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7251,8 +6768,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE049-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7280,7 +6795,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -7298,8 +6812,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE053-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7327,7 +6839,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7343,8 +6854,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE033-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7372,7 +6881,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7391,8 +6899,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE045T1-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7420,7 +6926,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -7439,8 +6944,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE045T2-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7468,7 +6971,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -7484,8 +6986,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE044-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7513,7 +7013,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7529,8 +7028,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE024-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7558,7 +7055,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7574,8 +7070,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE004-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7603,7 +7097,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -7621,8 +7114,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE011-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7650,7 +7141,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7668,8 +7158,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE047-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7697,7 +7185,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7713,8 +7200,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE046-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7738,7 +7223,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -7756,8 +7240,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE050-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7785,7 +7267,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7801,8 +7282,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE016-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7826,7 +7305,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -7844,8 +7322,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE040-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7869,7 +7345,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7885,8 +7360,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE036-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7910,7 +7383,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -7928,8 +7400,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE037-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -7957,7 +7427,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7975,8 +7444,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE014-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8004,7 +7471,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8020,8 +7486,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE015-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8045,7 +7509,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8061,8 +7524,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE003-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8086,7 +7547,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8102,8 +7562,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE026-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8131,7 +7589,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8147,8 +7604,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE032-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8176,7 +7631,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8192,8 +7646,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE027-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8221,7 +7673,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8239,8 +7690,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE006-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8264,7 +7713,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -8284,8 +7732,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE038-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8313,7 +7759,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8329,8 +7774,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE041-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8358,7 +7801,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8374,8 +7816,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE035-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8403,7 +7843,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8419,8 +7858,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE018-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8448,7 +7885,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8464,8 +7900,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE009-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8489,7 +7923,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8505,8 +7938,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE039-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8530,7 +7961,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -8548,8 +7978,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE056-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8573,7 +8001,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -8591,8 +8018,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE029-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8616,7 +8041,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8632,8 +8056,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE028-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8661,7 +8083,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -8679,8 +8100,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE013-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8708,7 +8127,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -8726,8 +8144,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE023-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8751,7 +8167,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8767,8 +8182,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE051-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8792,7 +8205,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -8810,8 +8222,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE054-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8835,7 +8245,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -8853,8 +8262,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01DE030-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -8884,7 +8291,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -8904,8 +8310,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ040-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -8933,7 +8337,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -8952,8 +8355,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ040T3-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -8981,7 +8382,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -8999,8 +8399,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ040T2-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9030,7 +8428,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -9050,8 +8447,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ040T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9079,7 +8474,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -9099,8 +8493,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ008-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun",
       "Bandle City"
@@ -9130,7 +8522,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -9152,8 +8543,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ008T2-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun",
       "Bandle City"
@@ -9183,7 +8572,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -9205,8 +8593,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ008T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9234,7 +8620,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -9262,8 +8647,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun",
       "Bandle City"
@@ -9293,7 +8676,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -9313,8 +8695,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ013-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9338,7 +8718,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -9354,8 +8733,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ007-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9379,7 +8756,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -9407,8 +8783,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T10-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun",
       "Bandle City"
@@ -9438,7 +8812,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -9456,8 +8829,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T7-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9485,7 +8856,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9503,8 +8873,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T9-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9532,7 +8900,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9553,8 +8920,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T3-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9582,7 +8947,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -9598,8 +8962,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T8-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9627,7 +8989,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9645,8 +9006,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T2-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9674,7 +9033,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9692,8 +9050,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T5-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9721,7 +9077,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9739,8 +9094,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9768,7 +9121,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9786,8 +9138,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T4-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9811,7 +9161,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9829,8 +9178,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ056T6-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9858,7 +9205,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -9876,8 +9222,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ018-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9905,7 +9249,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -9921,8 +9264,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ019-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9946,7 +9287,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -9964,8 +9304,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ025-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -9993,7 +9331,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10011,8 +9348,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ048-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10036,7 +9371,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10052,8 +9386,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ048T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10081,7 +9413,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -10097,8 +9428,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ032-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10122,7 +9451,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10138,8 +9466,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ015-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10163,7 +9489,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TECH",
     "subtypes": [
       "TECH"
     ],
@@ -10183,8 +9508,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ022-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10212,7 +9535,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Trap",
@@ -10230,8 +9552,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ028-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10259,7 +9579,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -10275,8 +9594,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ050-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10304,7 +9621,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -10322,8 +9638,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ054-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10347,7 +9661,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10363,8 +9676,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ054T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10392,7 +9703,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -10410,8 +9720,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ030-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10435,7 +9743,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -10453,8 +9760,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ030T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10482,7 +9787,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -10500,8 +9804,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ017-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10525,7 +9827,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10541,8 +9842,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ038-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10566,7 +9865,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10586,8 +9884,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ036-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10615,7 +9911,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -10635,8 +9930,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ036T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10666,7 +9959,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -10685,8 +9977,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ036T2-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10714,7 +10004,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -10730,8 +10019,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ035-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10755,7 +10042,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10773,8 +10059,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ010-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10802,7 +10086,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -10818,8 +10101,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ045-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10843,7 +10124,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10859,8 +10139,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ013T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10888,7 +10166,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -10904,8 +10181,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ002-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10929,7 +10204,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -10945,8 +10219,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ004-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -10974,7 +10246,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -10990,8 +10261,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ020-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11019,7 +10288,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -11037,8 +10305,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ046-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11066,7 +10332,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11082,8 +10347,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ052-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11111,7 +10374,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11129,8 +10391,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ033-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11158,7 +10418,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11174,8 +10433,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ033T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11203,7 +10460,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11219,8 +10475,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ005-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11248,7 +10502,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11264,8 +10517,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ021-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11289,7 +10540,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11305,8 +10555,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ031-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11334,7 +10582,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11350,8 +10597,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ059-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11375,7 +10620,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11391,8 +10635,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ001-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11420,7 +10662,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11438,8 +10679,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ057-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11467,7 +10706,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11483,8 +10721,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ027-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11512,7 +10748,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11528,8 +10763,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ055-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11553,7 +10786,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11571,8 +10803,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ014-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11600,7 +10830,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11618,8 +10847,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ034-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11643,7 +10870,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11659,8 +10885,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ014T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11684,7 +10908,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11702,8 +10925,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ060-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11731,7 +10952,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -11747,8 +10967,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ003-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11776,7 +10994,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11794,8 +11011,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ044-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11819,7 +11034,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11835,8 +11049,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ029-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11864,7 +11076,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11880,8 +11091,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ051-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11909,7 +11118,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -11925,8 +11133,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ044T2-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11954,7 +11160,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -11970,8 +11175,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ023-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -11995,7 +11198,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12011,8 +11213,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ024-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12036,7 +11236,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12052,8 +11251,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ049-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12081,7 +11278,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -12097,8 +11293,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ006-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12126,7 +11320,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12145,8 +11338,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ053-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12170,7 +11361,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12186,8 +11376,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ012-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12215,7 +11403,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12231,8 +11418,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ039-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12260,7 +11445,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -12276,8 +11460,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ016-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12305,7 +11487,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -12324,8 +11505,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ058-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12349,7 +11528,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -12367,8 +11545,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ009-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12396,7 +11572,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12412,8 +11587,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ042-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12437,7 +11610,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12453,8 +11625,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ026-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12482,7 +11652,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -12498,8 +11667,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ043-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12523,7 +11690,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12539,8 +11705,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01PZ047-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -12570,7 +11734,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -12591,8 +11754,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR024-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12620,7 +11781,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -12639,8 +11799,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR024T2-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12668,7 +11826,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -12688,8 +11845,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR024T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12717,7 +11872,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -12738,8 +11892,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR024T3-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12767,7 +11919,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -12786,8 +11937,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR024T5-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12815,7 +11964,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -12834,8 +11982,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR024T4-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12859,7 +12005,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -12878,8 +12023,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR039-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12907,7 +12050,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -12926,8 +12068,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR039T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -12955,7 +12095,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -12974,8 +12113,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR039T2-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13007,7 +12144,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -13023,8 +12159,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR006-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13052,7 +12186,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -13068,8 +12201,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR022-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13093,7 +12224,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13109,8 +12239,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR042-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13138,7 +12266,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -13158,8 +12285,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR009-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13189,7 +12314,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -13205,8 +12329,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR018-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13234,7 +12356,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13252,8 +12373,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR036-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13277,7 +12396,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13293,8 +12411,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR045-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13318,7 +12434,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13334,8 +12449,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR008-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13359,7 +12472,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -13377,8 +12489,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR008T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13402,7 +12512,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -13420,8 +12529,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR055-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13449,7 +12556,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -13469,8 +12575,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR038-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13494,7 +12598,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -13510,8 +12613,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR038T3-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13539,7 +12640,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -13559,8 +12659,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR038T2-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13584,7 +12682,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -13603,8 +12700,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR038T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13632,7 +12727,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -13648,8 +12742,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR029-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13677,7 +12769,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -13693,8 +12784,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR035-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13718,7 +12807,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13734,8 +12822,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR028-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13759,7 +12845,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "YETI",
     "subtypes": [
       "YETI"
     ],
@@ -13777,8 +12862,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR020-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13806,7 +12889,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -13824,8 +12906,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR014-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13853,7 +12933,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "YETI",
     "subtypes": [
       "YETI"
     ],
@@ -13873,8 +12952,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR049-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13902,7 +12979,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13918,8 +12994,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR037-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13947,7 +13021,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -13967,8 +13040,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR009T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -13998,7 +13069,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -14017,8 +13087,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR009T2-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14046,7 +13114,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -14062,8 +13129,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR026-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14091,7 +13156,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14107,8 +13171,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR030-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14136,7 +13198,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -14152,8 +13213,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR013-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14181,7 +13240,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14197,8 +13255,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR019-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14226,7 +13282,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -14242,8 +13297,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR041-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14267,7 +13320,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14283,8 +13335,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR025-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14308,7 +13358,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14324,8 +13373,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR054-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14355,7 +13402,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14373,8 +13419,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR021-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14398,7 +13442,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14414,8 +13457,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR021T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14443,7 +13484,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -14461,8 +13501,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR043-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14486,7 +13524,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -14504,8 +13541,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR049T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14529,7 +13564,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14545,8 +13579,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR033-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14570,7 +13602,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14586,8 +13617,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR011-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14611,7 +13640,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14627,8 +13655,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR050-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14652,7 +13678,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14670,8 +13695,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR052-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14699,7 +13722,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14715,8 +13737,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR052T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14744,7 +13764,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -14760,8 +13779,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR016-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14789,7 +13806,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -14805,8 +13821,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR005-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14834,7 +13848,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -14850,8 +13863,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR023-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14879,7 +13890,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -14895,8 +13905,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR047-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14924,7 +13932,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -14940,8 +13947,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR056-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -14965,7 +13970,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YETI",
     "subtypes": [
       "YETI"
     ],
@@ -14983,8 +13987,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR027-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15008,7 +14010,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELNUK",
     "subtypes": [
       "ELNUK"
     ],
@@ -15026,8 +14027,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR057-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15055,7 +14054,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15071,8 +14069,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR004-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15100,7 +14096,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15118,8 +14113,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR048-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15143,7 +14136,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15159,8 +14151,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR017-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15184,7 +14174,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELNUK",
     "subtypes": [
       "ELNUK"
     ],
@@ -15202,8 +14191,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR046-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15231,7 +14218,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15247,8 +14233,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR012-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15276,7 +14260,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15292,8 +14275,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR040-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15317,7 +14298,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15333,8 +14313,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR031-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15362,7 +14340,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YETI",
     "subtypes": [
       "YETI"
     ],
@@ -15380,8 +14357,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR036T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15409,7 +14384,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -15425,8 +14399,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR053-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15454,7 +14426,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -15472,8 +14443,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR010-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15501,7 +14470,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15517,8 +14485,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR001-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15546,7 +14512,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15564,8 +14529,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR043T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15593,7 +14556,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -15611,8 +14573,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR032-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15640,7 +14600,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15658,8 +14617,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR051-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15687,7 +14644,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15703,8 +14659,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR034-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15732,7 +14686,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15748,8 +14701,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR007-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15773,7 +14724,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15789,8 +14739,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01FR003-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -15818,7 +14766,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15834,8 +14781,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI038-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -15859,7 +14804,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -15875,8 +14819,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI049-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -15904,7 +14846,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -15924,8 +14865,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI053-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -15953,7 +14892,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -15975,8 +14913,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI053T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16004,7 +14940,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -16023,8 +14958,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI053T2-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16054,7 +14987,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -16072,8 +15004,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI057-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16097,7 +15027,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16113,8 +15042,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI023-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16138,7 +15065,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16156,8 +15082,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI010-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16185,7 +15109,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -16205,8 +15128,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI042-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16234,7 +15155,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -16254,8 +15174,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI042T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16285,7 +15203,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -16305,8 +15222,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI042T2-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16334,7 +15249,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -16352,8 +15266,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI027-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16381,7 +15293,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -16397,8 +15308,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI027T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16426,7 +15335,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -16446,8 +15354,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI048-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16477,7 +15383,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16493,8 +15398,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI018-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16518,7 +15421,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16537,8 +15439,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI030-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16566,7 +15466,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -16585,8 +15484,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI030T2-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16614,7 +15511,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -16633,8 +15529,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI030T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16662,7 +15556,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -16680,8 +15573,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI035-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16709,7 +15600,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16725,8 +15615,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI035T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16754,7 +15642,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -16770,8 +15657,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI002-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16795,7 +15680,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -16813,8 +15697,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI024-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16842,7 +15724,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16858,8 +15739,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI005-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16887,7 +15766,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16903,8 +15781,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI037-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16932,7 +15808,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -16950,8 +15825,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI048T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -16975,7 +15848,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -16994,8 +15866,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI052-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17023,7 +15893,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -17041,8 +15910,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI033-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17072,7 +15939,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17088,8 +15954,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI003-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17117,7 +15981,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17133,8 +15996,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI041-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17164,7 +16025,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17180,8 +16040,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI045-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17209,7 +16067,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17227,8 +16084,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI036-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17256,7 +16111,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17272,8 +16126,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI051-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17297,7 +16149,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17313,8 +16164,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI012-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17338,7 +16187,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17357,8 +16205,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI052T2-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17386,7 +16232,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -17405,8 +16250,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI052T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17434,7 +16277,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -17450,8 +16292,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI031-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17479,7 +16319,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17495,8 +16334,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI034-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17524,7 +16361,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17542,8 +16378,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI043-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17571,7 +16405,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17587,8 +16420,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI009-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17612,7 +16443,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17630,8 +16460,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI007-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17659,7 +16487,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17675,8 +16502,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI007T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17704,7 +16529,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17720,8 +16544,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI056-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17749,7 +16571,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -17767,8 +16588,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI001-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17796,7 +16615,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17812,8 +16630,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI019-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17841,7 +16657,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17857,8 +16672,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI014-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17886,7 +16699,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -17902,8 +16714,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI022-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17931,7 +16741,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17947,8 +16756,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI006-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -17976,7 +16783,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -17994,8 +16800,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI033T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18023,7 +16827,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -18039,8 +16842,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI028-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18068,7 +16869,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18084,8 +16884,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI025-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18113,7 +16911,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18129,8 +16926,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI011-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18154,7 +16949,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18170,8 +16964,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI046-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18199,7 +16991,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18217,8 +17008,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI050-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18246,7 +17035,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18264,8 +17052,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI016-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18289,7 +17075,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18305,8 +17090,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI021-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18338,7 +17121,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18354,8 +17136,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI032-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18379,7 +17159,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18395,8 +17174,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI058-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18420,7 +17197,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18436,8 +17212,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI054-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18465,7 +17239,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18481,8 +17254,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI044-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18510,7 +17281,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18526,8 +17296,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI039-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18555,7 +17323,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "SPIDER",
     "subtypes": [
       "SPIDER"
     ],
@@ -18573,8 +17340,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI020-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18598,7 +17363,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18614,8 +17378,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI029-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18643,7 +17405,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18659,8 +17420,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI004-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18690,7 +17449,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18706,8 +17464,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI026-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18735,7 +17491,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18753,8 +17508,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI040-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18782,7 +17535,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18798,8 +17550,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI015-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18827,7 +17577,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -18843,8 +17592,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI055-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18872,7 +17619,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -18888,8 +17634,6 @@
         "fullAbsolutePath": "http://dd.b.pvp.net/2_21_0/set1/en_us/img/cards/01SI047-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -18917,7 +17661,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
