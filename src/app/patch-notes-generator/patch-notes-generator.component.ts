@@ -295,9 +295,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
             }
             if (options.changeLog) {
                 let edittedCardName = log.data.name;
-                if (log.data.type == 'Champion' && log.data.code.lastIndexOf('T') >= 0) {
-                    edittedCardName += ' - Level 2';
-                }
+                // if (log.data.type == 'Champion' && log.data.code.lastIndexOf('T') >= 0) {
+                //     edittedCardName += ' - Level 2';
+                // }
 
                 if (options.changeLog && (log.type & MODIFY_TYPE.ADD)) {
                     unshiftContents = [
@@ -371,11 +371,16 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
+                    let skippedKeywords = ['Missing Translation'];
+
                     if (oldCard.spellSpeed != newCard.spellSpeed) {
                         const startTip = startTipContent + newCard.spellSpeed + endTipContent;
                         const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
                         log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
                         log.type = MODIFY_TYPE.CHANGE;
+
+                        skippedKeywords.push(newCard.spellSpeed)
+                        skippedKeywords.push(oldCard.spellSpeed)
                     }
 
                     let removedRegions = oldCard.regions.filter(x => !newCard.regions.includes(x));
@@ -415,8 +420,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
-                    let removedKeywords = oldCard._data.keywords.filter(x => !newCard._data.keywords.includes(x));
-                    let newKeywords = newCard._data.keywords.filter(x => !oldCard._data.keywords.includes(x));
+                    let removedKeywords = oldCard._data.keywords.filter(x => !newCard._data.keywords.includes(x)).filter(x => !skippedKeywords.includes(x));
+                    let newKeywords = newCard._data.keywords.filter(x => !oldCard._data.keywords.includes(x)).filter(x => !skippedKeywords.includes(x));
                     if (newKeywords.length) {
                         let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
 
