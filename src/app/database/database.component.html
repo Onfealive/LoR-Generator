@@ -107,7 +107,7 @@
             <div class="input-group mb-3">
                 <button *ngIf="form.get('text').value.length != 0" class="btn btn-secondary" type="button"
                     (click)="clearTextSearch()">Clear</button>
-                <input type="text" class="form-control" formControlName="text" autofocus
+                <input type="text" class="form-control" formControlName="text" [autofocus]="true"
                     placeholder="Card Name, Card Text, Keywords or even Card Code">
             </div>
         </div>

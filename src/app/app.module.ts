@@ -20,6 +20,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AutosizeModule } from 'ngx-autosize';
 import { UnownedCardsComponent } from './unowned-cards/unowned-cards.component';
 import { RangePipe } from './shared/pipe.range';
+import { AutofocusFixModule } from 'ngx-autofocus-fix';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RangePipe } from './shared/pipe.range';
     HttpClientModule,
     ClipboardModule,
     NgSelectModule,
-    AutosizeModule
+    AutosizeModule,
+    AutofocusFixModule.forRoot()
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

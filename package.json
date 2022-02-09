@@ -32,6 +32,7 @@
     "firebase": "^7.0.0 || ^8.0.0",
     "jquery": "^3.5.1",
     "ng-lazyload-image": "^9.1.0",
+    "ngx-autofocus-fix": "^1.0.4",
     "ngx-autosize": "^1.8.4",
     "ngx-clipboard": "^14.0.1",
     "ngx-device-detector": "^2.0.7",

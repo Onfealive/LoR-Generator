@@ -1,5 +1,39 @@
 [
     {
+        "version": "1.8.11",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.1."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Bugfixed: Card Search input will now actually autofocus on first visit."
+                ]
+            }
+        ]
+    },
+    {
+        "version": "1.8.10",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.0."
+                ]
+            },
+            {
+                "title": "Patch",
+                "details": [
+                    "Bugfixed: Fix to not show keyword \"Missing Translation\"."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.8.9",
         "changes": [
             {
