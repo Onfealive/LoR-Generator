@@ -82,7 +82,7 @@ export class DatabaseComponent implements OnInit {
         { id: 'Trap', name: 'Trap' },
     ]);
 
-    costsData: Array<FormOption> = [
+    costData: Array<FormOption> = [
         { id: '0', icon: 'Cost', circle: true, name: '0' },
         { id: '1', icon: 'Cost', circle: true, name: '1' },
         { id: '2', icon: 'Cost', circle: true, name: '2' },
@@ -94,6 +94,14 @@ export class DatabaseComponent implements OnInit {
         { id: '8', icon: 'Cost', circle: true, name: '8' },
         { id: '9', icon: 'Cost', circle: true, name: '9' },
         { id: '10', icon: 'Cost', circle: true, name: '10+' },
+    ];
+
+    rarityData: Array<FormOption> = [
+        { id: 'Common', icon: 'Common' },
+        { id: 'Rare', icon: 'Rare' },
+        { id: 'Epic', icon: 'Epic' },
+        { id: 'Champion', icon: 'Champion' },
+        { id: 'None', name: 'None' }
     ];
 
     collectibleData: Array<FormOption> = [
@@ -115,6 +123,9 @@ export class DatabaseComponent implements OnInit {
     get costFormArray() {
         return this.form.get('costs') as FormArray;
     }
+    get rarityFormArray() {
+        return this.form.get('rarities') as FormArray;
+    }
     get collectibleFormArray() {
         return this.form.get('collectibles') as FormArray;
     }
@@ -131,6 +142,7 @@ export class DatabaseComponent implements OnInit {
             sets: this.formBuilder.array([]),
             cardTypes: this.formBuilder.array([]),
             costs: this.formBuilder.array([]),
+            rarities: this.formBuilder.array([]),
             collectibles: this.formBuilder.array([]),
             text: this.formBuilder.control(''),
         });
@@ -187,9 +199,13 @@ export class DatabaseComponent implements OnInit {
             }
         });
 
-        this.costsData.forEach((o) =>
+        this.costData.forEach((o) =>
             this.costFormArray.push(new FormControl(o.default))
         );
+        this.rarityData.forEach((o) =>
+            this.rarityFormArray.push(new FormControl(o.default))
+        );
+
         this.collectibleData.forEach((o) =>
             this.collectibleFormArray.push(new FormControl(o.default))
         );
@@ -302,7 +318,11 @@ export class DatabaseComponent implements OnInit {
             .filter((v) => v !== null);
 
         const selectedCostIds = this.form.value['costs']
-            .map((checked, i) => (checked ? this.costsData[i].id : null))
+            .map((checked, i) => (checked ? this.costData[i].id : null))
+            .filter((v) => v !== null);
+
+        const selectedRarityIds = this.form.value['rarities']
+            .map((checked, i) => (checked ? this.rarityData[i].id : null))
             .filter((v) => v !== null);
 
         const selectedCollectibleIds = this.form.value['collectibles']
@@ -372,6 +392,17 @@ export class DatabaseComponent implements OnInit {
                         (costCode == 10 && c.cost >= costCode) ||
                         (costCode != 10 && c.cost == costCode)
                     ) {
+                        found = true;
+                    }
+                });
+                return found;
+            });
+        }
+        if (selectedRarityIds.length) {
+            filterList.push((c) => {
+                let found = false;
+                selectedRarityIds.forEach((rarityCode) => {
+                    if (rarityCode == c.rarity) {
                         found = true;
                     }
                 });

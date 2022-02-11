@@ -1,6 +1,7 @@
 export const Keywords = [
     { name: "Advance" },
     { name: "Allegiance" },
+    { name: "Attach" },
     { name: "Attack" },
     { name: "Attune", icon: "Attune" },
     { name: "Augment", icon: "Augment" },
@@ -29,6 +30,7 @@ export const Keywords = [
     { name: "Fearsome", icon: "Fearsome" },
     { name: "Fleeting", icon: "Fleeting" },
     { name: "Focus", icon: "Focus" },
+    { name: "Formidable" },
     { name: "Frostbite", icon: "Frostbite" },
     { name: "Fury", icon: "Fury" },
     { name: "Imbue", icon: "Imbue" },
@@ -42,6 +44,7 @@ export const Keywords = [
     { name: "Nexus Strike" },
     { name: "Nightfall" },
     { name: "Obliterate" },
+    { name: "Overwhelm", icon: "Overwhelm" },
     { name: "Phase" },
     { name: "Play" },
     { name: "Plunder" },

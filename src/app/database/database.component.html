@@ -65,20 +65,6 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-3 col-md-1 col-form-label">Cost</label>
-        <div class="col-9 col-md-11 image-checkboxes-container">
-            <div class="form-check form-check-inline" formArrayName="costs"
-                *ngFor="let region of costFormArray.controls; let i = index">
-                <input class="form-check-input" type="checkbox" [id]="'cost' + costsData[i].id" [formControlName]="i">
-                <label class="form-check-label" [for]="'cost' + costsData[i].id"
-                    [ngClass]="{'circle': !!costsData[i].circle}">
-                    <img *ngIf="costsData[i].icon" [src]="'./assets/icons/' + costsData[i].icon + '.png'">
-                    <span *ngIf="costsData[i].name">{{costsData[i].name }}</span>
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
         <label class="col-3 col-md-1 col-form-label">Collectible</label>
         <div class="col-9 col-md-5 image-checkboxes-container">
             <div class="form-check form-check-inline" formArrayName="collectibles"
@@ -137,9 +123,48 @@
         </div>
     </div>
 
+    <div class="collapse" id="advanceCollapse">
+        <div class="form-group row">
+            <label class="col-3 col-md-1 col-form-label">Cost</label>
+            <div class="col-9 col-md-11 image-checkboxes-container">
+                <div class="form-check form-check-inline" formArrayName="costs"
+                    *ngFor="let region of costFormArray.controls; let i = index">
+                    <input class="form-check-input" type="checkbox" [id]="'cost' + costData[i].id"
+                        [formControlName]="i">
+                    <label class="form-check-label" [for]="'cost' + costData[i].id"
+                        [ngClass]="{'circle': !!costData[i].circle}">
+                        <img *ngIf="costData[i].icon" [src]="'./assets/icons/' + costData[i].icon + '.png'">
+                        <span *ngIf="costData[i].name">{{costData[i].name }}</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-3 col-md-1 col-form-label">Rarity</label>
+            <div class="col-9 col-md-11 image-checkboxes-container">
+                <div class="form-check form-check-inline" formArrayName="rarities"
+                    *ngFor="let region of rarityFormArray.controls; let i = index">
+                    <input class="form-check-input" type="checkbox" [id]="'rarity' + rarityData[i].id"
+                        [formControlName]="i">
+                    <label class="form-check-label" [for]="'rarity' + rarityData[i].id"
+                        [ngClass]="{'circle': !!rarityData[i].circle}">
+                        <img *ngIf="rarityData[i].icon"
+                            [src]="'./assets/currency/Wildcard_' + rarityData[i].icon + '.png'">
+                        <span *ngIf="rarityData[i].name">{{rarityData[i].name }}</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="form-group row text-center">
         <div class="col-12">
             <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
+            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#advanceCollapse" aria-expanded="false" aria-controls="advanceCollapse">
+                More Filters
+            </button>
             <button type="submit" class="btn btn-primary ms-2">Search</button>
         </div>
     </div>
