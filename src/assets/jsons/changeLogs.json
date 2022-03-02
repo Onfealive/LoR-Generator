@@ -1,5 +1,16 @@
 [
     {
+        "version": "1.9.1",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.2 to match live and V3.3."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9",
         "changes": [
             {
@@ -549,7 +560,7 @@
                 "title": "Expedition",
                 "details": [
                     "Added: Deck Code for each archetype.",
-                    "Update Data: V2.3 and V2.4 to match live"
+                    "Update Data: V2.3 and V2.4 to match live."
                 ]
             }
         ]
