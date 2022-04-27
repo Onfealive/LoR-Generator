@@ -183,5 +183,13 @@ export const PatchInfo = {
     '3.3': {
         'code': '3_3_0',
         'maxSet': 5
+    },
+    '3.4': {
+        'code': '3_4_0',
+        'maxSet': 5
+    },
+    '3.6': {
+        'code': '3_6_0',
+        'maxSet': 5
     }
 }

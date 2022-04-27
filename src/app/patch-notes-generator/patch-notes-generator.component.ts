@@ -137,6 +137,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
     optionDisplayChanged(inputOption) {
         this.displayType = inputOption;
+        this.logs = [];
         this.compare();
     }
 
@@ -229,12 +230,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         const commonPrefix = !options.display ? '* ' : '';
 
-        let newPrefixText = "Text becomes: \"";
-        let oldPrefixText = "Old Text: \"";
-        let newPrefixLevelUp = "Level Up becomes: \"";
-        let oldPrefixLevelUp = "Old Level Up: \"";
-        let newPrefixFlavor = "Flavor becomes: \"";
-        let oldPrefixFlavor = "Old Flavor: \"";
+        let currentPrefixText = "Text becomes: \"";
+        let previousPrefixText = "Old Text: \"";
+        let addedPrefixText = "Text added: \"";
+        let removedPrefixText = "Text removed";
+        let currentPrefixLevelUp = "Level Up becomes: \"";
+        let previousPrefixLevelUp = "Old Level Up: \"";
+        let currentPrefixFlavor = "Flavor becomes: \"";
+        let previousPrefixFlavor = "Old Flavor: \"";
         let newKeywordPrefix = "Now gain ";
         let removedKeywordPrefix = "No longer ";
         let addedHighlightedContent = '';
@@ -243,12 +246,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
         let endTipContent = '';
 
         if (!options.display) {
-            newPrefixText = '* ' + newPrefixText;
-            oldPrefixText = '** ' + oldPrefixText;
-            newPrefixLevelUp = '* ' + newPrefixLevelUp;
-            oldPrefixLevelUp = '** ' + oldPrefixLevelUp;
-            newPrefixFlavor = "* " + newPrefixFlavor;
-            oldPrefixFlavor = "** " + oldPrefixFlavor;
+            currentPrefixText = '* ' + currentPrefixText;
+            previousPrefixText = '** ' + previousPrefixText;
+            addedPrefixText = '** ' + addedPrefixText;
+            removedPrefixText = '** ' + removedPrefixText;
+            currentPrefixLevelUp = '* ' + currentPrefixLevelUp;
+            previousPrefixLevelUp = '** ' + previousPrefixLevelUp;
+            currentPrefixFlavor = "* " + currentPrefixFlavor;
+            previousPrefixFlavor = "** " + previousPrefixFlavor;
             addedHighlightedContent = `'''`;
             removedHighlightedContent = `''`;
             startTipContent = '{{TipLoR|';
@@ -440,21 +445,23 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         {
                             object: 'description',
                             text: 'Description has',
-                            newPrefix: newPrefixText,
-                            oldPrefix: oldPrefixText,
+                            currentPrefix: currentPrefixText,
+                            previousPrefix: previousPrefixText,
+                            addedPrefix: addedPrefixText,
+                            removedPrefix: removedPrefixText,
                             isCheckedVisual: true
                         },
                         {
                             object: 'levelupDescription',
                             text: 'Level Up has',
-                            newPrefix: newPrefixLevelUp,
-                            oldPrefix: oldPrefixLevelUp,
+                            currentPrefix: currentPrefixLevelUp,
+                            previousPrefix: previousPrefixLevelUp,
                             isCheckedVisual: true
                         },
                         {
                             object: 'flavor',
-                            newPrefix: newPrefixFlavor,
-                            oldPrefix: oldPrefixFlavor
+                            currentPrefix: currentPrefixFlavor,
+                            previousPrefix: previousPrefixFlavor
                         }
                     ]
 
@@ -470,7 +477,16 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
+                                log.type = MODIFY_TYPE.CHANGE_FLAVOR;
                             } else {
+                                let prevExist = true;
+                                let currentExist = true;
+                                if (oldCard[largeContent.object].trim() == '' && largeContent.removedPrefix) {
+                                    prevExist = false;
+                                } else if (newCard[largeContent.object].trim() == '' && largeContent.addedPrefix) {
+                                    currentExist = false;
+                                }
+
                                 const diffParts = Diff.diffWords(oldCard[largeContent.object], newCard[largeContent.object], {
                                     newlineIsToken: false
                                 });
@@ -478,7 +494,19 @@ export class PatchNotesGeneratorComponent implements OnInit {
                                 let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
 
                                 let newDiv = [];
-                                [{ value: largeContent.newPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.removed).forEach((part, index) => {
+
+                                let currentPrefix = largeContent.currentPrefix;
+                                if (!prevExist) {
+                                    currentPrefix = largeContent.addedPrefix;
+                                }
+
+                                let newComparingContent = [{ value: currentPrefix }, ...cleanedDiffParts, { value: "\"" }];
+
+                                if (!currentExist) {
+                                    newComparingContent = [{ value: removedPrefixText }, { value: "." }]
+                                }
+
+                                newComparingContent.filter(part => !part.removed).forEach((part, index) => {
                                     // green for additions, red for deletions
                                     // grey for common parts
                                     const color = part.added ? 'green' :
@@ -501,7 +529,13 @@ export class PatchNotesGeneratorComponent implements OnInit {
                                 }
 
                                 let oldDiv = [];
-                                [{ value: largeContent.oldPrefix }, ...cleanedDiffParts, { value: "\"" }].filter(part => !part.added).forEach((part, index) => {
+                                let oldComparingContent = []
+                                if (oldCard[largeContent.object].trim() == '' && largeContent.removedPrefix) {
+                                    // Added text.
+                                } else {
+                                    oldComparingContent = [{ value: largeContent.previousPrefix }, ...cleanedDiffParts, { value: "\"" }]
+                                }
+                                oldComparingContent.filter(part => !part.added).forEach((part, index) => {
                                     const color = part.added ? 'green' :
                                         part.removed ? 'red' : 'black';
 
@@ -524,7 +558,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         } else if (largeContent.isCheckedVisual) {
                             if (Utility.cleanNewline(oldCard['_data'][largeContent.object]) != Utility.cleanNewline(newCard['_data'][largeContent.object])) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
-                                log.type = MODIFY_TYPE.CHANGE;
+                                log.type = MODIFY_TYPE.CHANGE_FLAVOR;
                             }
                         }
                     });
@@ -567,6 +601,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
                 handleLogDiff(log);
             }
+        });
+
+        this.logs.forEach(logGroup => {
+            logGroup.list = logGroup.list.sort((a, b) => a.data.name.localeCompare(b.data.name));
         });
     }
 
