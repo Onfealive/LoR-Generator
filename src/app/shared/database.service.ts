@@ -9,7 +9,7 @@ import { Artists, Card, Keywords, Regions } from './gameMechanics';
 import { ClipboardService } from 'ngx-clipboard';
 
 import { Toast } from 'bootstrap';
-import { DeckEncoder } from 'runeterra';
+import * as DeckEncoder from 'lor-deckcodes-ts';
 
 @Injectable({
     providedIn: 'root'
@@ -303,18 +303,12 @@ export class DatabaseService {
 
         inputDeck.forEach(card => {
             deck.push({
-                code: card['code'],
-                count: card['count'] || 1,
-                faction: {
-                    id: this.FACTIONS[card['code'].substring(2, 4)],
-                    shortCode: card['code'].substring(2, 4)
-                },
-                id: parseInt(card['code'].slice(-3)),
-                set: parseInt(card['code'].substring(0, 2))
+                cardCode: card['code'],
+                count: card['count'] || 1
             });
         });
 
-        return DeckEncoder.encode(deck);
+        return DeckEncoder.getCodeFromDeck(deck);
     }
 
     public deck2Shards(inputDeck, isMissingDeck = false): number {

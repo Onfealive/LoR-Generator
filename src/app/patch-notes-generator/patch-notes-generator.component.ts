@@ -248,8 +248,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         if (!options.display) {
             currentPrefixText = '* ' + currentPrefixText;
             previousPrefixText = '** ' + previousPrefixText;
-            addedPrefixText = '** ' + addedPrefixText;
-            removedPrefixText = '** ' + removedPrefixText;
+            addedPrefixText = '* ' + addedPrefixText;
+            removedPrefixText = '* ' + removedPrefixText;
             currentPrefixLevelUp = '* ' + currentPrefixLevelUp;
             previousPrefixLevelUp = '** ' + previousPrefixLevelUp;
             currentPrefixFlavor = "* " + currentPrefixFlavor;

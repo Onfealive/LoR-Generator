@@ -8,8 +8,6 @@ import * as Utility from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
 import { ExpeditionInfo } from '../shared/expeditions';
 
-import { DeckEncoder } from 'runeterra';
-
 declare var $: any;
 declare var bootstrap: any;
 

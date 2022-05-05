@@ -1,5 +1,18 @@
 [
     {
+        "version": "1.9.3",
+        "changes": [
+            {
+                "title": "Unowned Cards",
+                "details": [
+                    "Added Sort: Code",
+                    "Bugfixed: Fixed a bug that prevented it from working properly with new cards.",
+                    "Bugfixed: Region sort doesn't work properly."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.2",
         "changes": [
             {

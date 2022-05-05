@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as Utility from "../shared/utility";
-import { DeckEncoder } from 'runeterra';
+import * as DeckEncoder from 'lor-deckcodes-ts';
 import { DatabaseService } from '../shared/database.service';
 import { Card, Regions } from '../shared/gameMechanics';
-import { AttachSession } from 'protractor/built/driverProviders';
 
 @Component({
     selector: 'app-unowned-cards',
@@ -27,7 +26,8 @@ export class UnownedCardsComponent implements OnInit {
 
     sortType = null;
     sortData: Array<any> = [
-        { id: 'sortedCode', name: 'Region', sort: 'sortedCode,count' },
+        { id: 'sortedCode', name: 'Code', sort: 'sortedCode,count' },
+        { id: 'region', name: 'Region', sort: 'regions,count,code' },
         { id: 'name', name: 'Name', sort: 'name,count' },
         { id: 'cost', name: 'Cost', sort: 'cost,count,code' },
         { id: 'rarity', name: 'Rarity (⇓)', sort: 'weightRarity,count,code' }
@@ -50,10 +50,10 @@ export class UnownedCardsComponent implements OnInit {
     getUnownedCards() {
         this.isViewDetail = false;
 
-        let ownedLibCards = DeckEncoder.decode(this.ownedCardCode);
+        let ownedLibCards: DeckEncoder.Deck = DeckEncoder.getDeckFromCode(this.ownedCardCode);
         let ownedCards = [];
         ownedLibCards.forEach(c => {
-            let card = this.database[c.code];
+            let card = this.database[c.cardCode];
             card['count'] = c.count;
             ownedCards.push(Object.assign({}, card));
         });
