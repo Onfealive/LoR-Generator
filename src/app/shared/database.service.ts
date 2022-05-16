@@ -149,6 +149,10 @@ export class DatabaseService {
                     }
                 });
 
+                if (cardData.type == 'Ability' && !cardData.keywords.includes('Skill')) {
+                    cardData.type = 'Origin'
+                }
+
                 let rarity = cardData.collectible ? cardData.rarityRef : 'None';
 
                 let card: Card = {

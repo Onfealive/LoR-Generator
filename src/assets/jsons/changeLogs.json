@@ -1,5 +1,22 @@
 [
     {
+        "version": "1.9.4",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.7 and V3.8 until 2022/05/15."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Updated: Now Artist are put into \"More Filters\"."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.3",
         "changes": [
             {

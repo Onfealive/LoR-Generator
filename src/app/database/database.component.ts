@@ -56,6 +56,7 @@ export class DatabaseComponent implements OnInit {
         { id: 'SI', icon: 'Shadow Isles' },
         { id: 'SH', icon: 'Shurima' },
         { id: 'MT', icon: 'Targon' },
+        { id: 'RU', icon: 'Runeterra' },
     ];
 
     setsData: Array<FormOption> = [
@@ -64,6 +65,7 @@ export class DatabaseComponent implements OnInit {
         { id: '03', icon: 'Call of the Mountain' },
         { id: '04', icon: 'Empires of the Ascended' },
         { id: '05', icon: 'Beyond the Bandlewood' },
+        { id: '06', name: 'Worldwalker' },
     ];
 
     cardTypesData: Array<FormOption> = this._reformatFormOptions([
@@ -80,6 +82,7 @@ export class DatabaseComponent implements OnInit {
         { id: 'Landmark', icon: 'Landmark' },
         { id: 'Skill', icon: 'Skill' },
         { id: 'Trap', name: 'Trap' },
+        { id: 'Origin', name: 'Origin' },
     ]);
 
     costData: Array<FormOption> = [

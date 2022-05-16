@@ -55,6 +55,7 @@ form {
     }
 
     label {
+
         img,
         span {
             height: 60px;
@@ -68,7 +69,7 @@ form {
         }
     }
 
-    :checked + label::before {
+    :checked+label::before {
         content: "✓";
         background-color: green;
         transform: scale(1);
@@ -76,7 +77,8 @@ form {
         z-index: 1;
     }
 
-    :checked + label {
+    :checked+label {
+
         img,
         span {
             transform: scale(0.9);
@@ -106,6 +108,12 @@ form {
             height: 40px;
         }
     }
+
+    .form-check-label-no-icon {
+        padding: 5px;
+        height: 40px;
+        border: 2px solid black;
+    }
 }
 
 .secondary-controls {
@@ -127,6 +135,7 @@ form {
 }
 
 .card-info {
+
     .card-header,
     .card-img-top {
         cursor: pointer;
