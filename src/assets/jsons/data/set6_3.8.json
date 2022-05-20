@@ -217,50 +217,6 @@
   },
   {
     "associatedCards": [],
-    "associatedCardRefs": [
-      "06NX024"
-    ],
-    "assets": [
-      {
-        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06NX024T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06NX024T1-full.png"
-      }
-    ],
-    "regions": [
-      "Noxus"
-    ],
-    "regionRefs": [
-      "Noxus"
-    ],
-    "attack": 0,
-    "cost": 0,
-    "health": 0,
-    "description": "Deal 2 to an enemy.",
-    "descriptionRaw": "Deal 2 to an enemy.",
-    "levelupDescription": "",
-    "levelupDescriptionRaw": "",
-    "flavorText": "Fine tools are wasted on the unsophisticated craftsman.",
-    "artistName": "Kudos Productions",
-    "name": "Kashuri Gauntlet",
-    "cardCode": "06NX024T1",
-    "keywords": [
-      "Skill"
-    ],
-    "keywordRefs": [
-      "Skill"
-    ],
-    "spellSpeed": "",
-    "spellSpeedRef": "",
-    "rarity": "None",
-    "rarityRef": "None",
-    "subtypes": [],
-    "supertype": "",
-    "type": "Ability",
-    "collectible": false,
-    "set": "Set6"
-  },
-  {
-    "associatedCards": [],
     "associatedCardRefs": [],
     "assets": [
       {
@@ -1588,6 +1544,1289 @@
     "spellSpeedRef": "Burst",
     "rarity": "EPIC",
     "rarityRef": "Epic",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006T3-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 1,
+    "cost": 1,
+    "health": 1,
+    "description": "",
+    "descriptionRaw": "",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "There is no greater symbol of what lurks below. Whether it means you harm or not is irrelevant to the fear--the panic that rises in your chest. Nature supplies spectacle, but your mind supplies intent.",
+    "artistName": "Michael Ivan",
+    "name": "Tentacle",
+    "cardCode": "06BW006T3",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW009-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 3,
+    "cost": 3,
+    "health": 2,
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: A 1 cost ally starts a free attack.",
+    "descriptionRaw": "Play: A 1 cost ally starts a free attack.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Recall the ocean's wisdom! If you do not move, you will be moved! Follow my voice if you've lost your way--for your foe surely knows their own.\" ",
+    "artistName": "Envar Studio",
+    "name": "Buhru Leader",
+    "cardCode": "06BW009",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW007-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 5,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Deal 2 to me and <link=vocab.Spawn><style=Vocab>Spawn</style></link> 1.",
+    "descriptionRaw": "Round Start: Deal 2 to me and Spawn 1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "When terrors swarm out from the Shadow Isles, the idol glows bright--a blazing beacon on the horizon.",
+    "artistName": "Polar Engine",
+    "name": "Watchful Idol",
+    "cardCode": "06BW007",
+    "keywords": [
+      "Immobile"
+    ],
+    "keywordRefs": [
+      "Immobile"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW016.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW016-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 4,
+    "cost": 5,
+    "health": 3,
+    "description": "When I'm summoned, <link=vocab.Spawn><style=Vocab>Spawn</style></link> 3.",
+    "descriptionRaw": "When I'm summoned, Spawn 3.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Life is sweetest in simplicity. Salt spray in your face, birdsong in your ears... and an uncomplicated foe on the horizon.",
+    "artistName": "Will Gist",
+    "name": "Buhru Lookout",
+    "cardCode": "06BW016",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW035.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW035-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 3,
+    "cost": 3,
+    "health": 3,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: <link=vocab.Spawn><style=Vocab>Spawn</style></link> 1 and give your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.summon><style=AssociatedCard>Tentacle</style></link> <link=keyword.Overwhelm><sprite name=Overwhelm><style=Keyword>Overwhelm</style></link> this round.",
+    "descriptionRaw": "Attack: Spawn 1 and give your strongest Tentacle Overwhelm this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Summoning Nagakabouros involves little in the way of ritual or rite. She answers the call of those whose soul can rise to match the ocean's, every swell, every thrash. It is a battle few can withstand.",
+    "artistName": "Michael Ivan",
+    "name": "The Sea's Voice",
+    "cardCode": "06BW035",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW015.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW015-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "<link=vocab.Spawn><style=Vocab>Spawn</style></link> 2, or spend 5 mana to <link=vocab.Spawn><style=Vocab>Spawn</style></link> 4 instead.",
+    "descriptionRaw": "Spawn 2, or spend 5 mana to Spawn 4 instead.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Prayer to Nagakabouros is not about supplication, nor about asking and receiving. Hers is a blessing not unlike life: strive, struggle, push, and occasionally, reward will find you.",
+    "artistName": "Kudos Productions",
+    "name": "Answered Prayer",
+    "cardCode": "06BW015",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW015T5.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW015T5-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "<link=vocab.Spawn><style=Vocab>Spawn</style></link> 4.",
+    "descriptionRaw": "Spawn 4.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Prayer to Nagakabouros is not about supplication, nor about asking and receiving. Hers is a blessing not unlike life: strive, struggle, push, and occasionally, reward will find you.",
+    "artistName": "Kudos Productions",
+    "name": "Answered Prayer",
+    "cardCode": "06BW015T5",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3",
+      "06BW006T1",
+      "06BW006T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 1,
+    "cost": 4,
+    "health": 6,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: <link=vocab.Spawn><style=Vocab>Spawn</style></link> 1, then I gain Power equal to your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.summon><style=AssociatedCard>Tentacle</style></link>'s Power this round.",
+    "descriptionRaw": "Attack: Spawn 1, then I gain Power equal to your strongest Tentacle's Power this round.",
+    "levelupDescription": "I've seen <link=card.summon><style=AssociatedCard>Tentacles</style></link> or I deal 15+ damage. <style=Variable></style>",
+    "levelupDescriptionRaw": "I've seen Tentacles or I deal 15+ damage. ",
+    "flavorText": "The \"Eye of Nagakabouros\" is merely a name, but Illaoi takes it as a challenge to live as if her god is a constant--and easily-bored--companion.",
+    "artistName": "MICHAEL IVAN",
+    "name": "Illaoi",
+    "cardCode": "06BW006",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3",
+      "06BW006",
+      "06BW006T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006T1-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 2,
+    "cost": 4,
+    "health": 7,
+    "description": "When you <link=vocab.Spawn><style=Vocab>Spawn</style></link>, increase its <nobr>value by 1.</nobr>\r\n<link=vocab.Attack><style=Vocab>Attack</style></link>: <link=vocab.Spawn><style=Vocab>Spawn</style></link> 1, then fully heal your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.summon><style=AssociatedCard>Tentacle</style></link> and I gain stats equal to its stats this round.",
+    "descriptionRaw": "When you Spawn, increase its value by 1.\r\nAttack: Spawn 1, then fully heal your strongest Tentacle and I gain stats equal to its stats this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "A life lesson: If ever you have the chance to leap from the rigging of a fine ship and crash like thunderous repentance upon your foes, do so. It is most invigorating.",
+    "artistName": "MICHAEL IVAN",
+    "name": "Illaoi",
+    "cardCode": "06BW006T1",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3",
+      "06BW006T1",
+      "06BW006"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW006T2-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=vocab.Spawn><style=Vocab>Spawn</style></link> 3, then your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.summon><style=AssociatedCard>Tentacle</style></link> and an enemy <link=vocab.Strike><style=Vocab>strike</style></link> each other.\r\nCreate an <link=card.level1><style=AssociatedCard>Illaoi</style></link> in your deck.",
+    "descriptionRaw": "Spawn 3, then your strongest Tentacle and an enemy strike each other.\r\nCreate an Illaoi in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Life is a test. And pain is the teacher more often than we might like.\" - Illaoi",
+    "artistName": "Kudos Productions",
+    "name": "Illaoi's Tentacle Smash",
+    "cardCode": "06BW006T2",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW028.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW028-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=vocab.Spawn><style=Vocab>Spawn</style></link> 3, then your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.summon><style=AssociatedCard>Tentacle</style></link> and an enemy <link=vocab.Strike><style=Vocab>strike</style></link> each other.",
+    "descriptionRaw": "Spawn 3, then your strongest Tentacle and an enemy strike each other.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Life is a test. And pain is the teacher more often than we might like.\" - Illaoi",
+    "artistName": "Kudos Productions",
+    "name": "Tentacle Smash",
+    "cardCode": "06BW028",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW030.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW030-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "<link=vocab.Spawn><style=Vocab>Spawn</style></link> 2.\r\nDraw 2.",
+    "descriptionRaw": "Spawn 2.\r\nDraw 2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Nagakabouros is a god of providence--provided one survives the act of worship.",
+    "artistName": "Kudos Productions",
+    "name": "Eye of Nagakabouros",
+    "cardCode": "06BW030",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW011T2",
+      "06BW006T3",
+      "06BW011T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW011.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW011-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 5,
+    "cost": 8,
+    "health": 8,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: <link=vocab.Spawn><style=Vocab>Spawn</style></link> 2. Then, if your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.tentacle><style=AssociatedCard>Tentacle</style></link> has 12+ Power, create a <link=card.spell><style=AssociatedCard>Nagakabouros' Tantrum</style></link> in hand.",
+    "descriptionRaw": "Round Start: Spawn 2. Then, if your strongest Tentacle has 12+ Power, create a Nagakabouros' Tantrum in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"The Mother Serpent. The Great Kraken. The Bearded Lady. Nagakabouros cares little for names, and less for the restless dead.\" - Illaoi",
+    "artistName": "MICHAEL IVAN",
+    "name": "Nagakabouros",
+    "cardCode": "06BW011",
+    "keywords": [
+      "Fearsome"
+    ],
+    "keywordRefs": [
+      "Fearsome"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3",
+      "06BW011T1",
+      "06BW011"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW011T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW011T2-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 1,
+    "cost": 1,
+    "health": 1,
+    "description": "When I'm summoned, grow my stats to that of your <link=vocab.Strongest><style=Vocab>strongest</style></link> <link=card.tentacle><style=AssociatedCard>Tentacle</style></link> and grant me its keywords.",
+    "descriptionRaw": "When I'm summoned, grow my stats to that of your strongest Tentacle and grant me its keywords.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"To say you've witnessed Nagakabouros after seeing her tendrils is to say you know the sun after witnessing daylight. Nagakabouros is more than enormous. Nagakabouros is unending.\" - Falaweh, Buhru Priestess",
+    "artistName": "Michael Ivan",
+    "name": "Nagakabouros' Tentacle",
+    "cardCode": "06BW011T2",
+    "keywords": [
+      "Ephemeral"
+    ],
+    "keywordRefs": [
+      "Ephemeral"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW011T2",
+      "06BW011",
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW011T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW011T1-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "<link=card.parentRef><style=AssociatedCard>Nagakabouros</style></link> starts a free attack with 4 <link=card.unitRef><style=AssociatedCard>Nagakabouros' Tentacle</style></link>.",
+    "descriptionRaw": "Nagakabouros starts a free attack with 4 Nagakabouros' Tentacle.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "It is a common Buhru story that the land was once whole, and Nagakabouros shattered it into islands to provide greater challenge for navigators. It's a story, of course. Nagakabouros didn't shatter the land. Nobody questions, however, whether she could if she felt like it.",
+    "artistName": "Kudos Productions",
+    "name": "Nagakabouros' Tantrum",
+    "cardCode": "06BW011T1",
+    "keywords": [
+      "Focus",
+      "Fleeting"
+    ],
+    "keywordRefs": [
+      "Focus",
+      "Fleeting"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "03PZ011",
+      "01PZ005",
+      "01PZ049"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06PZ043.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06PZ043-full.png"
+      }
+    ],
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.create1><style=AssociatedCard>Aftershock</style></link>, <link=card.create2><style=AssociatedCard>Hextech Transmogulator</style></link>, or <link=card.create3><style=AssociatedCard>Progress Day!</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting Aftershock, Hextech Transmogulator, or Progress Day! in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"You won't find a finer set of pieces anywhere in the world, good sir. My daughter put her heart into every last detail.\" - Corin Reveck ",
+    "artistName": "Kudos Productions",
+    "name": "Piltovan Tellstones",
+    "cardCode": "06PZ043",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01SI022",
+      "04SI002",
+      "03SI008"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06SI037.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06SI037-full.png"
+      }
+    ],
+    "regions": [
+      "Shadow Isles"
+    ],
+    "regionRefs": [
+      "ShadowIsles"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <nobr><link=card.create1><style=AssociatedCard>Mark of the Isles</style></link></nobr>, <link=card.create2><style=AssociatedCard>Spirit Journey</style></link>, or <link=card.create3><style=AssociatedCard>Crumble</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting Mark of the Isles, Spirit Journey, or Crumble in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Polished... decorations. Tokens... learn rules. Curious game. Breathtaking... unparalleled craftsmanship... unforgettable.\" - Recovered journal",
+    "artistName": "Kudos Productions",
+    "name": "Shadow Isles Tellstones",
+    "cardCode": "06SI037",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "02BW012",
+      "02BW051",
+      "02BW025",
+      "02BW032T1",
+      "02BW046T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW043.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BW043-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.cardA><style=AssociatedCard>More Powder!</style></link>, <link=card.cardB><style=AssociatedCard>Playful Trickster</style></link>, or <link=card.cardC><style=AssociatedCard>Chum the Waters</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting More Powder!, Playful Trickster, or Chum the Waters in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Don't try to catch someone bluffin' in a match of 'stones. Bilgewater's full of good liars. If you really wanna win, you gotta watch the hands.\" - Twisted Fate",
+    "artistName": "Kudos Productions",
+    "name": "Bilgewater Tellstones",
+    "cardCode": "06BW043",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "05BC141",
+      "05BC216",
+      "05BC191"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BC040.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BC040-full.png"
+      }
+    ],
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.spell3><style=AssociatedCard>Heroic Refrain</style></link>, <link=card.spell2><style=AssociatedCard>Yordle Contraption</style></link>, or <link=card.spell1><style=AssociatedCard>Keeper's Verdict</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting Heroic Refrain, Yordle Contraption, or Keeper's Verdict in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Yordles are always down for a game... but don't be surprised if the rules change in the middle of one!",
+    "artistName": "Kudos Productions",
+    "name": "Bandle Tellstones",
+    "cardCode": "06BC040",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01IO004",
+      "03IO005",
+      "01IO010"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06IO036.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06IO036-full.png"
+      }
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "regionRefs": [
+      "Ionia"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.create1><style=AssociatedCard>Health Potion</style></link>, <link=card.create2><style=AssociatedCard>Homecoming</style></link>, or <link=card.create3><style=AssociatedCard>Stand United</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting Health Potion, Homecoming, or Stand United in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Learning to read your opponent is an essential skill, even outside of a fight. But most importantly, the purpose of a game is to have fun. Now, fetch me my footbath!\" - Inspiring Mentor",
+    "artistName": "Kudos Productions",
+    "name": "Ionian Tellstones",
+    "cardCode": "06IO036",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01DE032",
+      "01DE025",
+      "01DE035"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06DE042.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06DE042-full.png"
+      }
+    ],
+    "regions": [
+      "Demacia"
+    ],
+    "regionRefs": [
+      "Demacia"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.create1><style=AssociatedCard>Prismatic Barrier</style></link>, <link=card.create2><style=AssociatedCard>Detain</style></link>, or <link=card.create3><style=AssociatedCard>For Demacia!</style></link> in hand.\r\n",
+    "descriptionRaw": "Create a Fleeting Prismatic Barrier, Detain, or For Demacia! in hand.\r\n",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Why do they call it 'King's Gambit'? Queens take risks, too!\" - Cithria of Cloudfield",
+    "artistName": "Kudos Productions",
+    "name": "Demacian Tellstones",
+    "cardCode": "06DE042",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "03MT008",
+      "03MT093",
+      "03MT036"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06MT043.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06MT043-full.png"
+      }
+    ],
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.spell1><style=AssociatedCard>Wish</style></link>, <link=card.spell2><style=AssociatedCard>Paddle Star</style></link>, or <link=card.spell3><style=AssociatedCard>Blessing of Targon</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting Wish, Paddle Star, or Blessing of Targon in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"It's the strangest thing, Shorin... Even without turning the stone over, I know exactly what constellation is painted on it.\" - Tyari the Traveler",
+    "artistName": "Kudos Productions",
+    "name": "Targonian Tellstones",
+    "cardCode": "06MT043",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "03NX014",
+      "01NX011",
+      "05NX014",
+      "01NX041"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06NX037.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06NX037-full.png"
+      }
+    ],
+    "regions": [
+      "Noxus"
+    ],
+    "regionRefs": [
+      "Noxus"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.create1><style=AssociatedCard>Sharpened Resolve</style></link>, <link=card.create2><style=AssociatedCard>Whirling Death</style></link>, or <link=card.create3><style=AssociatedCard>Weapons of the Lost</style></link> in hand.",
+    "descriptionRaw": "Create a Fleeting Sharpened Resolve, Whirling Death, or Weapons of the Lost in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Clara darling, you have to clean the blood from the tokens.\" - Ophelia Noradi, Crimson Aristocrat",
+    "artistName": "Kudos Productions",
+    "name": "Noxian Tellstones",
+    "cardCode": "06NX037",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "04SH069",
+      "04SH004",
+      "04SH106"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06SH042.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06SH042-full.png"
+      }
+    ],
+    "regions": [
+      "Shurima"
+    ],
+    "regionRefs": [
+      "Shurima"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Create a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>fleeting</style></link> <link=card.create1><style=AssociatedCard>Ruthless Predator</style></link>, <link=card.create2><style=AssociatedCard>Weight of Judgment</style></link>, or <link=card.create3><style=AssociatedCard>Spirit Fire</style></link> in hand.",
+    "descriptionRaw": "Create a fleeting Ruthless Predator, Weight of Judgment, or Spirit Fire in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"A game of Tellstones is never about who wins--it's about how great you look while playing!\" - Akshan",
+    "artistName": "Kudos Productions",
+    "name": "Shuriman Tellstones",
+    "cardCode": "06SH042",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06RU001T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06RU001T3-full.png"
+      }
+    ],
+    "regions": [
+      "Runeterra"
+    ],
+    "regionRefs": [
+      "Runeterra"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Grant a random ally in hand +1|+1.",
+    "descriptionRaw": "Grant a random ally in hand +1|+1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "On still windless nights, cast your eyes to the heavens and listen for the soft symphony of tinkling chimes. In that moment you will know that He is watching.",
+    "artistName": "Kudos Productions",
+    "name": "Chime",
+    "cardCode": "06RU001T3",
+    "keywords": [
+      "Boon"
+    ],
+    "keywordRefs": [
+      "Boon"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Trap",
+    "collectible": false,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU001T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BC026.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BC026-full.png"
+      }
+    ],
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 2,
+    "cost": 1,
+    "health": 1,
+    "description": "When I'm summoned, plant a <link=card.chime><style=AssociatedCard>Chime</style></link> on the top card of your deck.",
+    "descriptionRaw": "When I'm summoned, plant a Chime on the top card of your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"..second time was the big 'un. I was sweepin' the floors, when all a sudden I spot me dinner spilt on the table and me pots 'n' pans waddlin' on two legs, hurryin’ out the door! I followed fast as these knees’d go, and I found ‘em at that temple, rummagin’ through the shelves like they was lookin’ for somethin’.” - Old Gaff’s tale, part 2",
+    "artistName": "Caravan Studio",
+    "name": "Byrd, The Bellringer",
+    "cardCode": "06BC026",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU001T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06MT029.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06MT029-full.png"
+      }
+    ],
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 2,
+    "description": "When I'm summoned, plant a <link=card.chime><style=AssociatedCard>Chime</style></link> on the top card of your deck.\r\n<link=vocab.Support><style=Vocab>Support</style></link>: Grant my supported ally +1|+1.",
+    "descriptionRaw": "When I'm summoned, plant a Chime on the top card of your deck.\r\nSupport: Grant my supported ally +1|+1.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"...but I heard Esmus was created by the Caretaker himself, and with her birth, sound came to the world!\"\n\"I say lies! It is known that Esmus bears the face of an old singer who had the heart of an angel but the voice of the dead... until Bard himself granted her a voice of pure beauty!\"\n\"I say lies! Esmus is...\"\n- An instance of the Birth of Esmus, a popular bard's game",
+    "artistName": "Caravan Studio",
+    "name": "Esmus, Breath of the World",
+    "cardCode": "06MT029",
+    "keywords": [
+      "Elusive"
+    ],
+    "keywordRefs": [
+      "Elusive"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU001T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06MT047.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06MT047-full.png"
+      }
+    ],
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "When I'm summoned or when I count down, plant 3 <link=card.chime><style=AssociatedCard>Chimes</style></link> on random cards in your deck. <link=vocab.Countdown><style=Vocab>Countdown 2</style></link><style=Variable></style>: Draw 1.\r\n",
+    "descriptionRaw": "When I'm summoned or when I count down, plant 3 Chimes on random cards in your deck. Countdown 2: Draw 1.\r\n",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Then I seen it--thousands of 'em, all singin' and dancin' this way and that-un. Next thing I know, I seen a flash o' light, and they’re all gone, the temple with 'em–not a stone to see. And in me hands? Well Old Gaff was left there holdin' a chime.\" - Old Gaff’s tale, part 3",
+    "artistName": "Caravan Studio",
+    "name": "Mystic Vortex",
+    "cardCode": "06MT047",
+    "keywords": [
+      "Countdown",
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "Countdown",
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set6"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BC030.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set6/en_us/img/cards/06BC030-full.png"
+      }
+    ],
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Deal 1 to a unit. If one of your traps or boons activated this round, deal 3 to it instead.",
+    "descriptionRaw": "Deal 1 to a unit. If one of your traps or boons activated this round, deal 3 to it instead.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"If it starts to glow, it's gonna blow!\" - Bandle Scout rule number 463",
+    "artistName": "Kudos Productions",
+    "name": "Proximity Puffcap",
+    "cardCode": "06BC030",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",

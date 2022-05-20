@@ -41,7 +41,7 @@
               "file-saver",
               "jquery",
               "xlsx",
-              "runeterra"
+              "lor-deckcodes-ts"
             ]
           },
           "configurations": {

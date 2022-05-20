@@ -1,5 +1,22 @@
 [
     {
+        "version": "1.9.5",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.8 until 2022/05/19."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Bugfixed: Added missing Artists."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.4",
         "changes": [
             {

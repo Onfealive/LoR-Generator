@@ -44,6 +44,7 @@ export const Keywords = [
     { name: "Nexus Strike" },
     { name: "Nightfall" },
     { name: "Obliterate" },
+    { name: "Origin" },
     { name: "Overwhelm", icon: "Overwhelm" },
     { name: "Phase" },
     { name: "Play" },
@@ -62,6 +63,7 @@ export const Keywords = [
     { name: "Silence", icon: "Silence" },
     { name: "Slay" },
     { name: "Slow", icon: "Slow" },
+    { name: "Spawn" },
     { name: "SpellShield", icon: "SpellShield" },
     { name: "Strike" },
     { name: "Strongest" },
@@ -95,16 +97,23 @@ export const Groups = [
 
 export const Artists = [
     { name: '<Unknown>', specialIndicator: [''] },
+    { name: 'Alessandro Poli' },
     { name: 'Alex Heath' },
     { name: 'Aron Elekes' },
+    { name: 'Ben Skutt' },
+    { name: 'Caravan Studio' },
     { name: 'Chin LikHui' },
+    { name: 'Chris Kintner' },
+    { name: 'Concept Art House' },
     { name: 'Dao Le' },
+    { name: 'Envar Studio' },
     { name: 'Eunice' },
     { name: 'Grafit Studio' },
     { name: 'Greg Faillace' },
     { name: 'JiHun Lee', specialIndicator: ['Jihun Lee'] },
-    { name: 'Kudos Productions', specialIndicator: ['Kudos Production'] },
+    { name: 'Kudos Productions', specialIndicator: ['Kudos Production', 'Kudos Illustrations'] },
     { name: 'MAR Studio' },
+    { name: 'Michael Ivan', specialIndicator: ['MICHAEL IVAN', 'Michal Ivan'] },
     { name: 'Max Grecke' },
     { name: 'Oliver Chipping' },
     { name: 'Original Force' },
@@ -112,7 +121,9 @@ export const Artists = [
     { name: 'Rafael Zanchetin' },
     { name: 'SIXMOREVODKA' },
     { name: 'Slawomir Maniak' },
-    { name: 'Wild Blue Studios', specialIndicator: ['Wild Blue Studio', 'Wild Blue'] }
+    { name: 'Valentin Gloaguen' },
+    { name: 'Wild Blue Studios', specialIndicator: ['Wild Blue Studio', 'Wild Blue'] },
+    { name: 'Will Gist' }
 ];
 
 export class Card {
@@ -147,6 +158,7 @@ export const Regions = [
     { id: 'IO', icon: 'Ionia', name: 'Ionia' },
     { id: 'NX', icon: 'Noxus', name: 'Noxus' },
     { id: 'PZ', icon: 'Piltover and Zaun', name: 'Piltover and Zaun' },
+    { id: 'RU', icon: 'Runeterra', name: 'Runeterra' },
     { id: 'SI', icon: 'Shadow Isles', name: 'Shadow Isles' },
     { id: 'SH', icon: 'Shurima', name: 'Shurima' },
     { id: 'MT', icon: 'Targon', name: 'Targon' },

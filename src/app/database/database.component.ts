@@ -81,8 +81,9 @@ export class DatabaseComponent implements OnInit {
         },
         { id: 'Landmark', icon: 'Landmark' },
         { id: 'Skill', icon: 'Skill' },
-        { id: 'Trap', name: 'Trap' },
+        { id: 'Boon', name: 'Boon' },
         { id: 'Origin', name: 'Origin' },
+        { id: 'Trap', name: 'Trap' },
     ]);
 
     costData: Array<FormOption> = [

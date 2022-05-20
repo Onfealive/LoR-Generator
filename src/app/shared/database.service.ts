@@ -242,7 +242,11 @@ export class DatabaseService {
         }
 
         if (cardData.type == 'Ability') {
-            return 'Skill'
+            return !cardData.keywords.includes('Skill') ? 'Origin' : 'Skill'
+        }
+
+        if (cardData.type == 'Trap') {
+            return cardData.keywords.includes('Trap') ? 'Trap' : 'Boon'
         }
 
         if (isgroupedType) {
@@ -256,8 +260,6 @@ export class DatabaseService {
                     if (this.latestDatabase[mainCardCode]._data.supertype == 'Champion') {
                         return 'Champion'
                     }
-                } else {
-                    return null;
                 }
             }
         }
