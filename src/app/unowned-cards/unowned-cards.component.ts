@@ -36,7 +36,7 @@ export class UnownedCardsComponent implements OnInit {
     constructor(
         private databaseService: DatabaseService,
     ) {
-        this.databaseService.getCardData().subscribe((database) => {
+        this.databaseService.getValidCardData().subscribe((database) => {
             this.database = database;
         });
 
@@ -57,7 +57,6 @@ export class UnownedCardsComponent implements OnInit {
             card['count'] = c.count;
             ownedCards.push(Object.assign({}, card));
         });
-
 
         let ownedLibCardCode = ownedCards.map(card => card.code);
 

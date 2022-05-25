@@ -47,7 +47,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 'name': patchVersion,
                 'code': PatchInfo[patchVersion].code,
                 'checked': index == patchLength - 1,
-                'maxSet': PatchInfo[patchVersion].maxSet
+                'maxSet': PatchInfo[patchVersion].maxSet,
+                'upcoming': PatchInfo[patchVersion].upcoming
             })
         });
 

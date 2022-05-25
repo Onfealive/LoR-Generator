@@ -1,5 +1,22 @@
 [
     {
+        "version": "1.9.6",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.8 to match live."
+                ]
+            },
+            {
+                "title": "Unowned Cards",
+                "details": [
+                    "Bugfixed: No more upcoming cards now."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.5",
         "changes": [
             {

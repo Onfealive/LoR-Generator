@@ -63,12 +63,19 @@ export class DatabaseService {
         }, 0);
     }
 
+    getValidCardData(): Observable<any> {
+        let newestValidPatch = Object.keys(PatchInfo).filter(patch => !PatchInfo[patch]['upcoming']).slice(-1)[0];
+
+        return this.getCardData(newestValidPatch);
+    }
+
     getCardData(patch = null): Observable<any> {
         if (!patch) {
             patch = this.newestPatch;
         }
 
         let maxSet = PatchInfo[patch].maxSet;
+
         let rawLatestDatabase = {}
 
         let list = [];
@@ -150,7 +157,13 @@ export class DatabaseService {
                 });
 
                 if (cardData.type == 'Ability' && !cardData.keywords.includes('Skill')) {
-                    cardData.type = 'Origin'
+                    if (cardData.keywords.length == 0) {
+                        cardData.type = 'Origin'
+                    }
+
+                    if (cardData.keywords.includes('Boon')) {
+                        cardData.type = 'Boon'
+                    }
                 }
 
                 let rarity = cardData.collectible ? cardData.rarityRef : 'None';

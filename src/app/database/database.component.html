@@ -164,9 +164,10 @@
     <div class="form-group row text-center">
         <div class="col-12">
             <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
-            <button class="btn btn-primary ms-2" type="button" data-bs-toggle="collapse"
+            <button class="btn btn-primary ms-2 collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#advanceCollapse" aria-expanded="false" aria-controls="advanceCollapse">
-                More Filters
+                <span class="expanded-word">Less Filters</span>
+                <span class="collapsed-word">More Filters</span>
             </button>
             <button type="submit" class="btn btn-primary ms-2">Search</button>
         </div>

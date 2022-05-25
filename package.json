@@ -31,7 +31,7 @@
     "file-saver": "^2.0.2",
     "firebase": "^7.0.0 || ^8.0.0",
     "jquery": "^3.5.1",
-    "lor-deckcodes-ts": "^1.0.4",
+    "lor-deckcodes-ts": "^1.1.0",
     "ng-lazyload-image": "^9.1.0",
     "ngx-autofocus-fix": "^1.0.4",
     "ngx-autosize": "^1.8.4",

@@ -16,6 +16,18 @@ form {
     }
 }
 
+button:not(.collapsed) {
+    .collapsed-word {
+        display: none;
+    }
+}
+
+button.collapsed {
+    .expanded-word {
+        display: none;
+    }
+}
+
 .image-checkboxes-container {
     input[type="checkbox"] {
         display: none;

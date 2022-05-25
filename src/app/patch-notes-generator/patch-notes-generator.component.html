@@ -1,10 +1,10 @@
 <div class="mb-3">
-    <div>Use the already data:</div>
+    <div>Use the already data (* for upcoming patch):</div>
     <ng-container *ngFor="let pInfo of patchInfo; let i = index;">
         <label class="patch-label">
             <input [disabled]="i == 0" name="options" ng-control="options" type="radio" [value]="pInfo.code"
                 [checked]="pInfo.checked" (change)="selectPatchInfo(pInfo)">
-            {{ pInfo.name }}
+            {{ pInfo.name }}{{ pInfo.upcoming ? '*' : ''}}
         </label>
     </ng-container>
     <button type="button" class="btn btn-success mb-2" (click)="compare()">Compare</button>

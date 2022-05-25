@@ -65,7 +65,7 @@ export class DatabaseComponent implements OnInit {
         { id: '03', icon: 'Call of the Mountain' },
         { id: '04', icon: 'Empires of the Ascended' },
         { id: '05', icon: 'Beyond the Bandlewood' },
-        { id: '06', name: 'Worldwalker' },
+        { id: '06', icon: 'Worldwalker' },
     ];
 
     cardTypesData: Array<FormOption> = this._reformatFormOptions([
@@ -153,6 +153,9 @@ export class DatabaseComponent implements OnInit {
 
         this.databaseService.getCardData().subscribe((database) => {
             this.database = database;
+
+            // var a = [...new Set(Object.values(this.database).map(a => a['artist']))]
+            // console.log(a.sort())
         });
 
         this.sortType = this.sortData[0].id;
@@ -163,7 +166,7 @@ export class DatabaseComponent implements OnInit {
     ngOnInit(): void {
         setTimeout(() => {
             this.searchCards(true);
-        }, 500);
+        }, 2000);
     }
 
     private _reformatFormOptions(formOptions: Array<FormOption>, isRealIndex: boolean = false): Array<FormOption> {

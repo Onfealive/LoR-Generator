@@ -186,7 +186,8 @@
   {
     "associatedCards": [],
     "associatedCardRefs": [
-      "04PZ005T1"
+      "04PZ005T1",
+      "04PZ005T2"
     ],
     "assets": [
       {
@@ -290,7 +291,7 @@
     "attack": 4,
     "cost": 2,
     "health": 2,
-    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Deal 1 to enemies and the enemy Nexus.",
+    "description": "<link=keyword.AttackSkillMark><sprite name=SkillMark><style=Keyword>Attack</style></link>: Deal 1 to enemies and the enemy Nexus.",
     "descriptionRaw": "Attack: Deal 1 to enemies and the enemy Nexus.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
@@ -4052,8 +4053,8 @@
     "attack": 4,
     "cost": 5,
     "health": 6,
-    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Summon an exact copy of an allied landmark. \r\n<link=keyword.AttackSkillMark><sprite name=SkillMark><style=Keyword>Attack</style></link>: Deal 2 to my blocker 3 times. If it's dead or gone, deal 2 to the enemy Nexus instead.",
-    "descriptionRaw": "Play: Summon an exact copy of an allied landmark. \r\nAttack: Deal 2 to my blocker 3 times. If it's dead or gone, deal 2 to the enemy Nexus instead.",
+    "description": "<link=vocab.Play><style=Vocab>Play</style></link>: Summon an exact copy of an allied landmark. \r\n<link=keyword.AttackSkillMark><sprite name=SkillMark><style=Keyword>Attack</style></link>: I deal 2 damage to my blocker 3 times. If it's dead or gone, I deal 2 damage to the enemy Nexus instead.",
+    "descriptionRaw": "Play: Summon an exact copy of an allied landmark. \r\nAttack: I deal 2 damage to my blocker 3 times. If it's dead or gone, I deal 2 damage to the enemy Nexus instead.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "Taliyah left Ionia after hearing word of monumental change in her homeland. She returned to Shurima to find an emperor reborn, her people fraught, and the xer'sai more active than ever. She had no choice but to grow beyond her years.",
