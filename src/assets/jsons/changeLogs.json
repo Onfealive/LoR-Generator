@@ -1,5 +1,33 @@
 [
     {
+        "version": "1.9.8",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.10."
+                ]
+            },
+            {
+                "title": "Expedition",
+                "details": [
+                    "Retired."
+                ]
+            }
+        ]
+    },
+    {
+        "version": "1.9.7",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.9."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.6",
         "changes": [
             {

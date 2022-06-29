@@ -10,7 +10,7 @@ import { UnownedCardsComponent } from './unowned-cards/unowned-cards.component';
 
 const routes: Routes = [
   { path: "patch-note", component: PatchNotesGeneratorComponent },
-  { path: "expedition", component: ExpeditionGeneratorComponent },
+  // { path: "expedition", component: ExpeditionGeneratorComponent },
   { path: "text-formatter", component: TextFormatterComponent },
   { path: "database", component: DatabaseComponent },
   { path: "unowned-cards", component: UnownedCardsComponent },
