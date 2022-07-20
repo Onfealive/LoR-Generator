@@ -1,5 +1,29 @@
 [
     {
+        "version": "1.9.9",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.11."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Updated: Module data will now output to Lua format.",
+                    "Bugfixed: Fixed Plunder, Support, Last Breath in back-end being counted as innate keyword."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added: Add keywords related to Skill."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.8",
         "changes": [
             {
@@ -193,7 +217,7 @@
                 ]
             },
             {
-                "title": "Patch Generator",
+                "title": "Patch Note Generator",
                 "details": [
                     "Updated: Now the Change Log link to the Wiki will take you directly to the Change Log section.",
                     "Bugfixed: Fix bug when exporting new data card without Subtype."
@@ -223,7 +247,7 @@
         "version": "1.8.6",
         "changes": [
             {
-                "title": "Patch Generator",
+                "title": "Patch Note Generator",
                 "details": [
                     "Updated: Champion Spells will now be placed under the Champion category."
                 ]
@@ -258,7 +282,7 @@
                 ]
             },
             {
-                "title": "Patch Generator",
+                "title": "Patch Note Generator",
                 "details": [
                     "Updated: Artist change will be less impressive."
                 ]
@@ -286,7 +310,7 @@
                 ]
             },
             {
-                "title": "Patch Generator",
+                "title": "Patch Note Generator",
                 "details": [
                     "Fixed: Fix the wrong Artist change."
                 ]
@@ -408,7 +432,7 @@
                 ]
             },
             {
-                "title": "Patch Generator",
+                "title": "Patch Note Generator",
                 "details": [
                     "Updated: Copy button will not be displayed in Display mode."
                 ]
@@ -452,7 +476,7 @@
                 ]
             },
             {
-                "title": "Patch Generator",
+                "title": "Patch Note Generator",
                 "details": [
                     "Updated: Copy button will not be displayed in Display mode."
                 ]

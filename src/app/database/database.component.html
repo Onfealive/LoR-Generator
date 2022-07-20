@@ -93,9 +93,10 @@
         <div class="col-9 col-md-11">
             <ng-select #keywordSelector [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}"
                 [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
-                <ng-option *ngFor="let keyword of keywords" [value]="keyword.name">
-                    <img *ngIf="keyword.icon" [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
-                    {{keyword.name}}
+                <ng-option *ngFor="let keyword of keywords" [value]="keyword.id">
+                    <img *ngIf="keyword.icon" alt="{{keyword.id}}"
+                        [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
+                    {{keyword.name || keyword.id}}
                 </ng-option>
             </ng-select>
         </div>

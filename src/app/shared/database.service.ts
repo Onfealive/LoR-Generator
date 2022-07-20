@@ -103,15 +103,15 @@ export class DatabaseService {
     convertData2Database(rawData, patch) {
         let database = {}
         let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
-        let keywords = Keywords.filter(k => !k.specialIndicator);
-        let specialKeywords = Keywords.filter(k => k.specialIndicator);
-        let skippingKeywords = ['Missing Translation'];
+        let keywords = Keywords.filter(k => !k.specialIndicators);
+        let specialKeywords = Keywords.filter(k => k.specialIndicators);
+        let skippingKeywords = ['Missing Translation', 'Support', 'Plunder', 'Last Breath'];
 
         Object.keys(rawData).forEach(setID => {
             const rawSetData = rawData[setID][patch];
             let setData = {};
-            JSON.parse(rawSetData).forEach(cardData => {
-                let sortedCode: string = cardData.cardCode;
+            JSON.parse(rawSetData).forEach(rawCardData => {
+                let sortedCode: string = rawCardData.cardCode;
                 let isAssociatedCard = false;
                 if (sortedCode.includes('MT')) {
                     if (sortedCode.lastIndexOf('T') != sortedCode.lastIndexOf('MT') + 1) {
@@ -127,27 +127,27 @@ export class DatabaseService {
                     sortedCode = sortedCode.slice(0, wordTIndex) + associatedText.padStart(3, '0');
                 }
 
-                let realSpellSpeed = cardData.spellSpeed;
-                if (cardData.keywords.filter(k => spellSpeedKeywords.includes(k))) {
-                    realSpellSpeed = cardData.keywords.find(k => spellSpeedKeywords.includes(k));
+                let realSpellSpeed = rawCardData.spellSpeed;
+                if (rawCardData.keywords.filter(k => spellSpeedKeywords.includes(k))) {
+                    realSpellSpeed = rawCardData.keywords.find(k => spellSpeedKeywords.includes(k));
                 }
 
                 let group = [];
-                if (cardData.subtypes) {
-                    if (cardData.subtypes.length) {
-                        group = cardData.subtypes;
+                if (rawCardData.subtypes) {
+                    if (rawCardData.subtypes.length) {
+                        group = rawCardData.subtypes;
                     }
-                } else if (cardData.subtype) {
-                    if (!Array.isArray(cardData.subtype)) {
-                        group = [cardData.subtype];
+                } else if (rawCardData.subtype) {
+                    if (!Array.isArray(rawCardData.subtype)) {
+                        group = [rawCardData.subtype];
                     }
                 }
 
-                let artist = cardData.artistName;
+                let artist = rawCardData.artistName;
                 Artists.forEach(artistData => {
                     let artists = [artistData.name];
-                    if (artistData.specialIndicator && artistData.specialIndicator.length) {
-                        artists = artists.concat(artistData.specialIndicator);
+                    if (artistData.specialIndicators && artistData.specialIndicators.length) {
+                        artists = artists.concat(artistData.specialIndicators);
                     }
 
                     if (artists.includes(artist)) {
@@ -156,84 +156,90 @@ export class DatabaseService {
                     }
                 });
 
-                if (cardData.type == 'Ability' && !cardData.keywords.includes('Skill')) {
-                    if (cardData.keywords.length == 0) {
-                        cardData.type = 'Origin'
+                if (rawCardData.type == 'Ability' && !rawCardData.keywords.includes('Skill')) {
+                    if (rawCardData.keywords.length == 0) {
+                        rawCardData.type = 'Origin'
                     }
 
-                    if (cardData.keywords.includes('Boon')) {
-                        cardData.type = 'Boon'
+                    if (rawCardData.keywords.includes('Boon')) {
+                        rawCardData.type = 'Boon'
                     }
                 }
 
-                let rarity = cardData.collectible ? cardData.rarityRef : 'None';
+                let rarity = rawCardData.collectible ? rawCardData.rarityRef : 'None';
 
                 let card: Card = {
-                    _data: cardData,
+                    _data: rawCardData,
                     sortedCode: sortedCode,
-                    code: cardData.cardCode,
-                    name: cardData.name.trim(),
-                    collectible: cardData.collectible,
-                    cost: cardData.cost,
-                    power: cardData.attack,
-                    health: cardData.health,
-                    description: Utility.cleanNewline(cardData.descriptionRaw),
-                    levelupDescription: Utility.cleanNewline(cardData.levelupDescriptionRaw),
-                    type: this.getCardType(cardData),
-                    groupedType: this.getCardType(cardData, true),
+                    code: rawCardData.cardCode,
+                    name: rawCardData.name.trim(),
+                    collectible: rawCardData.collectible,
+                    cost: rawCardData.cost,
+                    power: rawCardData.attack,
+                    health: rawCardData.health,
+                    description: Utility.cleanNewline(rawCardData.descriptionRaw),
+                    levelupDescription: Utility.cleanNewline(rawCardData.levelupDescriptionRaw),
+                    type: this.getCardType(rawCardData),
+                    groupedType: this.getCardType(rawCardData, true),
                     spellSpeed: realSpellSpeed,
                     group: Utility.capitalize(group),
                     subtype: Utility.capitalize(group),
-                    flavor: cardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-                    keywords: [...cardData.keywords],
+                    flavor: rawCardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
+                    keywords: [...rawCardData.keywords],
                     artist: artist,
-                    regions: cardData.regions ? cardData.regions : [cardData.region],
+                    regions: rawCardData.regions ? rawCardData.regions : [rawCardData.region],
                     rarity: rarity,
                     weightRarity: this.WEIGHT_RARITY[rarity]
                 }
                 card.description = card.description.split(' </').join('</');
                 card.description = card.description.split('  ').join(' ');
 
-                setData[cardData.cardCode] = card;
+                setData[rawCardData.cardCode] = card;
 
-                if (!setData[cardData.cardCode]['keywords'].length) {
-                    setData[cardData.cardCode]['keywords'] = [];
+                if (!setData[rawCardData.cardCode]['keywords'].length) {
+                    setData[rawCardData.cardCode]['keywords'] = [];
                 }
 
-                if (cardData.keywordRefs.includes('AuraVisualFakeKeyword')) {
-                    setData[cardData.cardCode]['keywords'].push('Aura');
+                if (rawCardData.keywordRefs.includes('AuraVisualFakeKeyword')) {
+                    setData[rawCardData.cardCode]['keywords'].push('Aura');
                 }
+
+                rawCardData.keywords = rawCardData.keywords.filter(keyword => !skippingKeywords.includes(keyword));
+                rawCardData.keywordRefs = rawCardData.keywordRefs.filter(keyword => !['AuraVisualFakeKeyword'].includes(keyword));
 
                 keywords.forEach(keywordData => {
-                    let keywordText = [`<link=vocab.${keywordData.name}>`, `<link=keyword.${keywordData.name}>`, `<style=Vocab>${keywordData.name}`];
+                    let keywordText = [`<link=vocab.${keywordData.name || keywordData.id}>`, `<link=keyword.${keywordData.name || keywordData.id}>`, `<style=Vocab>${keywordData.name || keywordData.id}`];
                     keywordText.forEach(kText => {
-                        if (cardData.description.toLowerCase().includes(kText.toLowerCase())) {
-                            setData[cardData.cardCode]['keywords'].push(keywordData.name);
+                        if (rawCardData.description.toLowerCase().includes(kText.toLowerCase())) {
+                            setData[rawCardData.cardCode]['keywords'].push(keywordData.name || keywordData.id);
                             return;
                         }
                     });
                 });
 
                 specialKeywords.forEach(keywordData => {
-                    if (cardData['keywords'].includes(keywordData.specialIndicator)) {
-                        setData[cardData.cardCode]['keywords'].push(keywordData.name);
-                        return;
-                    }
-                    if (cardData['levelupDescription'].includes(keywordData.specialIndicator)) {
-                        setData[cardData.cardCode]['keywords'].push(keywordData.name);
-                        return;
-                    }
-                    if (cardData['description'].includes(keywordData.specialIndicator)) {
-                        setData[cardData.cardCode]['keywords'].push(keywordData.name);
-                        return;
-                    }
-                    if (cardData['descriptionRaw'].includes(keywordData.specialIndicator)) {
-                        setData[cardData.cardCode]['keywords'].push(keywordData.name);
-                        return;
-                    }
+                    keywordData.specialIndicators.forEach(specialIndicator => {
+                        if (rawCardData['keywords'].includes(specialIndicator)) {
+                            setData[rawCardData.cardCode]['keywords'].push(keywordData.name || keywordData.id);
+                            return;
+                        }
+                        if (rawCardData['levelupDescription'].includes(specialIndicator)) {
+                            setData[rawCardData.cardCode]['keywords'].push(keywordData.name || keywordData.id);
+                            return;
+                        }
+                        if (rawCardData['description'].includes(specialIndicator)) {
+                            setData[rawCardData.cardCode]['keywords'].push(keywordData.name || keywordData.id);
+                            return;
+                        }
+                        if (rawCardData['descriptionRaw'].includes(specialIndicator)) {
+                            setData[rawCardData.cardCode]['keywords'].push(keywordData.name || keywordData.id);
+                            return;
+                        }
+                    })
+
                 })
 
-                setData[cardData.cardCode]['keywords'] = [...new Set(setData[cardData.cardCode]['keywords'].filter(x => !skippingKeywords.includes(x)))];
+                setData[rawCardData.cardCode]['keywords'] = [...new Set(setData[rawCardData.cardCode]['keywords'].filter(x => !skippingKeywords.includes(x)))];
             });
 
             database = Object.assign(database, setData);
@@ -241,6 +247,8 @@ export class DatabaseService {
         Object.values(database).filter(card => card['groupedType'] == null).forEach((cardData: any) => {
             database[cardData.code].groupedType = this.getCardType(cardData._data, true);
         });
+
+        console.log(database);
 
         return database;
     }

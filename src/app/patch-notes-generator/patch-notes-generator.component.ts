@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver';
 import { PatchInfo } from '../shared/patches';
 import { DatabaseService } from '../shared/database.service';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
     selector: 'app-patch-notes-generator',
@@ -377,7 +377,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
-                    let skippedKeywords = ['Missing Translation'];
+                    let skippedKeywords = ['Missing Translation', 'Support', 'Plunder', 'Last Breath'];
 
                     if (oldCard.spellSpeed != newCard.spellSpeed) {
                         const startTip = startTipContent + newCard.spellSpeed + endTipContent;
@@ -471,14 +471,18 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         if (oldCard[largeContent.object] != newCard[largeContent.object]) {
                             flag++;
                             if (largeContent.object == 'flavor' && flag == 1) {
-                                log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                                if (!log.type) {
+                                    log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                                }
                             } else {
                                 log.type = MODIFY_TYPE.CHANGE;
                             }
 
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
-                                log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                                if (!log.type) {
+                                    log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                                }
                             } else {
                                 let prevExist = true;
                                 let currentExist = true;
@@ -559,7 +563,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
                         } else if (largeContent.isCheckedVisual) {
                             if (Utility.cleanNewline(oldCard['_data'][largeContent.object]) != Utility.cleanNewline(newCard['_data'][largeContent.object])) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
-                                log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                                if (!log.type) {
+                                    log.type = MODIFY_TYPE.CHANGE_FLAVOR;
+                                }
                             }
                         }
                     });
@@ -633,7 +639,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
     convertNewCards() {
         let addedCards = this.getAddedCards;
-        var result = {};
+        let result = {};
 
         let database = {};
         if (this.selectedPatch !== 'custom') {
@@ -678,9 +684,11 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 return `\uE000${JSON.stringify(value.map(v => typeof v === 'string' ? v.replace(/"/g, '\uE001') : v))}\uE000`;
             }
             return value;
-        }, 4).replace(/"\uE000([^\uE000]+)\uE000"/g, match => match.substr(2, match.length - 4).replace(/\\"/g, '"').replace(/\uE001/g, '\\\"'));
+        }, 4).replace(/"\uE000([^\uE000]+)\uE000"/g, match => match.substring(2, match.length - 2).replace(/\\"/g, '"').replace(/\uE001/g, '\\\"'));
 
         fileContent = fileContent.split(`’`).join(`'`);
+        fileContent = fileContent.split(`“`).join(`\"`);
+        fileContent = fileContent.split(`”`).join(`\"`);
         fileContent = fileContent.split(`\\r\\n`).join(`<br />`);
         fileContent = fileContent.split(`\\n`).join(`<br />`);
         fileContent = fileContent.split(`[`).join(`{`);
@@ -695,12 +703,12 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         fileContent = fileContent.split(`": {`).join(`"] = {`);
 
-        const blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, `${this.selectedPatch}_AddedCardsData.txt`);
+        const blob = new Blob([fileContent], { type: "application/lua;charset=utf-8" });
+        saveAs(blob, `${this.selectedPatch}_AddedCardsData.lua`);
     }
 
     copy2Clipboard(diffData) {
-        var htmlElementRegex = /(<([^>]+)>)/ig;
+        let htmlElementRegex = /(<([^>]+)>)/ig;
 
         let copiedText = diffData.slice(1, diffData.length).join('\n').replace(htmlElementRegex, "");
         copiedText = copiedText.replace(/  +/g, ' ');
