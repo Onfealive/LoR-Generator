@@ -138,7 +138,6 @@ export const PatchInfo = {
     '2.14': {
         'code': '2_14_0',
         'maxSet': 5
-
     },
     '2.15': {
         'code': '2_15_0',
@@ -211,5 +210,13 @@ export const PatchInfo = {
     '3.11': {
         'code': '3_11_0',
         'maxSet': 6
-    }
+    },
+    '3.12': {
+        'code': '3_12_0',
+        'maxSet': 6
+    },
+    '3.13': {
+        'code': '3_13_0',
+        'maxSet': 6
+    },
 }
