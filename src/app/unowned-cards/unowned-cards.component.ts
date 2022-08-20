@@ -173,7 +173,7 @@ export class UnownedCardsComponent implements OnInit {
         this.getUnownedCards();
     }
 
-    getAPIImage(cardcode) {
-        return this.databaseService.getAPIImage(cardcode);
+    getAPIImage(cardcode, isRetry = false) {
+        return this.databaseService.getAPIImage(null, cardcode, isRetry);
     }
 }

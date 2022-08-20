@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { PatchInfo } from '../shared/patches';
 import * as Utility from "../shared/utility";
-import { Observable, Observer, Subject } from 'rxjs';
-import { forkJoin } from 'rxjs';
-import { Artists, Card, Keywords, Regions } from './gameMechanics';
+import { Observable, Observer, forkJoin } from 'rxjs';
+import { Artists, Card, Keywords } from './gameMechanics';
 import { ClipboardService } from 'ngx-clipboard';
 
 import { Toast } from 'bootstrap';
@@ -248,8 +247,6 @@ export class DatabaseService {
             database[cardData.code].groupedType = this.getCardType(cardData._data, true);
         });
 
-        console.log(database);
-
         return database;
     }
 
@@ -292,14 +289,17 @@ export class DatabaseService {
         return this.http.get(`./assets/jsons/data/set${set}_${patch}.json`);
     }
 
-    public getAPIImage(cardcode, patchCode = null) {
-        if (!patchCode) {
-            patchCode = this.newestPatchCode;
+    public getAPIImage(patchData, cardCode, isRetry = false) {
+        if (!patchData) {
+            patchData = PatchInfo[this.newestPatch];
         }
-        let set = parseInt(cardcode.substring(0, 2));
-        let url = `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardcode}.png`;
+        let patchCode = patchData.code;
+        let set = parseInt(cardCode.substring(0, 2));
+        if (isRetry && patchData.customSets && patchData.customSets[set]) {
+            set = patchData.customSets && patchData.customSets[set];
+        }
 
-        return url;
+        return `https://dd.b.pvp.net/${patchCode}/set${set}/en_us/img/cards/${cardCode}.png`;
     }
 
     public getExpeditionJSON(patchCode) {

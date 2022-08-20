@@ -21,6 +21,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
     modifyTypes = [];
     displayType = 'display';
+    isHideBackEndChanges = true;
 
     selectedPatch = null;
     comparingPatch = null;
@@ -132,8 +133,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         }
     }
 
-    getAPIImage(patchCode, cardcode) {
-        return this.databaseService.getAPIImage(patchCode, cardcode);
+    getAPIImage(patchData, cardcode, isRetry = false) {
+        return this.databaseService.getAPIImage(patchData, cardcode, isRetry);
     }
 
     optionDisplayChanged(inputOption) {
@@ -263,6 +264,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
         let handleLogDiff = (log) => {
             if (!log.diff.length) {
+                return;
+            }
+
+            if (this.isHideBackEndChanges && (log.type & MODIFY_TYPE.CHANGE_FLAVOR)) {
                 return;
             }
 
@@ -615,26 +620,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
         });
     }
 
-    generateChangedCardList() {
-        let changedCards = this.getChangedCards;
-
-        let cardChangeContent = changedCards.map(card => card.code + '.png').join('\n');
-        cardChangeContent += ('\n') + changedCards.map(card => card.code + '-alt.png').join('\n');
-
-        const blob = new Blob([cardChangeContent], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, `${this.selectedPatch}_CardChangesList.txt`);
-    }
-
-    generateNewCardList() {
-        let addedCards = this.getAddedCards;
-
-        let cardAddedContent = addedCards.map(card => card.code + '.png').join('\n');
-        cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt.png').join('\n');
-        cardAddedContent += ('\n') + addedCards.map(card => card.code + '-full.png').join('\n');
-        cardAddedContent += ('\n') + addedCards.map(card => card.code + '-alt-full.png').join('\n');
-
-        const blob = new Blob([cardAddedContent], { type: "text/plain;charset=utf-8" });
-        saveAs(blob, `${this.selectedPatch}_CardChangesList.txt`);
+    hideBackEndChanges() {
+        this.isHideBackEndChanges = !this.isHideBackEndChanges;
+        this.compare();
     }
 
     convertNewCards() {
@@ -648,8 +636,12 @@ export class PatchNotesGeneratorComponent implements OnInit {
             database = this.customDatabase;
         }
 
-        addedCards.forEach(addedCard => {
-            let cardData = database[addedCard.code];
+        let sortedCodes = addedCards.map(card => card.sortedCode);
+        sortedCodes.sort();
+
+        sortedCodes.forEach(sortedCode => {
+            let cardCode = addedCards.find(card => card.sortedCode == sortedCode).code;
+            let cardData = database[cardCode];
             let rawCardData = cardData._data;
             let subtypes = Utility.capitalize(rawCardData.subtypes);
 
@@ -675,9 +667,12 @@ export class PatchNotesGeneratorComponent implements OnInit {
                 regions: rawCardData.regions,
                 artist: rawCardData.artistName
             });
-        });
 
-        result = Utility.sortObjectByKey(result);
+            if (!["Unit", "Equipment"].includes(rawCardData.type)) {
+                delete result[rawCardData.cardCode].power;
+                delete result[rawCardData.cardCode].health;
+            }
+        });
 
         let fileContent = JSON.stringify(result, (key, value) => {
             if (Array.isArray(value) && !value.some(x => x && typeof x === 'object')) {
@@ -687,8 +682,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         }, 4).replace(/"\uE000([^\uE000]+)\uE000"/g, match => match.substring(2, match.length - 2).replace(/\\"/g, '"').replace(/\uE001/g, '\\\"'));
 
         fileContent = fileContent.split(`’`).join(`'`);
-        fileContent = fileContent.split(`“`).join(`\"`);
-        fileContent = fileContent.split(`”`).join(`\"`);
+        fileContent = fileContent.split(`“`).join(`\\"`);
+        fileContent = fileContent.split(`”`).join(`\\"`);
         fileContent = fileContent.split(`\\r\\n`).join(`<br />`);
         fileContent = fileContent.split(`\\n`).join(`<br />`);
         fileContent = fileContent.split(`[`).join(`{`);

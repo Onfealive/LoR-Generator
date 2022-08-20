@@ -219,4 +219,12 @@ export const PatchInfo = {
         'code': '3_13_0',
         'maxSet': 6
     },
+    '3.14': {
+        'code': '3_14_0',
+        'customSets': {
+            6: '6cde'
+        },
+        'maxSet': 6,
+        'upcoming': true
+    },
 }

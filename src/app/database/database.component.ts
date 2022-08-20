@@ -79,6 +79,7 @@ export class DatabaseComponent implements OnInit {
                 { id: 'Slow', icon: 'Slow' },
             ]
         },
+        { id: 'Equipment', icon: 'Equipment' },
         { id: 'Landmark', icon: 'Landmark' },
         { id: 'Skill', icon: 'Skill' },
         { id: 'Boon', name: 'Boon' },
@@ -219,8 +220,8 @@ export class DatabaseComponent implements OnInit {
         this.defaultFormValues = this.form.value;
     }
 
-    getAPIImage(cardcode) {
-        return this.databaseService.getAPIImage(cardcode);
+    getAPIImage(cardcode, isRetry = false) {
+        return this.databaseService.getAPIImage(null, cardcode, isRetry);
     }
 
     getAPIArtwork(cardcode) {
@@ -308,6 +309,10 @@ export class DatabaseComponent implements OnInit {
     }
 
     searchCards(isFirstTime = false) {
+        if (!isFirstTime && !this.isCompleted) {
+            return;
+        }
+
         this.isCompleted = false;
         this.searchResults = [];
 

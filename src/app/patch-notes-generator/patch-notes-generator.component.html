@@ -23,16 +23,15 @@
     <div class="row">
         <div class="form-inline col-12 col-md-6" *ngIf="getChangedCards.length || getAddedCards.length">
             <div class="form-group">
-                <label for="resourceImageFolder">File List</label>
-                <button *ngIf="getChangedCards.length" type="button" class="btn btn-info btn-sm ms-1"
-                    (click)="generateChangedCardList()">Change</button>
-                <button *ngIf="getAddedCards.length" type="button" class="btn btn-info btn-sm ms-1"
-                    (click)="generateNewCardList()">New</button>
+                <label for="generatorOptions">Options</label>
+                <button type="button" class="btn btn-sm ms-1"
+                    [ngClass]="{'btn-info': isHideBackEndChanges, 'btn-secondary': !isHideBackEndChanges}"
+                    (click)="hideBackEndChanges()">Hide BackEnd Changes</button>
             </div>
         </div>
         <div class="form-inline col-12 col-md-6" *ngIf="getAddedCards.length">
             <div class="form-group">
-                <label for="resourceImageFolder">Module Data</label>
+                <label for="moduleData">Module Data</label>
                 <button *ngIf="getAddedCards.length" type="button" class="btn btn-info btn-sm ms-1"
                     (click)="convertNewCards()">New</button>
             </div>
@@ -98,13 +97,17 @@
                         [ngClass]="{'removed-cards': log.type == MODIFY_TYPE.REMOVE, 'flavor-changed-cards': log.type == MODIFY_TYPE.CHANGE_FLAVOR }">
                         <td>
                             <img *ngIf="log.type != MODIFY_TYPE.ADD && PatchInfo[this.comparingPatch]"
-                                [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.comparingPatch].code)"
-                                width="200px" [defaultImage]="defaultImage">
+                                [alt]="log.data.code"
+                                [lazyLoad]="getAPIImage(PatchInfo[this.comparingPatch], log.data.code)" width="200px"
+                                [errorImage]="getAPIImage(PatchInfo[this.comparingPatch], log.data.code, true)"
+                                [defaultImage]="defaultImage">
                         </td>
                         <td>
                             <img *ngIf="log.type != MODIFY_TYPE.REMOVE && PatchInfo[this.selectedPatch]"
-                                [lazyLoad]="getAPIImage(log.data.code, PatchInfo[this.selectedPatch].code)"
-                                width="200px" [defaultImage]="defaultImage">
+                                [alt]="log.data.code"
+                                [lazyLoad]="getAPIImage(PatchInfo[this.selectedPatch], log.data.code)" width="200px"
+                                [errorImage]="getAPIImage(PatchInfo[this.selectedPatch], log.data.code, true)"
+                                [defaultImage]="defaultImage">
                         </td>
                         <td>
                             <div *ngFor="let diff of log.diff" [innerHTML]="diff | safeHtml"></div>
@@ -116,4 +119,10 @@
             </ng-container>
         </tbody>
     </table>
+
+    <div class="back-to-top-wrapper">
+        <a href="patch-note#top" class="back-to-top-link" aria-label="Scroll to Top">
+            <i class="bi bi-chevron-double-up"></i>
+        </a>
+    </div>
 </ng-container>

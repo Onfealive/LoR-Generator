@@ -71,7 +71,7 @@
                                 <small [ngClass]="{'text-muted': card.rarity != 'Champion'}">{{card.code}}</small>
                             </div>
                             <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
-                                [alt]="card.code">
+                                [errorImage]="getAPIImage(card.code, true)" [alt]="card.code">
                             <div class="card-body">
                                 <h5 class="card-title text-center"
                                     [ngClass]="{'border-primary text-primary': card.rarity == 'Rare', 'border-warning text-warning bg-gradient-success': card.rarity == 'Champion', 'border-epic text-epic': card.rarity == 'Epic', 'border-success text-success': card.rarity == 'Common' }">

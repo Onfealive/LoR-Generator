@@ -1,5 +1,27 @@
 [
     {
+        "version": "1.9.11",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.14 until 08/19."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Added: Hide Back-End Change feature.",
+                    "Added: Move to Top feature.",
+                    "Updated: Now only Equipment and Units have Power and Health values when exported.",
+                    "Removed: File List feature.",
+                    "Bugfixed: Fixed flavor text error when exporting Lua file.",
+                    "Bugfixed: Fixed card order in Lua file is not correct."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.10",
         "changes": [
             {
