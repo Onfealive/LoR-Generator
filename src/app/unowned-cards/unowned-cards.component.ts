@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import * as Utility from "../shared/utility";
 import * as DeckEncoder from 'lor-deckcodes-ts';
 import { DatabaseService } from '../shared/database.service';
-import { Card, Regions } from '../shared/gameMechanics';
+import { Regions } from '../shared/gameMechanics';
+import { PatchInfo } from '../shared/patches';
+import { Card } from '../shared/defined';
 
 @Component({
     selector: 'app-unowned-cards',
@@ -12,7 +14,7 @@ import { Card, Regions } from '../shared/gameMechanics';
 })
 export class UnownedCardsComponent implements OnInit {
 
-    database = {};
+    database: Card[] = [];
     isCompleted = false;
     isViewDetail = false;
     defaultImage = `./assets/icons/Queue Card Back.png`;
@@ -36,8 +38,12 @@ export class UnownedCardsComponent implements OnInit {
     constructor(
         private databaseService: DatabaseService,
     ) {
-        this.databaseService.getValidCardData().subscribe((database) => {
-            this.database = database;
+        this.databaseService.loadingCompleted$.subscribe(isCompleted => {
+            if (!isCompleted) {
+                return;
+            }
+
+            this.database = this.databaseService.newestPatchCards;
         });
 
         this.ownedCardCode = 'CEOQCBABBEAQIBQLAECAEAIBAQEQYAIEAQFAGBAAAEDQQBAEAMBAICQSAQBACAICAYEQKAYEAECQUDQZAUBQMBQHBAHA6BICAIAQIBIHBACQGAYCAMGRCEQGAMCQEAYEAYFA6BQCAABAGBAHBAEQMBAHEYWTOPSDNMDAEBABAMDAQCIKA4BQCAQEAYDREEYUA4BQABIGA4EAUDQZBABAGAIDAQCQMBYIBEEAEBIBAMCAKBQHBEFAUAYCAEBAGCAKBMIREFAWBUBQSDYQCMKBYMCKKJKFQXC5LYKQEBQEBAFAYFAWC4MRYHJCEYUCSLBNGE4TUOZ7DQAQEAQDAUDASCYMBYHRCEYUCYLRQHA6D4TCOKBMFYYDCNBWG4QACAABAMCAMBYJBMGA2DYSCMKBKFQXDANBWHA5DYQCEJBHFIWDEMZWG4RQCBABAIDQQCIKBQGQ4EQTCQMRUGY5DYQSEJRHFAVCWLBNFYZDINJWG44TUOZEAEBQEBAFAYEQYDIPCAIRGFYYDIOR4HZAEERCGJJGE4UCSKZOF4YDEMZUGU3TQKIBAUAQIBIGA4FAWDAPCAJBGFIWC4NBYHI6EARCGJBGE4UCSKRLFQWS6MBRGIZTKNRXHA5CUAIBAEBQIBIIBEFQYDIQCEJRIFIWDENB2HQ7EERCGJBFEYTSQKJKFMWS4MBRGIZTKNRXHA4RYAIEAQHACBADB4AQIAQOAECACCQBAQCQSAQCAIBQUAQCAQCAOAQCAMBAUAQCAUBAQAYEA4FQ2XIDAMAACAYMAMBACBIHBIBQGBQCBEKAIAYFAECQYDIEAIAACBIGBICAIAACBEFA4BIDAMAQMCIOCMCQCAYHBMKRSLAFAECQSGI7EE2AMAYEAIFQYDITCYDAGAQFAYDQSEYZAYBQCAYFBAERCGIIAEAQMBYKBYLSALZUBAAQIBIQCEKROLZQGEEQCAQEA4JB2IJEEUVDSCQCAYBQSEIYDMSCKNZ4HUFACAACBIHCCJJJFMXTININAMEQMDJHFAVDGPB7JBINMAOYAHOACFIBAMARMAIEAMBQCBAGBABAEAIEBABQIAADAYGQGAIBCIMBWBAEAUCQ2DYRAUBQMAIDAQIBCBIDAABAICYNB4CQGBADAQIREFAFAMBQIBIHB4LAMBABAUDQ2DQQCEDAGBIHBAEQ4EASA4AQAEIZD4TC2MBYA4AQGCAKCQNS2MJWA4AQKAYOCQNSKLRZBAAQIBAYDQPSGJBTHAFAIBYEBEHRUMJZHNCU2UQKAEBAUDIQDINSAKJLGI4BKAQGAICQMBYLBUHBAEQTCUNB4IBBE4YDEMZWHATQGCIBAMCQOCIMCEKROGQ3EMTCSLBNF42DMNZZHZAEGR2JJRHVKVSXLFQGEZGZAHNADWYB3UAQ';
@@ -52,15 +58,16 @@ export class UnownedCardsComponent implements OnInit {
 
         let ownedLibCards: DeckEncoder.Deck = DeckEncoder.getDeckFromCode(this.ownedCardCode);
         let ownedCards = [];
-        ownedLibCards.forEach(c => {
-            let card = this.database[c.cardCode];
-            card['count'] = c.count;
-            ownedCards.push(Object.assign({}, card));
+        ownedLibCards.forEach(card => {
+            let deckCard = this.database.find(c => c.code == card.cardCode);
+            deckCard['count'] = card.count;
+            ownedCards.push(Object.assign({}, deckCard));
         });
 
         let ownedLibCardCode = ownedCards.map(card => card.code);
+        let upcomingPatchs = PatchInfo.filter(p => p.isUpcoming).map(p => p.code);
 
-        let collectibleCards = Object.assign([], Object.values(this.database).filter((c: Card) => c.collectible));
+        let collectibleCards = Object.assign([], Object.values(this.database).filter((c: Card) => c.collectible && !upcomingPatchs.includes(c.patch)));
         collectibleCards.forEach(c => { c['count'] = 3 })
 
         collectibleCards.forEach(card => {
@@ -68,7 +75,7 @@ export class UnownedCardsComponent implements OnInit {
         });
 
         let notCollectEnoughCards = ownedCards.filter(card => card.count < 3).map(libCard => {
-            let card = Object.assign({}, this.database[libCard.code]);
+            let card = Object.assign({}, this.database.find(c => c.code == libCard.code));
             card['count'] = libCard.count
 
             return card;
@@ -173,7 +180,7 @@ export class UnownedCardsComponent implements OnInit {
         this.getUnownedCards();
     }
 
-    getAPIImage(cardcode, isRetry = false) {
-        return this.databaseService.getAPIImage(null, cardcode, isRetry);
+    getAPIImage(cardData: Card) {
+        return this.databaseService.getAPIImage(cardData);
     }
 }

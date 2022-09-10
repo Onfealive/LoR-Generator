@@ -194,7 +194,7 @@
 
     <div class="row row-cols-auto g-4 mt-2">
         <ng-container *ngFor="let card of searchResults; let resultIndex = index"
-            [ngTemplateOutlet]='!card.detail ? cardInfo : cardDetail'
+            [ngTemplateOutlet]='!card.detail ? cardInfo : ""'
             [ngTemplateOutletContext]="{card: card, resultIndex: resultIndex}">
         </ng-container>
         <ng-template #cardInfo let-card="card" let-resultIndex="resultIndex">
@@ -203,10 +203,15 @@
                     <div class="card-header text-center">
                         <small class="text-muted ">{{card.code}}<span class="to-clipboard"
                                 (click)="card2Clipboard(card)">📋</span></small>
+                        <span *ngIf="historyDatabase[card.code]"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                            {{historyDatabase[card.code].length}}
+                            <span class="visually-hidden">changes</span>
+                        </span>
+
                     </div>
-                    <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card.code)"
-                        [errorImage]="getAPIImage(card.code, true)" [alt]="card.code"
-                        (click)="selectCardInfo(resultIndex)">
+                    <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card)"
+                        [alt]="card.code" (click)="selectCardInfo(card.code)">
                     <div class="card-body">
                         <h5 class="card-title text-center">
                             {{card.name}}
@@ -225,119 +230,6 @@
                 </div>
             </div>
         </ng-template>
-        <ng-template #cardDetail let-card="card" let-resultIndex="resultIndex">
-            <div class="card-detail col-12" [id]="'detail_' + card.code">
-                <div class="card h-100">
-                    <div class="card-header text-center">
-                        <small class="text-muted ">{{card.code}}</small>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12 col-md-11">
-                                <div class="row">
-                                    <div class="col-md-3 d-none d-md-block">
-                                        <img class="card-image" [defaultImage]="defaultImage"
-                                            [lazyLoad]="getAPIImage(card.code)" [alt]="card.code" width="250px"
-                                            [errorImage]="getAPIImage(card.code, true)">
-                                    </div>
-                                    <div class="col-12 col-md-9">
-                                        <div class="row">
-                                            <h5 class="card-title text-center">
-                                                {{card.name}}
-                                                <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
-                                                    target="_blank">
-                                                    <svg width="24px" height="24px" viewBox="0 0 24 24">
-                                                        <g stroke="#0d6efd" stroke-width="1.5" fill="none"
-                                                            fill-rule="evenodd" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5">
-                                                            </polyline>
-                                                            <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
-                                                        </g>
-                                                    </svg>
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div class="row">
-                                            <form class="border-0">
-                                                <div class="form-group row">
-                                                    <label class="col-4 col-md-2 col-form-label">Type</label>
-                                                    <div class="col-8 col-md-4">
-                                                        <input class="form-control-plaintext" type="text" readonly
-                                                            value="{{card.type}}">
-                                                    </div>
-                                                    <label class="col-4 col-md-2 col-form-label">Region</label>
-                                                    <div class="col-8 col-md-4 position-relative">
-                                                        <img class="position-absolute top-50 region"
-                                                            [src]="'./assets/icons/' + getRegion(card.code) + '.png'"
-                                                            width="50xp">
-                                                    </div>
-                                                    <label class="col-4 col-md-2 col-form-label">Cost</label>
-                                                    <div class="col-8 col-md-4">
-                                                        <input class="form-control-plaintext" type="text" readonly
-                                                            value="{{card.cost}}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row" *ngIf="card.description">
-                                                    <label class="col-4 col-md-2 col-form-label">Description</label>
-                                                    <div class="col-8 col-md-10">
-                                                        <textarea autosize class="form-control-plaintext"
-                                                            readonly>{{card.description}}</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row" *ngIf="card.levelupDescription">
-                                                    <label class="col-4 col-md-2 col-form-label">Level Up</label>
-                                                    <div class="col-8 col-md-10">
-                                                        <textarea autosize class="form-control-plaintext"
-                                                            readonly>{{card.levelupDescription}}</textarea>
-                                                    </div>
-                                                </div>
-                                                <fieldset class="form-group row"
-                                                    *ngIf="['Follower','Champion'].includes(card.type)">
-                                                    <label class="col-4 col-md-2 col-form-label">Power</label>
-                                                    <div class="col-8 col-md-4"><input class="form-control-plaintext"
-                                                            type="text" readonly value="{{card.power}}"></div>
-                                                    <label class="col-4 col-md-2 col-form-label">Health</label>
-                                                    <div class="col-8 col-md-4"><input class="form-control-plaintext"
-                                                            type="text" readonly value="{{card.health}}"></div>
-                                                </fieldset>
-                                                <div class="form-group row">
-                                                    <label class="col-4 col-md-2 col-form-label">Flavor</label>
-                                                    <div class="col-8 col-md-10">
-                                                        <textarea autosize class="form-control-plaintext"
-                                                            readonly>{{card.flavor}}</textarea>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div>Artwork ({{card.artist || 'Unknown'}}):</div>
-                                        <img class="rounded mx-auto d-block" [defaultImage]="defaultArtwork"
-                                            [lazyLoad]="getAPIArtwork(card.code)" [alt]="card.code"
-                                            [attr.width]="isMobile ? '100%' : 'auto'"
-                                            [attr.height]="isMobile ? 'auto' : '500px'">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                [ngClass]="{'col-md-1 mt-md-0 d-grid gap-5': !isMobile, 'col-12 mt-3 d-flex justify-content-around gap-3': isMobile }">
-                                <button *ngIf="!isMobile" class="invisible"></button>
-                                <button class="btn btn-primary gap-2 w-100" type="button"
-                                    (click)="selectCardDetail(resultIndex)">Close</button>
-                                <button class="btn btn-secondary w-100" type="button"
-                                    (click)="hideAllCardDetails(resultIndex)">Close All</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </ng-template>
     </div>
 
     <div class="back-to-top-wrapper">
@@ -345,4 +237,179 @@
             <i class="bi bi-chevron-double-up"></i>
         </a>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" id="detailModal" data-bs-delay='{"show":50,"hide":100}'>
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" *ngIf="cardDetail">
+            <div class="modal-header">
+                <h5 class="modal-title">{{cardDetail.name}} (<small class="text-muted ">{{cardDetail.code}}</small>)
+                    <a [href]="'https://leagueoflegends.fandom.com/wiki/' + cardDetail.code + ' (Legends_of_Runeterra)'"
+                        target="_blank">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24">
+                            <g stroke="#0d6efd" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5">
+                                </polyline>
+                                <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5">
+                                </path>
+                            </g>
+                        </svg>
+                    </a>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-detail col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-3 d-none d-md-block">
+                                            <img class="card-image" [defaultImage]="defaultImage"
+                                                [lazyLoad]="getAPIImage(cardDetail)" [alt]="cardDetail.code"
+                                                width="250px">
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <div class="row">
+                                                <form class="border-0">
+                                                    <div class="form-group row">
+                                                        <label class="col-4 col-md-2 col-form-label">Type</label>
+                                                        <div class="col-8 col-md-4">
+                                                            <input class="form-control-plaintext" type="text" readonly
+                                                                value="{{cardDetail.type}}">
+                                                        </div>
+                                                        <label class="col-4 col-md-2 col-form-label">Region</label>
+                                                        <div class="col-8 col-md-4 position-relative">
+                                                            <img class="position-absolute top-50 region"
+                                                                [alt]="cardDetail.code"
+                                                                [src]="'./assets/icons/' + getRegion(cardDetail.code) + '.png'"
+                                                                width="50xp">
+                                                        </div>
+                                                        <label class="col-4 col-md-2 col-form-label">Cost</label>
+                                                        <div class="col-8 col-md-4">
+                                                            <input class="form-control-plaintext" type="text" readonly
+                                                                value="{{cardDetail.cost}}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row" *ngIf="cardDetail.description">
+                                                        <label class="col-4 col-md-2 col-form-label">Description</label>
+                                                        <div class="col-8 col-md-10">
+                                                            <textarea autosize class="form-control-plaintext"
+                                                                readonly>{{cardDetail.description}}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row" *ngIf="cardDetail.levelupDescription">
+                                                        <label class="col-4 col-md-2 col-form-label">Level Up</label>
+                                                        <div class="col-8 col-md-10">
+                                                            <textarea autosize class="form-control-plaintext"
+                                                                readonly>{{cardDetail.levelupDescription}}</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <fieldset class="form-group row"
+                                                        *ngIf="['Follower','Champion','Equipment'].includes(cardDetail.type)">
+                                                        <label class="col-4 col-md-2 col-form-label">Power</label>
+                                                        <div class="col-8 col-md-4"><input
+                                                                class="form-control-plaintext" type="text" readonly
+                                                                value="{{cardDetail.power}}"></div>
+                                                        <label class="col-4 col-md-2 col-form-label">Health</label>
+                                                        <div class="col-8 col-md-4"><input
+                                                                class="form-control-plaintext" type="text" readonly
+                                                                value="{{cardDetail.health}}"></div>
+                                                    </fieldset>
+                                                    <div class="form-group row">
+                                                        <label class="col-4 col-md-2 col-form-label">Flavor</label>
+                                                        <div class="col-8 col-md-10">
+                                                            <textarea autosize class="form-control-plaintext"
+                                                                readonly>{{cardDetail.flavor}}</textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <ul class="nav nav-pills nav-justified" id="detalCardDisplayTabs"
+                                            role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="artwork-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#artwork-tab-pane" type="button" role="tab"
+                                                    aria-controls="artwork-tab-pane"
+                                                    aria-selected="true">Artwork</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="change-history-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#change-history-tab-pane" type="button" role="tab"
+                                                    aria-controls="change-history-tab-pane" aria-selected="false"
+                                                    [disabled]="!historyDatabase[cardDetail.code]">Change
+                                                    History</button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="artwork-tab-pane" role="tabpanel"
+                                                aria-labelledby="artwork-tab" tabindex="0">
+                                                <div class="col-12">
+                                                    <div>{{cardDetail.artist || 'Unknown'}}</div>
+                                                    <img class="rounded mx-auto d-block" [defaultImage]="defaultArtwork"
+                                                        [lazyLoad]="getAPIArtwork(cardDetail)" [alt]="cardDetail.code"
+                                                        [attr.width]="isMobile ? '100%' : 'auto'"
+                                                        [attr.height]="isMobile ? 'auto' : '500px'">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="change-history-tab-pane" role="tabpanel"
+                                                aria-labelledby="change-history-tab" tabindex="0">
+                                                <div class="col-12" *ngIf="historyDatabase[cardDetail.code]">
+                                                    <table class="table  table-bordered" style="table-layout: fixed">
+                                                        <caption></caption>
+                                                        <colgroup>
+                                                            <col style="width: 20%;">
+                                                            <col style="width: 20%;">
+                                                            <col style="width: 60%;">
+                                                        </colgroup>
+                                                        <thead class="text-center">
+                                                            <tr>
+                                                                <th scope="col">Previous Version</th>
+                                                                <th scope="col">Changed Version</th>
+                                                                <th scope="col">Changes</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tr *ngFor="let log of historyDatabase[cardDetail.code]">
+                                                            <td class="flavor-changed-cards text-center">
+                                                                <img *ngIf="log.oldURL" [alt]="cardDetail.code"
+                                                                    [lazyLoad]="log.oldURL" width="180px"
+                                                                    [defaultImage]="defaultImage">
+                                                                <br />{{log.oldURL ? log.oldPatch : '' }}
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <img [alt]="cardDetail.code" [lazyLoad]="log.newURL"
+                                                                    width="180px" [defaultImage]="defaultImage">
+                                                                <br />{{ log.newPatch }}
+                                                            </td>
+                                                            <td>
+                                                                <div class="diff" *ngFor="let diff of log.diff"
+                                                                    [innerHTML]="diff | safeHtml">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
 </div>

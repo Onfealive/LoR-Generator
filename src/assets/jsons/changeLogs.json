@@ -1,5 +1,25 @@
 [
     {
+        "version": "2.0",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.14 to match live.",
+                    "Bugfixed: Added the missing Patche data of Set 2 from V1.0 to V1.3."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added: Card History feature.",
+                    "Added Sort: Number of Card Changes.",
+                    "Updated: Card Detail is now displayed in Modal."
+                ]
+            }
+        ]
+    },
+    {
         "version": "1.9.11",
         "changes": [
             {

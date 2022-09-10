@@ -35,6 +35,7 @@ export const Keywords = [
     { id: "Fleeting", icon: "Fleeting" },
     { id: "Flow" },
     { id: "Focus", icon: "Focus" },
+    { id: "Forge" },
     { id: "Formidable" },
     { id: "Frostbite", icon: "Frostbite" },
     { id: "Fury", icon: "Fury" },
@@ -42,6 +43,7 @@ export const Keywords = [
     { id: "Imbue", icon: "Imbue" },
     { id: "Invoke", icon: "Invoke" },
     { id: "Impact", icon: "Impact" },
+    { id: "Improvise" },
     { id: "Last Breath", icon: "Last Breath" },
     { id: "Lifesteal", icon: "Lifesteal" },
     { id: "Lurk" },
@@ -101,6 +103,7 @@ export const Groups = [
     { name: 'Spider' },
     { name: 'Tech' },
     { name: 'Treasure' },
+    { name: 'Weaponmaster' },
     { name: 'Yeti' },
     { name: 'Yordle' }
 ];
@@ -135,30 +138,6 @@ export const Artists = [
     { name: 'Wild Blue Studios', specialIndicators: ['Wild Blue Studio', 'Wild Blue'] },
     { name: 'Will Gist' }
 ];
-
-export class Card {
-    _data: object;
-    sortedCode: string;
-    code: string;
-    name: string;
-    collectible: boolean;
-    cost: number;
-    power: number;
-    health: number;
-    description: string;
-    levelupDescription: string;
-    type: string;
-    groupedType: string;
-    spellSpeed: string;
-    group: Array<string>;
-    subtype: Array<string>;
-    flavor: string;
-    keywords: Array<string>;
-    artist: string;
-    regions: string;
-    rarity: string;
-    weightRarity: number;
-}
 
 export const Regions = [
     { id: 'BC', icon: 'Bandle City', name: 'Bandle City' },

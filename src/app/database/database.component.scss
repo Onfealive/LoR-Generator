@@ -181,3 +181,17 @@ button.collapsed {
         margin-top: 0.84375em;
     }
 }
+
+.flavor-changed-cards {
+    img {
+        opacity: 0.5;
+    }
+}
+
+.modal {
+    .table {
+        .diff {
+            padding: 0;
+        }
+    }
+}

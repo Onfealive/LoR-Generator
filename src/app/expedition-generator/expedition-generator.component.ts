@@ -7,6 +7,7 @@ import * as XLSX from 'xlsx';
 import * as Utility from "../shared/utility";
 import { DatabaseService } from '../shared/database.service';
 import { ExpeditionInfo } from '../shared/expeditions';
+import { Card } from '../shared/defined';
 
 declare var $: any;
 declare var bootstrap: any;
@@ -19,7 +20,7 @@ declare var bootstrap: any;
 export class ExpeditionGeneratorComponent implements OnInit {
     expeditionInfo = [];
 
-    database = {};
+    database: Card[] = [];
 
     selectedExpeditionInfo = null;
     expeditionDatabase = {};
@@ -39,8 +40,15 @@ export class ExpeditionGeneratorComponent implements OnInit {
 
         this.selectedExpeditionInfo = this.expeditionInfo[this.expeditionInfo.length - 1];
 
-        this.databaseService.getCardData().subscribe((database) => {
-            this.database = database;
+        // this.databaseService.getCardData().subscribe((database) => {
+        //     this.database = database;
+        // });
+        this.databaseService.loadingCompleted$.subscribe(isCompleted => {
+            if (!isCompleted) {
+                return;
+            }
+
+            this.database = this.databaseService.newestPatchCards;
         });
 
         window.onload = () => {

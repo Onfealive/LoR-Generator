@@ -11,39 +11,38 @@ export class UtilityComponent implements OnInit {
     versionPattern = /^(\d+\.)?(\d+\.)?(\*|\d+)$/;
 
     newestPatch = '';
-    rawNewestPatch = '';
     currentPatch = '';
+
+    isCompleted = false;
 
     constructor(
         private databaseService: DatabaseService
     ) { }
 
     ngOnInit(): void {
-        this.currentPatch = this.databaseService.newestPatch;
-        this.rawNewestPatch = this.currentPatch;
+        this.currentPatch = this.databaseService.newestPatch.name;
         this.newestPatch = this.patch2code(this.currentPatch);
+
+        this.databaseService.loadingCompleted$.subscribe(isCompleted => {
+            if (!isCompleted) {
+                return;
+            }
+
+            this.isCompleted = isCompleted;
+        });
     }
 
     getSetArray() {
-        let setArray = [];
-
-        if (!this.rawNewestPatch) {
-            return setArray;
+        if (!this.isCompleted) {
+            return [];
         }
 
-        let maxSet = PatchInfo[this.rawNewestPatch].maxSet;
-        let patchInfo = PatchInfo[this.currentPatch];
-
-        if (patchInfo) {
-            maxSet = patchInfo.maxSet;
+        let patchInfo = PatchInfo?.find(p => p.name == this.currentPatch);
+        if (!patchInfo) {
+            return [];
         }
 
-
-        for (let i = 1; i <= maxSet; i++) {
-            setArray.push(i)
-        }
-
-        return setArray;
+        return patchInfo.sets;
     }
 
     isValidVersion(version) {

@@ -1,4 +1,3 @@
-import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DatabaseService } from '../shared/database.service';
@@ -6,6 +5,10 @@ import * as Utility from '../shared/utility';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Artists, Groups, Keywords } from '../shared/gameMechanics';
+import { Card, MODIFY_TYPE } from '../shared/defined';
+import { PatchInfo, PatchInfoInterface } from '../shared/patches';
+import * as bootstrap from 'bootstrap'
+import { saveAs } from 'file-saver';
 
 declare var $: any;
 @Component({
@@ -19,11 +22,14 @@ export class DatabaseComponent implements OnInit {
     isMobile = false;
 
     isCompleted = false;
-    database = {};
+    database: Card[] = [];
+    historyDatabase = {};
+
+    currentPatch;
 
     form: FormGroup;
     defaultFormValues = null;
-    sortType = null;
+    sortType;
 
     defaultImage = `./assets/icons/Queue Card Back.png`;
     defaultArtwork = `./assets/gifs/Loading.gif`;
@@ -35,7 +41,11 @@ export class DatabaseComponent implements OnInit {
     groups = Groups;
 
     selectedArtists: [];
-    artist = Artists;
+
+    cardDetail = null;
+
+    artist = Artists; // for Client-only
+    PatchInfo = PatchInfo; // for Client-only
 
     sortData: Array<any> = [
         { id: 'sortedCode', name: 'Code', sort: 'sortedCode' },
@@ -60,12 +70,13 @@ export class DatabaseComponent implements OnInit {
     ];
 
     setsData: Array<FormOption> = [
-        { id: '01', icon: 'Foundations' },
-        { id: '02', icon: 'Rising Tides' },
-        { id: '03', icon: 'Call of the Mountain' },
-        { id: '04', icon: 'Empires of the Ascended' },
-        { id: '05', icon: 'Beyond the Bandlewood' },
-        { id: '06', icon: 'Worldwalker' },
+        { id: '1', icon: 'Foundations' },
+        { id: '2', icon: 'Rising Tides' },
+        { id: '3', icon: 'Call of the Mountain' },
+        { id: '4', icon: 'Empires of the Ascended' },
+        { id: '5', icon: 'Beyond the Bandlewood' },
+        { id: '6', icon: 'Worldwalker' },
+        { id: '6cde', icon: 'The Darkin Saga' },
     ];
 
     cardTypesData: Array<FormOption> = this._reformatFormOptions([
@@ -114,7 +125,7 @@ export class DatabaseComponent implements OnInit {
         { id: 'false', icon: 'Uncollectible', name: 'Uncollectible', default: true },
     ];
 
-    searchResults = [];
+    searchResults: Card[] = [];
 
     get regionFormArray() {
         return this.form.get('regions') as FormArray;
@@ -140,6 +151,8 @@ export class DatabaseComponent implements OnInit {
         private databaseService: DatabaseService,
         private deviceService: DeviceDetectorService
     ) {
+        this.sortType = this.sortData[0].id;
+        this.currentPatch = this.databaseService.newestPatch.name;
         this.isMobile = this.deviceService.isMobile();
 
         this.form = this.formBuilder.group({
@@ -152,22 +165,34 @@ export class DatabaseComponent implements OnInit {
             text: this.formBuilder.control(''),
         });
 
-        this.databaseService.getCardData().subscribe((database) => {
-            this.database = database;
-
-            // var a = [...new Set(Object.values(this.database).map(a => a['artist']))]
-            // console.log(a.sort())
-        });
-
-        this.sortType = this.sortData[0].id;
-
         this.addCheckboxData();
     }
 
     ngOnInit(): void {
-        setTimeout(() => {
-            this.searchCards(true);
-        }, 2000);
+        this.databaseService.loadingCompleted$.subscribe(isCompleted => {
+            if (!isCompleted) {
+                return;
+            }
+
+            this.sortData.push(
+                { id: 'changeCount', name: 'Changes (⇓)', sort: 'changeCount,name', sortOrder: { 'changeCount': false } }
+            );
+
+            this.database = this.databaseService.newestPatchCards;
+            this.historyDatabase = this.databaseService.historyDatabase;
+
+            setTimeout(() => {
+                this.searchCards(true);
+            }, 1000);
+        });
+
+        this.databaseService.trackingCompleted$.subscribe(isCompleted => {
+            if (!isCompleted) {
+                return;
+            }
+
+            this.trackingCardHistory();
+        });
     }
 
     private _reformatFormOptions(formOptions: Array<FormOption>, isRealIndex: boolean = false): Array<FormOption> {
@@ -220,8 +245,12 @@ export class DatabaseComponent implements OnInit {
         this.defaultFormValues = this.form.value;
     }
 
-    getAPIImage(cardcode, isRetry = false) {
-        return this.databaseService.getAPIImage(null, cardcode, isRetry);
+    getAPIImage(cardData: Card) {
+        return this.databaseService.getAPIImage(cardData);
+    }
+
+    getAPIImageFromPatch(cardCode, patchName) {
+        return this.databaseService.getAPIImageFromPatch(cardCode, patchName);
     }
 
     getAPIArtwork(cardcode) {
@@ -253,29 +282,87 @@ export class DatabaseComponent implements OnInit {
         this.databaseService.copy2Clipboard(`{{LoR|${card.name}|code=${card.code}}}`);
     }
 
-    selectCardInfo(resultIndex) {
-        let cardData = this.searchResults[resultIndex];
+    selectCardInfo(cardCode) {
+        this.cardDetail = this.database.find(c => c.code == cardCode);
 
-        if ($('#detail_' + cardData.code).length == 0) {
-            this.searchResults.splice(
-                resultIndex + 1,
-                0,
-                Object.assign({}, cardData, {
-                    detail: true,
-                })
-            );
-        } else {
-            $('#detail_' + cardData.code).show();
-        }
+        const detailModal = new bootstrap.Modal('#detailModal');
+        detailModal.show();
+    }
 
-        setTimeout(() => {
-            $([document.documentElement, document.body]).animate(
-                {
-                    scrollTop: $('#detail_' + cardData.code).offset().top - 20,
-                },
-                250
-            );
-        }, 0);
+    trackingCardHistory() {
+        let modifyTypes = [];
+        modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: false });
+        modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE | MODIFY_TYPE.CHANGE_FLAVOR, value: true });
+        modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
+
+        let options = {
+            display: true,
+            changeLog: false,
+            patchNote: false,
+            isHideBackEndChanges: true,
+            modifyTypes: modifyTypes,
+            selectedPatch: null,
+            isGrouped: false,
+            isLink: false
+        };
+
+        this.database.forEach((cardData) => {
+            let oldCardData: Card = null
+            let currentPatch = null;
+            let histories = [];
+
+            PatchInfo.forEach((patch: PatchInfoInterface, index) => {
+                let DB = this.databaseService.getDatabaseOfPatch(patch);
+
+                if (index == 0 || patch.name == this.databaseService.newestPatch.name) {
+                    oldCardData = DB.find(card => card.code == cardData.code);
+                    currentPatch = patch;
+
+                    return;
+                }
+
+                let newCardData = DB.find(card => card.code == cardData.code)
+
+
+                options.selectedPatch = patch;
+                let logs = this.databaseService.getCardChangeData(options, oldCardData ? [oldCardData] : [], newCardData ? [newCardData] : []);
+
+                if (logs.length) {
+                    let log = Object.assign({}, logs[0]);
+
+                    if (log.display) {
+                        log.oldPatch = currentPatch.name;
+                        log.newPatch = patch.name;
+                        log.oldURL = oldCardData ? this.getAPIImage(oldCardData) : null;
+                        log.newURL = this.getAPIImage(newCardData);
+                        delete log.newCard;
+                        delete log.oldCard;
+                        histories.push(log);
+                    }
+                }
+
+                oldCardData = newCardData;
+                currentPatch = patch;
+            });
+
+            if (histories.length) {
+                histories.reverse();
+                cardData.histories = histories;
+            }
+        });
+
+
+        this.database = Utility.sortArrayByValues(this.database, ['sortedCode']);
+        let exportedData = {};
+
+        this.database.forEach((cardData, index) => {
+            if (cardData.histories) {
+                exportedData[cardData.code] = cardData.histories;
+            }
+        });
+
+        const blob = new Blob([JSON.stringify(JSON['decycle'](exportedData))], { type: "application/json;charset=utf-8" });
+        saveAs(blob, `${this.databaseService.newestPatch.code}_AddedCardsData.json`);
     }
 
     selectCardDetail(resultIndex) {
@@ -359,10 +446,10 @@ export class DatabaseComponent implements OnInit {
             });
         }
         if (selectedSetIds.length) {
-            filterList.push((c) => {
+            filterList.push((c: Card) => {
                 let found = false;
                 selectedSetIds.forEach((setCode) => {
-                    if (c.code.substring(0, 2) == setCode) {
+                    if (c.set == setCode) {
                         found = true;
                     }
                 });
@@ -493,8 +580,12 @@ export class DatabaseComponent implements OnInit {
         });
 
         // Sort settings
-        let selectedSortData = this.sortData.find(s => s.id == this.sortType);
-        searchResult = Utility.sortArrayByValues(searchResult, selectedSortData.sort.split(','), selectedSortData.sortOrder);
+        let selectedSortData = this.sortData ? this.sortData.find(s => s.id == this.sortType) : this.sortData[0];
+        searchResult = Utility.sortArrayByValues(searchResult, selectedSortData?.sort.split(','), selectedSortData.sortOrder, {
+            'changeCount': (data: Card) => {
+                return this.historyDatabase[data.code]?.length || 0;
+            }
+        });
 
         this.searchResults = searchResult;
 

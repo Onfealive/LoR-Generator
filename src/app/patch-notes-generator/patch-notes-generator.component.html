@@ -96,17 +96,13 @@
                     <tr *ngIf="log.display"
                         [ngClass]="{'removed-cards': log.type == MODIFY_TYPE.REMOVE, 'flavor-changed-cards': log.type == MODIFY_TYPE.CHANGE_FLAVOR }">
                         <td>
-                            <img *ngIf="log.type != MODIFY_TYPE.ADD && PatchInfo[this.comparingPatch]"
-                                [alt]="log.data.code"
-                                [lazyLoad]="getAPIImage(PatchInfo[this.comparingPatch], log.data.code)" width="200px"
-                                [errorImage]="getAPIImage(PatchInfo[this.comparingPatch], log.data.code, true)"
+                            <img *ngIf="log.oldCard && log.type != MODIFY_TYPE.ADD && this.oldPatch"
+                                [alt]="log.oldCard.code" [lazyLoad]="getAPIImage(log.oldCard)" width="200px"
                                 [defaultImage]="defaultImage">
                         </td>
                         <td>
-                            <img *ngIf="log.type != MODIFY_TYPE.REMOVE && PatchInfo[this.selectedPatch]"
-                                [alt]="log.data.code"
-                                [lazyLoad]="getAPIImage(PatchInfo[this.selectedPatch], log.data.code)" width="200px"
-                                [errorImage]="getAPIImage(PatchInfo[this.selectedPatch], log.data.code, true)"
+                            <img *ngIf="log.newCard && log.type != MODIFY_TYPE.REMOVE && this.newPatch"
+                                [alt]="log.newCard.code" [lazyLoad]="getAPIImage(log.newCard)" width="200px"
                                 [defaultImage]="defaultImage">
                         </td>
                         <td>

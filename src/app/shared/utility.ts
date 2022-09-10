@@ -7,22 +7,25 @@ export function sortObjectByKey(unordered) {
     return ordered;
 }
 
-const compareFunction = (a, b, keys, sortOrder = {}) => {
+const compareFunction = (a, b, keys, sortOrder = {}, customFields = null) => {
     let key = Array.isArray(keys) ? keys[0] : keys;
     let ascending = (sortOrder != undefined && sortOrder[key] != undefined) ? sortOrder[key] : true;
     keys = keys.slice(1);
-    if (a[key] < b[key]) {
+
+    let aKey = customFields && customFields[key] ? customFields[key](a) : (a[key] || 0);
+    let bKey = customFields && customFields[key] ? customFields[key](b) : (b[key] || 0);
+    if (aKey < bKey) {
         return ascending ? -1 : 1;
-    } else if (a[key] > b[key]) {
+    } else if (aKey > bKey) {
         return ascending ? 1 : -1;
     }
 
     return keys.length ? compareFunction(a, b, keys, sortOrder) : 0;
 }
 
-export function sortArrayByValues(sortable: Array<any>, keys: Array<string>, sortOrder = {}) {
+export function sortArrayByValues(sortable: Array<any>, keys: Array<string>, sortOrder = {}, customFields = null) {
     sortable.sort(function (a, b) {
-        return compareFunction(a, b, keys, sortOrder);
+        return compareFunction(a, b, keys, sortOrder, customFields);
     });
 
     return sortable;
@@ -61,6 +64,10 @@ export function isElement(obj) {
     }
 }
 
+export function roundToX(number, digit = 0) {
+    return Math.round((number + Number.EPSILON) * Math.pow(10, digit)) / Math.pow(10, digit);
+}
+
 export function capitalize(input) {
     if (Array.isArray(input)) {
         return input.map(a => capitalize(a));
@@ -84,7 +91,7 @@ export function cleanNewline(str: string) {
         str = str.split(indicator).map(s => s.trim()).join(' ');
     });
 
-    return str;
+    return str.trim();
 }
 
 export function cleanObject(obj) {
