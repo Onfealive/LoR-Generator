@@ -5,10 +5,9 @@ import * as Utility from '../shared/utility';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Artists, Groups, Keywords } from '../shared/gameMechanics';
-import { Card, MODIFY_TYPE } from '../shared/defined';
-import { PatchInfo, PatchInfoInterface } from '../shared/patches';
+import { Card } from '../shared/defined';
+import { PatchInfo } from '../shared/patches';
 import * as bootstrap from 'bootstrap'
-import { saveAs } from 'file-saver';
 
 declare var $: any;
 @Component({
@@ -17,8 +16,6 @@ declare var $: any;
     styleUrls: ['./database.component.scss'],
 })
 export class DatabaseComponent implements OnInit {
-    @ViewChild('keywordSelector') keywordSelectorComponent: NgSelectComponent;
-
     isMobile = false;
 
     isCompleted = false;
@@ -33,6 +30,9 @@ export class DatabaseComponent implements OnInit {
 
     defaultImage = `./assets/icons/Queue Card Back.png`;
     defaultArtwork = `./assets/gifs/Loading.gif`;
+
+    databaseVersions = PatchInfo;
+    selectedDatabaseVersion = null;
 
     selectedKeywords: [];
     keywords = Keywords;
@@ -125,6 +125,8 @@ export class DatabaseComponent implements OnInit {
         { id: 'false', icon: 'Uncollectible', name: 'Uncollectible', default: true },
     ];
 
+    databaseVersion
+
     searchResults: Card[] = [];
 
     get regionFormArray() {
@@ -180,18 +182,24 @@ export class DatabaseComponent implements OnInit {
 
             this.database = this.databaseService.newestPatchCards;
             this.historyDatabase = this.databaseService.historyDatabase;
+            this.selectedDatabaseVersion = this.databaseService.newestPatch.name;
 
             setTimeout(() => {
                 this.searchCards(true);
             }, 1000);
         });
+    }
 
-        this.databaseService.trackingCompleted$.subscribe(isCompleted => {
-            if (!isCompleted) {
-                return;
+    ngAfterViewInit(): void {
+        window.addEventListener('click', (e: any) => {
+            if (e.target.id != 'searchModal' && document.getElementById('searchModal')?.contains(e.target)) {
+                // Clicked in box
+            } else {
+                if (['ng-option-label', 'ng-option', 'ng-value-icon'].some(c => e.target.classList.contains(c))) {
+                    return;
+                }
+                this.closeFilters();
             }
-
-            this.trackingCardHistory();
         });
     }
 
@@ -213,6 +221,51 @@ export class DatabaseComponent implements OnInit {
         });
 
         return isRealIndex ? results : formOptions;
+    }
+
+    showFilters() {
+        $('body').append('<div class="modal-backdrop fade show"></div');
+        $('body').toggleClass('modal-open');
+        $('body').css({
+            'overflow': 'hidden',
+            'padding-right': '17px',
+        });
+
+        $('#searchModal').toggleClass('show');
+
+        setTimeout(() => {
+            $('#searchModal').css({
+                'display': 'block'
+            });
+        }, 300);
+    }
+
+    closeFilters() {
+        if ($('#searchModal').css('display') != 'block') {
+            return;
+        }
+        $('.modal-backdrop').remove();
+        $('body').toggleClass('modal-open');
+        $('body').css({
+            'overflow': 'visible ',
+            'padding-right': '0px',
+        });
+
+        $('#searchModal').toggleClass('show');
+        $('#searchModal').css({
+            'display': 'none'
+        });
+    }
+
+    switchDatabase() {
+        this.isCompleted = false;
+        this.searchResults = [];
+
+        this.databaseService.getCardData(PatchInfo.find(p => p.name == this.selectedDatabaseVersion)).subscribe(database => {
+            this.database = database;
+            this.isCompleted = true;
+            this.searchCards();
+        })
     }
 
     private addCheckboxData() {
@@ -289,82 +342,6 @@ export class DatabaseComponent implements OnInit {
         detailModal.show();
     }
 
-    trackingCardHistory() {
-        let modifyTypes = [];
-        modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: false });
-        modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE | MODIFY_TYPE.CHANGE_FLAVOR, value: true });
-        modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
-
-        let options = {
-            display: true,
-            changeLog: false,
-            patchNote: false,
-            isHideBackEndChanges: true,
-            modifyTypes: modifyTypes,
-            selectedPatch: null,
-            isGrouped: false,
-            isLink: false
-        };
-
-        this.database.forEach((cardData) => {
-            let oldCardData: Card = null
-            let currentPatch = null;
-            let histories = [];
-
-            PatchInfo.forEach((patch: PatchInfoInterface, index) => {
-                let DB = this.databaseService.getDatabaseOfPatch(patch);
-
-                if (index == 0 || patch.name == this.databaseService.newestPatch.name) {
-                    oldCardData = DB.find(card => card.code == cardData.code);
-                    currentPatch = patch;
-
-                    return;
-                }
-
-                let newCardData = DB.find(card => card.code == cardData.code)
-
-
-                options.selectedPatch = patch;
-                let logs = this.databaseService.getCardChangeData(options, oldCardData ? [oldCardData] : [], newCardData ? [newCardData] : []);
-
-                if (logs.length) {
-                    let log = Object.assign({}, logs[0]);
-
-                    if (log.display) {
-                        log.oldPatch = currentPatch.name;
-                        log.newPatch = patch.name;
-                        log.oldURL = oldCardData ? this.getAPIImage(oldCardData) : null;
-                        log.newURL = this.getAPIImage(newCardData);
-                        delete log.newCard;
-                        delete log.oldCard;
-                        histories.push(log);
-                    }
-                }
-
-                oldCardData = newCardData;
-                currentPatch = patch;
-            });
-
-            if (histories.length) {
-                histories.reverse();
-                cardData.histories = histories;
-            }
-        });
-
-
-        this.database = Utility.sortArrayByValues(this.database, ['sortedCode']);
-        let exportedData = {};
-
-        this.database.forEach((cardData, index) => {
-            if (cardData.histories) {
-                exportedData[cardData.code] = cardData.histories;
-            }
-        });
-
-        const blob = new Blob([JSON.stringify(JSON['decycle'](exportedData))], { type: "application/json;charset=utf-8" });
-        saveAs(blob, `${this.databaseService.newestPatch.code}_AddedCardsData.json`);
-    }
-
     selectCardDetail(resultIndex) {
         let cardData = this.searchResults[resultIndex];
 
@@ -399,6 +376,8 @@ export class DatabaseComponent implements OnInit {
         if (!isFirstTime && !this.isCompleted) {
             return;
         }
+
+        this.closeFilters();
 
         this.isCompleted = false;
         this.searchResults = [];

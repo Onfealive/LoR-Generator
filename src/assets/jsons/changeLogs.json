@@ -1,12 +1,37 @@
 [
     {
+        "version": "2.1",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.15."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Updated: Back-End changes will now be a Change Type option.",
+                    "Bugfixed: Fixed a bug where the text comparison feature sometimes had extra spaces."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added: Database Versions - Database can now select older versions.",
+                    "Updated: Search Options will now be floating on the right."
+                ]
+            }
+        ]
+    },
+    {
         "version": "2.0",
         "changes": [
             {
                 "title": "Data",
                 "details": [
                     "Added: V3.14 to match live.",
-                    "Bugfixed: Added the missing Patche data of Set 2 from V1.0 to V1.3."
+                    "Bugfixed: Added the missing Patch data of Set 2 from V1.0 to V1.3."
                 ]
             },
             {

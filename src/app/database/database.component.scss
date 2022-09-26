@@ -28,6 +28,16 @@ button.collapsed {
     }
 }
 
+.btn-search-container {
+    top: 20px;
+    width: 0;
+    height: 0;
+
+    .btn-search {
+        margin-left: -60px
+    }
+}
+
 .image-checkboxes-container {
     input[type="checkbox"] {
         display: none;
@@ -70,7 +80,7 @@ button.collapsed {
 
         img,
         span {
-            height: 60px;
+            height: 50px;
             width: auto;
             transition-duration: 0.2s;
             transform-origin: 50% 50%;

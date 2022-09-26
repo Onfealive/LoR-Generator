@@ -9,20 +9,20 @@
 }
 
 table {
-  .subheader {
-    background-color: grey;
-    color: white;
-  }
+    .subheader {
+        background-color: grey;
+        color: white;
+    }
 
-  .removed-cards {
-    img {
-      filter: grayscale(80%);
+    .removed-cards {
+        img {
+            filter: grayscale(80%);
+        }
     }
-  }
-  
-  .flavor-changed-cards {
-    img {
-      opacity: 0.5;
+
+    .flavor-changed-cards {
+        img {
+            opacity: 0.5;
+        }
     }
-  }
 }

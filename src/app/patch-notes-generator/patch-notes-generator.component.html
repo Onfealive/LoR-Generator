@@ -19,16 +19,14 @@
     {{ error }}
 </div>
 
+<div class="text-center mt-3" *ngIf="isLoading">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
 <ng-container *ngIf="isCompleted">
     <div class="row">
-        <div class="form-inline col-12 col-md-6" *ngIf="getChangedCards.length || getAddedCards.length">
-            <div class="form-group">
-                <label for="generatorOptions">Options</label>
-                <button type="button" class="btn btn-sm ms-1"
-                    [ngClass]="{'btn-info': isHideBackEndChanges, 'btn-secondary': !isHideBackEndChanges}"
-                    (click)="hideBackEndChanges()">Hide BackEnd Changes</button>
-            </div>
-        </div>
         <div class="form-inline col-12 col-md-6" *ngIf="getAddedCards.length">
             <div class="form-group">
                 <label for="moduleData">Module Data</label>
@@ -45,7 +43,7 @@
                 <input class="btn-check" type="checkbox" [id]="modifyType.id + '-display'"
                     (change)="optionModifyChanged(modifyType.type)" [checked]="modifyType.value"
                     [disabled]="!getCards(modifyType.type).length">
-                <label class="btn btn-outline-primary border border-dark" [for]="modifyType.id + '-display'">
+                <label class="btn btn-outline-primary" [for]="modifyType.id + '-display'">
                     {{modifyType.text}}
                     <span class="badge bg-warning text-dark">{{ getCards(modifyType.type).length ?
                         getCards(modifyType.type).length
@@ -66,13 +64,8 @@
             <label class="btn btn-outline-success" for="displayType_patchNote">Patch Note</label>
             <input type="radio" class="btn-check" id="displayType_changeLog" autocomplete="off"
                 [checked]="displayType == 'changeLog'" (click)="optionDisplayChanged('changeLog')">
-            <label class="btn btn-outline-success" for="displayType_changeLog">Change
-                Log</label>
+            <label class="btn btn-outline-success" for="displayType_changeLog">Change Log</label>
         </div>
-    </div>
-
-    <div class="">
-
     </div>
 
     <table class="table mt-3" style="table-layout: fixed">
@@ -93,7 +86,7 @@
                     <td colspan="3" class="subheader">{{ logGroup.type }}</td>
                 </tr>
                 <ng-container *ngFor="let log of logGroup.list">
-                    <tr *ngIf="log.display"
+                    <tr *ngIf="log.visible"
                         [ngClass]="{'removed-cards': log.type == MODIFY_TYPE.REMOVE, 'flavor-changed-cards': log.type == MODIFY_TYPE.CHANGE_FLAVOR }">
                         <td>
                             <img *ngIf="log.oldCard && log.type != MODIFY_TYPE.ADD && this.oldPatch"

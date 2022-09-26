@@ -12,6 +12,7 @@ import * as Diff from "diff";
 import { Toast } from 'bootstrap';
 import * as DeckEncoder from 'lor-deckcodes-ts';
 import { MODIFY_TYPE, Card, PatchCards } from './defined';
+import { saveAs } from 'file-saver';
 
 @Injectable({
     providedIn: 'root'
@@ -25,7 +26,7 @@ export class DatabaseService {
     public loadingCompleted$ = new BehaviorSubject<boolean>(false);
     public trackingCompleted$ = new BehaviorSubject<boolean>(false);
 
-    skippingKeywords = ['Missing Translation', 'Support', 'Plunder', 'Last Breath', 'Countdown'];
+    skippingKeywords = ['Missing Translation', 'Support', 'Plunder', 'Last Breath', 'Countdown', 'Flow', 'Imbue', "Fast", "Slow", "Focus", "Burst"];
 
     private SHARDS = {
         'Common': 100,
@@ -95,7 +96,84 @@ export class DatabaseService {
             }, 0);
         } else {
             this.trackingCompleted$.next(true);
+            this.trackingCardHistory();
         }
+    }
+
+    trackingCardHistory() {
+        let modifyTypes = [];
+        modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: false });
+        modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE | MODIFY_TYPE.CHANGE_FLAVOR, value: true });
+        modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: true });
+        modifyTypes.push({ id: 'backed', text: 'Back-End', type: MODIFY_TYPE.BACK_END, value: false });
+
+        let options = {
+            display: true,
+            changeLog: false,
+            patchNote: false,
+            modifyTypes: modifyTypes,
+            selectedPatch: null,
+            isGrouped: false,
+            isLink: false
+        };
+
+        let database = [...this.newestPatchCards];
+
+        database.forEach((cardData) => {
+            let oldCardData: Card = null
+            let currentPatch = null;
+            let histories = [];
+
+            PatchInfo.forEach((patch: PatchInfoInterface, index) => {
+                let DB = this.getDatabaseOfPatch(patch);
+
+                if (index == 0) {
+                    oldCardData = DB.find(card => card.code == cardData.code);
+                    currentPatch = patch;
+
+                    return;
+                }
+
+                let newCardData = DB.find(card => card.code == cardData.code);
+
+                options.selectedPatch = patch;
+                let logs = this.getCardChangeData(options, oldCardData ? [oldCardData] : [], newCardData ? [newCardData] : []);
+
+                if (logs.length) {
+                    let log = Object.assign({}, logs[0]);
+
+                    if (log.visible) {
+                        log.oldPatch = currentPatch.name;
+                        log.newPatch = patch.name;
+                        log.oldURL = oldCardData ? this.getAPIImage(oldCardData) : null;
+                        log.newURL = this.getAPIImage(newCardData);
+                        delete log.newCard;
+                        delete log.oldCard;
+                        histories.push(log);
+                    }
+                }
+
+                oldCardData = newCardData;
+                currentPatch = patch;
+            });
+
+            if (histories.length) {
+                histories.reverse();
+                cardData.histories = histories;
+            }
+        });
+
+        database = Utility.sortArrayByValues(database, ['sortedCode']);
+        let exportedData = {};
+
+        database.forEach((cardData, index) => {
+            if (cardData.histories) {
+                exportedData[cardData.code] = cardData.histories;
+            }
+        });
+
+        const blob = new Blob([JSON.stringify(JSON['decycle'](exportedData))], { type: "application/json;charset=utf-8" });
+        saveAs(blob, `${this.newestPatch.code}_AddedCardsData.json`);
     }
 
     setCopyToast() {
@@ -351,10 +429,6 @@ export class DatabaseService {
         return this.http.get(`./assets/jsons/data/set${set}_${patch}.json`);
     }
 
-    // public getDatabaseJSON(): Observable<any> {
-    //     return this.http.get(`./assets/jsons/data/${this.newestPatch.code}_Database.json`);
-    // }
-
     public getAPIImage(cardData: Card) {
         return `https://dd.b.pvp.net/${cardData.patch}/set${cardData.set}/en_us/img/cards/${cardData.code}.png`;
     }
@@ -414,7 +488,42 @@ export class DatabaseService {
         return wildcards;
     }
 
-    public getCardChangeData(options: { display, isHideBackEndChanges, modifyTypes, changeLog, patchNote, selectedPatch, isGrouped, isLink }, totalOldJSONData: Card[], totalNewJSONData: Card[]) {
+    private isSkippingAddingSpace(currentPart, nextPart) {
+        let prevSkippingCharacters = ["\"", "'", "("];
+        let nextSkippingCharacters = [',', ',', '.', "'", '-', "\"", "!", "’", ":", ")"];
+
+        let prevCharacter = currentPart.value[currentPart.value.length - 1];
+        let nextCharacter = nextPart.value[0];
+
+        // 10+
+        if (!isNaN(prevCharacter) && ['+', '-', '|'].includes(nextCharacter)) {
+            return true;
+        }
+
+        // +3, |4
+        if (['+', '-', '|'].includes(prevCharacter) && !isNaN(nextCharacter)) {
+            return true;
+        }
+
+        // "x
+        if (prevSkippingCharacters.includes(prevCharacter)) {
+            return true;
+        }
+
+        // x.
+        if (nextSkippingCharacters.includes(nextCharacter)) {
+            return true;
+        }
+
+        // 8/9
+        if (!isNaN(prevCharacter) && !isNaN(nextCharacter)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public getCardChangeData(options: { display, modifyTypes, changeLog, patchNote, selectedPatch, isGrouped, isLink }, totalOldJSONData: Card[], totalNewJSONData: Card[]) {
         let logs = [];
 
         options.isGrouped = options.isGrouped == undefined ? true : options.isGrouped;
@@ -435,6 +544,8 @@ export class DatabaseService {
         let previousPrefixLevelUp = "Old Level Up: \"";
         let currentPrefixFlavor = "Flavor becomes: \"";
         let previousPrefixFlavor = "Old Flavor: \"";
+        let addedPrefixFlavor = "Flavor added: \"";
+        let removedPrefixFlavor = "Flavor removed.";
         let newKeywordPrefix = "Now gain ";
         let removedKeywordPrefix = "No longer ";
         let addedHighlightedContent = '';
@@ -451,6 +562,7 @@ export class DatabaseService {
             previousPrefixLevelUp = '** ' + previousPrefixLevelUp;
             currentPrefixFlavor = "* " + currentPrefixFlavor;
             previousPrefixFlavor = "** " + previousPrefixFlavor;
+            addedPrefixFlavor = "** " + addedPrefixFlavor;
             addedHighlightedContent = `'''`;
             removedHighlightedContent = `''`;
             startTipContent = '{{TipLoR|';
@@ -462,11 +574,8 @@ export class DatabaseService {
                 return;
             }
 
-            if (options.isHideBackEndChanges && (log.type & MODIFY_TYPE.BACK_END)) {
-                return;
-            }
+            log.visible = options.modifyTypes.find(type => type.type & log.type).value == true;
 
-            log.display = options.modifyTypes.find(type => type.type & log.type).value == true;
             let unshiftContents = [];
 
             let additionalHref = '';
@@ -565,7 +674,7 @@ export class DatabaseService {
                     log.type = MODIFY_TYPE.ADD
                 } else {
                     if (oldCard.name != newCard.name) {
-                        log.diff.push(commonPrefix + `Renamed from ${addedHighlightedContent + oldCard.name + addedHighlightedContent}.`);
+                        log.diff.push(commonPrefix + `Renamed from <b>${addedHighlightedContent + oldCard.name + addedHighlightedContent}</b>.`);
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
@@ -585,14 +694,11 @@ export class DatabaseService {
                     }
 
 
-                    if (oldCard.spellSpeed != newCard.spellSpeed) {
+                    if (newCard.spellSpeed && oldCard.spellSpeed != newCard.spellSpeed) {
                         const startTip = startTipContent + newCard.spellSpeed + endTipContent;
                         const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
                         log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
                         log.type = MODIFY_TYPE.CHANGE;
-
-                        this.skippingKeywords.push(newCard.spellSpeed)
-                        this.skippingKeywords.push(oldCard.spellSpeed)
                     }
 
                     let removedRegions = oldCard.regions.filter(x => !newCard.regions.includes(x));
@@ -633,10 +739,17 @@ export class DatabaseService {
                     let removedKeywords = oldCard._data['keywords'].filter(x => !newCard._data['keywords'].includes(x)).filter(x => !this.skippingKeywords.includes(x));
                     let newKeywords = newCard._data['keywords'].filter(x => !oldCard._data['keywords'].includes(x)).filter(x => !this.skippingKeywords.includes(x));
                     if (newKeywords.length) {
-                        let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
+                        if (newKeywords.length == 1 && ["Skill", "Landmark"].includes(newKeywords[0])) {
+                            log.diff.push(commonPrefix + `Back-end Updated.`);
+                            if (!log.type) {
+                                log.type = MODIFY_TYPE.BACK_END;
+                            }
+                        } else {
+                            let content = commonPrefix + newKeywordPrefix + startTipContent + newKeywords.join(endTipContent + ', ') + endTipContent + '.';
 
-                        log.diff.push(content);
-                        log.type = MODIFY_TYPE.CHANGE;
+                            log.diff.push(content);
+                            log.type = MODIFY_TYPE.CHANGE;
+                        }
                     }
 
                     if (removedKeywords.length) {
@@ -666,7 +779,9 @@ export class DatabaseService {
                         {
                             object: 'flavor',
                             currentPrefix: currentPrefixFlavor,
-                            previousPrefix: previousPrefixFlavor
+                            previousPrefix: previousPrefixFlavor,
+                            addedPrefix: addedPrefixFlavor,
+                            removedPrefix: removedPrefixFlavor
                         }
                     ]
 
@@ -682,6 +797,11 @@ export class DatabaseService {
                                 log.type = MODIFY_TYPE.CHANGE;
                             }
 
+                            const diffParts = Diff.diffWords(oldCard[largeContent.object], newCard[largeContent.object], {
+                                newlineIsToken: false,
+                                ignoreWhitespace: true
+                            });
+
                             if (largeContent.isCheckedVisual && oldCard[largeContent.object].trim() == newCard[largeContent.object].trim()) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
                                 if (!log.type) {
@@ -696,12 +816,7 @@ export class DatabaseService {
                                     currentExist = false;
                                 }
 
-                                const diffParts = Diff.diffWords(oldCard[largeContent.object], newCard[largeContent.object], {
-                                    newlineIsToken: false
-                                });
-
                                 let cleanedDiffParts = this.getCleanedDiffParts(diffParts);
-
                                 let newDiv = [];
 
                                 let currentPrefix = largeContent.currentPrefix;
@@ -715,7 +830,8 @@ export class DatabaseService {
                                     newComparingContent = [{ value: removedPrefixText }, { value: "." }]
                                 }
 
-                                newComparingContent.filter(part => !part.removed).forEach((part, index) => {
+                                let newContent = '';
+                                newComparingContent.filter(p => !p.removed).forEach((part, index, array) => {
                                     // green for additions, red for deletions
                                     // grey for common parts
                                     const color = part.added ? 'green' :
@@ -726,16 +842,35 @@ export class DatabaseService {
                                     }
 
                                     let content = part.value;
+                                    if (part.removed) {
+                                        content = '';
+                                    }
+
+                                    if (index != 0) {
+                                        newContent += content;
+                                    }
+
                                     if (part.added) {
-                                        content = addedHighlightedContent + part.value + addedHighlightedContent
+                                        content = addedHighlightedContent + part.value + addedHighlightedContent;
+                                    }
+
+                                    if (options.display) {
+                                        let nextPart = array[index + 1];
+                                        if (index > 0 && index < array.length - 2 && nextPart && !nextPart.removed) {
+                                            if (!part.removed || index != 1) {
+                                                if (!this.isSkippingAddingSpace(part, nextPart)) {
+                                                    content += ' ';
+                                                    newContent += ' ';
+                                                }
+                                            }
+                                        }
                                     }
 
                                     newDiv.push(`<span style="color: ${color}">${content}</span>`);
                                 });
 
-                                if (newDiv.length) {
-                                    log.diff.push(newDiv.join(''));
-                                }
+
+                                let oldContent = '';
 
                                 let oldDiv = [];
                                 let oldComparingContent = []
@@ -744,24 +879,54 @@ export class DatabaseService {
                                 } else {
                                     oldComparingContent = [{ value: largeContent.previousPrefix }, ...cleanedDiffParts, { value: "\"" }]
                                 }
-                                oldComparingContent.filter(part => !part.added).forEach((part, index) => {
+                                oldComparingContent.filter(p => !p.added).forEach((part, index, array) => {
                                     const color = part.added ? 'green' :
                                         part.removed ? 'red' : 'black';
 
                                     let content = part.value;
+
+                                    if (part.added) {
+                                        content = '';
+                                    }
+
+                                    if (index != 0) {
+                                        oldContent += content;
+                                    }
+
                                     if (part.removed) {
                                         content = removedHighlightedContent + part.value + removedHighlightedContent;
+                                    }
+
+                                    if (options.display) {
+                                        let nextPart = array[index + 1];
+                                        if (index > 0 && index < array.length - 2 && nextPart && !nextPart.added) {
+                                            if (!part.added || index != 1) {
+                                                if (!this.isSkippingAddingSpace(part, nextPart)) {
+                                                    content += ' ';
+                                                    oldContent += ' ';
+                                                }
+                                            }
+                                        }
                                     }
 
                                     oldDiv.push(`<span style="color: ${color}">${content}</span>`);
                                 });
 
-                                if (oldDiv.length) {
-                                    if (options.display) {
-                                        oldDiv.unshift(`<span style="display: inline-block; width: 37px;"></span>`);
+                                if (oldContent == newContent) {
+                                    log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
+                                    log.type = MODIFY_TYPE.BACK_END;
+                                } else {
+                                    if (newDiv.length) {
+                                        log.diff.push(newDiv.join(''));
                                     }
 
-                                    log.diff.push(oldDiv.join(''));
+                                    if (oldDiv.length) {
+                                        if (options.display) {
+                                            oldDiv.unshift(`<span style="display: inline-block; width: 37px;"></span>`);
+                                        }
+
+                                        log.diff.push(oldDiv.join(''));
+                                    }
                                 }
                             }
                         } else if (largeContent.isCheckedVisual) {
@@ -826,11 +991,13 @@ export class DatabaseService {
     private getCleanedDiffParts(diffParts) {
         let cleanedDiffParts = [...diffParts];
         let emptyDiffIndexs = [];
+
         cleanedDiffParts.forEach((part, index) => {
             if (!part.added && !part.removed && part.value == " ") {
                 emptyDiffIndexs.push(index);
             }
-        })
+        });
+
         emptyDiffIndexs.forEach(emptyIndex => {
             if (emptyIndex - 2 >= 0) {
                 cleanedDiffParts[emptyIndex - 2].value += cleanedDiffParts[emptyIndex].value;
@@ -839,7 +1006,9 @@ export class DatabaseService {
                 cleanedDiffParts[emptyIndex - 1].value += cleanedDiffParts[emptyIndex].value;
             }
         });
-        emptyDiffIndexs.reverse().forEach(emptyIndex => {
+        emptyDiffIndexs.reverse();
+
+        emptyDiffIndexs.forEach(emptyIndex => {
             cleanedDiffParts.splice(emptyIndex, 1)
         });
 
@@ -871,7 +1040,9 @@ export class DatabaseService {
                     firstPart.value += cleanedDiffParts[i].value;
                 });
 
-                sameIndexes.reverse().forEach(i => {
+                sameIndexes.reverse();
+
+                sameIndexes.forEach(i => {
                     cleanedDiffParts.splice(i, 1)
                 });
             } else if (part.added) {
@@ -891,7 +1062,8 @@ export class DatabaseService {
                     firstPart.value += cleanedDiffParts[i].value;
                 });
 
-                sameIndexes.reverse().forEach(i => {
+                sameIndexes.reverse();
+                sameIndexes.forEach(i => {
                     cleanedDiffParts.splice(i, 1)
                 });
             }
@@ -899,6 +1071,17 @@ export class DatabaseService {
 
         // Clean up parts
         cleanedDiffParts.forEach((part, index) => {
+            let prevPart = cleanedDiffParts[index - 1];
+            if (!prevPart) {
+                return;
+            }
+
+            if (["'", ",", "."].includes(part.value[0])) {
+                if (prevPart.value[prevPart.value.length - 1] == ' ') {
+                    prevPart.value = prevPart.value.slice(0, -1);
+                }
+            }
+
             let nextPart = cleanedDiffParts[index + 1];
             if (!nextPart) {
                 return;
@@ -911,23 +1094,6 @@ export class DatabaseService {
         });
 
         cleanedDiffParts = cleanedDiffParts.filter(part => part.value != '');
-
-        cleanedDiffParts.forEach((part, index) => {
-            if (part.added || part.removed) {
-                if (part.value[0] == ' ') {
-                    if (cleanedDiffParts[index - 1]) {
-                        part.value = part.value.slice(1);
-                        cleanedDiffParts[index - 1].value = cleanedDiffParts[index - 1].value + " ";
-                    }
-                }
-                if (part.value[part.value.length - 1] == ' ') {
-                    if (cleanedDiffParts[index + 1]) {
-                        part.value = part.value.slice(0, -1);
-                        cleanedDiffParts[index + 1].value = " " + cleanedDiffParts[index + 1].value;
-                    }
-                }
-            }
-        });
 
         return cleanedDiffParts;
     }

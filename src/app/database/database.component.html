@@ -1,181 +1,19 @@
-<form [formGroup]="form" (ngSubmit)="searchCards()" id="top">
-    <div class="form-group row">
-        <label class="col-3 col-md-1 col-form-label">Regions</label>
-        <div class="col-9 col-md-11 image-checkboxes-container">
-            <div class="form-check form-check-inline" formArrayName="regions"
-                *ngFor="let region of regionFormArray.controls; let i = index">
-                <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
-                    [formControlName]="i">
-                <label class="form-check-label" [for]="'region' + regionsData[i].id">
-                    <img *ngIf="regionsData[i].icon" [src]="'./assets/icons/' + regionsData[i].icon + '.png'">
-                    <!-- <span *ngIf="regionsData[i].name">{{regionsData[i].name }}</span> -->
-                </label>
-            </div>
-        </div>
+<div class="row" *ngIf="isCompleted" id="top">
+    <label for="databaseVersion" class="col-sm-2 col-form-label">Database Version</label>
+    <div class="col-sm-10">
+        <select class="form-select" id="databaseVersion" aria-label="Database Version"
+            [(ngModel)]="selectedDatabaseVersion" (change)="switchDatabase()" [disabled]="!isCompleted">
+            <option *ngFor="let ver of databaseVersions" [value]="ver.name">{{ver.name}}</option>
+        </select>
     </div>
-    <div class="form-group row">
-        <label class="col-3 col-md-1 col-form-label">Sets</label>
-        <div class="col-9 col-md-11 image-checkboxes-container">
-            <div class="form-check form-check-inline" formArrayName="sets"
-                *ngFor="let region of setFormArray.controls; let i = index">
-                <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id" [formControlName]="i">
-                <label class="form-check-label" [for]="'set' + setsData[i].id"
-                    [ngClass]="{'form-check-label-no-icon': !setsData[i].icon}">
-                    <img *ngIf="setsData[i].icon" [src]="'./assets/icons/' + setsData[i].icon + '.png'">
-                    <span *ngIf="setsData[i].name">{{setsData[i].name }}</span>
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-3 col-md-1 col-form-label">Card Types</label>
-        <div class="col-9 col-md-11 image-checkboxes-container">
-            <ng-container *ngFor="let cardType of cardTypesData; let i = index">
-                <div class="form-check form-check-inline" formArrayName="cardTypes">
-                    <input class="form-check-input" type="checkbox" [id]="'cardType' + cardType.id"
-                        [formControlName]="cardType.index">
-                    <label class="form-check-label" [for]="'cardType' + cardType.id"
-                        [ngClass]="{'form-check-label-no-icon': !cardType.icon}">
-                        <img *ngIf="cardType.icon" [src]="'./assets/icons/' + cardType.icon + '.png'">
-                        <span *ngIf="cardType.name">{{cardType.name }}</span>
-                    </label>
-                </div>
-                <ng-container *ngFor="let cardTypeChild of cardType.children; let j = index">
-                    <div class="form-check form-check-inline secondary-controls" formArrayName="cardTypes"
-                        [ngClass]="{'active': cardTypeFormArray.controls[cardType.index].value }">
-                        <input class="form-check-input" type="checkbox" [id]="'cardType' + cardTypeChild.id"
-                            [formControlName]="cardTypeChild.index">
-                        <label class="form-check-label" [for]="'cardType' + cardTypeChild.id">
-                            <img *ngIf="cardTypeChild.icon" [src]="'./assets/icons/' + cardTypeChild.icon + '.png'">
-                            <span *ngIf="cardTypeChild.name">{{cardType.name }}</span>
-                        </label>
-                    </div>
-                </ng-container>
-            </ng-container>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-3 col-md-1 col-form-label">Collectible</label>
-        <div class="col-9 col-md-5 image-checkboxes-container">
-            <div class="form-check form-check-inline" formArrayName="collectibles"
-                *ngFor="let region of collectibleFormArray.controls; let i = index">
-                <input class="form-check-input" type="checkbox" [id]="'collectible' + collectibleData[i].id"
-                    [formControlName]="i">
-                <label class="form-check-label" [for]="'collectible' + collectibleData[i].id">
-                    <img *ngIf="collectibleData[i].icon" [src]="'./assets/icons/' + collectibleData[i].icon + '.png'">
-                    <span *ngIf="collectibleData[i].name">{{collectibleData[i].name }}</span>
-                </label>
-            </div>
-        </div>
-        <label class="col-3 col-md-1 col-form-label">Groups</label>
-        <div class="col-9 col-md-5">
-            <ng-select #groupSelector [(ngModel)]="selectedGroups" [ngModelOptions]="{standalone: true}"
-                [multiple]="true" [markFirst]="true" [placeholder]="'Groups like Tech, Dragon'">
-                <ng-option *ngFor="let group of groups" [value]="group.name">
-                    {{group.name}}
-                </ng-option>
-            </ng-select>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-3 col-md-1 col-form-label">Card Search</label>
-        <div class="col-9 col-md-11">
-            <div class="input-group mb-3">
-                <button *ngIf="form.get('text').value.length != 0" class="btn btn-secondary" type="button"
-                    (click)="clearTextSearch()">Clear</button>
-                <input type="text" class="form-control" formControlName="text" [autofocus]="true"
-                    placeholder="Card Name, Card Text, Keywords or even Card Code">
-            </div>
-        </div>
-    </div>
-    <div class="form-group row keyword-container">
-        <label class="col-3 col-md-1 col-form-label">Keywords</label>
-        <div class="col-9 col-md-11">
-            <ng-select #keywordSelector [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}"
-                [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
-                <ng-option *ngFor="let keyword of keywords" [value]="keyword.id">
-                    <img *ngIf="keyword.icon" alt="{{keyword.id}}"
-                        [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
-                    {{keyword.name || keyword.id}}
-                </ng-option>
-            </ng-select>
-        </div>
-    </div>
-    <div class="form-group row" *ngIf="isMobile">
-        <label class="col-3 col-form-label">Artist</label>
-        <div class="col-9">
-            <ng-select #artistSelector [(ngModel)]="selectedArtists" [ngModelOptions]="{standalone: true}"
-                [multiple]="true" [maxSelectedItems]="1" [markFirst]="true"
-                [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
-                <ng-option *ngFor="let artist of artist" [value]="artist.name">
-                    {{artist.name}}
-                </ng-option>
-            </ng-select>
-        </div>
-    </div>
+</div>
+<div class="sticky-top btn-search-container" *ngIf="isCompleted">
+    <button type="button" class="btn btn-success btn-search" (click)="showFilters()" [disabled]="!isCompleted">
+        <i class="bi bi-search"></i>
+    </button>
+</div>
 
-    <div class="collapse" id="advanceCollapse">
-        <div class="form-group row">
-            <label class="col-3 col-md-1 col-form-label">Cost</label>
-            <div class="col-9 col-md-11 image-checkboxes-container">
-                <div class="form-check form-check-inline" formArrayName="costs"
-                    *ngFor="let region of costFormArray.controls; let i = index">
-                    <input class="form-check-input" type="checkbox" [id]="'cost' + costData[i].id"
-                        [formControlName]="i">
-                    <label class="form-check-label" [for]="'cost' + costData[i].id"
-                        [ngClass]="{'circle': !!costData[i].circle}">
-                        <img *ngIf="costData[i].icon" [src]="'./assets/icons/' + costData[i].icon + '.png'">
-                        <span *ngIf="costData[i].name">{{costData[i].name }}</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group row mb-2">
-            <label class="col-3 col-md-1 col-form-label">Rarity</label>
-            <div class="col-9 col-md-11 image-checkboxes-container">
-                <div class="form-check form-check-inline" formArrayName="rarities"
-                    *ngFor="let region of rarityFormArray.controls; let i = index">
-                    <input class="form-check-input" type="checkbox" [id]="'rarity' + rarityData[i].id"
-                        [formControlName]="i">
-                    <label class="form-check-label" [for]="'rarity' + rarityData[i].id"
-                        [ngClass]="{'circle': !!rarityData[i].circle}">
-                        <img *ngIf="rarityData[i].icon"
-                            [src]="'./assets/currency/Wildcard_' + rarityData[i].icon + '.png'">
-                        <span *ngIf="rarityData[i].name">{{rarityData[i].name }}</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group row mb-2">
-            <label class="col-3 col-md-1 col-form-label">Artist</label>
-            <div class="col-9 col-md-11">
-                <ng-select #artistSelector [(ngModel)]="selectedArtists" [ngModelOptions]="{standalone: true}"
-                    [multiple]="true" [maxSelectedItems]="1" [markFirst]="true"
-                    [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
-                    <ng-option *ngFor="let artist of artist" [value]="artist.name">
-                        {{artist.name}}
-                    </ng-option>
-                </ng-select>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group row text-center">
-        <div class="col-12">
-            <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
-            <button class="btn btn-primary ms-2 collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#advanceCollapse" aria-expanded="false" aria-controls="advanceCollapse">
-                <span class="expanded-word">Less Filters</span>
-                <span class="collapsed-word">More Filters</span>
-            </button>
-            <button type="submit" class="btn btn-primary ms-2">Search</button>
-        </div>
-    </div>
-</form>
-
-<div class="text-center mt-3" *ngIf="!isCompleted">
+<div class="text-center mt-5" *ngIf="!isCompleted">
     <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
@@ -239,7 +77,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Detail Modal -->
 <div class="modal fade" tabindex="-1" id="detailModal" data-bs-delay='{"show":50,"hide":100}'>
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content" *ngIf="cardDetail">
@@ -411,5 +249,191 @@
             </div>
         </div>
     </div>
+</div>
 
+<!-- Search Modal -->
+<div class="modal fade" tabindex="-1" id="searchModal">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Search</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeFilters()"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="searchCards()" id="top">
+                    <div class="form-group row">
+                        <label class="col-3 col-md-1 col-form-label">Regions</label>
+                        <div class="col-9 col-md-11 image-checkboxes-container">
+                            <div class="form-check form-check-inline" formArrayName="regions"
+                                *ngFor="let region of regionFormArray.controls; let i = index">
+                                <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
+                                    [formControlName]="i">
+                                <label class="form-check-label" [for]="'region' + regionsData[i].id">
+                                    <img *ngIf="regionsData[i].icon" [alt]="'region' + regionsData[i].name"
+                                        [src]="'./assets/icons/' + regionsData[i].icon + '.png'">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-md-1 col-form-label">Sets</label>
+                        <div class="col-9 col-md-11 image-checkboxes-container">
+                            <div class="form-check form-check-inline" formArrayName="sets"
+                                *ngFor="let region of setFormArray.controls; let i = index">
+                                <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id"
+                                    [formControlName]="i">
+                                <label class="form-check-label" [for]="'set' + setsData[i].id"
+                                    [ngClass]="{'form-check-label-no-icon': !setsData[i].icon}">
+                                    <img *ngIf="setsData[i].icon" [src]="'./assets/icons/' + setsData[i].icon + '.png'">
+                                    <span *ngIf="setsData[i].name">{{setsData[i].name }}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-md-1 col-form-label">Card Types</label>
+                        <div class="col-9 col-md-11 image-checkboxes-container">
+                            <ng-container *ngFor="let cardType of cardTypesData; let i = index">
+                                <div class="form-check form-check-inline" formArrayName="cardTypes">
+                                    <input class="form-check-input" type="checkbox" [id]="'cardType' + cardType.id"
+                                        [formControlName]="cardType.index">
+                                    <label class="form-check-label" [for]="'cardType' + cardType.id"
+                                        [ngClass]="{'form-check-label-no-icon': !cardType.icon}">
+                                        <img *ngIf="cardType.icon" [src]="'./assets/icons/' + cardType.icon + '.png'">
+                                        <span *ngIf="cardType.name">{{cardType.name }}</span>
+                                    </label>
+                                </div>
+                                <ng-container *ngFor="let cardTypeChild of cardType.children; let j = index">
+                                    <div class="form-check form-check-inline secondary-controls"
+                                        formArrayName="cardTypes"
+                                        [ngClass]="{'active': cardTypeFormArray.controls[cardType.index].value }">
+                                        <input class="form-check-input" type="checkbox"
+                                            [id]="'cardType' + cardTypeChild.id"
+                                            [formControlName]="cardTypeChild.index">
+                                        <label class="form-check-label" [for]="'cardType' + cardTypeChild.id">
+                                            <img *ngIf="cardTypeChild.icon"
+                                                [src]="'./assets/icons/' + cardTypeChild.icon + '.png'">
+                                            <span *ngIf="cardTypeChild.name">{{cardType.name }}</span>
+                                        </label>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-md-1 col-form-label">Collectible</label>
+                        <div class="col-9 col-md-5 image-checkboxes-container">
+                            <div class="form-check form-check-inline" formArrayName="collectibles"
+                                *ngFor="let region of collectibleFormArray.controls; let i = index">
+                                <input class="form-check-input" type="checkbox"
+                                    [id]="'collectible' + collectibleData[i].id" [formControlName]="i">
+                                <label class="form-check-label" [for]="'collectible' + collectibleData[i].id">
+                                    <img *ngIf="collectibleData[i].icon"
+                                        [src]="'./assets/icons/' + collectibleData[i].icon + '.png'">
+                                    <span *ngIf="collectibleData[i].name">{{collectibleData[i].name }}</span>
+                                </label>
+                            </div>
+                        </div>
+                        <label class="col-3 col-md-1 col-form-label">Groups</label>
+                        <div class="col-9 col-md-5">
+                            <ng-select #groupSelector [(ngModel)]="selectedGroups" [ngModelOptions]="{standalone: true}"
+                                [multiple]="true" [markFirst]="true" [placeholder]="'Groups like Tech, Dragon'">
+                                <ng-option *ngFor="let group of groups" [value]="group.name">
+                                    {{group.name}}
+                                </ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-md-1 col-form-label">Card Search</label>
+                        <div class="col-9 col-md-11">
+                            <div class="input-group mb-3">
+                                <button *ngIf="form.get('text').value.length != 0" class="btn btn-secondary"
+                                    type="button" (click)="clearTextSearch()">Clear</button>
+                                <input type="text" class="form-control" formControlName="text" [autofocus]="true"
+                                    placeholder="Card Name, Card Text, Keywords or even Card Code">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row keyword-container">
+                        <label class="col-3 col-md-1 col-form-label">Keywords</label>
+                        <div class="col-9 col-md-11">
+                            <ng-select [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}"
+                                [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
+                                <ng-option *ngFor="let keyword of keywords" [value]="keyword.id">
+                                    <img *ngIf="keyword.icon" alt="{{keyword.id}}"
+                                        [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
+                                    {{keyword.name || keyword.id}}
+                                </ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row" *ngIf="isMobile">
+                        <label class="col-3 col-form-label">Artist</label>
+                        <div class="col-9">
+                            <ng-select #artistSelector [(ngModel)]="selectedArtists"
+                                [ngModelOptions]="{standalone: true}" [multiple]="true" [maxSelectedItems]="1"
+                                [markFirst]="true" [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
+                                <ng-option *ngFor="let artist of artist" [value]="artist.name">
+                                    {{artist.name}}
+                                </ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-3 col-md-1 col-form-label">Cost</label>
+                        <div class="col-9 col-md-11 image-checkboxes-container">
+                            <div class="form-check form-check-inline" formArrayName="costs"
+                                *ngFor="let region of costFormArray.controls; let i = index">
+                                <input class="form-check-input" type="checkbox" [id]="'cost' + costData[i].id"
+                                    [formControlName]="i">
+                                <label class="form-check-label" [for]="'cost' + costData[i].id"
+                                    [ngClass]="{'circle': !!costData[i].circle}">
+                                    <img *ngIf="costData[i].icon" [src]="'./assets/icons/' + costData[i].icon + '.png'">
+                                    <span *ngIf="costData[i].name">{{costData[i].name }}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <label class="col-3 col-md-1 col-form-label">Rarity</label>
+                        <div class="col-9 col-md-11 image-checkboxes-container">
+                            <div class="form-check form-check-inline" formArrayName="rarities"
+                                *ngFor="let region of rarityFormArray.controls; let i = index">
+                                <input class="form-check-input" type="checkbox" [id]="'rarity' + rarityData[i].id"
+                                    [formControlName]="i">
+                                <label class="form-check-label" [for]="'rarity' + rarityData[i].id"
+                                    [ngClass]="{'circle': !!rarityData[i].circle}">
+                                    <img *ngIf="rarityData[i].icon"
+                                        [src]="'./assets/currency/Wildcard_' + rarityData[i].icon + '.png'">
+                                    <span *ngIf="rarityData[i].name">{{rarityData[i].name }}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <label class="col-3 col-md-1 col-form-label">Artist</label>
+                        <div class="col-9 col-md-11">
+                            <ng-select #artistSelector [(ngModel)]="selectedArtists"
+                                [ngModelOptions]="{standalone: true}" [multiple]="true" [maxSelectedItems]="1"
+                                [markFirst]="true" [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
+                                <ng-option *ngFor="let artist of artist" [value]="artist.name">
+                                    {{artist.name}}
+                                </ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
+                    <button type="button" class="btn btn-primary ms-2" (click)="searchCards()">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

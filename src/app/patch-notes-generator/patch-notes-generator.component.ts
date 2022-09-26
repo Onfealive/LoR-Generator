@@ -22,7 +22,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
 
     modifyTypes = [];
     displayType = 'display';
-    isHideBackEndChanges = true;
 
     oldPatch: PatchInfoInterface = null;
     newPatch: PatchInfoInterface = null;
@@ -30,6 +29,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
     customDatabase: Card[] = [];
 
     isCompleted = false;
+    isLoading = false;
     isCustom = false;
 
     patchInfo = [];
@@ -66,6 +66,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         modifyTypes.push({ id: 'add', text: 'Added', type: MODIFY_TYPE.ADD, value: true });
         modifyTypes.push({ id: 'change', text: 'Changed', type: MODIFY_TYPE.CHANGE | MODIFY_TYPE.CHANGE_FLAVOR, value: true });
         modifyTypes.push({ id: 'remove', text: 'Removed', type: MODIFY_TYPE.REMOVE, value: false });
+        modifyTypes.push({ id: 'backed', text: 'Back-End', type: MODIFY_TYPE.BACK_END, value: false });
 
         this.modifyTypes = modifyTypes;
     }
@@ -95,11 +96,13 @@ export class PatchNotesGeneratorComponent implements OnInit {
         let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
         this.newPatch = PatchInfo[selectedPatchIndex];
         this.oldPatch = PatchInfo[selectedPatchIndex - 1];
-
-        this.addModifyTypes();
     }
 
     compare(isCustom = false) {
+        this.isLoading = true;
+        this.logs = [];
+        this.addModifyTypes();
+
         let flag = 0;
         this.isCustom = isCustom;
         if (!isCustom) {
@@ -131,13 +134,13 @@ export class PatchNotesGeneratorComponent implements OnInit {
     optionDisplayChanged(inputOption) {
         this.displayType = inputOption;
         this.logs = [];
-        this.compare();
+        this._compareJson();
     }
 
     optionModifyChanged(modifyType: MODIFY_TYPE) {
         let modifyData = this.modifyTypes.find(m => m.type == modifyType);
         modifyData.value = !modifyData.value;
-        this.compare();
+        this._compareJson();
     }
 
     onSelect(event) {
@@ -197,7 +200,10 @@ export class PatchNotesGeneratorComponent implements OnInit {
     }
 
     _compareJson(isCustom = false) {
+        this.logs = [];
+
         this.isCompleted = true;
+        this.isLoading = true;
 
         let options: any = {};
         options[this.displayType] = true;
@@ -209,7 +215,6 @@ export class PatchNotesGeneratorComponent implements OnInit {
         };
 
         options = Object.assign({}, defaults, options);
-        options.isHideBackEndChanges = this.isHideBackEndChanges;
         options.modifyTypes = this.modifyTypes;
         options.selectedPatch = this.newPatch.name;
 
@@ -218,11 +223,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         let totalNewJSONData = isCustom ? this.customDatabase : this.databaseService.getDatabaseOfPatch(this.newPatch);
 
         this.logs = this.databaseService.getCardChangeData(options, totalOldJSONData, totalNewJSONData);
-    }
 
-    hideBackEndChanges() {
-        this.isHideBackEndChanges = !this.isHideBackEndChanges;
-        this.compare();
+        this.isLoading = false;
     }
 
     convertNewCards() {
