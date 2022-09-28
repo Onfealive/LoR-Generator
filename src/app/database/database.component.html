@@ -49,7 +49,8 @@
 
                     </div>
                     <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card)"
-                        [alt]="card.code" (click)="selectCardInfo(card.code)">
+                        [ngClass]="{'removed-card': card.removed}" [alt]="card.code"
+                        (click)="selectCardInfo(card.code)">
                     <div class="card-body">
                         <h5 class="card-title text-center">
                             {{card.name}}
@@ -83,6 +84,7 @@
         <div class="modal-content" *ngIf="cardDetail">
             <div class="modal-header">
                 <h5 class="modal-title">{{cardDetail.name}} (<small class="text-muted ">{{cardDetail.code}}</small>)
+                    <span *ngIf="cardDetail.removed" class="badge bg-danger">Removed</span>
                     <a [href]="'https://leagueoflegends.fandom.com/wiki/' + cardDetail.code + ' (Legends_of_Runeterra)'"
                         target="_blank">
                         <svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -214,14 +216,16 @@
                                                             </tr>
                                                         </thead>
                                                         <tr *ngFor="let log of historyDatabase[cardDetail.code]">
-                                                            <td class="flavor-changed-cards text-center">
+                                                            <td class="text-center">
                                                                 <img *ngIf="log.oldURL" [alt]="cardDetail.code"
                                                                     [lazyLoad]="log.oldURL" width="180px"
                                                                     [defaultImage]="defaultImage">
-                                                                <br />{{log.oldURL ? log.oldPatch : '' }}
+                                                                <br />{{log.oldURL ?
+                                                                log.oldPatch : '' }}
                                                             </td>
                                                             <td class="text-center">
-                                                                <img [alt]="cardDetail.code" [lazyLoad]="log.newURL"
+                                                                <img [ngClass]="{'invisible': !log.newURL}"
+                                                                    [alt]="cardDetail.code" [lazyLoad]="log.newURL"
                                                                     width="180px" [defaultImage]="defaultImage">
                                                                 <br />{{ log.newPatch }}
                                                             </td>

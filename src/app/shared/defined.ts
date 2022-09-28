@@ -6,7 +6,6 @@ export enum MODIFY_TYPE {
     BACK_END = 16,
 }
 
-
 export class Card {
     _data: any;
     sortedCode: string;
@@ -32,6 +31,7 @@ export class Card {
     set: number;
     patch: string;
     histories: Array<any>;
+    removed: boolean;
 }
 
 export interface PatchCards {

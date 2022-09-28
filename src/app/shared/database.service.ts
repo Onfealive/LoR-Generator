@@ -20,6 +20,7 @@ import { saveAs } from 'file-saver';
 export class DatabaseService {
     private globalDatabase: PatchCards[] = [];
     historyDatabase: any[] = [];
+    removedDatabase: Card[] = [];
 
     copyToast;
 
@@ -63,7 +64,11 @@ export class DatabaseService {
 
             this.getHistoryData().subscribe(histories => {
                 this.historyDatabase = histories;
-                this.loadingCompleted$.next(true);
+
+                this.getRemovedData().subscribe(removedCards => {
+                    this.removedDatabase = removedCards;
+                    this.loadingCompleted$.next(true);
+                })
             })
         });
 
@@ -118,6 +123,21 @@ export class DatabaseService {
         };
 
         let database = [...this.newestPatchCards];
+        let databaseCodes = database.map(c => c.code);
+        let removedCardCodes = [];
+
+        PatchInfo.slice().reverse().forEach((patch: PatchInfoInterface, index) => {
+            let queryingDB = this.getDatabaseOfPatch(patch);
+
+            databaseCodes = [... new Set(databaseCodes.concat(queryingDB.map(c => c.code)))];
+
+            databaseCodes.filter(x => !database.map(c => c.code).includes(x)).forEach(removedCardCode => {
+                let removedCard = queryingDB.find(card => card.code == removedCardCode);
+                removedCard.removed = true;
+                database.push(removedCard);
+                removedCardCodes.push(removedCardCode)
+            });
+        });
 
         database.forEach((cardData) => {
             let oldCardData: Card = null
@@ -125,16 +145,16 @@ export class DatabaseService {
             let histories = [];
 
             PatchInfo.forEach((patch: PatchInfoInterface, index) => {
-                let DB = this.getDatabaseOfPatch(patch);
+                let queryingDB = this.getDatabaseOfPatch(patch);
 
                 if (index == 0) {
-                    oldCardData = DB.find(card => card.code == cardData.code);
+                    oldCardData = queryingDB.find(card => card.code == cardData.code);
                     currentPatch = patch;
 
                     return;
                 }
 
-                let newCardData = DB.find(card => card.code == cardData.code);
+                let newCardData = queryingDB.find(card => card.code == cardData.code);
 
                 options.selectedPatch = patch;
                 let logs = this.getCardChangeData(options, oldCardData ? [oldCardData] : [], newCardData ? [newCardData] : []);
@@ -146,7 +166,9 @@ export class DatabaseService {
                         log.oldPatch = currentPatch.name;
                         log.newPatch = patch.name;
                         log.oldURL = oldCardData ? this.getAPIImage(oldCardData) : null;
-                        log.newURL = this.getAPIImage(newCardData);
+                        if (!removedCardCodes.includes(cardData.code)) {
+                            log.newURL = newCardData ? this.getAPIImage(newCardData) : null;
+                        }
                         delete log.newCard;
                         delete log.oldCard;
                         histories.push(log);
@@ -165,15 +187,24 @@ export class DatabaseService {
 
         database = Utility.sortArrayByValues(database, ['sortedCode']);
         let exportedData = {};
+        let removedDatabase = [];
 
         database.forEach((cardData, index) => {
             if (cardData.histories) {
                 exportedData[cardData.code] = cardData.histories;
             }
+
+            if (removedCardCodes.includes(cardData.code)) {
+                removedDatabase.push(cardData);
+                delete cardData.histories;
+            }
         });
 
-        const blob = new Blob([JSON.stringify(JSON['decycle'](exportedData))], { type: "application/json;charset=utf-8" });
-        saveAs(blob, `${this.newestPatch.code}_AddedCardsData.json`);
+        const historyBlob = new Blob([JSON.stringify(JSON['decycle'](exportedData))], { type: "application/json;charset=utf-8" });
+        saveAs(historyBlob, `${this.newestPatch.code}_history.json`);
+
+        const removedBlob = new Blob([JSON.stringify(JSON['decycle'](removedDatabase))], { type: "application/json;charset=utf-8" });
+        saveAs(removedBlob, `${this.newestPatch.code}_removed.json`);
     }
 
     setCopyToast() {
@@ -230,6 +261,10 @@ export class DatabaseService {
 
     getHistoryData(): Observable<any> {
         return this.http.get(`./assets/jsons/histories/${this.newestPatch.code}.json`);
+    }
+
+    getRemovedData(): Observable<any> {
+        return this.http.get(`./assets/jsons/removed/${this.newestPatch.code}.json`);
     }
 
     convertData2Database(rawData, patchCode: string): Card[] {
@@ -313,8 +348,8 @@ export class DatabaseService {
                     cost: rawCardData.cost,
                     power: rawCardData.attack,
                     health: rawCardData.health,
-                    description: Utility.cleanNewline(rawCardData.descriptionRaw),
-                    levelupDescription: Utility.cleanNewline(rawCardData.levelupDescriptionRaw),
+                    description: Utility.cleanUpTextContent(rawCardData.descriptionRaw),
+                    levelupDescription: Utility.cleanUpTextContent(rawCardData.levelupDescriptionRaw),
                     type: this.getCardType(rawCardData),
                     groupedType: this.getCardType(rawCardData, true),
                     spellSpeed: realSpellSpeed,
@@ -328,7 +363,8 @@ export class DatabaseService {
                     weightRarity: this.WEIGHT_RARITY[rarity],
                     set: rawCardData.set ? rawCardData.set.replace('Set', '') : parseInt(rawCardData.cardCode.substring(0, 2)),
                     patch: patchCode,
-                    histories: null
+                    histories: null,
+                    removed: false
                 }
 
                 card.description = card.description.split(' </').join('</');
@@ -930,7 +966,7 @@ export class DatabaseService {
                                 }
                             }
                         } else if (largeContent.isCheckedVisual) {
-                            if (Utility.cleanNewline(oldCard['_data'][largeContent.object]) != Utility.cleanNewline(newCard['_data'][largeContent.object])) {
+                            if (Utility.cleanUpTextContent(oldCard['_data'][largeContent.object]) != Utility.cleanUpTextContent(newCard['_data'][largeContent.object])) {
                                 log.diff.push(commonPrefix + largeContent.text + ` Back-end Text Updated.`);
                                 if (!log.type) {
                                     log.type = MODIFY_TYPE.BACK_END;

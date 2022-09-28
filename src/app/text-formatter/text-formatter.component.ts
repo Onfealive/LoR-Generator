@@ -36,7 +36,7 @@ export class TextFormatterComponent implements OnInit {
 
             this.newestPatch = this.databaseService.newestPatch.name;
             this.isCompleted = isCompleted;
-            this.database = this.databaseService.newestPatchCards;
+            this.database = this.databaseService.newestPatchCards.concat(this.databaseService.removedDatabase);
         });
     }
 
@@ -91,6 +91,7 @@ export class TextFormatterComponent implements OnInit {
         this.textContent = this.textContent.split('’').join("'");
         this.textContent = this.textContent.split('“').join("\"");
         this.textContent = this.textContent.split('”').join("\"");
+        this.textContent = this.textContent.split('    ').join("");
         $(this.textElement.nativeElement).scrollTop(0);
 
         // Handling

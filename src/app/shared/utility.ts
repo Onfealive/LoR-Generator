@@ -83,13 +83,17 @@ export function camelize(str) {
     }).replace(/\s+/g, '');
 }
 
-export function cleanNewline(str: string) {
+export function cleanUpTextContent(str: string) {
     if (!str) {
         return str;
     }
     ['\r\n', '\r', '\n'].forEach(indicator => {
         str = str.split(indicator).map(s => s.trim()).join(' ');
     });
+
+    str = str.split('’').join("'");
+    str = str.split('“').join("\"");
+    str = str.split('”').join("\"");
 
     return str.trim();
 }

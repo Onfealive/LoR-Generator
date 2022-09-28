@@ -20,6 +20,7 @@ export class DatabaseComponent implements OnInit {
 
     isCompleted = false;
     database: Card[] = [];
+    removedDatabase: Card[] = [];
     historyDatabase = {};
 
     currentPatch;
@@ -183,6 +184,7 @@ export class DatabaseComponent implements OnInit {
             this.database = this.databaseService.newestPatchCards;
             this.historyDatabase = this.databaseService.historyDatabase;
             this.selectedDatabaseVersion = this.databaseService.newestPatch.name;
+            this.removedDatabase = this.databaseService.removedDatabase;
 
             setTimeout(() => {
                 this.searchCards(true);
@@ -336,7 +338,7 @@ export class DatabaseComponent implements OnInit {
     }
 
     selectCardInfo(cardCode) {
-        this.cardDetail = this.database.find(c => c.code == cardCode);
+        this.cardDetail = this.database.concat(this.removedDatabase).find(c => c.code == cardCode);
 
         const detailModal = new bootstrap.Modal('#detailModal');
         detailModal.show();
@@ -553,7 +555,7 @@ export class DatabaseComponent implements OnInit {
             });
         }
 
-        let searchResult = Object.values(this.database);
+        let searchResult = Object.values(this.database.concat(this.removedDatabase));
         filterList.forEach((filterLogic) => {
             searchResult = searchResult.filter(filterLogic);
         });

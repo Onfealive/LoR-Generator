@@ -161,6 +161,10 @@ button.collapsed {
     .card-header,
     .card-img-top {
         cursor: pointer;
+
+        &.removed-card {
+            filter: grayscale(80%);
+        }
     }
 
     .to-clipboard {

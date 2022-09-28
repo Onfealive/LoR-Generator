@@ -1,5 +1,29 @@
 [
     {
+        "version": "2.2",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.16."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Bugfixed: Scroll-to-Top position covers part of the card."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added: Removed Cards.",
+                    "Bugfixed: Scroll-to-Top position covers part of the card."
+                ]
+            }
+        ]
+    },
+    {
         "version": "2.1",
         "changes": [
             {
