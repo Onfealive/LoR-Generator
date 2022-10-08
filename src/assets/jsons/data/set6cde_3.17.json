@@ -1,0 +1,1361 @@
+[
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU009T6",
+      "06RU009T7",
+      "06RU009T9",
+      "06RU009T11"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009-full.png"
+      }
+    ],
+    "regions": [
+      "Runeterra"
+    ],
+    "regionRefs": [
+      "Runeterra"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 4,
+    "description": "<link=vocab.Origin><style=Vocab>Origin</style></link>: <link=card.origin><style=AssociatedCard>The Arrow of Retribution</style></link>.\r\n<link=vocab.AutoEquip><style=Vocab>Auto-Equip</style></link> <link=card.item><style=AssociatedCard>The Darkin Bow</style></link>.\r\n",
+    "descriptionRaw": "Origin: The Arrow of Retribution.\r\nAuto-Equip The Darkin Bow.\r\n",
+    "levelupDescription": "You have targeted 8+ allies. <style=Variable></style>",
+    "levelupDescriptionRaw": "You have targeted 8+ allies. ",
+    "flavorText": "What if, over time, the man that became the Darkin remembered himself, prompted by the mortal voices within? What if, instead of overcoming those voices entirely, he came to believe in them?",
+    "artistName": "Kudos Productions",
+    "name": "Varus",
+    "cardCode": "06RU009",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "Champion",
+    "rarityRef": "Champion",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU009",
+      "06RU009T7",
+      "06RU009T9",
+      "06RU009T11"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T6.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T6-full.png"
+      }
+    ],
+    "regions": [
+      "Runeterra"
+    ],
+    "regionRefs": [
+      "Runeterra"
+    ],
+    "attack": 4,
+    "cost": 4,
+    "health": 5,
+    "description": "<link=vocab.AutoEquip><style=Vocab>Auto-Equip</style></link> <link=card.item><style=AssociatedCard>The Darkin Bow</style></link>. \r\n<link=card.item><style=AssociatedCard>The Darkin Bow</style></link> activates twice and has max +10|+0.",
+    "descriptionRaw": "Auto-Equip The Darkin Bow. \r\nThe Darkin Bow activates twice and has max +10|+0.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Varus was empowered, bolstered, reminded of who he was and what he had yet to become. He embraced the sum of his parts instead of working against them--and when they acted, they acted as one.",
+    "artistName": "Kudos Productions",
+    "name": "Varus",
+    "cardCode": "06RU009T6",
+    "keywords": [
+      "Overwhelm",
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "Overwhelm",
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "Champion",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU009"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T11.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T11-full.png"
+      }
+    ],
+    "regions": [
+      "Runeterra"
+    ],
+    "regionRefs": [
+      "Runeterra"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "You may put any Cultist cards into your deck during deckbuilding.\r\nOnce you have played 3+ Cultist spells, draw a <link=card.level1><style=AssociatedCard>Varus</style></link>.",
+    "descriptionRaw": "You may put any Cultist cards into your deck during deckbuilding.\r\nOnce you have played 3+ Cultist spells, draw a Varus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"We will seek out our betrayers, and we will bring them oblivion.\" - Varus",
+    "artistName": "Kudos Productions",
+    "name": "The Arrow of Retribution",
+    "cardCode": "06RU009T11",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU009",
+      "06RU009T6",
+      "06RU009T10"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T9.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T9-full.png"
+      }
+    ],
+    "regions": [
+      "Runeterra"
+    ],
+    "regionRefs": [
+      "Runeterra"
+    ],
+    "attack": 0,
+    "cost": 3,
+    "health": 0,
+    "description": "Give an enemy <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> and give an ally +1|+0 this round.\r\nCreate a <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link> <link=card.selfRef><style=AssociatedCard>Chain of Corruption</style></link> in hand. \r\nCreate a <link=card.level1><style=AssociatedCard>Varus</style></link> in your deck.",
+    "descriptionRaw": "Give an enemy Vulnerable and give an ally +1|+0 this round.\r\nCreate a Fleeting Chain of Corruption in hand. \r\nCreate a Varus in your deck.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Pity those who cross me.\" - Varus",
+    "artistName": "Kudos Productions",
+    "name": "Varus' Chain of Corruption",
+    "cardCode": "06RU009T9",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "Champion",
+    "type": "Spell",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06RU009",
+      "06RU009T6"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T7.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06RU009T7-full.png"
+      }
+    ],
+    "regions": [
+      "Runeterra"
+    ],
+    "regionRefs": [
+      "Runeterra"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "When you play a spell or <link=vocab.Equip><style=Vocab>equip</style></link> an ally, give me +1|+0 (max +5|+0) until the next time my bearer <link=vocab.Strike><style=Vocab>strikes</style></link>.",
+    "descriptionRaw": "When you play a spell or equip an ally, give me +1|+0 (max +5|+0) until the next time my bearer strikes.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Heartlights Kai and Valmar were not the first to bear the bow and host Varus' inhuman power... but they were the first to remind him of his lost humanity.",
+    "artistName": "Kudos Productions",
+    "name": "The Darkin Bow",
+    "cardCode": "06RU009T7",
+    "keywords": [
+      "Equipment"
+    ],
+    "keywordRefs": [
+      "Equipment"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "",
+    "type": "Equipment",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BC028.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BC028-full.png"
+      }
+    ],
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 3,
+    "cost": 3,
+    "health": 2,
+    "description": "Once you've <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, grant me <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link>.",
+    "descriptionRaw": "Once you've Equipped an ally this game, grant me Elusive.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Person, plant, animal... the Darkin's corruptive influence spares no one and nothing.",
+    "artistName": "Kudos Productions",
+    "name": "Blooming Cultist",
+    "cardCode": "06BC028",
+    "keywords": [
+      "Attune"
+    ],
+    "keywordRefs": [
+      "Attune"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BC038.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BC038-full.png"
+      }
+    ],
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Once you have <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, I cost 2 less. \r\nGrow an ally to 5|5 this round.",
+    "descriptionRaw": "Once you have Equipped an ally this game, I cost 2 less. \r\nGrow an ally to 5|5 this round.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"There is so much power in us.\" - Varus",
+    "artistName": "Kudos Productions",
+    "name": "The Sudden Surge",
+    "cardCode": "06BC038",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW026T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW026.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW026-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 2,
+    "cost": 1,
+    "health": 2,
+    "description": "When <link=vocab.Equip><style=Vocab>Equipped</style></link> allies attack, deal 1 to the enemy nexus.",
+    "descriptionRaw": "When Equipped allies attack, deal 1 to the enemy nexus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "It didn't matter where the power came from--her goddess would not care. What mattered was the glory it would bring her through the monsters she slayed.",
+    "artistName": "Kudos Productions",
+    "name": "Buhru Cultist",
+    "cardCode": "06BW026",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW026T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW026T1-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "Deal 1 to the enemy nexus.",
+    "descriptionRaw": "Deal 1 to the enemy nexus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Yes... this weapon will certainly please Mother Serpent.",
+    "artistName": "Kudos Productions",
+    "name": "Piercing Bolt",
+    "cardCode": "06BW026T1",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW039.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW039-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Once you have <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, I cost 2 less.\r\nDraw 2 and give them <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link>. ",
+    "descriptionRaw": "Once you have Equipped an ally this game, I cost 2 less.\r\nDraw 2 and give them Fleeting. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Though Ibaaros' old bones moved slow, the waters that surged ahead of him moved at an almost incomprehensible speed.",
+    "artistName": "Kudos Productions",
+    "name": "The Unending Wave",
+    "cardCode": "06BW039",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "03MT092T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06MT032.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06MT032-full.png"
+      }
+    ],
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 1,
+    "cost": 2,
+    "health": 3,
+    "description": "When I'm summoned or once you've <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, create a <link=card.create><style=AssociatedCard>Gem</style></link> in hand.",
+    "descriptionRaw": "When I'm summoned or once you've Equipped an ally this game, create a Gem in hand.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "She sought an end to the conflict between Sun and Moon, day and night. The bow offered power, though it came with a terrible cost - yet she pledged herself to it anyway, hoping that it would stop the war once and for all. ",
+    "artistName": "Kudos Productions",
+    "name": "Lunari Cultist",
+    "cardCode": "06MT032",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06MT040.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06MT040-full.png"
+      }
+    ],
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "Once you have <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, I cost 2 less.\r\nGive an ally <link=keyword.SpellShield><sprite name=SpellShield><style=Keyword>SpellShield</style></link> this round. ",
+    "descriptionRaw": "Once you have Equipped an ally this game, I cost 2 less.\r\nGive an ally SpellShield this round. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Look to the night sky and focus your eyes on a small swathe of the firmament. Now imagine all those lived within it, all the knowledge gained and all the experiences lived over countless millennia. Imagine all that information condensed into a shard that could fit into the palm of your hand. Think of how much wisdom you would hold. How much power.",
+    "artistName": "Kudos Productions",
+    "name": "The Expanse's Protection",
+    "cardCode": "06MT040",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR017.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR017-full.png"
+      }
+    ],
+    "regions": [
+      "Freljord"
+    ],
+    "regionRefs": [
+      "Freljord"
+    ],
+    "attack": 5,
+    "cost": 5,
+    "health": 5,
+    "description": "Your <link=vocab.Equip><style=Vocab>Equipped</style></link> allies have <link=keyword.Overwhelm><sprite name=Overwhelm><style=Keyword>Overwhelm</style></link>.",
+    "descriptionRaw": "Your Equipped allies have Overwhelm.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The Winter's Claw was right. The Avarosans HAD been too soft. It was time for a new leader, one that would not seek to unify the Freljord through peace, but rule over it. ",
+    "artistName": "MICHAEL IVAN",
+    "name": "Icevale Cultist",
+    "cardCode": "06FR017",
+    "keywords": [
+      "Missing Translation"
+    ],
+    "keywordRefs": [
+      "AuraVisualFakeKeyword"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR034.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR034-full.png"
+      }
+    ],
+    "regions": [
+      "Freljord"
+    ],
+    "regionRefs": [
+      "Freljord"
+    ],
+    "attack": 0,
+    "cost": 4,
+    "health": 0,
+    "description": "<link=keyword.Frostbite><sprite name=Frostbite><style=Keyword>Frostbite</style></link> the <link=vocab.Strongest><style=Vocab>strongest</style></link> enemy. If you have <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, copy me.",
+    "descriptionRaw": "Frostbite the strongest enemy. If you have Equipped an ally this game, copy me.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Anaakca moved with such speed that the Freljord itself seemed to follow in her wake. Those who survived her butchery soon felt their skin freeze, and their hearts still.",
+    "artistName": "Kudos Productions",
+    "name": "The Unforgiving Cold",
+    "cardCode": "06FR034",
+    "keywords": [
+      "Burst"
+    ],
+    "keywordRefs": [
+      "Burst"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ007-full.png"
+      }
+    ],
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 5,
+    "description": "Once you've <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, create a new spell that costs 2 in hand and set its cost to 0.",
+    "descriptionRaw": "Once you've Equipped an ally this game, create a new spell that costs 2 in hand and set its cost to 0.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"I have always been willing to sacrifice in the name of science. No matter the personal risk, the limitless, inexhaustible power I gained through the exchange was more than reward.\"",
+    "artistName": "Mogi",
+    "name": "Ambitious Cultist",
+    "cardCode": "06PZ007",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ037.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ037-full.png"
+      }
+    ],
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Deal 1 to a unit. If you have <link=vocab.Equip><style=Vocab>Equipped</style></link> an ally this game, copy me with the same targets.",
+    "descriptionRaw": "Deal 1 to a unit. If you have Equipped an ally this game, copy me with the same targets.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "If discord be the cacophony of destruction, then butcher on.",
+    "artistName": "Kudos Productions",
+    "name": "The Violent Dischord",
+    "cardCode": "06PZ037",
+    "keywords": [
+      "Fast"
+    ],
+    "keywordRefs": [
+      "Fast"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [
+      "CULTIST"
+    ],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW014T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW014.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW014-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Draw 1 at the next <link=vocab.RoundStart><style=Vocab>Round Start</style></link> and give it <link=keyword.Fleeting><sprite name=Fleeting><style=Keyword>Fleeting</style></link>. \r\nYou may spend 9 mana to play me as <link=card.unit><style=AssociatedCard>Ibaaros</style></link>.",
+    "descriptionRaw": "Attack: Draw 1 at the next Round Start and give it Fleeting. \r\nYou may spend 9 mana to play me as Ibaaros.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Steer clear, steer clear, of the strait of Daray,\nWhere the waters whisper and the winds betray,\nWhere sea beast and bird so seldom foray,\nFor fear o' the darkness deep 'neath the strait of Daray.\"\n- Bilgewater rhyme",
+    "artistName": "Kudos Productions",
+    "name": "The Darkin Harpoon",
+    "cardCode": "06BW014",
+    "keywords": [
+      "Equipment",
+      "Fearsome"
+    ],
+    "keywordRefs": [
+      "Equipment",
+      "Fearsome"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "",
+    "type": "Equipment",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "02BW020"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW014T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW014T1-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 9,
+    "health": 0,
+    "description": "I have +1|+1 for each card you've drawn this game. I can only be blocked by enemies with 4 or more Power.",
+    "descriptionRaw": "I have +1|+1 for each card you've drawn this game. I can only be blocked by enemies with 4 or more Power.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Ibaaros, the Champion of the Dunes, lifted himself through the water. His blood coursed with that same familiar yearning from years before. To serve. To obey. To submit.",
+    "artistName": "Michal Ivan",
+    "name": "Ibaaros",
+    "cardCode": "06BW014T1",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06BW006T3"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BW004-full.png"
+      }
+    ],
+    "regions": [
+      "Bilgewater"
+    ],
+    "regionRefs": [
+      "Bilgewater"
+    ],
+    "attack": 0,
+    "cost": 1,
+    "health": 0,
+    "description": "Give an enemy <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link> this round. If it dies this round, deal 1 to the enemy Nexus.",
+    "descriptionRaw": "Give an enemy Vulnerable this round. If it dies this round, deal 1 to the enemy Nexus.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Will you stand, or cower?\" - Illaoi",
+    "artistName": "Kudos Productions",
+    "name": "Test of Spirit",
+    "cardCode": "06BW004",
+    "keywords": [
+      "Focus"
+    ],
+    "keywordRefs": [
+      "Focus"
+    ],
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BC041.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06BC041-full.png"
+      }
+    ],
+    "regions": [
+      "Bandle City"
+    ],
+    "regionRefs": [
+      "BandleCity"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "When I'm discarded, summon me. When you summon a Mecha-Yordle, grant it a random keyword. ",
+    "descriptionRaw": "When I'm discarded, summon me. When you summon a Mecha-Yordle, grant it a random keyword. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Big or small, inanimate or otherwise, if there's a doodad you want found, try Skrappy's! Just don't ask Skrappy where it is, because she is not a believer in cataloguing.",
+    "artistName": "Envar Studio",
+    "name": "Skrappy's Partsapalooza",
+    "cardCode": "06BC041",
+    "keywords": [
+      "Landmark"
+    ],
+    "keywordRefs": [
+      "LandmarkVisualOnly"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Landmark",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR020.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR020-full.png"
+      }
+    ],
+    "regions": [
+      "Freljord"
+    ],
+    "regionRefs": [
+      "Freljord"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "Deal 1 to EVERYTHING or destroy a unit's equipment.",
+    "descriptionRaw": "Deal 1 to EVERYTHING or destroy a unit's equipment.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The cold spares nothing and no one.",
+    "artistName": "Kudos Productions",
+    "name": "Fracture",
+    "cardCode": "06FR020",
+    "keywords": [
+      "Slow"
+    ],
+    "keywordRefs": [
+      "Slow"
+    ],
+    "spellSpeed": "Slow",
+    "spellSpeedRef": "Slow",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR040.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06FR040-full.png"
+      }
+    ],
+    "regions": [
+      "Freljord"
+    ],
+    "regionRefs": [
+      "Freljord"
+    ],
+    "attack": 6,
+    "cost": 9,
+    "health": 6,
+    "description": "When I'm summoned, grant allies +1|+1 for each different subtype you’ve summoned this game. <style=Variable></style>",
+    "descriptionRaw": "When I'm summoned, grant allies +1|+1 for each different subtype you’ve summoned this game. ",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"...an' there was a BIG creature that cared for aaaaaaall of the LIL' creatures...\" - Ingvar the Younger",
+    "artistName": "Kudos Productions",
+    "name": "Warden of the Tribes",
+    "cardCode": "06FR040",
+    "keywords": [
+      "Overwhelm"
+    ],
+    "keywordRefs": [
+      "Overwhelm"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06MT042.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06MT042-full.png"
+      }
+    ],
+    "regions": [
+      "Targon"
+    ],
+    "regionRefs": [
+      "Targon"
+    ],
+    "attack": 2,
+    "cost": 2,
+    "health": 2,
+    "description": "<link=keyword.Daybreak><style=Keyword>Daybreak</style></link>: Give <link=keyword.Daybreak><style=Keyword>Daybreak</style></link> allies +1|+1 this round.\r\n<link=keyword.Nightfall><style=Keyword>Nightfall</style></link>: Grant <link=keyword.Nightfall><style=Keyword>Nightfall</style></link> allies +1|+0.",
+    "descriptionRaw": "Daybreak: Give Daybreak allies +1|+1 this round.\r\nNightfall: Grant Nightfall allies +1|+0.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "In the twilight hours and just before sunrise the owl can be heard, its call a reminder of the liminal places between dusk and dawn.",
+    "artistName": "Caravan Studio",
+    "name": "Twilit Protector",
+    "cardCode": "06MT042",
+    "keywords": [],
+    "keywordRefs": [],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06IO015T1"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO015.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO015-full.png"
+      }
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "regionRefs": [
+      "Ionia"
+    ],
+    "attack": 3,
+    "cost": 4,
+    "health": 3,
+    "description": "<link=vocab.Flow><style=Vocab>Flow</style></link>: I cost 2 less.\r\n<link=keyword.PlaySkillMark><sprite name=SkillMark><style=Keyword>Play</style></link>: <link=keyword.Stun><sprite name=Stunned><style=Keyword>Stun</style></link> an enemy.",
+    "descriptionRaw": "Flow: I cost 2 less.\r\nPlay: Stun an enemy.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "What is this one's role in this strange and gruesome show? Ah, more than audience, she is observer, the lens through which all things pass and must be held up against truth and beauty. The Witness!",
+    "artistName": "Envar Studio",
+    "name": "The Witness",
+    "cardCode": "06IO015",
+    "keywords": [
+      "Flow"
+    ],
+    "keywordRefs": [
+      "Flow"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO015T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO015T1-full.png"
+      }
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "regionRefs": [
+      "Ionia"
+    ],
+    "attack": 0,
+    "cost": 0,
+    "health": 0,
+    "description": "<link=keyword.Stun><sprite name=Stunned><style=Keyword>Stun</style></link> an enemy.",
+    "descriptionRaw": "Stun an enemy.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "The Kashuri spies are mostly observers, but they are well-equipped in case they are ever attacked.",
+    "artistName": "Kudos Productions",
+    "name": "Scintillating Artifact",
+    "cardCode": "06IO015T1",
+    "keywords": [
+      "Skill"
+    ],
+    "keywordRefs": [
+      "Skill"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Ability",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "01IO030"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO016.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO016-full.png"
+      }
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "regionRefs": [
+      "Ionia"
+    ],
+    "attack": 3,
+    "cost": 6,
+    "health": 5,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: <link=vocab.Flow><style=Vocab>Flow</style></link>: Summon a <link=card.summon><style=AssociatedCard>The Empyrean</style></link> and grant it <link=keyword.Ephemeral><sprite name=Ephemeral><style=Keyword>Ephemeral</style></link>.",
+    "descriptionRaw": "Round Start: Flow: Summon a The Empyrean and grant it Ephemeral.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"The shape of the water reflects the shape of your desire. Tell me, wanderer... what do you see?\"",
+    "artistName": "Kudos Productions",
+    "name": "Dragoncaller",
+    "cardCode": "06IO016",
+    "keywords": [
+      "Attune",
+      "Flow"
+    ],
+    "keywordRefs": [
+      "Attune",
+      "Flow"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO029.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO029-full.png"
+      }
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "regionRefs": [
+      "Ionia"
+    ],
+    "attack": 4,
+    "cost": 5,
+    "health": 3,
+    "description": "<link=vocab.Flow><style=Vocab>Flow</style></link>: I cost 2 less. \r\nWhen I'm summoned, draw a spell.",
+    "descriptionRaw": "Flow: I cost 2 less. \r\nWhen I'm summoned, draw a spell.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"Master Doran believed each eye of the Spirit of Wuju offered unique insight into a person's being. But try as I might, all my helm's lenses can behold are different shades of green. What am I missing?\" - Lui, Disciple of Doran",
+    "artistName": "Kudos Productions",
+    "name": "The Spirit of Wuju",
+    "cardCode": "06IO029",
+    "keywords": [
+      "Flow"
+    ],
+    "keywordRefs": [
+      "Flow"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO032.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06IO032-full.png"
+      }
+    ],
+    "regions": [
+      "Ionia"
+    ],
+    "regionRefs": [
+      "Ionia"
+    ],
+    "attack": 0,
+    "cost": 5,
+    "health": 0,
+    "description": "<link=vocab.Flow><style=Vocab>Flow</style></link>: I cost 2 less.\r\n<link=keyword.Recall><style=Keyword>Recall</style></link> a unit or landmark. If it has any attachments, destroy them first.",
+    "descriptionRaw": "Flow: I cost 2 less.\r\nRecall a unit or landmark. If it has any attachments, destroy them first.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "\"You are not worthy of the power you hold.\" - Rhaast",
+    "artistName": "Kudos Productions",
+    "name": "Unworthy Soul",
+    "cardCode": "06IO032",
+    "keywords": [
+      "Fast",
+      "Flow"
+    ],
+    "keywordRefs": [
+      "Fast",
+      "Flow"
+    ],
+    "spellSpeed": "Fast",
+    "spellSpeedRef": "Fast",
+    "rarity": "RARE",
+    "rarityRef": "Rare",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Spell",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [
+      "06PZ008T2"
+    ],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ008-full.png"
+      }
+    ],
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 0,
+    "cost": 2,
+    "health": 0,
+    "description": "You may spend 8 mana to play me as <link=card.unit><style=AssociatedCard>Styraatu</style></link>.",
+    "descriptionRaw": "You may spend 8 mana to play me as Styraatu.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "As the Targonians pondered where they should scatter the Darkin weapons, one of their kind suggested the lands that would become known as Zaun. Buried deep within the walls of the cavernous and winding passageways would be perfect, they assumed. Far from human reach. But not Chirean.",
+    "artistName": "Kudos Productions",
+    "name": "The Darkin Harp",
+    "cardCode": "06PZ008",
+    "keywords": [
+      "Equipment",
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "Equipment",
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "EPIC",
+    "rarityRef": "Epic",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "",
+    "type": "Equipment",
+    "collectible": true,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ008T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ008T2-full.png"
+      }
+    ],
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 8,
+    "cost": 8,
+    "health": 6,
+    "description": "<link=vocab.Attack><style=Vocab>Attack</style></link>: Draw 2, then reduce those cards' costs by 2.",
+    "descriptionRaw": "Attack: Draw 2, then reduce those cards' costs by 2.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "Styraatu burst through the processing plant, furious and impatient. Her rage was known even before the tendrils of madness found their way into her mind, but now... now she would make them all pay. First here, in this land of technology, then south, where she would war alongside her general once again.",
+    "artistName": "Kudos Productions",
+    "name": "Styraatu",
+    "cardCode": "06PZ008T2",
+    "keywords": [
+      "Quick Attack"
+    ],
+    "keywordRefs": [
+      "QuickStrike"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "None",
+    "rarityRef": "None",
+    "subtypes": [
+      "DARKIN"
+    ],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": false,
+    "set": "Set6cde"
+  },
+  {
+    "associatedCards": [],
+    "associatedCardRefs": [],
+    "assets": [
+      {
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ019.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_17_0/set6cde/en_us/img/cards/06PZ019-full.png"
+      }
+    ],
+    "regions": [
+      "Piltover & Zaun"
+    ],
+    "regionRefs": [
+      "PiltoverZaun"
+    ],
+    "attack": 4,
+    "cost": 4,
+    "health": 4,
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: <link=vocab.Flow><style=Vocab>Flow</style></link>: Refill 2 spell mana.",
+    "descriptionRaw": "Round Start: Flow: Refill 2 spell mana.",
+    "levelupDescription": "",
+    "levelupDescriptionRaw": "",
+    "flavorText": "If he had things his way, NOBODY would get in.",
+    "artistName": "Envar Studio",
+    "name": "Zaun Bouncer",
+    "cardCode": "06PZ019",
+    "keywords": [
+      "Flow"
+    ],
+    "keywordRefs": [
+      "Flow"
+    ],
+    "spellSpeed": "",
+    "spellSpeedRef": "",
+    "rarity": "COMMON",
+    "rarityRef": "Common",
+    "subtypes": [],
+    "supertype": "",
+    "type": "Unit",
+    "collectible": true,
+    "set": "Set6cde"
+  }
+]

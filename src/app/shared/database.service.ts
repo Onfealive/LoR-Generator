@@ -27,7 +27,9 @@ export class DatabaseService {
     public loadingCompleted$ = new BehaviorSubject<boolean>(false);
     public trackingCompleted$ = new BehaviorSubject<boolean>(false);
 
-    skippingKeywords = ['Missing Translation', 'Support', 'Plunder', 'Last Breath', 'Countdown', 'Flow', 'Imbue', "Fast", "Slow", "Focus", "Burst"];
+    invalidKeywords = ['Missing Translation', 'AuraVisualFakeKeyword', 'LandmarkVisualOnly'];
+    skippingInnateKeywords = ['Support', 'Plunder', 'Last Breath', 'Countdown', 'Flow', 'Imbue'];
+    spellSkippingKeywords = ['Burst', 'Fast', 'Focus', 'Slow'];
 
     private SHARDS = {
         'Common': 100,
@@ -269,7 +271,7 @@ export class DatabaseService {
 
     convertData2Database(rawData, patchCode: string): Card[] {
         let database: Card[] = []
-        let spellSpeedKeywords = ['Slow', 'Fast', 'Burst', 'Focus'];
+
         let keywords = Keywords.filter(k => !k.specialIndicators);
         let specialKeywords = Keywords.filter(k => k.specialIndicators);
 
@@ -299,8 +301,8 @@ export class DatabaseService {
                 }
 
                 let realSpellSpeed = rawCardData.spellSpeed;
-                if (rawCardData.keywords.filter(k => spellSpeedKeywords.includes(k))) {
-                    realSpellSpeed = rawCardData.keywords.find(k => spellSpeedKeywords.includes(k));
+                if (rawCardData.keywords.filter(k => this.spellSkippingKeywords.includes(k))) {
+                    realSpellSpeed = rawCardData.keywords.find(k => this.spellSkippingKeywords.includes(k));
                 }
 
                 let group = [];
@@ -339,6 +341,10 @@ export class DatabaseService {
 
                 let rarity = rawCardData.collectible ? rawCardData.rarityRef : 'None';
 
+                let innateKeywords = rawCardData.keywords.filter(keyword => !this.invalidKeywords.concat(this.skippingInnateKeywords).includes(keyword));
+
+                innateKeywords.sort();
+
                 let card: Card = {
                     _data: rawCardData,
                     sortedCode: sortedCode,
@@ -356,7 +362,8 @@ export class DatabaseService {
                     group: Utility.capitalize(group),
                     subtype: Utility.capitalize(group),
                     flavor: rawCardData.flavorText.trim().replace(/(?:\r\n|\r|\n)/g, ' '),
-                    keywords: [...rawCardData.keywords],
+                    keywords: [...innateKeywords],
+                    keywordRefs: [...innateKeywords],
                     artist: artist,
                     regions: rawCardData.regions ? rawCardData.regions : [rawCardData.region],
                     rarity: rarity,
@@ -364,28 +371,25 @@ export class DatabaseService {
                     set: rawCardData.set ? rawCardData.set.replace('Set', '') : parseInt(rawCardData.cardCode.substring(0, 2)),
                     patch: patchCode,
                     histories: null,
-                    removed: false
+                    removed: false,
                 }
 
                 card.description = card.description.split(' </').join('</');
                 card.description = card.description.split('  ').join(' ');
 
-                if (!card['keywords'].length) {
-                    card['keywords'] = [];
+                if (!card.keywordRefs.length) {
+                    card.keywordRefs = [];
                 }
 
                 if (rawCardData.keywordRefs.includes('AuraVisualFakeKeyword')) {
-                    card['keywords'].push('Aura');
+                    card.keywordRefs.push('Aura');
                 }
-
-                rawCardData.keywords = rawCardData.keywords.filter(keyword => !this.skippingKeywords.includes(keyword));
-                rawCardData.keywordRefs = rawCardData.keywordRefs.filter(keyword => !['AuraVisualFakeKeyword'].includes(keyword));
 
                 keywords.forEach(keywordData => {
                     let keywordText = [`<link=vocab.${keywordData.name || keywordData.id}>`, `<link=keyword.${keywordData.name || keywordData.id}>`, `<style=Vocab>${keywordData.name || keywordData.id}`];
                     keywordText.forEach(kText => {
                         if (rawCardData.description.toLowerCase().includes(kText.toLowerCase())) {
-                            card['keywords'].push(keywordData.name || keywordData.id);
+                            card.keywordRefs.push(keywordData.name || keywordData.id);
                             return;
                         }
                     });
@@ -394,26 +398,27 @@ export class DatabaseService {
                 specialKeywords.forEach(keywordData => {
                     keywordData.specialIndicators.forEach(specialIndicator => {
                         if (rawCardData['keywords'].includes(specialIndicator)) {
-                            card['keywords'].push(keywordData.name || keywordData.id);
+                            card.keywordRefs.push(keywordData.name || keywordData.id);
                             return;
                         }
                         if (rawCardData['levelupDescription'].includes(specialIndicator)) {
-                            card['keywords'].push(keywordData.name || keywordData.id);
+                            card.keywordRefs.push(keywordData.name || keywordData.id);
                             return;
                         }
                         if (rawCardData['description'].includes(specialIndicator)) {
-                            card['keywords'].push(keywordData.name || keywordData.id);
+                            card.keywordRefs.push(keywordData.name || keywordData.id);
                             return;
                         }
                         if (rawCardData['descriptionRaw'].includes(specialIndicator)) {
-                            card['keywords'].push(keywordData.name || keywordData.id);
+                            card.keywordRefs.push(keywordData.name || keywordData.id);
                             return;
                         }
                     })
 
                 })
 
-                card['keywords'] = [...new Set(card['keywords'].filter(x => !this.skippingKeywords.includes(x)))];
+                card.keywordRefs = [...new Set(card.keywordRefs)];
+                card.keywordRefs.sort();
 
                 database.push(card);
             });
@@ -772,8 +777,17 @@ export class DatabaseService {
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
-                    let removedKeywords = oldCard._data['keywords'].filter(x => !newCard._data['keywords'].includes(x)).filter(x => !this.skippingKeywords.includes(x));
-                    let newKeywords = newCard._data['keywords'].filter(x => !oldCard._data['keywords'].includes(x)).filter(x => !this.skippingKeywords.includes(x));
+                    let skippingKeywordPool = this.invalidKeywords;
+                    skippingKeywordPool = skippingKeywordPool.concat(this.skippingInnateKeywords);
+
+                    if ((oldCard || newCard).type == 'Spell') {
+                        skippingKeywordPool = skippingKeywordPool.concat(this.spellSkippingKeywords);
+                    }
+
+                    let removedKeywords = oldCard._data['keywords'].filter(x => !newCard._data['keywords'].includes(x)).filter(x => !skippingKeywordPool.includes(x));
+
+                    let newKeywords = newCard._data['keywords'].filter(x => !oldCard._data['keywords'].includes(x)).filter(x => !skippingKeywordPool.includes(x));
+
                     if (newKeywords.length) {
                         if (newKeywords.length == 1 && ["Skill", "Landmark"].includes(newKeywords[0])) {
                             log.diff.push(commonPrefix + `Back-end Updated.`);

@@ -288,6 +288,12 @@ export const PatchInfo: PatchInfoInterface[] = [
         'name': '3.16',
         'code': '3_16_0',
         'sets': ['1', '2', '3', '4', '5', '6', '6cde'],
+    },
+    {
+        'name': '3.17',
+        'code': '3_17_0',
+        'sets': ['1', '2', '3', '4', '5', '6', '6cde'],
+        'isUpcoming': true
     }
 ]
 

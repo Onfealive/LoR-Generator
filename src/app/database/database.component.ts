@@ -1,15 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DatabaseService } from '../shared/database.service';
 import * as Utility from '../shared/utility';
-import { NgSelectComponent } from '@ng-select/ng-select';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Artists, Groups, Keywords } from '../shared/gameMechanics';
 import { Card } from '../shared/defined';
 import { PatchInfo } from '../shared/patches';
 import * as bootstrap from 'bootstrap'
 
-declare var $: any;
+declare let $: any;
 @Component({
     selector: 'app-database',
     templateUrl: './database.component.html',
@@ -19,6 +18,8 @@ export class DatabaseComponent implements OnInit {
     isMobile = false;
 
     isCompleted = false;
+    isDebouncing = false;
+
     database: Card[] = [];
     removedDatabase: Card[] = [];
     historyDatabase = {};
@@ -197,7 +198,7 @@ export class DatabaseComponent implements OnInit {
             if (e.target.id != 'searchModal' && document.getElementById('searchModal')?.contains(e.target)) {
                 // Clicked in box
             } else {
-                if (['ng-option-label', 'ng-option', 'ng-value-icon'].some(c => e.target.classList.contains(c))) {
+                if (['ng-option-label', 'ng-option', 'ng-value-icon', 'search-form-buttons'].some(c => e.target.classList.contains(c))) {
                     return;
                 }
                 this.closeFilters();
@@ -225,6 +226,32 @@ export class DatabaseComponent implements OnInit {
         return isRealIndex ? results : formOptions;
     }
 
+    @HostListener('window:keydown', ['$event'])
+    globalShortcuts($event: KeyboardEvent) {
+        if (!$event) {
+            return;
+        }
+
+        if (this.isDebouncing) {
+            return;
+        }
+
+        if ($event.shiftKey && ($event.key === "S")) {
+            $event.preventDefault();
+
+            let toggleFilters;
+            if ($('#searchModal').css('display') != 'block') {
+                toggleFilters = this.showFilters;
+            } else {
+                toggleFilters = this.closeFilters;
+            }
+
+            this.isDebouncing = true;
+
+            toggleFilters();
+        }
+    }
+
     showFilters() {
         $('body').append('<div class="modal-backdrop fade show"></div');
         $('body').toggleClass('modal-open');
@@ -235,10 +262,13 @@ export class DatabaseComponent implements OnInit {
 
         $('#searchModal').toggleClass('show');
 
+        let that = this;
         setTimeout(() => {
             $('#searchModal').css({
                 'display': 'block'
             });
+
+            $('#searchWord').focus();
         }, 300);
     }
 
@@ -257,6 +287,17 @@ export class DatabaseComponent implements OnInit {
         $('#searchModal').css({
             'display': 'none'
         });
+        this.isDebouncing = false;
+    }
+
+    searchWordKeyDown($event) {
+        if (!$event || !$event.key) {
+            return;
+        }
+
+        if ($event.key == 'Enter') {
+            this.searchCards();
+        }
     }
 
     switchDatabase() {

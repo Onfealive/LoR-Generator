@@ -1,5 +1,29 @@
 [
     {
+        "version": "2.2.1",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.17 until 10/07."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Bugfixed: Fix the keyword part of spell when exporting is missing.",
+                    "Bugfixed: Sometimes innate keyword was exported incorrectly."
+                ]
+            },
+            {
+                "title": "Database",
+                "details": [
+                    "Added Shortcut Key: Shift + S to open Search popup."
+                ]
+            }
+        ]
+    },
+    {
         "version": "2.2",
         "changes": [
             {

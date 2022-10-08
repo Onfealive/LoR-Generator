@@ -1,443 +1,458 @@
 <div class="row" *ngIf="isCompleted" id="top">
-    <label for="databaseVersion" class="col-sm-2 col-form-label">Database Version</label>
-    <div class="col-sm-10">
-        <select class="form-select" id="databaseVersion" aria-label="Database Version"
-            [(ngModel)]="selectedDatabaseVersion" (change)="switchDatabase()" [disabled]="!isCompleted">
-            <option *ngFor="let ver of databaseVersions" [value]="ver.name">{{ver.name}}</option>
-        </select>
+    <div class="sticky-top btn-search-container" *ngIf="isCompleted">
+        <div class="btn-search-group">
+            <button type="button" class="btn btn-success btn-search" (click)="showFilters()" [disabled]="!isCompleted">
+                <i class="bi bi-search"></i>
+            </button><br /><small>Shift + S</small>
+        </div>
+    </div>
+    <div class="col-6">
+        <ng-select #databaseVersionSelector aria-label="Database Version" [(ngModel)]="selectedDatabaseVersion"
+            [clearable]="false" [disabled]="!isCompleted" [(ngModel)]="selectedDatabaseVersion"
+            (change)="switchDatabase()" [ngModelOptions]="{standalone: true}" [markFirst]="true"
+            [placeholder]="'Database Version'">
+            <ng-option *ngFor="let ver of databaseVersions" [value]="ver.name">
+                {{ver.name}}
+            </ng-option>
+        </ng-select>
+    </div>
+    <div class="col-6">
+
     </div>
 </div>
-<div class="sticky-top btn-search-container" *ngIf="isCompleted">
-    <button type="button" class="btn btn-success btn-search" (click)="showFilters()" [disabled]="!isCompleted">
-        <i class="bi bi-search"></i>
-    </button>
-</div>
-
 <div class="text-center mt-5" *ngIf="!isCompleted">
     <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
 </div>
+<div class="row">
+    <div class="search-result" *ngIf="isCompleted">
+        <div class="mt-3">Found {{searchResults.length}} card(s).</div>
 
-<div class="search-result" *ngIf="isCompleted">
-    <div class="mt-3">Found {{searchResults.length}} card(s).</div>
+        <div class="btn-group mt-3" role="group" aria-label="Select sort type" *ngIf="isCompleted">
+            <ng-container *ngFor="let sort of sortData">
+                <input type="radio" class="btn-check" name="btnradio" [id]="'btnradio_' + sort.id" autocomplete="off"
+                    (change)="changeSort(sort.id)" [checked]="sort.id == sortType">
+                <label class="btn btn-outline-primary" [for]="'btnradio_' + sort.id">{{sort.name}}</label>
+            </ng-container>
+        </div>
 
-    <div class="btn-group mt-3" role="group" aria-label="Select sort type" *ngIf="isCompleted">
-        <ng-container *ngFor="let sort of sortData">
-            <input type="radio" class="btn-check" name="btnradio" [id]="'btnradio_' + sort.id" autocomplete="off"
-                (change)="changeSort(sort.id)" [checked]="sort.id == sortType">
-            <label class="btn btn-outline-primary" [for]="'btnradio_' + sort.id">{{sort.name}}</label>
-        </ng-container>
-    </div>
-
-    <div class="row row-cols-auto g-4 mt-2">
-        <ng-container *ngFor="let card of searchResults; let resultIndex = index"
-            [ngTemplateOutlet]='!card.detail ? cardInfo : ""'
-            [ngTemplateOutletContext]="{card: card, resultIndex: resultIndex}">
-        </ng-container>
-        <ng-template #cardInfo let-card="card" let-resultIndex="resultIndex">
-            <div class="card-info col-6 col-md-2" [id]="'card_' + card.code">
-                <div class="card h-100">
-                    <div class="card-header text-center">
-                        <small class="text-muted ">{{card.code}}<span class="to-clipboard"
-                                (click)="card2Clipboard(card)">📋</span></small>
-                        <span *ngIf="historyDatabase[card.code]"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                            {{historyDatabase[card.code].length}}
-                            <span class="visually-hidden">changes</span>
-                        </span>
-
-                    </div>
-                    <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card)"
-                        [ngClass]="{'removed-card': card.removed}" [alt]="card.code"
-                        (click)="selectCardInfo(card.code)">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            {{card.name}}
-                            <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
-                                target="_blank">
-                                <svg width="24px" height="24px" viewBox="0 0 24 24">
-                                    <g stroke="#0d6efd" stroke-width="1.5" fill="none" fill-rule="evenodd"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline>
-                                        <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
-                                    </g>
-                                </svg>
-                            </a>
-                        </h5>
+        <div class="row row-cols-auto g-4 mt-2">
+            <ng-container *ngFor="let card of searchResults">
+                <div class="card-info col-6 col-md-2" [id]="'card_' + card.code">
+                    <div class="card h-100">
+                        <div class="card-header text-center">
+                            <small class="text-muted ">{{card.code}}<span class="to-clipboard"
+                                    (click)="card2Clipboard(card)">📋</span></small>
+                            <span *ngIf="historyDatabase[card.code]"
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+                                {{historyDatabase[card.code].length}}
+                                <span class="visually-hidden">changes</span>
+                            </span>
+                        </div>
+                        <img class="card-img-top" [defaultImage]="defaultImage" [lazyLoad]="getAPIImage(card)"
+                            [ngClass]="{'removed-card': card.removed}" [alt]="card.code"
+                            (click)="selectCardInfo(card.code)">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                {{card.name}}
+                                <a [href]="'https://leagueoflegends.fandom.com/wiki/' + card.code + ' (Legends_of_Runeterra)'"
+                                    target="_blank">
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                                        <g stroke="#0d6efd" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline>
+                                            <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </ng-template>
+            </ng-container>
+        </div>
+
+        <div class="back-to-top-wrapper">
+            <a href="database#top" class="back-to-top-link" aria-label="Scroll to Top">
+                <i class="bi bi-chevron-double-up"></i>
+            </a>
+        </div>
     </div>
 
-    <div class="back-to-top-wrapper">
-        <a href="database#top" class="back-to-top-link" aria-label="Scroll to Top">
-            <i class="bi bi-chevron-double-up"></i>
-        </a>
-    </div>
-</div>
-
-<!-- Detail Modal -->
-<div class="modal fade" tabindex="-1" id="detailModal" data-bs-delay='{"show":50,"hide":100}'>
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content" *ngIf="cardDetail">
-            <div class="modal-header">
-                <h5 class="modal-title">{{cardDetail.name}} (<small class="text-muted ">{{cardDetail.code}}</small>)
-                    <span *ngIf="cardDetail.removed" class="badge bg-danger">Removed</span>
-                    <a [href]="'https://leagueoflegends.fandom.com/wiki/' + cardDetail.code + ' (Legends_of_Runeterra)'"
-                        target="_blank">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24">
-                            <g stroke="#0d6efd" stroke-width="1.5" fill="none" fill-rule="evenodd"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5">
-                                </polyline>
-                                <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5">
-                                </path>
-                            </g>
-                        </svg>
-                    </a>
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-detail col-12">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-md-3 d-none d-md-block">
-                                            <img class="card-image" [defaultImage]="defaultImage"
-                                                [lazyLoad]="getAPIImage(cardDetail)" [alt]="cardDetail.code"
-                                                width="250px">
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <div class="row">
-                                                <form class="border-0">
-                                                    <div class="form-group row">
-                                                        <label class="col-4 col-md-2 col-form-label">Type</label>
-                                                        <div class="col-8 col-md-4">
-                                                            <input class="form-control-plaintext" type="text" readonly
-                                                                value="{{cardDetail.type}}">
-                                                        </div>
-                                                        <label class="col-4 col-md-2 col-form-label">Region</label>
-                                                        <div class="col-8 col-md-4 position-relative">
-                                                            <img class="position-absolute top-50 region"
-                                                                [alt]="cardDetail.code"
-                                                                [src]="'./assets/icons/' + getRegion(cardDetail.code) + '.png'"
-                                                                width="50xp">
-                                                        </div>
-                                                        <label class="col-4 col-md-2 col-form-label">Cost</label>
-                                                        <div class="col-8 col-md-4">
-                                                            <input class="form-control-plaintext" type="text" readonly
-                                                                value="{{cardDetail.cost}}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row" *ngIf="cardDetail.description">
-                                                        <label class="col-4 col-md-2 col-form-label">Description</label>
-                                                        <div class="col-8 col-md-10">
-                                                            <textarea autosize class="form-control-plaintext"
-                                                                readonly>{{cardDetail.description}}</textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row" *ngIf="cardDetail.levelupDescription">
-                                                        <label class="col-4 col-md-2 col-form-label">Level Up</label>
-                                                        <div class="col-8 col-md-10">
-                                                            <textarea autosize class="form-control-plaintext"
-                                                                readonly>{{cardDetail.levelupDescription}}</textarea>
-                                                        </div>
-                                                    </div>
-                                                    <fieldset class="form-group row"
-                                                        *ngIf="['Follower','Champion','Equipment'].includes(cardDetail.type)">
-                                                        <label class="col-4 col-md-2 col-form-label">Power</label>
-                                                        <div class="col-8 col-md-4"><input
-                                                                class="form-control-plaintext" type="text" readonly
-                                                                value="{{cardDetail.power}}"></div>
-                                                        <label class="col-4 col-md-2 col-form-label">Health</label>
-                                                        <div class="col-8 col-md-4"><input
-                                                                class="form-control-plaintext" type="text" readonly
-                                                                value="{{cardDetail.health}}"></div>
-                                                    </fieldset>
-                                                    <div class="form-group row">
-                                                        <label class="col-4 col-md-2 col-form-label">Flavor</label>
-                                                        <div class="col-8 col-md-10">
-                                                            <textarea autosize class="form-control-plaintext"
-                                                                readonly>{{cardDetail.flavor}}</textarea>
-                                                        </div>
-                                                    </div>
-                                                </form>
+    <!-- Detail Modal -->
+    <div class="modal fade" tabindex="-1" id="detailModal" data-bs-delay='{"show":50,"hide":100}'>
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content" *ngIf="cardDetail">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{cardDetail.name}} (<small class="text-muted ">{{cardDetail.code}}</small>)
+                        <span *ngIf="cardDetail.removed" class="badge bg-danger">Removed</span>
+                        <a [href]="'https://leagueoflegends.fandom.com/wiki/' + cardDetail.code + ' (Legends_of_Runeterra)'"
+                            target="_blank">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24">
+                                <g stroke="#0d6efd" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5">
+                                    </polyline>
+                                    <path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5">
+                                    </path>
+                                </g>
+                            </svg>
+                        </a>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-detail col-12">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-3 d-none d-md-block">
+                                                <img class="card-image" [defaultImage]="defaultImage"
+                                                    [lazyLoad]="getAPIImage(cardDetail)" [alt]="cardDetail.code"
+                                                    width="250px">
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <ul class="nav nav-pills nav-justified" id="detalCardDisplayTabs"
-                                            role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="artwork-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#artwork-tab-pane" type="button" role="tab"
-                                                    aria-controls="artwork-tab-pane"
-                                                    aria-selected="true">Artwork</button>
-                                            </li>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="change-history-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#change-history-tab-pane" type="button" role="tab"
-                                                    aria-controls="change-history-tab-pane" aria-selected="false"
-                                                    [disabled]="!historyDatabase[cardDetail.code]">Change
-                                                    History</button>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="artwork-tab-pane" role="tabpanel"
-                                                aria-labelledby="artwork-tab" tabindex="0">
-                                                <div class="col-12">
-                                                    <div>{{cardDetail.artist || 'Unknown'}}</div>
-                                                    <img class="rounded mx-auto d-block" [defaultImage]="defaultArtwork"
-                                                        [lazyLoad]="getAPIArtwork(cardDetail)" [alt]="cardDetail.code"
-                                                        [attr.width]="isMobile ? '100%' : 'auto'"
-                                                        [attr.height]="isMobile ? 'auto' : '500px'">
+                                            <div class="col-12 col-md-9">
+                                                <div class="row">
+                                                    <form class="border-0">
+                                                        <div class="form-group row">
+                                                            <label class="col-4 col-md-2 col-form-label">Type</label>
+                                                            <div class="col-8 col-md-4">
+                                                                <input class="form-control-plaintext" type="text"
+                                                                    readonly value="{{cardDetail.type}}">
+                                                            </div>
+                                                            <label class="col-4 col-md-2 col-form-label">Region</label>
+                                                            <div class="col-8 col-md-4 position-relative">
+                                                                <img class="position-absolute top-50 region"
+                                                                    [alt]="cardDetail.code"
+                                                                    [src]="'./assets/icons/' + getRegion(cardDetail.code) + '.png'"
+                                                                    width="50xp">
+                                                            </div>
+                                                            <label class="col-4 col-md-2 col-form-label">Cost</label>
+                                                            <div class="col-8 col-md-4">
+                                                                <input class="form-control-plaintext" type="text"
+                                                                    readonly value="{{cardDetail.cost}}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row" *ngIf="cardDetail.description">
+                                                            <label
+                                                                class="col-4 col-md-2 col-form-label">Description</label>
+                                                            <div class="col-8 col-md-10">
+                                                                <textarea autosize class="form-control-plaintext"
+                                                                    readonly>{{cardDetail.description}}</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row"
+                                                            *ngIf="cardDetail.levelupDescription">
+                                                            <label class="col-4 col-md-2 col-form-label">Level
+                                                                Up</label>
+                                                            <div class="col-8 col-md-10">
+                                                                <textarea autosize class="form-control-plaintext"
+                                                                    readonly>{{cardDetail.levelupDescription}}</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <fieldset class="form-group row"
+                                                            *ngIf="['Follower','Champion','Equipment'].includes(cardDetail.type)">
+                                                            <label class="col-4 col-md-2 col-form-label">Power</label>
+                                                            <div class="col-8 col-md-4"><input
+                                                                    class="form-control-plaintext" type="text" readonly
+                                                                    value="{{cardDetail.power}}"></div>
+                                                            <label class="col-4 col-md-2 col-form-label">Health</label>
+                                                            <div class="col-8 col-md-4"><input
+                                                                    class="form-control-plaintext" type="text" readonly
+                                                                    value="{{cardDetail.health}}"></div>
+                                                        </fieldset>
+                                                        <div class="form-group row">
+                                                            <label class="col-4 col-md-2 col-form-label">Flavor</label>
+                                                            <div class="col-8 col-md-10">
+                                                                <textarea autosize class="form-control-plaintext"
+                                                                    readonly>{{cardDetail.flavor}}</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="change-history-tab-pane" role="tabpanel"
-                                                aria-labelledby="change-history-tab" tabindex="0">
-                                                <div class="col-12" *ngIf="historyDatabase[cardDetail.code]">
-                                                    <table class="table  table-bordered" style="table-layout: fixed">
-                                                        <caption></caption>
-                                                        <colgroup>
-                                                            <col style="width: 20%;">
-                                                            <col style="width: 20%;">
-                                                            <col style="width: 60%;">
-                                                        </colgroup>
-                                                        <thead class="text-center">
-                                                            <tr>
-                                                                <th scope="col">Previous Version</th>
-                                                                <th scope="col">Changed Version</th>
-                                                                <th scope="col">Changes</th>
+                                        </div>
+                                        <div class="row">
+                                            <ul class="nav nav-pills nav-justified" id="detalCardDisplayTabs"
+                                                role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="artwork-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#artwork-tab-pane"
+                                                        type="button" role="tab" aria-controls="artwork-tab-pane"
+                                                        aria-selected="true">Artwork</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="change-history-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#change-history-tab-pane"
+                                                        type="button" role="tab" aria-controls="change-history-tab-pane"
+                                                        aria-selected="false"
+                                                        [disabled]="!historyDatabase[cardDetail.code]">Change
+                                                        History</button>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="artwork-tab-pane"
+                                                    role="tabpanel" aria-labelledby="artwork-tab" tabindex="0">
+                                                    <div class="col-12">
+                                                        <div>{{cardDetail.artist || 'Unknown'}}</div>
+                                                        <img class="rounded mx-auto d-block"
+                                                            [defaultImage]="defaultArtwork"
+                                                            [lazyLoad]="getAPIArtwork(cardDetail)"
+                                                            [alt]="cardDetail.code"
+                                                            [attr.width]="isMobile ? '100%' : 'auto'"
+                                                            [attr.height]="isMobile ? 'auto' : '500px'">
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="change-history-tab-pane" role="tabpanel"
+                                                    aria-labelledby="change-history-tab" tabindex="0">
+                                                    <div class="col-12" *ngIf="historyDatabase[cardDetail.code]">
+                                                        <table class="table  table-bordered"
+                                                            style="table-layout: fixed">
+                                                            <caption></caption>
+                                                            <colgroup>
+                                                                <col style="width: 20%;">
+                                                                <col style="width: 20%;">
+                                                                <col style="width: 60%;">
+                                                            </colgroup>
+                                                            <thead class="text-center">
+                                                                <tr>
+                                                                    <th scope="col">Previous Version</th>
+                                                                    <th scope="col">Changed Version</th>
+                                                                    <th scope="col">Changes</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr *ngFor="let log of historyDatabase[cardDetail.code]">
+                                                                <td class="text-center">
+                                                                    <img *ngIf="log.oldURL" [alt]="cardDetail.code"
+                                                                        [lazyLoad]="log.oldURL" width="180px"
+                                                                        [defaultImage]="defaultImage">
+                                                                    <br />{{log.oldURL ?
+                                                                    log.oldPatch : '' }}
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <img [ngClass]="{'invisible': !log.newURL}"
+                                                                        [alt]="cardDetail.code" [lazyLoad]="log.newURL"
+                                                                        width="180px" [defaultImage]="defaultImage">
+                                                                    <br />{{ log.newPatch }}
+                                                                </td>
+                                                                <td>
+                                                                    <div class="diff" *ngFor="let diff of log.diff"
+                                                                        [innerHTML]="diff | safeHtml">
+                                                                    </div>
+                                                                </td>
                                                             </tr>
-                                                        </thead>
-                                                        <tr *ngFor="let log of historyDatabase[cardDetail.code]">
-                                                            <td class="text-center">
-                                                                <img *ngIf="log.oldURL" [alt]="cardDetail.code"
-                                                                    [lazyLoad]="log.oldURL" width="180px"
-                                                                    [defaultImage]="defaultImage">
-                                                                <br />{{log.oldURL ?
-                                                                log.oldPatch : '' }}
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <img [ngClass]="{'invisible': !log.newURL}"
-                                                                    [alt]="cardDetail.code" [lazyLoad]="log.newURL"
-                                                                    width="180px" [defaultImage]="defaultImage">
-                                                                <br />{{ log.newPatch }}
-                                                            </td>
-                                                            <td>
-                                                                <div class="diff" *ngFor="let diff of log.diff"
-                                                                    [innerHTML]="diff | safeHtml">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Search Modal -->
-<div class="modal fade" tabindex="-1" id="searchModal">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Search</h5>
-                <button type="button" class="btn-close" aria-label="Close" (click)="closeFilters()"></button>
-            </div>
-            <div class="modal-body">
-                <form [formGroup]="form" (ngSubmit)="searchCards()" id="top">
-                    <div class="form-group row">
-                        <label class="col-3 col-md-1 col-form-label">Regions</label>
-                        <div class="col-9 col-md-11 image-checkboxes-container">
-                            <div class="form-check form-check-inline" formArrayName="regions"
-                                *ngFor="let region of regionFormArray.controls; let i = index">
-                                <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
-                                    [formControlName]="i">
-                                <label class="form-check-label" [for]="'region' + regionsData[i].id">
-                                    <img *ngIf="regionsData[i].icon" [alt]="'region' + regionsData[i].name"
-                                        [src]="'./assets/icons/' + regionsData[i].icon + '.png'">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-md-1 col-form-label">Sets</label>
-                        <div class="col-9 col-md-11 image-checkboxes-container">
-                            <div class="form-check form-check-inline" formArrayName="sets"
-                                *ngFor="let region of setFormArray.controls; let i = index">
-                                <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id"
-                                    [formControlName]="i">
-                                <label class="form-check-label" [for]="'set' + setsData[i].id"
-                                    [ngClass]="{'form-check-label-no-icon': !setsData[i].icon}">
-                                    <img *ngIf="setsData[i].icon" [src]="'./assets/icons/' + setsData[i].icon + '.png'">
-                                    <span *ngIf="setsData[i].name">{{setsData[i].name }}</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-md-1 col-form-label">Card Types</label>
-                        <div class="col-9 col-md-11 image-checkboxes-container">
-                            <ng-container *ngFor="let cardType of cardTypesData; let i = index">
-                                <div class="form-check form-check-inline" formArrayName="cardTypes">
-                                    <input class="form-check-input" type="checkbox" [id]="'cardType' + cardType.id"
-                                        [formControlName]="cardType.index">
-                                    <label class="form-check-label" [for]="'cardType' + cardType.id"
-                                        [ngClass]="{'form-check-label-no-icon': !cardType.icon}">
-                                        <img *ngIf="cardType.icon" [src]="'./assets/icons/' + cardType.icon + '.png'">
-                                        <span *ngIf="cardType.name">{{cardType.name }}</span>
+    <!-- Search Modal -->
+    <div class="modal fade" tabindex="-1" id="searchModal">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search</h5>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="closeFilters()"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="form" (ngSubmit)="searchCards()">
+                        <div class="form-group row">
+                            <label class="col-3 col-md-1 col-form-label">Regions</label>
+                            <div class="col-9 col-md-11 image-checkboxes-container">
+                                <div class="form-check form-check-inline" formArrayName="regions"
+                                    *ngFor="let region of regionFormArray.controls; let i = index">
+                                    <input class="form-check-input" type="checkbox" [id]="'region' + regionsData[i].id"
+                                        [formControlName]="i">
+                                    <label class="form-check-label" [for]="'region' + regionsData[i].id">
+                                        <img *ngIf="regionsData[i].icon" [alt]="'region' + regionsData[i].name"
+                                            [src]="'./assets/icons/' + regionsData[i].icon + '.png'">
                                     </label>
                                 </div>
-                                <ng-container *ngFor="let cardTypeChild of cardType.children; let j = index">
-                                    <div class="form-check form-check-inline secondary-controls"
-                                        formArrayName="cardTypes"
-                                        [ngClass]="{'active': cardTypeFormArray.controls[cardType.index].value }">
-                                        <input class="form-check-input" type="checkbox"
-                                            [id]="'cardType' + cardTypeChild.id"
-                                            [formControlName]="cardTypeChild.index">
-                                        <label class="form-check-label" [for]="'cardType' + cardTypeChild.id">
-                                            <img *ngIf="cardTypeChild.icon"
-                                                [src]="'./assets/icons/' + cardTypeChild.icon + '.png'">
-                                            <span *ngIf="cardTypeChild.name">{{cardType.name }}</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-3 col-md-1 col-form-label">Sets</label>
+                            <div class="col-9 col-md-11 image-checkboxes-container">
+                                <div class="form-check form-check-inline" formArrayName="sets"
+                                    *ngFor="let region of setFormArray.controls; let i = index">
+                                    <input class="form-check-input" type="checkbox" [id]="'set' + setsData[i].id"
+                                        [formControlName]="i">
+                                    <label class="form-check-label" [for]="'set' + setsData[i].id"
+                                        [ngClass]="{'form-check-label-no-icon': !setsData[i].icon}">
+                                        <img *ngIf="setsData[i].icon"
+                                            [src]="'./assets/icons/' + setsData[i].icon + '.png'">
+                                        <span *ngIf="setsData[i].name">{{setsData[i].name }}</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-3 col-md-1 col-form-label">Card Types</label>
+                            <div class="col-9 col-md-11 image-checkboxes-container">
+                                <ng-container *ngFor="let cardType of cardTypesData; let i = index">
+                                    <div class="form-check form-check-inline" formArrayName="cardTypes">
+                                        <input class="form-check-input" type="checkbox" [id]="'cardType' + cardType.id"
+                                            [formControlName]="cardType.index">
+                                        <label class="form-check-label" [for]="'cardType' + cardType.id"
+                                            [ngClass]="{'form-check-label-no-icon': !cardType.icon}">
+                                            <img *ngIf="cardType.icon"
+                                                [src]="'./assets/icons/' + cardType.icon + '.png'">
+                                            <span *ngIf="cardType.name">{{cardType.name }}</span>
                                         </label>
                                     </div>
+                                    <ng-container *ngFor="let cardTypeChild of cardType.children; let j = index">
+                                        <div class="form-check form-check-inline secondary-controls"
+                                            formArrayName="cardTypes"
+                                            [ngClass]="{'active': cardTypeFormArray.controls[cardType.index].value }">
+                                            <input class="form-check-input" type="checkbox"
+                                                [id]="'cardType' + cardTypeChild.id"
+                                                [formControlName]="cardTypeChild.index">
+                                            <label class="form-check-label" [for]="'cardType' + cardTypeChild.id">
+                                                <img *ngIf="cardTypeChild.icon"
+                                                    [src]="'./assets/icons/' + cardTypeChild.icon + '.png'">
+                                                <span *ngIf="cardTypeChild.name">{{cardType.name }}</span>
+                                            </label>
+                                        </div>
+                                    </ng-container>
                                 </ng-container>
-                            </ng-container>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-md-1 col-form-label">Collectible</label>
-                        <div class="col-9 col-md-5 image-checkboxes-container">
-                            <div class="form-check form-check-inline" formArrayName="collectibles"
-                                *ngFor="let region of collectibleFormArray.controls; let i = index">
-                                <input class="form-check-input" type="checkbox"
-                                    [id]="'collectible' + collectibleData[i].id" [formControlName]="i">
-                                <label class="form-check-label" [for]="'collectible' + collectibleData[i].id">
-                                    <img *ngIf="collectibleData[i].icon"
-                                        [src]="'./assets/icons/' + collectibleData[i].icon + '.png'">
-                                    <span *ngIf="collectibleData[i].name">{{collectibleData[i].name }}</span>
-                                </label>
                             </div>
                         </div>
-                        <label class="col-3 col-md-1 col-form-label">Groups</label>
-                        <div class="col-9 col-md-5">
-                            <ng-select #groupSelector [(ngModel)]="selectedGroups" [ngModelOptions]="{standalone: true}"
-                                [multiple]="true" [markFirst]="true" [placeholder]="'Groups like Tech, Dragon'">
-                                <ng-option *ngFor="let group of groups" [value]="group.name">
-                                    {{group.name}}
-                                </ng-option>
-                            </ng-select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-md-1 col-form-label">Card Search</label>
-                        <div class="col-9 col-md-11">
-                            <div class="input-group mb-3">
-                                <button *ngIf="form.get('text').value.length != 0" class="btn btn-secondary"
-                                    type="button" (click)="clearTextSearch()">Clear</button>
-                                <input type="text" class="form-control" formControlName="text" [autofocus]="true"
-                                    placeholder="Card Name, Card Text, Keywords or even Card Code">
+                        <div class="form-group row">
+                            <label class="col-3 col-md-1 col-form-label">Collectible</label>
+                            <div class="col-9 col-md-5 image-checkboxes-container">
+                                <div class="form-check form-check-inline" formArrayName="collectibles"
+                                    *ngFor="let region of collectibleFormArray.controls; let i = index">
+                                    <input class="form-check-input" type="checkbox"
+                                        [id]="'collectible' + collectibleData[i].id" [formControlName]="i">
+                                    <label class="form-check-label" [for]="'collectible' + collectibleData[i].id">
+                                        <img *ngIf="collectibleData[i].icon"
+                                            [src]="'./assets/icons/' + collectibleData[i].icon + '.png'">
+                                        <span *ngIf="collectibleData[i].name">{{collectibleData[i].name }}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="col-3 col-md-1 col-form-label">Groups</label>
+                            <div class="col-9 col-md-5">
+                                <ng-select #groupSelector [(ngModel)]="selectedGroups"
+                                    [ngModelOptions]="{standalone: true}" [multiple]="true" [markFirst]="true"
+                                    [placeholder]="'Groups like Tech, Dragon'">
+                                    <ng-option *ngFor="let group of groups" [value]="group.name">
+                                        {{group.name}}
+                                    </ng-option>
+                                </ng-select>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group row keyword-container">
-                        <label class="col-3 col-md-1 col-form-label">Keywords</label>
-                        <div class="col-9 col-md-11">
-                            <ng-select [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}"
-                                [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
-                                <ng-option *ngFor="let keyword of keywords" [value]="keyword.id">
-                                    <img *ngIf="keyword.icon" alt="{{keyword.id}}"
-                                        [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
-                                    {{keyword.name || keyword.id}}
-                                </ng-option>
-                            </ng-select>
+                        <div class="form-group row">
+                            <label class="col-3 col-md-1 col-form-label">Card Search</label>
+                            <div class="col-9 col-md-11">
+                                <div class="input-group mb-3">
+                                    <button *ngIf="form.get('text').value.length != 0"
+                                        class="btn btn-secondary search-form-buttons" type="button"
+                                        (click)="clearTextSearch()">Clear</button>
+                                    <input type="text" class="form-control" formControlName="text" [id]="'searchWord'"
+                                        (keydown)="searchWordKeyDown($event)"
+                                        placeholder="Card Name, Card Text, Keywords or even Card Code">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row" *ngIf="isMobile">
-                        <label class="col-3 col-form-label">Artist</label>
-                        <div class="col-9">
-                            <ng-select #artistSelector [(ngModel)]="selectedArtists"
-                                [ngModelOptions]="{standalone: true}" [multiple]="true" [maxSelectedItems]="1"
-                                [markFirst]="true" [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
-                                <ng-option *ngFor="let artist of artist" [value]="artist.name">
-                                    {{artist.name}}
-                                </ng-option>
-                            </ng-select>
+                        <div class="form-group row keyword-container">
+                            <label class="col-3 col-md-1 col-form-label">Keywords</label>
+                            <div class="col-9 col-md-11">
+                                <ng-select [(ngModel)]="selectedKeywords" [ngModelOptions]="{standalone: true}"
+                                    [multiple]="true" [markFirst]="true" [placeholder]="'Keywords like Barrier, Play'">
+                                    <ng-option *ngFor="let keyword of keywords" [value]="keyword.id">
+                                        <img *ngIf="keyword.icon" alt="{{keyword.id}}"
+                                            [src]="'./assets/icons/keywords/' + keyword.icon + '.png'" width="20px">
+                                        {{keyword.name || keyword.id}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group row" *ngIf="isMobile">
+                            <label class="col-3 col-form-label">Artist</label>
+                            <div class="col-9">
+                                <ng-select #artistSelector [(ngModel)]="selectedArtists"
+                                    [ngModelOptions]="{standalone: true}" [multiple]="true" [maxSelectedItems]="1"
+                                    [markFirst]="true" [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
+                                    <ng-option *ngFor="let artist of artist" [value]="artist.name">
+                                        {{artist.name}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                        </div>
 
-                    <div class="form-group row">
-                        <label class="col-3 col-md-1 col-form-label">Cost</label>
-                        <div class="col-9 col-md-11 image-checkboxes-container">
-                            <div class="form-check form-check-inline" formArrayName="costs"
-                                *ngFor="let region of costFormArray.controls; let i = index">
-                                <input class="form-check-input" type="checkbox" [id]="'cost' + costData[i].id"
-                                    [formControlName]="i">
-                                <label class="form-check-label" [for]="'cost' + costData[i].id"
-                                    [ngClass]="{'circle': !!costData[i].circle}">
-                                    <img *ngIf="costData[i].icon" [src]="'./assets/icons/' + costData[i].icon + '.png'">
-                                    <span *ngIf="costData[i].name">{{costData[i].name }}</span>
-                                </label>
+                        <div class="form-group row">
+                            <label class="col-3 col-md-1 col-form-label">Cost</label>
+                            <div class="col-9 col-md-11 image-checkboxes-container">
+                                <div class="form-check form-check-inline" formArrayName="costs"
+                                    *ngFor="let region of costFormArray.controls; let i = index">
+                                    <input class="form-check-input" type="checkbox" [id]="'cost' + costData[i].id"
+                                        [formControlName]="i">
+                                    <label class="form-check-label" [for]="'cost' + costData[i].id"
+                                        [ngClass]="{'circle': !!costData[i].circle}">
+                                        <img *ngIf="costData[i].icon"
+                                            [src]="'./assets/icons/' + costData[i].icon + '.png'">
+                                        <span *ngIf="costData[i].name">{{costData[i].name }}</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group row mb-2">
-                        <label class="col-3 col-md-1 col-form-label">Rarity</label>
-                        <div class="col-9 col-md-11 image-checkboxes-container">
-                            <div class="form-check form-check-inline" formArrayName="rarities"
-                                *ngFor="let region of rarityFormArray.controls; let i = index">
-                                <input class="form-check-input" type="checkbox" [id]="'rarity' + rarityData[i].id"
-                                    [formControlName]="i">
-                                <label class="form-check-label" [for]="'rarity' + rarityData[i].id"
-                                    [ngClass]="{'circle': !!rarityData[i].circle}">
-                                    <img *ngIf="rarityData[i].icon"
-                                        [src]="'./assets/currency/Wildcard_' + rarityData[i].icon + '.png'">
-                                    <span *ngIf="rarityData[i].name">{{rarityData[i].name }}</span>
-                                </label>
+                        <div class="form-group row mb-2">
+                            <label class="col-3 col-md-1 col-form-label">Rarity</label>
+                            <div class="col-9 col-md-11 image-checkboxes-container">
+                                <div class="form-check form-check-inline" formArrayName="rarities"
+                                    *ngFor="let region of rarityFormArray.controls; let i = index">
+                                    <input class="form-check-input" type="checkbox" [id]="'rarity' + rarityData[i].id"
+                                        [formControlName]="i">
+                                    <label class="form-check-label" [for]="'rarity' + rarityData[i].id"
+                                        [ngClass]="{'circle': !!rarityData[i].circle}">
+                                        <img *ngIf="rarityData[i].icon"
+                                            [src]="'./assets/currency/Wildcard_' + rarityData[i].icon + '.png'">
+                                        <span *ngIf="rarityData[i].name">{{rarityData[i].name }}</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group row mb-2">
-                        <label class="col-3 col-md-1 col-form-label">Artist</label>
-                        <div class="col-9 col-md-11">
-                            <ng-select #artistSelector [(ngModel)]="selectedArtists"
-                                [ngModelOptions]="{standalone: true}" [multiple]="true" [maxSelectedItems]="1"
-                                [markFirst]="true" [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
-                                <ng-option *ngFor="let artist of artist" [value]="artist.name">
-                                    {{artist.name}}
-                                </ng-option>
-                            </ng-select>
+                        <div class="form-group row mb-2">
+                            <label class="col-3 col-md-1 col-form-label">Artist</label>
+                            <div class="col-9 col-md-11">
+                                <ng-select #artistSelector [(ngModel)]="selectedArtists"
+                                    [ngModelOptions]="{standalone: true}" [multiple]="true" [maxSelectedItems]="1"
+                                    [markFirst]="true" [placeholder]="'Artist like SIXMOREVODKA, Dao Le'">
+                                    <ng-option *ngFor="let artist of artist" [value]="artist.name">
+                                        {{artist.name}}
+                                    </ng-option>
+                                </ng-select>
+                            </div>
                         </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
+                        <button type="button" class="btn btn-primary ms-2" (click)="searchCards()">Search</button>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="col-12 text-center">
-                    <button type="button" class="btn btn-info" (click)="clearFilters()">Clear Filters</button>
-                    <button type="button" class="btn btn-primary ms-2" (click)="searchCards()">Search</button>
                 </div>
             </div>
         </div>
     </div>
-</div>

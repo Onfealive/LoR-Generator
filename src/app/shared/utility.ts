@@ -33,7 +33,7 @@ export function sortArrayByValues(sortable: Array<any>, keys: Array<string>, sor
 
 export function sortObjectByValues(unordered: object, keys, sortOrder = {}) {
     let sortable = [];
-    for (var item in unordered) {
+    for (let item in unordered) {
         sortable.push([item, unordered[item]]);
     }
 
@@ -99,7 +99,7 @@ export function cleanUpTextContent(str: string) {
 }
 
 export function cleanObject(obj) {
-    for (var propName in obj) {
+    for (let propName in obj) {
         if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {
             delete obj[propName];
         }
@@ -121,9 +121,9 @@ export function unique(array: Array<any>) {
 }
 
 export function numberFormat(no) {
-    var str = no + '';
-    var ar = [];
-    var i = str.length - 1;
+    let str = no + '';
+    let ar = [];
+    let i = str.length - 1;
 
     while (i >= 0) {
         ar.push((str[i - 2] || '') + (str[i - 1] || '') + (str[i] || ''));

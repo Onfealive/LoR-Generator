@@ -24,6 +24,7 @@ export class Card {
     subtype: Array<string>;
     flavor: string;
     keywords: Array<string>;
+    keywordRefs: Array<string>;
     artist: string;
     regions: Array<string>;
     rarity: string;

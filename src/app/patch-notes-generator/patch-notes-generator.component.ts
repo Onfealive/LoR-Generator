@@ -235,17 +235,14 @@ export class PatchNotesGeneratorComponent implements OnInit {
             let rawCardData = cardData._data;
             let subtypes = Utility.capitalize(rawCardData.subtypes);
 
-            let keywords = cardData.keywords;
-            keywords.sort();
-
             result[rawCardData.cardCode] = Utility.cleanObject({
                 name: rawCardData.name,
                 type: rawCardData.type,
                 rarity: rawCardData.collectible ? rawCardData.rarityRef : 'None',
                 subtype: subtypes.length ? subtypes : '',
                 supertype: rawCardData.supertype,
-                keywords: rawCardData.keywords,
-                keywordRefs: keywords,
+                keywords: cardData.keywords,
+                keywordRefs: cardData.keywordRefs,
                 collectible: rawCardData.collectible,
                 cost: rawCardData.cost,
                 power: rawCardData.attack,
