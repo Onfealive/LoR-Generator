@@ -1,5 +1,16 @@
 [
     {
+        "version": "2.2.2",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.17 to match live."
+                ]
+            }
+        ]
+    },
+    {
         "version": "2.2.1",
         "changes": [
             {
