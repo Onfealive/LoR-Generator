@@ -564,6 +564,26 @@ export class DatabaseService {
         return false;
     }
 
+    private isRemoveSpace(currentPart, nextPart) {
+        let prevSkippingCharacters = [" "];
+        let nextSkippingCharacters = ["+", "-"];
+
+        let prevCharacter = currentPart.value[currentPart.value.length - 1];
+        let nextCharacter = nextPart.value[0];
+
+        // "10 " + "+"
+        if (currentPart.value.length >= 2 && !isNaN(currentPart.value[currentPart.value.length - 2]) && prevSkippingCharacters.includes(prevCharacter) && nextSkippingCharacters.includes(nextCharacter)) {
+            return true;
+        }
+
+        // "+ " + 1"
+        if (nextSkippingCharacters.includes(currentPart.value[0]) && prevSkippingCharacters.includes(prevCharacter) && !isNaN(nextCharacter)) {
+            return true;
+        }
+
+        return false;
+    }
+
     public getCardChangeData(options: { display, modifyTypes, changeLog, patchNote, selectedPatch, isGrouped, isLink }, totalOldJSONData: Card[], totalNewJSONData: Card[]) {
         let logs = [];
 
@@ -912,6 +932,11 @@ export class DatabaseService {
                                                     content += ' ';
                                                     newContent += ' ';
                                                 }
+
+                                                if (this.isRemoveSpace(part, nextPart)) {
+                                                    content = content.slice(0, -1);
+                                                    newContent = newContent.slice(0, -1);
+                                                }
                                             }
                                         }
                                     }
@@ -929,6 +954,7 @@ export class DatabaseService {
                                 } else {
                                     oldComparingContent = [{ value: largeContent.previousPrefix }, ...cleanedDiffParts, { value: "\"" }]
                                 }
+
                                 oldComparingContent.filter(p => !p.added).forEach((part, index, array) => {
                                     const color = part.added ? 'green' :
                                         part.removed ? 'red' : 'black';
@@ -954,6 +980,11 @@ export class DatabaseService {
                                                 if (!this.isSkippingAddingSpace(part, nextPart)) {
                                                     content += ' ';
                                                     oldContent += ' ';
+                                                }
+
+                                                if (this.isRemoveSpace(part, nextPart)) {
+                                                    content = content.slice(0, -1);
+                                                    newContent = newContent.slice(0, -1);
                                                 }
                                             }
                                         }

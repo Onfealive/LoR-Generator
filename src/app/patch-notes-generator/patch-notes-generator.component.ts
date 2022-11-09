@@ -96,35 +96,36 @@ export class PatchNotesGeneratorComponent implements OnInit {
         let selectedPatchIndex = this.patchInfo.findIndex(p => p.checked);
         this.newPatch = PatchInfo[selectedPatchIndex];
         this.oldPatch = PatchInfo[selectedPatchIndex - 1];
+
+        this.isCustom = false;
+        this.files = [];
     }
 
-    compare(isCustom = false) {
+    compare() {
         this.isLoading = true;
         this.logs = [];
         this.addModifyTypes();
 
         let flag = 0;
-        this.isCustom = isCustom;
-        if (!isCustom) {
-            this.databaseService.getCardData(this.oldPatch).subscribe(database => {
-                flag++;
-                if (flag == 2) {
-                    setTimeout(() => {
-                        this._compareJson();
-                    }, 0);
-                }
-            });
-            this.databaseService.getCardData(this.newPatch).subscribe(database => {
-                flag++;
-                if (flag == 2) {
-                    setTimeout(() => {
-                        this._compareJson();
-                    }, 0);
-                }
-            });
-        } else {
-            this._compareJson(isCustom);
-        }
+        this.isCustom = false;
+        this.files = [];
+
+        this.databaseService.getCardData(this.oldPatch).subscribe(database => {
+            flag++;
+            if (flag == 2) {
+                setTimeout(() => {
+                    this._compareJson();
+                }, 0);
+            }
+        });
+        this.databaseService.getCardData(this.newPatch).subscribe(database => {
+            flag++;
+            if (flag == 2) {
+                setTimeout(() => {
+                    this._compareJson();
+                }, 0);
+            }
+        });
     }
 
     getAPIImage(cardData: Card) {
@@ -180,7 +181,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
                             throw 'Empty Object';
                         }
                         this.customDatabase = this.databaseService.convertData2Database(customDatabase, currentFile[1])
-                        this.compare(true);
+                        this._compareJson();
                     }
                 } catch (error) {
                     console.log(error);
@@ -199,7 +200,7 @@ export class PatchNotesGeneratorComponent implements OnInit {
         this.files.splice(this.files.indexOf(event), 1);
     }
 
-    _compareJson(isCustom = false) {
+    _compareJson() {
         this.logs = [];
 
         this.isCompleted = true;
@@ -219,8 +220,8 @@ export class PatchNotesGeneratorComponent implements OnInit {
         options.selectedPatch = this.newPatch.name;
 
         // Handleing
-        let totalOldJSONData = isCustom ? this.databaseService.newestPatchCards : this.databaseService.getDatabaseOfPatch(this.oldPatch)
-        let totalNewJSONData = isCustom ? this.customDatabase : this.databaseService.getDatabaseOfPatch(this.newPatch);
+        let totalOldJSONData = this.isCustom ? this.databaseService.newestPatchCards : this.databaseService.getDatabaseOfPatch(this.oldPatch)
+        let totalNewJSONData = this.isCustom ? this.customDatabase : this.databaseService.getDatabaseOfPatch(this.newPatch);
 
         this.logs = this.databaseService.getCardChangeData(options, totalOldJSONData, totalNewJSONData);
 

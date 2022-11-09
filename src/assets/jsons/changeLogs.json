@@ -1,5 +1,23 @@
 [
     {
+        "version": "2.2.3",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V3.18 and V3.19."
+                ]
+            },
+            {
+                "title": "Patch Note Generator",
+                "details": [
+                    "Bugfixed: When using Data file, selecting Change Type will no longer use the Patch option.",
+                    "Bugfixed: Fixed another bug where the text comparison feature sometimes had extra spaces."
+                ]
+            }
+        ]
+    },
+    {
         "version": "2.2.2",
         "changes": [
             {
