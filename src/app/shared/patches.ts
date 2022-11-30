@@ -303,6 +303,11 @@ export const PatchInfo: PatchInfoInterface[] = [
         'name': '3.19',
         'code': '3_19_0',
         'sets': ['1', '2', '3', '4', '5', '6', '6cde']
+    },
+    {
+        'name': '3.21',
+        'code': '3_21_0',
+        'sets': ['1', '2', '3', '4', '5', '6', '6cde']
     }
 ]
 

@@ -30,11 +30,13 @@ button.collapsed {
 
 .btn-search-container {
     top: 20px;
-    width: 0;
+    right: 0px;
+    width: 100%;
     height: 0;
 
     .btn-search-group {
-        margin-left: -60px;
+        margin-right: -60px;
+        float: right;
 
         small {
             font-size: 0.65em;

@@ -1,11 +1,11 @@
-<div class="row" *ngIf="isCompleted" id="top">
-    <div class="sticky-top btn-search-container" *ngIf="isCompleted">
-        <div class="btn-search-group">
-            <button type="button" class="btn btn-success btn-search" (click)="showFilters()" [disabled]="!isCompleted">
-                <i class="bi bi-search"></i>
-            </button><br /><small>Shift + S</small>
-        </div>
+<div class="sticky-top btn-search-container" *ngIf="isCompleted">
+    <div class="btn-search-group">
+        <button type="button" class="btn btn-success btn-search" (click)="showFilters()" [disabled]="!isCompleted">
+            <i class="bi bi-search"></i>
+        </button><br /><small>Shift + S</small>
     </div>
+</div>
+<div class="row" *ngIf="isCompleted" id="top">
     <div class="col-6">
         <ng-select #databaseVersionSelector aria-label="Database Version" [(ngModel)]="selectedDatabaseVersion"
             [clearable]="false" [disabled]="!isCompleted" [(ngModel)]="selectedDatabaseVersion"
@@ -15,9 +15,6 @@
                 {{ver.name}}
             </ng-option>
         </ng-select>
-    </div>
-    <div class="col-6">
-
     </div>
 </div>
 <div class="text-center mt-5" *ngIf="!isCompleted">

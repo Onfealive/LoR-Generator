@@ -375,6 +375,7 @@ export class DatabaseService {
                 }
 
                 card.description = card.description.split(' </').join('</');
+                card.description = card.description.split(' <').join('<');
                 card.description = card.description.split('  ').join(' ');
 
                 if (!card.keywordRefs.length) {

@@ -277,6 +277,9 @@ export class PatchNotesGeneratorComponent implements OnInit {
         fileContent = fileContent.split(`[`).join(`{`);
         fileContent = fileContent.split(`]`).join(`}`);
         fileContent = fileContent.split(`"0`).join(`["0`);
+        fileContent = fileContent.split(` .`).join(`.`);
+        fileContent = fileContent.split(` <`).join(`<`);
+        fileContent = fileContent.split(`  `).join(` `);
 
         let titles = ['name', 'type', 'rarity', 'subtype', 'supertype', 'keywords', 'keywordRefs', 'collectible', 'cost', 'power', 'health', 'desc', 'lvldesc', 'categoryRefs', 'flavor', 'artist', 'regions']
 

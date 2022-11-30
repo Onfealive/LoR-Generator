@@ -564,7 +564,7 @@ export class DatabaseComponent implements OnInit {
             filterList.push((c) => {
                 let found = 0;
                 searchKeywords.forEach((keyword) => {
-                    if (c.keywords.includes(keyword)) {
+                    if (c.keywordRefs.includes(keyword)) {
                         found++;
                     }
                 });
