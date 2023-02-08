@@ -1,5 +1,16 @@
 [
     {
+        "version": "2.2.5",
+        "changes": [
+            {
+                "title": "Data",
+                "details": [
+                    "Added: V4.0 and V4.1."
+                ]
+            }
+        ]
+    },
+    {
         "version": "2.2.4",
         "changes": [
             {
