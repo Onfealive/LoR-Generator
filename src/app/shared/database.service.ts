@@ -741,17 +741,17 @@ export class DatabaseService {
                     }
 
                     if (oldCard.cost != newCard.cost) {
-                        log.diff.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} from ${oldCard.cost}.`);
+                        log.diff.push(commonPrefix + `Mana cost ${oldCard.cost < newCard.cost ? 'increased' : 'reduced'} to ${newCard.cost} ''from ${oldCard.cost}''.`);
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (oldCard.power != newCard.power) {
-                        log.diff.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} from ${oldCard.power}.`);
+                        log.diff.push(commonPrefix + `Power ${oldCard.power < newCard.power ? 'increased' : 'reduced'} to ${newCard.power} ''from ${oldCard.power}''.`);
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
                     if (oldCard.health != newCard.health) {
-                        log.diff.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} from ${oldCard.health}.`);
+                        log.diff.push(commonPrefix + `Health ${oldCard.health < newCard.health ? 'increased' : 'reduced'} to ${newCard.health} ''from ${oldCard.health}''.`);
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
@@ -759,7 +759,7 @@ export class DatabaseService {
                     if (newCard.spellSpeed && oldCard.spellSpeed != newCard.spellSpeed) {
                         const startTip = startTipContent + newCard.spellSpeed + endTipContent;
                         const endTip = startTipContent + oldCard.spellSpeed + endTipContent;
-                        log.diff.push(commonPrefix + `Spell speed changed to ${startTip} from ${endTip}.`);
+                        log.diff.push(commonPrefix + `Spell speed changed to ${startTip} ''from ${endTip}''.`);
                         log.type = MODIFY_TYPE.CHANGE;
                     }
 
@@ -776,7 +776,7 @@ export class DatabaseService {
                         } else {
                             const removedRegionContent = addedHighlightedContent + removedRegions.join(', ') + addedHighlightedContent;
                             const newRegionContent = addedHighlightedContent + newRegions.join(', ') + addedHighlightedContent;
-                            log.diff.push(commonPrefix + `Now belong to ${newRegionContent} instead of ${removedRegionContent}.`);
+                            log.diff.push(commonPrefix + `Now belong to ${newRegionContent} instead ''of ${removedRegionContent}''.`);
                         }
                         log.type = MODIFY_TYPE.CHANGE;
                     }
@@ -793,7 +793,7 @@ export class DatabaseService {
                         } else {
                             const removedGroupContent = addedHighlightedContent + removedGroups.join(', ') + addedHighlightedContent;
                             const newGroupContent = addedHighlightedContent + newGroups.join(', ') + addedHighlightedContent;
-                            log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead of ${removedGroupContent}.`);
+                            log.diff.push(commonPrefix + `Now belong to ${newGroupContent} instead ''of ${removedGroupContent}''.`);
                         }
                         log.type = MODIFY_TYPE.CHANGE;
                     }
